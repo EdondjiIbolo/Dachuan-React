@@ -19,7 +19,7 @@ export function HeaderListItem({ section }) {
         )}
       </div>
       {section_list && (
-        <ul className="hidden py-2 sm:px-8 sub-menu w-screen max-w-[1310px]   md:justify-between md:items-center md:shadow-md bg-white md:absolute -left-40 top-[40px]  md:h-min">
+        <ul className="hidden py-2 sm:px-8 sub-menu w-screen max-w-[1310px] flex-col md:flex-row gap-3 md:gap-0 md:justify-between md:items-center md:shadow-md bg-white md:absolute -left-40 top-[40px]  md:h-min">
           {section_list?.map((item, index) => {
             return (
               <div key={index}>
