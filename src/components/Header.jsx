@@ -12,7 +12,7 @@ export function Header() {
     setMenu(!menu);
   };
   return (
-    <header className="  justify-center h-20  bg-white w-full flex fixed top-0 left-0 z-40  md:pr-5">
+    <header className="main-header  justify-center h-20  bg-white w-full flex fixed top-0 left-0 z-40  md:pr-5">
       <section className="flex w-full max-w-[1320px]  items-center  border-b-2  bg-white  m-auto justify-between  h-20 z-30  fixed   ">
         <section className="header__container--right">
           <Link to="/" className="w-44 h-20  flex items-center overflow-hidden">

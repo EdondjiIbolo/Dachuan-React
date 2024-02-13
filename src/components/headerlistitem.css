@@ -44,9 +44,7 @@
   .show {
     transform: translatex(0%);
   }
-  header {
-    box-shadow: 1px 0px 1px rgb(0, 0, 0);
-  }
+
   header > section {
     position: fixed;
     top: 0;

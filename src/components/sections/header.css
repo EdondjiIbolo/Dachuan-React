@@ -45,7 +45,7 @@
   .show {
     transform: translatex(0%);
   }
-  header {
+  .main-header {
     box-shadow: 1px 0px 1px rgb(0, 0, 0);
   }
   header > section {
