@@ -1,0 +1,81 @@
+export function Footer() {
+  return (
+    <footer className="bg-indigo-950 w-full h-auto text-white ">
+      <section className="p-12 pb-4 max-w-[1300px] m-auto">
+        <ul className="grid sm:grid-cols-2 md:grid-cols-4 pb-8 gap-16 border-b-[1px] :mdjustify-center border-zinc-500">
+          <ul className="flex flex-col gap-2  text-sm">
+            <p className="text-zinc-400">CNC MACHINIG</p>
+            <li>
+              <a className="px-4 " href="#">
+                CNC Milling
+              </a>
+            </li>
+            <li>
+              <a className="px-4 " href="#">
+                CNC Turning
+              </a>
+            </li>
+            <li>
+              <a className="px-4 " href="#">
+                CNC Drilling
+              </a>
+            </li>
+          </ul>
+          <ul className="flex flex-col gap-2  text-sm">
+            <p className="text-zinc-400"> Resources</p>
+            <li>
+              <a href="#">Guide</a>
+            </li>
+            <li>
+              <a href="#">Materials</a>
+            </li>
+            <li>
+              <a href="#">Assistance</a>
+            </li>
+          </ul>
+          <ul>
+            <p className="text-zinc-400">Others</p>
+            <li>
+              <a href="#">About Us</a>
+            </li>
+            <li>
+              <a href="#">Questions</a>
+            </li>
+            <li>
+              <a href="#">News</a>
+            </li>
+          </ul>
+          <ul>
+            <p className="text-zinc-400">Contact Us</p>
+            <li>
+              <a href="tel:999 999 999">Phone : 999 999 999</a>
+            </li>
+            <li>
+              <a href="mailto:example@gmail.com">Email : example@gmail.com</a>
+            </li>
+          </ul>
+        </ul>
+        <ul className="flex-col md:flex-row flex  md:justify-between items-center relative">
+          <div className="flex h-32 gap-3 items-center justify-center flex-col sm:flex-row w-min ">
+            <picture className=" h-20 overflow-hidden w-20 flex justify-start cursor-pointer text-zinc-500 ">
+              <img
+                className="object-cover  "
+                src="img/logo.png"
+                alt="Dachuan Logo"
+              />
+            </picture>
+            <p className="text-nowrap">&copy 2024 , Chuantai Enterprise</p>
+          </div>
+          <div className="flex gap-3 w-full justify-between md:justify-end">
+            <a href="#" className="text-blue-500">
+              沪ICP备2022003370号-1
+            </a>
+            <a href="#" className="text-blue-500">
+              沪公网安备31010902003376号
+            </a>
+          </div>
+        </ul>
+      </section>
+    </footer>
+  );
+}
