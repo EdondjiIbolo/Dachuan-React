@@ -168,7 +168,7 @@ export function AboutUs() {
               Our Team Members
             </h3>
             <hr />
-            <section className="flex sm:flex-row bg-white justify-between flex-col h-min p-2 rounded">
+            <section className="flex sm:flex-row gap-4 items-center bg-white justify-between flex-col h-min p-2 rounded">
               <article className=" md:w-[60%]">
                 <h3 className="font-semibold mb-2 text-lg italic">
                   Profession Title
@@ -192,7 +192,7 @@ export function AboutUs() {
                 />
               </picture>
             </section>
-            <section className="flex sm:flex-row bg-white justify-between flex-col h-min p-2 rounded">
+            <section className="flex sm:flex-row gap-4 items-center bg-white justify-between flex-col h-min p-2 rounded">
               <picture className="h-full rounded overflow-hidden md:w-[20%] pt-0">
                 <img
                   src="/img/CNC.jpg"
@@ -215,7 +215,7 @@ export function AboutUs() {
                 </p>
               </article>
             </section>
-            <section className="flex sm:flex-row bg-white justify-between flex-col h-min p-2 rounded">
+            <section className="flex sm:flex-row gap-4 items-center bg-white justify-between flex-col h-min p-2 rounded">
               <article className=" md:w-[60%]">
                 <h3 className="font-semibold mb-2 text-lg italic">
                   Profession Title

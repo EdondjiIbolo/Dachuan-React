@@ -4,7 +4,7 @@ import { ListItemNav } from "./ListItemNav.jsx";
 import "./headerlistitem.css";
 // import { ArrowIcon } from "./Icons.jsx";
 
-export function HeaderListItem({ section }) {
+export function HeaderListItem({ section, setMenu }) {
   const { section_list } = section;
   return (
     <li className="menu__item">
@@ -22,7 +22,7 @@ export function HeaderListItem({ section }) {
         <ul className="hidden py-2 sm:px-8 sub-menu w-screen max-w-[1310px] flex-col md:flex-row gap-3 md:gap-0 md:justify-between md:items-center md:shadow-md bg-white md:absolute -left-40 top-[40px]  md:h-min">
           {section_list?.map((item, index) => {
             return (
-              <div key={index}>
+              <div key={index} onClick={() => setMenu(false)}>
                 <ListItemNav item={item} />
               </div>
             );

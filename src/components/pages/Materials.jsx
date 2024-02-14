@@ -26,8 +26,8 @@ export function Materials() {
   ];
   return (
     <main className=" w-full max-w-[1300px] m-auto  relative  pt-20">
-      <header className="p-3 flex justify-between items-center">
-        <h1 className="font-bold text-3xl p-3 capitalize">
+      <header className="p-3 flex justify-between flex-col sm:flex-row items-center">
+        <h1 className="font-bold text-center sm:text-start text-3xl p-3 capitalize">
           materials for manufacturing
         </h1>
         <form action="">
@@ -42,26 +42,27 @@ export function Materials() {
           </label>
         </form>
       </header>
-      <main>
-        <p className="max-w-[80ch] text-lg">
-          You will find all materials on Dachuan&apos;s real-time quoting
-          engine, KeMi KeJi. If you need different materials than those listed,
-          please fill in the custom column in the engine.
-        </p>
-        <ul className="flex px-2 sm:px-4 w-full justify-between sticky z-10 top-20 md:px-12 font-semibold text-xs sm:text-lg py-2 text-blue-600 bg-zinc-50">
-          {materiales.map((material, index) => {
-            return (
-              <li key={index}>
-                <a
-                  href={`#${material.name}`}
-                  className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear "
-                >
-                  {material.name}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+
+      <p className="max-w-[80ch] p-2 text-lg">
+        You will find all materials on Dachuan&apos;s real-time quoting engine,
+        KeMi KeJi. If you need different materials than those listed, please
+        fill in the custom column in the engine.
+      </p>
+      <ul className="flex px-2 sm:px-4 w-full justify-between sticky z-10 top-20 md:px-12 font-semibold text-xs sm:text-lg py-2 text-blue-600 bg-zinc-50">
+        {materiales.map((material, index) => {
+          return (
+            <li key={index}>
+              <a
+                href={`#${material.name}`}
+                className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear "
+              >
+                {material.name}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+      <main className="p-3">
         <section className="my-2 p-3 border-2 border-slate-200 rounded">
           <header>
             <h1 className="text-lg font-bold">CNC MACHINING</h1>

@@ -11,6 +11,9 @@ export function Header() {
   const handleclick = () => {
     setMenu(!menu);
   };
+  const closemenu = () => {
+    setMenu(false);
+  };
   return (
     <header className="main-header  justify-center h-20  bg-white w-full flex fixed top-0 left-0 z-40  md:pr-5">
       <section className="flex w-full max-w-[1320px]  items-center  border-b-2  bg-white  m-auto justify-between  h-20 z-30  fixed   ">
@@ -27,22 +30,37 @@ export function Header() {
           <ul className="menu sm:flex-1 ">
             {sections.map((section, index) => {
               return (
-                <li key={index} className="menu__item">
-                  <HeaderListItem section={section} />
+                <li key={index} onClick={closemenu} className="menu__item">
+                  <HeaderListItem section={section} setMenu={setMenu} />
                 </li>
               );
             })}
           </ul>
           <section className="log flex flex-nowrap relative items-center justify-center gap-3 ">
             <div className="flex gap-2 flex-nowrap">
-              <span className="cursor-pointer hover:font-semibold">EN</span>|
-              <span className="cursor-pointer hover:font-semibold">CH</span>
+              <span
+                className="cursor-pointer hover:font-semibold"
+                onClick={closemenu}
+              >
+                EN
+              </span>
+              |
+              <span
+                className="cursor-pointer hover:font-semibold"
+                onClick={closemenu}
+              >
+                CH
+              </span>
             </div>
-            <div className="flex gap-1 cursor-pointer hover:font-semibold hover:outline outline-2 outline-bg-blue-700 rounded p-1 flex-nowrap">
+            <div
+              className="flex gap-1 cursor-pointer hover:font-semibold hover:outline outline-2 outline-bg-blue-700 rounded p-1 flex-nowrap"
+              onClick={closemenu}
+            >
               <p className="w-12">Log in</p>
               <LoginIcon />
             </div>
             <a
+              onClick={closemenu}
               href="#"
               className="bg-blue-800 font-semibold text-white p-2 text-nowrap rounded md:w-18 w-44 text-center hover:bg-blue-500  transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-blue-800 hover:text-white"
             >
