@@ -16,7 +16,14 @@ import { Services } from "../Services.jsx";
 
 import "../sections/home.css";
 import { Acordeon } from "../Acordeon.jsx";
+import { useEffect } from "react";
 export function HomePage() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <>
       <main className=" w-full max-w-[1300px] m-auto  relative  pt-20">
@@ -73,7 +80,7 @@ export function HomePage() {
             </a>
           </section>
         </section>
-        <ul className="flex px-1 sm:px-4 w-full text-nowrap text-ellipsis justify-between sticky z-10 top-20 md:px-12 text-xs sm:text-base py-2 text-zinc-600 bg-zinc-50">
+        <ul className="flex px-1 sm:px-4 w-full text-ellipsis justify-between sticky z-10 top-20 md:px-12 text-xs sm:text-base py-2 text-zinc-600 bg-zinc-50">
           <li>
             <a
               href="#Services"

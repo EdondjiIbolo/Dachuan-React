@@ -696,7 +696,7 @@ export function PartsIcon() {
       <rect
         x="174.818"
         y="327.434"
-        style={{ fill: "#FFC10D;" }}
+        style={{ fill: "#FFC10D" }}
         width="43.184"
         height="43.184"
       />

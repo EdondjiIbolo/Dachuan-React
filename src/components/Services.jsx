@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowIcon } from "./Icons.jsx";
 export function Services() {
   return (
@@ -35,15 +36,15 @@ export function Services() {
                 accuracy and quality of your industrial projects.
               </li>
             </ul>
-            <a
-              href="#"
+            <Link
+              to="/machining-milling"
               className="flex mt-12  items-center p-3 shadow-md rounded text-white bg-orange-500 w-full  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:border-orange-400 hover:outline hover:text-orange-400"
             >
               <div className="rotate-90">
                 <ArrowIcon />
               </div>
               <p className="text-center w-full">See More</p>
-            </a>
+            </Link>
           </div>
         </article>
         <article className="overflow-hidden grid place-content-center  bg-gradient-to-l p-4  text-white to-orange-500 from-orange-700  gap-6 py-4 ">
@@ -74,15 +75,15 @@ export function Services() {
                 your turned components.
               </li>
             </ul>
-            <a
-              href="#"
+            <Link
+              to="/machining-turning"
               className="flex p-3 items-center shadow-md rounded text-white bg-orange-500 w-full  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2   hover:outline   hover:outline-orange-400 hover:text-orange-400"
             >
               <div className="rotate-90 ">
                 <ArrowIcon />
               </div>
               <p className="text-center w-full">See More</p>
-            </a>
+            </Link>
           </div>
         </article>
         <article className="overflow-hidden grid place-content-center  bg-gradient-to-l p-4  text-white to-yellow-500 from-yellow-700  gap-6 py-4 ">
@@ -114,15 +115,15 @@ export function Services() {
                 consistency in your drilled components.
               </li>
             </ul>
-            <a
-              href="#"
+            <Link
+              to="/machining-drilling"
               className="flex mt-4  p-3 flex-grow pb-4 items-center shadow-md rounded text-white bg-orange-500 w-full  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:outline hover:border-orange-400 hover:text-orange-400"
             >
               <div className="rotate-90 ">
                 <ArrowIcon />
               </div>
               <p className="text-center w-full">See More</p>
-            </a>
+            </Link>
           </div>
         </article>
       </section>

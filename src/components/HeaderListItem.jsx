@@ -6,8 +6,15 @@ import "./headerlistitem.css";
 
 export function HeaderListItem({ section, setMenu }) {
   const { section_list } = section;
+  const closemenu = (e) => {
+    console.log(section.section_list);
+    if (section.section_list === undefined) {
+      setMenu(false);
+      return;
+    }
+  };
   return (
-    <li className="menu__item">
+    <li className="menu__item" onClick={closemenu}>
       <div className="flex justify-center items-center">
         <Link to={section.Page} className="menu__link ">
           {section?.section_title}

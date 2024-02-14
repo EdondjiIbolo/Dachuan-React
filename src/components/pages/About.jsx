@@ -1,6 +1,13 @@
+import { useEffect } from "react";
 import { CustomerIcon, MachinesIcon, PartsIcon, UsersIcon } from "../Icons";
 
 export function AboutUs() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <main>
       <section className="relative h-86 mt-20 sm:h-96 overflow-hidden">

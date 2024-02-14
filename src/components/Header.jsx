@@ -30,7 +30,7 @@ export function Header() {
           <ul className="menu sm:flex-1 ">
             {sections.map((section, index) => {
               return (
-                <li key={index} onClick={closemenu} className="menu__item">
+                <li key={index} className="menu__item">
                   <HeaderListItem section={section} setMenu={setMenu} />
                 </li>
               );
