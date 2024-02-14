@@ -64,7 +64,9 @@ export function Footer() {
                 alt="Dachuan Logo"
               />
             </picture>
-            <p className="text-nowrap">&copy 2024 , Chuantai Enterprise</p>
+            <p className="text-nowrap w-min flex">
+              &copy; 2024 , Chuantai Enterprise
+            </p>
           </div>
           <div className="flex gap-3 flex-wrap justify-center sm:items-start text-xs sm:text-sm w-full sm:justify-between md:justify-end">
             <a href="#" className="text-blue-500">
