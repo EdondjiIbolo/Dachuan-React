@@ -54,7 +54,7 @@ export function Materials() {
               <li key={index}>
                 <a
                   href={`#${material.name}`}
-                  className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear w2"
+                  className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear "
                 >
                   {material.name}
                 </a>

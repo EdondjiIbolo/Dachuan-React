@@ -67,7 +67,7 @@ export function DrillingCnc() {
           <li>
             <a
               href="#Services"
-              className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear w2"
+              className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear "
             >
               Services
             </a>
@@ -75,7 +75,7 @@ export function DrillingCnc() {
           <li>
             <a
               href="#Advantages"
-              className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear w2"
+              className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear "
             >
               Advantages
             </a>
@@ -83,7 +83,7 @@ export function DrillingCnc() {
           <li>
             <a
               href="#Materials"
-              className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear w2"
+              className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear "
             >
               Materials
             </a>
@@ -91,7 +91,7 @@ export function DrillingCnc() {
           <li>
             <a
               href="#Finishing"
-              className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear w2"
+              className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear "
             >
               Finishing
             </a>
@@ -99,7 +99,7 @@ export function DrillingCnc() {
           <li>
             <a
               href="#Quotation"
-              className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear w2"
+              className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear "
             >
               Get Quotation
             </a>

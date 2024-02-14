@@ -66,7 +66,7 @@ export function Footer() {
             </picture>
             <p className="text-nowrap">&copy 2024 , Chuantai Enterprise</p>
           </div>
-          <div className="flex gap-3 w-full justify-between md:justify-end">
+          <div className="flex gap-3 flex-wrap justify-center sm:items-start text-xs sm:text-sm w-full sm:justify-between md:justify-end">
             <a href="#" className="text-blue-500">
               沪ICP备2022003370号-1
             </a>

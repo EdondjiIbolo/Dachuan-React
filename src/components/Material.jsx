@@ -13,9 +13,7 @@ export function Material() {
         <thead>
           <tr>
             <th>Material</th>
-            <th colSpan="4" className="bg-white">
-              Features
-            </th>
+            <th colSpan="4">Features</th>
           </tr>
         </thead>
         <tbody className="sm:text-base text-xs ">

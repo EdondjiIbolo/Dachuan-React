@@ -66,7 +66,7 @@ export function Acordeon() {
   ];
 
   return (
-    <section className=" bg-slate-100 sm:p-6 p-2">
+    <section className="  sm:p-6 p-2">
       <article className="section-art text-center flex flex-col gap-3">
         <p className="text__title font-semibold text-xl">
           Frequently Asked Questions
