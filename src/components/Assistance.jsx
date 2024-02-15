@@ -45,7 +45,7 @@ export function Assistance() {
           </div>
         </article>
         <picture className="flex justify-center">
-          <img src="/img/CNC.jpg" alt="" className="object-cover" />
+          <img src="/img/CNC.webp" alt="" className="object-cover" />
         </picture>
       </section>
     </section>

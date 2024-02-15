@@ -19,7 +19,7 @@ export function DrillingCnc() {
         <section className="relative flex items-center h-86 sm:h-96 overflow-hidden ">
           <picture className="absolute hidden sm:block z-5 top-0 left-0  w-full ">
             <img
-              src="/img/Drilling-method.jpeg"
+              src="/img/Drilling-method.webp"
               className="h-96 object-[-235px] sm:object-bottom sm:h-96 block object-cover w-full"
               alt="Banner img"
             />

@@ -62,7 +62,7 @@ export function AboutUs() {
                 </p>
               </article>
               <picture className="flex justify-center p-4 pt-0">
-                <img src="/img/CNC.jpg" alt="" className="object-cover" />
+                <img src="/img/CNC2.webp" alt="" className="object-cover" />
               </picture>
             </section>
           </section>
@@ -193,7 +193,7 @@ export function AboutUs() {
 
               <picture className="h-full rounded overflow-hidden md:w-[20%] pt-0">
                 <img
-                  src="/img/CNC.jpg"
+                  src="/img/CNC.webp"
                   alt=""
                   className="object-cover h-full w-full"
                 />
@@ -202,7 +202,7 @@ export function AboutUs() {
             <section className="flex sm:flex-row gap-4 items-center bg-white justify-between flex-col h-min p-2 rounded">
               <picture className="h-full rounded overflow-hidden md:w-[20%] pt-0">
                 <img
-                  src="/img/CNC.jpg"
+                  src="/img/CNC.webp"
                   alt=""
                   className="object-cover h-full w-full"
                 />
@@ -240,7 +240,7 @@ export function AboutUs() {
 
               <picture className="h-full rounded overflow-hidden md:w-[20%] pt-0">
                 <img
-                  src="/img/CNC.jpg"
+                  src="/img/CNC.webp"
                   alt=""
                   className="object-cover h-full w-full"
                 />
