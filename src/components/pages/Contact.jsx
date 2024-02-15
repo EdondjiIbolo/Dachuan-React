@@ -4,7 +4,7 @@ export function Contact() {
   return (
     <main className="pt-20">
       <main className="w-full max-w-[1310px] m-auto p-3">
-        <header className="flex justify-between items-center px-3">
+        <header className="flex justify-between items-center md:px-3">
           <h1 className="font-bold text-2xl md:text-4xl p-3 md:text-center sm:mb-3">
             Contact Us
           </h1>
