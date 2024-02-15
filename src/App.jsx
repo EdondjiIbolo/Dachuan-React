@@ -8,6 +8,7 @@ import { TurningCnc } from "./components/pages/Turning";
 import { Route, Routes } from "react-router-dom";
 import { Materials } from "./components/pages/Materials";
 import { AboutUs } from "./components/pages/About";
+import { Contact } from "./components/pages/Contact";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/machining-turning" element={<TurningCnc />} />
         <Route path="/materials" element={<Materials />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/Contact" element={<Contact />} />
       </Routes>
       <Footer />
     </>
