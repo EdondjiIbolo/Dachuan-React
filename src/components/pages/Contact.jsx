@@ -8,7 +8,10 @@ export function Contact() {
           <h1 className="font-bold text-2xl md:text-4xl p-3 md:text-center sm:mb-3">
             Contact Us
           </h1>
-          <Link className="bg-slate-300 font-semibold text-black border border-black  p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2 h-8 md:h-12 hover:outline hover:outline-bg-blue-800 hover:text-blue-800">
+          <Link
+            to="/#Services"
+            className="bg-slate-300 font-semibold text-black border border-black  p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2 h-8 md:h-12 hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
+          >
             See Capabilities
           </Link>
         </header>
@@ -123,7 +126,7 @@ export function Contact() {
               </div>
               <input
                 type="submit"
-                value="Send"
+                value="Submit"
                 className="bg-blue-800 font-semibold text-white  p-2 flex items-center justify-center text-nowrap rounded w-full   text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2 cursor-pointer hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
               />
             </form>
