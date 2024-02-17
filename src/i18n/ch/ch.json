@@ -1,0 +1,50 @@
+{
+  "sections": [
+    {
+      "section_title": "服务",
+      "section_list": [
+        {
+          "section_subtitle": "CNC加工",
+          "section_intro": "CNC加工铣削",
+          "section_description": "为您的加工项目提供高品质的CNC铣削服务。",
+          "section_img": "/img/miling1.svg",
+          "section_img_alt": "CNC加工铣削",
+          "Page": "/machining-milling"
+        },
+        {
+          "section_subtitle": "CNC加工",
+          "section_intro": "CNC加工车削",
+          "section_description": "为您的加工项目提供一流的CNC车削服务。",
+          "section_img": "/img/drilling1.svg",
+          "section_img_alt": "CNC加工车削",
+          "Page": "/machining-turning"
+        },
+        {
+          "section_subtitle": "CNC加工",
+          "section_intro": "CNC加工钻孔",
+          "section_description": "使用先进的CNC加工精确高效地钻孔。",
+          "section_img": "/img/turning.svg",
+          "section_img_alt": "CNC加工钻孔",
+          "Page": "/machining-drilling"
+        }
+      ]
+    },
+    {
+      "section_title": "材料",
+      "Page": "/materials"
+    },
+    {
+      "section_title": "设计帮助",
+      "Page": "/Assistance"
+    },
+    {
+      "section_title": "关于我们",
+      "Page": "/about"
+    },
+    {
+      "section_title": "联系",
+      "Page": "/Contact"
+    }
+  ],
+  "hello": "mandmamsneujs"
+}

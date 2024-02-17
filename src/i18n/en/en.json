@@ -1,0 +1,49 @@
+{
+  "sections": [
+    {
+      "section_title": "Services",
+      "section_list": [
+        {
+          "section_subtitle": "CNC MACHINING",
+          "section_intro": " CNC MACHINING Milling",
+          "section_description": "High-quality CNC milling for your machining projects.",
+          "section_img": "/img/miling1.svg",
+          "section_img_alt": "CNC MACHINING MILLING",
+          "Page": "/machining-milling"
+        },
+        {
+          "section_subtitle": "CNC MACHINING",
+          "section_intro": " CNC MACHINING Turning",
+          "section_description": "We offer top-notch CNC turning services for your machining projects.",
+          "section_img": "/img/drilling1.svg",
+          "section_img_alt": "CNC MACHINING Turning",
+          "Page": "/machining-turning"
+        },
+        {
+          "section_subtitle": "CNC MACHINING",
+          "section_intro": "CNC MACHINING Drilling",
+          "section_description": "Drilling with precision and efficiency using advanced CNC machining.",
+          "section_img": "/img/turning.svg",
+          "section_img_alt": "CNC MACHINING Drilling",
+          "Page": "/machining-drilling"
+        }
+      ]
+    },
+    {
+      "section_title": "Material",
+      "Page": "/materials"
+    },
+    {
+      "section_title": "Design  Assistance",
+      "Page": "/Assistance"
+    },
+    {
+      "section_title": "About Us",
+      "Page": "/about"
+    },
+    {
+      "section_title": "Contact",
+      "Page": "/Contact"
+    }
+  ]
+}
