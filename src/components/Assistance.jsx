@@ -2,10 +2,7 @@ import { ArrowIcon } from "./Icons";
 
 export function Assistance() {
   return (
-    <section
-      className="w-full max-w-[1300px] m-auto py-20 px-10 bg-opacity-80"
-      id="Assistance"
-    >
+    <section className="w-full max-w-[1300px] m-auto py-20 px-10 bg-opacity-80">
       <h3 className=" font-medium text-2xl mb-8 max-w-[50ch] text-center text-pretty m-auto">
         Our priority is your satisfaction: We are always available to address
         your queries and needs.

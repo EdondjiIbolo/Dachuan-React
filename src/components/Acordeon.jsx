@@ -80,7 +80,7 @@ export function Acordeon() {
         <ul className="qs-list">
           {questions.map((question, index) => {
             return (
-              <li className="list__item" key={index}>
+              <li className="list__item border-b border-gray-300" key={index}>
                 <AcordeonItem question={question} />
               </li>
             );

@@ -1,29 +1,57 @@
+import { useEffect, useState } from "react";
 import { SearchIcon } from "../Icons";
 import { MaterialCard } from "../MaterialCard";
 import "../sections/materials.css";
+const materiales = [
+  {
+    name: "Aluminium",
+    Features: ["1", "2", "3", "4", "5"],
+  },
+  {
+    name: "Copper",
+    Features: ["1", "2", "3", "4", "5"],
+  },
+  {
+    name: "Plastic",
+    Features: ["1", "2", "3", "4", "5"],
+  },
+  {
+    name: "Brass",
+    Features: ["1", "2", "3", "4", "5"],
+  },
+  {
+    name: "Titanium",
+    Features: ["1", "2", "3", "4", "5"],
+  },
+];
 export function Materials() {
-  const materiales = [
-    {
-      name: "Aluminium",
-      Features: ["1", "2", "3", "4", "5"],
-    },
-    {
-      name: "Copper",
-      Features: ["1", "2", "3", "4", "5"],
-    },
-    {
-      name: "Plastic",
-      Features: ["1", "2", "3", "4", "5"],
-    },
-    {
-      name: "Brass",
-      Features: ["1", "2", "3", "4", "5"],
-    },
-    {
-      name: "Titanium",
-      Features: ["1", "2", "3", "4", "5"],
-    },
-  ];
+  const [currentSection, setCurrentSection] = useState("");
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section[data-section]");
+      let activeSection = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 200;
+        const sectionHeight = section.clientHeight;
+
+        if (
+          window.scrollY >= sectionTop &&
+          window.scrollY < sectionTop + sectionHeight
+        ) {
+          activeSection = section.getAttribute("data-section");
+          console.log(activeSection);
+        }
+      });
+
+      setCurrentSection(activeSection);
+      console.log(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [currentSection]);
   return (
     <main className=" w-full max-w-[1300px] m-auto  relative  pt-20">
       <header className="p-3 flex justify-between flex-col sm:flex-row items-center">
@@ -37,13 +65,17 @@ export function Materials() {
         KeMi KeJi. If you need different materials than those listed, please
         fill in the custom column in the engine.
       </p>
-      <ul className="flex px-2 sm:px-4 w-full justify-between sticky z-10 top-20 md:px-12 font-semibold text-xs sm:text-lg py-2 text-blue-600 bg-zinc-50">
+      <ul className="flex px-2 sm:px-4 w-full justify-between sticky z-10 top-20 md:px-12 font-semibold text-xs sm:text-lg py-2 text-blue-500 bg-zinc-50">
         {materiales.map((material, index) => {
           return (
             <li key={index}>
               <a
                 href={`#${material.name}`}
-                className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear "
+                className={`sm:p-1 p-[6px] text-base hover:font-medium transition-all duration-250 ease-linear ${
+                  currentSection === material.name
+                    ? "font-bold text-lg text-blue-700"
+                    : ""
+                }`}
               >
                 {material.name}
               </a>
@@ -60,7 +92,11 @@ export function Materials() {
           <section className="flex flex-col gap-16">
             {materiales.map((material, index) => {
               return (
-                <section key={index} id={material.name}>
+                <section
+                  key={index}
+                  id={material.name}
+                  data-section={`${material.name}`}
+                >
                   <h2 className="font-semibold mb-2 text-lg w-min text-blue-700 hover:underline cursor-pointer p-1">
                     {material.name}
                   </h2>

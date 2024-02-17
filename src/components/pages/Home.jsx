@@ -16,7 +16,7 @@ import { Services } from "../Services.jsx";
 
 import "../sections/home.css";
 import { Acordeon } from "../Acordeon.jsx";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 export function HomePage() {
   // useEffect(() => {
@@ -25,6 +25,36 @@ export function HomePage() {
   //     behavior: "smooth",
   //   });
   // }, []);
+
+  const [currentSection, setCurrentSection] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section[data-section]");
+      let activeSection = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 200;
+        const sectionHeight = section.clientHeight;
+
+        if (
+          window.scrollY >= sectionTop &&
+          window.scrollY < sectionTop + sectionHeight
+        ) {
+          activeSection = section.getAttribute("data-section");
+          console.log(activeSection);
+        }
+      });
+
+      setCurrentSection(activeSection);
+      console.log(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [currentSection]);
+
   return (
     <>
       <main className=" w-full  m-auto  relative  pt-20">
@@ -87,7 +117,9 @@ export function HomePage() {
             <li>
               <a
                 href="#Services"
-                className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear "
+                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear ${
+                  currentSection === "Services" ? "font-bold" : ""
+                }`}
               >
                 Services
               </a>
@@ -95,7 +127,9 @@ export function HomePage() {
             <li>
               <a
                 href="#Advantages"
-                className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear "
+                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear ${
+                  currentSection === "Advantages" ? "font-bold" : ""
+                }`}
               >
                 Advantages
               </a>
@@ -103,7 +137,9 @@ export function HomePage() {
             <li>
               <a
                 href="#Materials"
-                className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear "
+                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear ${
+                  currentSection === "Materials" ? "font-bold" : ""
+                }`}
               >
                 Materials
               </a>
@@ -111,7 +147,9 @@ export function HomePage() {
             <li>
               <a
                 href="#Assistance"
-                className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear "
+                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear ${
+                  currentSection === "Assistance" ? "font-bold" : ""
+                }`}
               >
                 Design Assistance
               </a>
@@ -119,7 +157,9 @@ export function HomePage() {
             <li>
               <a
                 href="#Introduction"
-                className="sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear "
+                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear ${
+                  currentSection === "Introduction" ? "font-bold" : ""
+                }`}
               >
                 Introduction
               </a>
@@ -128,7 +168,11 @@ export function HomePage() {
         </nav>
         <section>
           <Services />
-          <section id="Advantages" className="flex   bg-slate-100 flex-wrap">
+          <section
+            id="Advantages"
+            data-section="Advantages"
+            className="flex    bg-slate-100 flex-wrap"
+          >
             <article className="w-full max-w-[1300px] m-auto pt-20 flex justify-center items-center gap-8  p-4 flex-col">
               <h3 className="font-bold text-xl mb-2">How to place an order?</h3>
               <p className="text-blue-800">
@@ -270,78 +314,86 @@ export function HomePage() {
           </section>
           <section
             id="Materials"
+            data-section="Materials"
             className="relative flex justify-center bg-slate-200 w-full"
           >
             <Material />
           </section>
-          <section className=" bg-gray-300">
+          <section
+            id="Assistance"
+            data-section="Assistance"
+            className=" bg-gray-300 bg-opacity-20"
+          >
             <Assistance />
+            <section className="bg-slate-300 bg-opacity-50">
+              <section className="flex flex-col max-w-[1310px] m-auto   gap-8 p-16">
+                <h3 className="w-full text-center font-medium">
+                  Chuantai Select Power Technology provides strong support for
+                  your customized parts production
+                </h3>
+                <div className=" grid grid-cols-1 md:grid-cols-3 text-balance content-center gap-6  justify-center">
+                  <article className="flex  text-center gap-4 flex-col">
+                    <picture className="flex justify-center">
+                      <img
+                        className="w-36 h-36 block"
+                        src="/img/masive.svg"
+                        alt="Capabilitie"
+                      />
+                    </picture>
+                    <h4>Manufacturing Fusion</h4>
+                    <p className="max-w-[60ch] m-auto text-center">
+                      Chuantai has over 10,000 manufacturing partners located in
+                      China and over 30 countries worldwide, with different
+                      manufacturing capabilities and certifications. Orders can
+                      be placed online. Our manufacturing network strictly
+                      adheres to confidentiality agreements to protect customer
+                      privacy.
+                    </p>
+                  </article>
+                  <article className="flex   text-center gap-4 flex-col">
+                    <picture className="flex justify-center">
+                      <img
+                        className="w-36 h-36 block"
+                        src="/img/check.svg"
+                        alt="Capabilitie"
+                      />
+                    </picture>
+                    <h4>Instant feedback</h4>
+                    <p className="max-w-[60ch] m-auto text-center ">
+                      No need to wait for long, just a few clicks and you can
+                      get DFM ( Design for Manufacturability ) feedback to learn
+                      about lead times and quotes, among other information.
+                      Dachuan real-time quoting engine (IQE) powered by data
+                      science serves you to easily choose appropriate price/lead
+                      time options for your projects. It is compatible with
+                      STEP, Mesh, Parasolid, and ACIS files.
+                    </p>
+                  </article>
+                  <article className="flex   text-center gap-4 flex-col">
+                    <picture className="flex justify-center">
+                      <img
+                        className="w-36 h-36 block"
+                        src="/img/order.svg"
+                        alt="Capabilitie"
+                      />
+                    </picture>
+                    <h4>Precision Logistics</h4>
+                    <p className="max-w-[60ch] m-auto text-center">
+                      With strict quality assurance and regular status updates,
+                      we can ensure that the components you order will be
+                      accurately and timely delivered.
+                    </p>
+                  </article>
+                </div>
+              </section>
+            </section>
           </section>
         </section>
+
         <section className="bg-slate-300 bg-opacity-40">
-          <section className="flex flex-col max-w-[1310px] m-auto   gap-8 p-16">
-            <h3 className="w-full text-center font-medium">
-              Chuantai Select Power Technology provides strong support for your
-              customized parts production
-            </h3>
-            <div className=" grid grid-cols-1 md:grid-cols-3 text-balance content-center gap-6  justify-center">
-              <article className="flex  text-center gap-4 flex-col">
-                <picture className="flex justify-center">
-                  <img
-                    className="w-36 h-36 block"
-                    src="/img/masive.svg"
-                    alt="Capabilitie"
-                  />
-                </picture>
-                <h4>Manufacturing Fusion</h4>
-                <p className="max-w-[60ch] m-auto text-center">
-                  Chuantai has over 10,000 manufacturing partners located in
-                  China and over 30 countries worldwide, with different
-                  manufacturing capabilities and certifications. Orders can be
-                  placed online. Our manufacturing network strictly adheres to
-                  confidentiality agreements to protect customer privacy.
-                </p>
-              </article>
-              <article className="flex   text-center gap-4 flex-col">
-                <picture className="flex justify-center">
-                  <img
-                    className="w-36 h-36 block"
-                    src="/img/check.svg"
-                    alt="Capabilitie"
-                  />
-                </picture>
-                <h4>Instant feedback</h4>
-                <p className="max-w-[60ch] m-auto text-center ">
-                  No need to wait for long, just a few clicks and you can get
-                  DFM ( Design for Manufacturability ) feedback to learn about
-                  lead times and quotes, among other information. Dachuan
-                  real-time quoting engine (IQE) powered by data science serves
-                  you to easily choose appropriate price/lead time options for
-                  your projects. It is compatible with STEP, Mesh, Parasolid,
-                  and ACIS files.
-                </p>
-              </article>
-              <article className="flex   text-center gap-4 flex-col">
-                <picture className="flex justify-center">
-                  <img
-                    className="w-36 h-36 block"
-                    src="/img/order.svg"
-                    alt="Capabilitie"
-                  />
-                </picture>
-                <h4>Precision Logistics</h4>
-                <p className="max-w-[60ch] m-auto text-center">
-                  With strict quality assurance and regular status updates, we
-                  can ensure that the components you order will be accurately
-                  and timely delivered.
-                </p>
-              </article>
-            </div>
-          </section>
-        </section>
-        <section className="bg-slate-300 bg-opacity-60">
           <section
             id="Introduction"
+            data-section="Introduction"
             className="flex flex-col justufy-center bg-slate-70 pt-20 pb-5 px-4 items-center gap-8"
           >
             <h4 className="font-bold text-2xl text-center">
@@ -379,7 +431,7 @@ export function HomePage() {
           </section>
         </section>
       </main>
-      <section className="bg-slate-100 pb-8 ">
+      <section className="bg-slate-50 pb-8 ">
         <Acordeon />
         <div
           className="flex p-2 items-center shadow-md rounded m-auto   transition-all duration-200 ease-in hover:outline-2  bg-blue-800 font-semibold text-white hover:bg-white hover:outline

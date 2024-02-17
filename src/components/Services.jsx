@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 import { ArrowIcon } from "./Icons.jsx";
 export function Services() {
   return (
-    <main id="Services" className="max-w-[1300px] m-auto py-10">
+    <section
+      id="Services"
+      data-section="Services"
+      className="max-w-[1300px] m-auto py-10"
+    >
       <h2 className="text-center font-semibold text-2xl mb-4 pt-4 ">
         Services
       </h2>
@@ -127,6 +131,6 @@ export function Services() {
           </div>
         </article>
       </section>
-    </main>
+    </section>
   );
 }
