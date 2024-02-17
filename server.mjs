@@ -4,18 +4,22 @@ import { dirname, join } from "path";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
+
 const __dirname = dirname(__filename);
+// const previusDirectory = path.join(__dirname, "..");
 
 // Configura la carpeta "dist" como carpeta estática
 app.use(express.static(join(__dirname, "dist")));
 
 // Redirige todas las rutas a index.html
 app.get("*", (req, res) => {
+  console.log(join(__dirname, "dist", "index.html"));
   res.sendFile(join(__dirname, "dist", "index.html"));
 });
 
 // Inicia el servidor en el puerto 8080
 const PORT = process.env.PORT ?? 8080;
 app.listen(PORT, () => {
+  console.log(__dirname);
   console.log(`El servidor está ejecutándose en el puerto ${PORT}`);
 });
