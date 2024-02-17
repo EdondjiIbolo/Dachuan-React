@@ -15,7 +15,7 @@ export function Services() {
       </p>
       <section className="grid md:grid-cols-3 md:grid-flow-col  ">
         <article className="grid overflow-hidden  place-content-center  bg-gradient-to-l p-4  text-white to-green-500 from-green-700  gap-6 py-4 ">
-          <picture className=" flex items-center w-40 m-auto h-28">
+          <picture className=" overflow-hidden flex items-center w-40 m-auto h-28">
             <img
               src="/img/Milling parts3.jpg"
               className="object-cover h-full w-full"
@@ -52,7 +52,7 @@ export function Services() {
           </div>
         </article>
         <article className="overflow-hidden grid place-content-center  bg-gradient-to-l p-4  text-white to-orange-500 from-orange-700  gap-6 py-4 ">
-          <picture className=" flex items-center w-40 m-auto h-28">
+          <picture className=" flex items-center overflow-hidden w-40 m-auto h-28">
             <img
               src="/img/Turning-parts-2.jpeg"
               className="object-cover"
@@ -91,7 +91,7 @@ export function Services() {
           </div>
         </article>
         <article className="overflow-hidden grid place-content-center  bg-gradient-to-l p-4  text-white to-yellow-500 from-yellow-700  gap-6 py-4 ">
-          <picture className=" flex items-center w-40 m-auto h-28">
+          <picture className=" flex items-center overflow-hidden w-40 m-auto h-28">
             <img
               src="/img/Drilling-product.png"
               className="object-cover"

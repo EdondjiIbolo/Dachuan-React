@@ -19,6 +19,7 @@
 
 .menu__item:hover .sub-menu {
   display: flex;
+  padding: 20px;
 }
 .menu__item:hover .flecha {
   transform: rotate(180deg);

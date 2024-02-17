@@ -57,9 +57,9 @@ export function HomePage() {
 
   return (
     <>
-      <main className=" w-full  m-auto  relative  pt-20">
+      <main className=" w-full  m-auto  bg-zinc-100 relative  pt-20">
         <section className="relative max-w-[1310px] m-auto h-86 sm:h-96 overflow-hidden">
-          <picture className="absolute  z-10 top-0 left-0  w-full  ">
+          <picture className="absolute  z-10 top-0 left-0   w-full  ">
             <img
               src="/img/main-banner.webp"
               className="h-96 object-[-235px] sm:object-center sm:h-96 block object-cover w-full"
@@ -112,7 +112,7 @@ export function HomePage() {
             </Link>
           </section>
         </section>
-        <nav className="  sticky z-10 top-20 md:px-12 text-xs sm:text-base py-2 text-zinc-600 bg-zinc-50">
+        <nav className="  sticky z-10 top-20 md:px-12 text-xs sm:text-base border-b border-gray-300 shadow  py-2 text-zinc-600 bg-zinc-50">
           <ul className="flex px-1 sm:px-4 w-full text-ellipsis max-w-[1300px] m-auto justify-between ">
             <li>
               <a
