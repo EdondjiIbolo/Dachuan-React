@@ -7,6 +7,12 @@ import { useEffect } from "react";
 const { Milling } = Technologies;
 
 export function MillingCnc() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <main className=" relative  ">
       <main className=" w-full max-w-[1300px] m-auto pt-20">
