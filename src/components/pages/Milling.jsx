@@ -366,7 +366,7 @@ export function MillingCnc() {
               <div className="flex  flex-col justify-center items-center gap-1">
                 <a
                   href="#"
-                  className="bg-blue-800 font-semibold text-white p-2 text-nowrap rounded md:w-18 w-44 text-center hover:bg-blue-500  transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-blue-800 hover:text-white"
+                  className="bg-blue-800 font-semibold text-white p-2 text-nowrap rounded md:w-18 w-44 text-center hover:bg-white  transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-blue-800 hover:text-blue-700"
                 >
                   Get an Instant Qote
                 </a>

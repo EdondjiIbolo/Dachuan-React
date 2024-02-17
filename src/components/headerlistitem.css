@@ -15,7 +15,6 @@
   text-decoration: none;
   cursor: pointer;
   color: #000;
-  font-weight: 700;
 }
 
 .menu__item:hover .sub-menu {
@@ -108,4 +107,9 @@
     text-wrap: nowrap;
     font-weight: normal;
   }
+}
+
+.active {
+  color: black;
+  font-weight: bold;
 }

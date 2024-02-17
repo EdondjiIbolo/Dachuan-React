@@ -30,12 +30,12 @@
       ]
     },
     {
-      "section_title": "Material",
+      "section_title": "Material & Post Processing",
       "Page": "/materials"
     },
     {
       "section_title": "Design  Assistance",
-      "Page": "/Assistance"
+      "Page": "/assistance"
     },
     {
       "section_title": "About Us",
@@ -43,7 +43,7 @@
     },
     {
       "section_title": "Contact",
-      "Page": "/Contact"
+      "Page": "/contact"
     }
   ],
   "Technologies": {

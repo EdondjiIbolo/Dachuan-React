@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowIcon } from "./Icons.jsx";
 export function Services() {
   return (
-    <main id="Services">
+    <main id="Services" className="max-w-[1300px] m-auto py-10">
       <h2 className="text-center font-semibold text-2xl mb-4 pt-4 ">
         Services
       </h2>
@@ -38,7 +38,7 @@ export function Services() {
             </ul>
             <Link
               to="/machining-milling"
-              className="flex mt-12  items-center p-3 shadow-md rounded text-white bg-orange-500 w-full  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:border-orange-400 hover:outline hover:text-orange-400"
+              className="flex mt-12  items-center p-3 shadow-md rounded text-white bg-blue-900 w-full  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:border-orange-400 hover:outline hover:text-blue-700"
             >
               <div className="rotate-90">
                 <ArrowIcon />
@@ -77,7 +77,7 @@ export function Services() {
             </ul>
             <Link
               to="/machining-turning"
-              className="flex p-3 items-center shadow-md rounded text-white bg-orange-500 w-full  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2   hover:outline   hover:outline-orange-400 hover:text-orange-400"
+              className="flex   items-center p-3 shadow-md rounded text-white bg-blue-900 w-full  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:border-orange-400 hover:outline hover:text-blue-700"
             >
               <div className="rotate-90 ">
                 <ArrowIcon />
@@ -117,7 +117,7 @@ export function Services() {
             </ul>
             <Link
               to="/machining-drilling"
-              className="flex mt-4  p-3 flex-grow pb-4 items-center shadow-md rounded text-white bg-orange-500 w-full  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:outline hover:border-orange-400 hover:text-orange-400"
+              className="flex mt-6  items-center p-3 shadow-md rounded text-white bg-blue-900 w-full  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:border-orange-400 hover:outline hover:text-blue-700"
             >
               <div className="rotate-90 ">
                 <ArrowIcon />

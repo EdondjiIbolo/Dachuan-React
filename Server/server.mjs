@@ -11,7 +11,7 @@ app.use(express.static(join(__dirname, "dist")));
 
 // Redirige todas las rutas a index.html
 app.get("*", (req, res) => {
-  res.sendFile(join(__dirname, "build", "index.html"));
+  res.sendFile(join(__dirname, "dist", "index.html"));
 });
 
 // Inicia el servidor en el puerto 8080

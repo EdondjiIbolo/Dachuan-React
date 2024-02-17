@@ -18,8 +18,8 @@ export function Header() {
     <header className="main-header  justify-center h-20  bg-white w-full flex fixed top-0 left-0 z-40  md:pr-5">
       <section className="flex w-full max-w-[1320px]  items-center  border-b-2  bg-white  m-auto justify-between  h-20 z-30  fixed   ">
         <section className="header__container--right">
-          <Link
-            to="/"
+          <a
+            href="/"
             className="w-44 h-20  flex items-center overflow-hidden"
             onClick={closemenu}
           >
@@ -28,7 +28,7 @@ export function Header() {
               alt="Logo"
               className="w-full object-cover object-top"
             />
-          </Link>
+          </a>
         </section>
         <section className={className} id="menu">
           <ul className="menu sm:flex-1 ">
@@ -66,7 +66,7 @@ export function Header() {
             <a
               onClick={closemenu}
               href="#"
-              className="bg-blue-800 font-semibold text-white p-2 text-nowrap rounded md:w-18 w-44 text-center hover:bg-blue-500  transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-blue-800 hover:text-white"
+              className="bg-blue-800 font-semibold text-white p-2 text-nowrap rounded md:w-18 w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
             >
               Get a Quotation
             </a>

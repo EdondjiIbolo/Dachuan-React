@@ -3,55 +3,101 @@ export function Footer() {
     <footer className="bg-indigo-950 w-full h-auto text-white ">
       <section className="p-12 pb-4 max-w-[1300px] m-auto">
         <ul className="grid sm:grid-cols-2 md:grid-cols-4 pb-8 gap-16 border-b-[1px] :mdjustify-center border-zinc-500">
-          <ul className="flex flex-col gap-2  text-sm">
-            <p className="text-zinc-400">CNC MACHINIG</p>
+          <ul className="flex flex-col gap-3  text-sm">
+            <p className="text-zinc-400">CNC Machining</p>
             <li>
-              <a className="px-4 " href="#">
+              <a
+                href="/machining-milling"
+                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+              >
                 CNC Milling
               </a>
             </li>
             <li>
-              <a className="px-4 " href="#">
+              <a
+                href="/machining-turning"
+                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+              >
                 CNC Turning
               </a>
             </li>
             <li>
-              <a className="px-4 " href="#">
+              <a
+                href="/machining-drilling"
+                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+              >
                 CNC Drilling
               </a>
             </li>
           </ul>
-          <ul className="flex flex-col gap-2  text-sm">
+          <ul className="flex flex-col gap-3  text-sm">
             <p className="text-zinc-400"> Resources</p>
             <li>
-              <a href="#">Guide</a>
+              <a
+                href="#"
+                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+              >
+                Guide
+              </a>
             </li>
             <li>
-              <a href="#">Materials</a>
+              <a
+                href="/materials"
+                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+              >
+                Materials
+              </a>
             </li>
             <li>
-              <a href="#">Assistance</a>
+              <a
+                href="#"
+                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+              >
+                Design Assistance
+              </a>
             </li>
           </ul>
-          <ul>
+          <ul className="flex flex-col gap-3  text-sm">
             <p className="text-zinc-400">Others</p>
             <li>
-              <a href="#">About Us</a>
+              <a
+                href="/about"
+                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+              >
+                About Us
+              </a>
             </li>
             <li>
-              <a href="#">Questions</a>
+              <a
+                href="#"
+                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+              >
+                Questions
+              </a>
             </li>
             <li>
-              <a href="#">News</a>
+              <a
+                href="#"
+                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+              >
+                News
+              </a>
             </li>
           </ul>
-          <ul>
+          <ul className="flex flex-col gap-3  text-sm">
             <p className="text-zinc-400">Contact Us</p>
             <li>
-              <a href="tel:999 999 999">Phone : 999 999 999</a>
+              <a href="tel:999 999 999" className="hover:text-blue-400 ">
+                Phone : 999 999 999
+              </a>
             </li>
             <li>
-              <a href="mailto:example@gmail.com">Email : example@gmail.com</a>
+              <a
+                href="mailto:example@gmail.com"
+                className="hover:text-blue-400 "
+              >
+                Email : example@gmail.com
+              </a>
             </li>
           </ul>
         </ul>

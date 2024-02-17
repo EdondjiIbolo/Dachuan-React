@@ -23,7 +23,6 @@
   flex-direction: column;
   padding: 0;
   cursor: pointer;
-  border-bottom: 1px solid grey;
 }
 .qs-ans {
   height: 0px;

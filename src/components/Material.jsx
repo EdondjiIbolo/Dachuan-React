@@ -2,7 +2,7 @@ import { ArrowIcon } from "./Icons";
 import "./sections/material.css";
 export function Material() {
   return (
-    <div className="container flex flex-col gap-2">
+    <div className="container max-w-[1300px] pt-20 flex flex-col gap-2">
       <h2 className="text-center font-semibold text-2xl mb-8 ">Materials</h2>
       <p className="max-w-[70ch] text-center m-auto pb-2">
         All these materials are available in the Chuantai Instant Quoting
@@ -13,7 +13,9 @@ export function Material() {
         <thead>
           <tr>
             <th>Material</th>
-            <th colSpan="4">Features</th>
+            <th colSpan="4" className="text-center">
+              Features
+            </th>
           </tr>
         </thead>
         <tbody className="sm:text-base text-xs ">
@@ -54,7 +56,10 @@ export function Material() {
           </tr>
         </tbody>
       </table>
-      <div className="flex p-2 items-center m-auto my-8 shadow-md rounded text-white hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2   hover:outline-orange-400 hover:outline hover:text-orange-400  bg-orange-500 w-40 ">
+      <div
+        className="flex p-2 items-center m-auto my-8 shadow-md rounded   transition-all duration-200 ease-in hover:outline-2  bg-blue-800 font-semibold text-white hover:bg-white hover:outline
+              hover:outline-bg-blue-800 hover:text-blue-800 w-40 "
+      >
         <div className="rotate-90">
           <ArrowIcon />
         </div>

@@ -13,14 +13,13 @@ export function ListItemNav({ item }) {
           className=" w-12 h-12"
         />
       </picture>
-      <section className="flex flex-col gap-3">
+      <section className="flex flex-col gap-2">
         <div>
           <p className="font-bold text-sm text-blue-800">
-            {item?.section_subtitle}
+            {item?.section_intro}
           </p>
-          <p className="text-xs">{item?.section_intro}</p>
         </div>
-        <p className="text-xs font-semibold max-w-[28ch] hidden md:block text-pretty">
+        <p className="text-xs font-semibold max-w-[30ch] hidden md:block text-pretty">
           {item?.section_description}
         </p>
       </section>

@@ -30,17 +30,6 @@ export function Materials() {
         <h1 className="font-bold text-center sm:text-start text-3xl p-3 capitalize">
           materials for manufacturing
         </h1>
-        <form action="">
-          <label className="relative flex gap-2" htmlFor="">
-            <input
-              type="text"
-              className=" focus:outline-none  border border-slate-300 rounded p-2 "
-            />
-            <button className="bg-blue-700 h-10 w-10 flex rounded justify-center items-center text-white">
-              <SearchIcon />
-            </button>
-          </label>
-        </form>
       </header>
 
       <p className="max-w-[80ch] p-2 text-lg">
