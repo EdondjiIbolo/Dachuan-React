@@ -13,11 +13,19 @@ export function HeaderListItem({ section, setMenu }) {
       return;
     }
   };
+  const handleclick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="menu__item" onClick={closemenu}>
       <div className="flex  justify-center items-center">
         <NavLink
+          onClick={handleclick}
           to={section?.Page}
+          target="_self"
           className={`menu__link  hover:font-semibold transition-all duration-200 ease ${
             section?.page === "/" ? "pointer-events-none font-normal" : ""
           }`}

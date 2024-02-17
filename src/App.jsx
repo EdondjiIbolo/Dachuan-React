@@ -9,8 +9,13 @@ import { Route, Routes } from "react-router-dom";
 import { Materials } from "./components/pages/Materials";
 import { AboutUs } from "./components/pages/About";
 import { Contact } from "./components/pages/Contact";
+import { Login } from "./components/pages/Login";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header />
