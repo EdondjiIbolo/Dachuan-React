@@ -13,13 +13,17 @@ app.use(express.static(join(__dirname, "dist")));
 
 // Redirige todas las rutas a index.html
 app.get("*", (req, res) => {
-  console.log(join(__dirname, "dist", "index.html"));
+  console.log("holaaaaaaa");
+  // console.log(join(__dirname, "dist", "index.html"));
   res.sendFile(join(__dirname, "dist", "index.html"));
 });
 
 // Inicia el servidor en el puerto 8080
 const PORT = process.env.PORT ?? 5500;
 app.listen(PORT, () => {
-  console.log(__dirname);
-  console.log(`El servidor está ejecutándose en el puerto ${PORT}`);
+  const file = join(__dirname, "dist", "index.html");
+  console.log(file);
+  console.log(
+    `El servidor está ejecutándose en el puerto http://localhost:${PORT}`
+  );
 });
