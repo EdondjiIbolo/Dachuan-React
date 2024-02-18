@@ -18,7 +18,7 @@ app.get("*", (req, res) => {
 });
 
 // Inicia el servidor en el puerto 8080
-const PORT = process.env.PORT ?? 8080;
+const PORT = process.env.PORT ?? 5500;
 app.listen(PORT, () => {
   console.log(__dirname);
   console.log(`El servidor está ejecutándose en el puerto ${PORT}`);

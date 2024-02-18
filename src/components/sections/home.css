@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 35px;
 }
 .items-container2 {
   width: 100%;
@@ -43,7 +44,7 @@
   .items-container {
     width: 100%;
     flex-direction: column;
-    gap: 20px;
+    gap: 35px;
   }
   .item {
     width: 180px;

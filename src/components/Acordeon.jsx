@@ -26,6 +26,9 @@ export function AcordeonMaterial({ item }) {
   const className = show
     ? "qs-ans   flex flex-col  gap-2 ans-show"
     : "qs-ans   flex flex-col  gap-2";
+  const className2 = show
+    ? "icono flecha rotate-180 transition-all duration-150 ease-in"
+    : "rotate-90 icono flecha rotate-180 transition-all duration-150 ease-in";
   return (
     <>
       <header
@@ -33,14 +36,14 @@ export function AcordeonMaterial({ item }) {
         onClick={() => setShow(!show)}
       >
         <p className="font-bold text-lg p-2">{item.name}</p>
-        <div className="icono flecha rotate-180 transition-all duration-150 ease-in">
+        <div className={className2}>
           <ArrowIcon />
         </div>
       </header>
       <ul className={className}>
         {item.Features.map((feature, index) => {
           return (
-            <li key={index} className="font-semibold ml-3 text-base">
+            <li key={index} className="font-semibold ml-8 text-base">
               {feature}
             </li>
           );

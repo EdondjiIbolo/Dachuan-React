@@ -9,9 +9,9 @@ export function Material() {
         Engine. If you require a different, material please specify it as custom
         when you make a request.
       </p>
-      <table>
+      <table className=" shadow-sm">
         <thead>
-          <tr>
+          <tr className="border-t border-black">
             <th>Material</th>
             <th colSpan="4" className="text-center">
               Features

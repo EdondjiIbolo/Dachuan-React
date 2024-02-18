@@ -5,13 +5,13 @@ export function Login() {
     <>
       <header className="main-header  justify-center h-20  bg-white w-full flex fixed top-0 left-0 z-40  md:pr-5">
         <section className="flex w-full max-w-[1320px]  items-center  border-b-2  bg-white  m-auto justify-between  h-20 z-30  fixed   ">
-          <section className="w-36">
+          <Link to="/" className="w-36">
             <img
               src="/img/logo.png"
               alt="Logo"
               className="w-full object-cover object-top"
             />
-          </section>
+          </Link>
           <section>
             <Link className="w-16 bg-blue-600 px-3 py-2 hover:text-blue-600 hover:bg-white hover:border-2 border-blue-600 transition-all duration-150 ease rounded text-white">
               Sign Up

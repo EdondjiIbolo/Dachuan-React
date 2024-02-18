@@ -13,11 +13,12 @@ import {
 import { Assistance } from "../Assistance.jsx";
 import { Material } from "../Material.jsx";
 import { Services } from "../Services.jsx";
-
+import { Header } from "../Header.jsx";
+import { Footer } from "../Footer.jsx";
 import "../sections/home.css";
 import { Acordeon } from "../Acordeon.jsx";
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 export function HomePage() {
   // useEffect(() => {
   //   window.scrollTo({
@@ -57,6 +58,7 @@ export function HomePage() {
 
   return (
     <>
+      <Header />
       <main className=" w-full  m-auto  bg-zinc-100 relative  pt-20">
         <section className="relative max-w-[1310px] m-auto h-86 sm:h-96 overflow-hidden">
           <picture className="absolute  z-10 top-0 left-0   w-full  ">
@@ -104,7 +106,7 @@ export function HomePage() {
               All uploaded drawings are strictly confidential.
             </p>
             <Link
-              to="#"
+              to="/login"
               className="bg-blue-800 font-semibold text-white p-2 text-nowrap rounded md:w-18 w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
             >
               {" "}
@@ -117,8 +119,10 @@ export function HomePage() {
             <li>
               <a
                 href="#Services"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear ${
-                  currentSection === "Services" ? "font-bold" : ""
+                className={`sm:p-1 p-[6px] hover:font-medium  transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
+                  currentSection === "Services"
+                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
+                    : ""
                 }`}
               >
                 Services
@@ -127,8 +131,10 @@ export function HomePage() {
             <li>
               <a
                 href="#Advantages"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear ${
-                  currentSection === "Advantages" ? "font-bold" : ""
+                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
+                  currentSection === "Advantages"
+                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
+                    : ""
                 }`}
               >
                 Advantages
@@ -137,8 +143,10 @@ export function HomePage() {
             <li>
               <a
                 href="#Materials"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear ${
-                  currentSection === "Materials" ? "font-bold" : ""
+                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
+                  currentSection === "Materials"
+                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
+                    : ""
                 }`}
               >
                 Materials
@@ -147,8 +155,10 @@ export function HomePage() {
             <li>
               <a
                 href="#Assistance"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear ${
-                  currentSection === "Assistance" ? "font-bold" : ""
+                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
+                  currentSection === "Assistance"
+                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
+                    : ""
                 }`}
               >
                 Design Assistance
@@ -157,8 +167,10 @@ export function HomePage() {
             <li>
               <a
                 href="#Introduction"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear ${
-                  currentSection === "Introduction" ? "font-bold" : ""
+                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
+                  currentSection === "Introduction"
+                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
+                    : ""
                 }`}
               >
                 Introduction
@@ -174,14 +186,16 @@ export function HomePage() {
             className="flex    bg-slate-100 flex-wrap"
           >
             <article className="w-full max-w-[1300px] m-auto pt-20 flex justify-center items-center gap-8  p-4 flex-col">
-              <h3 className="font-bold text-xl mb-2">How to place an order?</h3>
-              <p className="text-blue-800">
+              <h3 className="font-bold text-2xl mb-2">
+                How to place an order?
+              </h3>
+              <p className="text-blue-900 text-lg">
                 You can place your order in just{" "}
-                <strong className="font-bold text-lg">3</strong> steps
+                <strong className="font-extrabold text-lg">3</strong> steps
               </p>
-              <div className="items-container ">
+              <div className="items-container md:mb-4 ">
                 <article className="item">
-                  <span className="absolute -top-2 -left-2 bg-green-900 text-white  text-xl p-3 h-12px w-12 rounded-full flex justify-center items-center font-semibold ">
+                  <span className="absolute -top-2 -left-2 bg-blue-800 text-white  text-xl p-3 h-12px w-12 rounded-full flex justify-center items-center font-semibold ">
                     1
                   </span>
                   <picture className="flex justify-center">
@@ -191,13 +205,9 @@ export function HomePage() {
                     Upload Your 3D File
                   </p>
                 </article>
-                <div className=" rotate-90 flex sm:rotate-0  p-1">
-                  <span className="w-4 h-4">{/* <Linkrrow2 /> */}</span>
-                  <span className="w-4 h-4">{/* <Linkrrow2 /> */}</span>
-                  <span className="w-4 h-4">{/* <Linkrrow2 /> */}</span>
-                </div>
+
                 <article className="item">
-                  <span className="absolute -top-2 -left-2 bg-green-900 text-white  text-xl p-3 h-12px w-12 rounded-full flex justify-center items-center font-semibold ">
+                  <span className="absolute -top-2 -left-2 bg-blue-800 text-white  text-xl p-3 h-12px w-12 rounded-full flex justify-center items-center font-semibold ">
                     2
                   </span>
                   <picture className="flex justify-center">
@@ -207,13 +217,9 @@ export function HomePage() {
                     Set Your Parametres
                   </p>
                 </article>
-                <div className="flex rotate-90 sm:rotate-0 p-1">
-                  <span className="w-4 h-4">{/* <Linkrrow2 /> */}</span>
-                  <span className="w-4 h-4">{/* <Linkrrow2 /> */}</span>
-                  <span className="w-4 h-4">{/* <Linkrrow2 /> */}</span>
-                </div>
+
                 <article className="item">
-                  <span className="absolute -top-2 -left-2 bg-green-900 text-white  text-xl p-3 h-12px w-12 rounded-full flex justify-center items-center font-semibold ">
+                  <span className="absolute -top-2 -left-2 bg-blue-800 text-white  text-xl p-3 h-12px w-12 rounded-full flex justify-center items-center font-semibold ">
                     3
                   </span>
                   <picture className="flex justify-center">
@@ -225,9 +231,9 @@ export function HomePage() {
                 </article>
               </div>
               <Link
-                to="#"
+                to="/login"
                 className="flex p-2 shadow-md rounded  transition-all duration-200 ease-in hover:outline-2  bg-blue-800 font-semibold text-white hover:bg-white hover:outline
-              hover:outline-bg-blue-800 hover:text-blue-800 w-40 "
+              hover:outline-bg-blue-800 hover:text-blue-800 w-1/2 md:w-40 "
               >
                 <div className="rotate-90">
                   <ArrowIcon />
@@ -237,13 +243,17 @@ export function HomePage() {
                 </p>
               </Link>
             </article>
-            <article className="items-container2 bg-slate-100">
+            <article className="items-container2 p-2 bg-slate-100">
               <h3 className="font-bold text-xl m-auto text-center mb-2">
                 In your custom parts design procurement
               </h3>
+              <p className="text-center">
+                Receive your products with ease and speed, because your
+                satisfaction is our priority!
+              </p>
               <div className="grid grid-cols-1 sm:grid-cols-4 sm:gap-8 gap-4  py-8">
                 <div className="item2 ">
-                  <header className="bg-green-400 p-2 w-full text-center font-semibold text-white sm:text-sm">
+                  <header className="bg-green-500 p-2 w-full text-center font-semibold text-white sm:text-sm">
                     <p>Upload you 3D File</p>
                   </header>
                   <div className="flex-grow flex flex-col sm:gap-4 h-full justify-center items-center py-2">
@@ -257,7 +267,7 @@ export function HomePage() {
                   </div>
                 </div>
                 <div className="item2 ">
-                  <header className="bg-green-400 p-2 w-full text-center font-semibold text-white sm:text-sm">
+                  <header className="bg-green-500 p-2 w-full text-center font-semibold text-white sm:text-sm">
                     <p>Short quotation time</p>
                   </header>
                   <div className="flex-grow flex flex-col sm:gap-4  justify-center items-center py-2">
@@ -271,7 +281,7 @@ export function HomePage() {
                   </div>
                 </div>
                 <div className="item2 ">
-                  <header className="bg-green-400 p-2 w-full text-center font-semibold text-white sm:text-sm">
+                  <header className="bg-green-500 p-2 w-full text-center font-semibold text-white sm:text-sm">
                     <p>Quality Assurance</p>
                   </header>
                   <div className=" flex-grow flex flex-col sm:gap-4  justify-center items-center py-2">
@@ -284,7 +294,7 @@ export function HomePage() {
                   </div>
                 </div>
                 <div className="item2 ">
-                  <header className="bg-green-400 p-2 w-full text-center font-semibold text-white sm:text-sm">
+                  <header className="bg-green-500 p-2 w-full text-center font-semibold text-white sm:text-sm">
                     <p>Delivery guarantee</p>
                   </header>
                   <div className="flex-grow  flex flex-col sm:gap-4  justify-center items-center py-2">
@@ -402,14 +412,14 @@ export function HomePage() {
             <article className=" flex flex-col gap-8 items-center">
               <section className="flex gap-20 flex-wrap">
                 <video
-                  className="w-96 max-w-screen flex-1  h-48 border-[3px] rounded shadow-lg"
+                  className="w-96 max-w-screen flex-1  h-48 border-[3px] border-slate-300 rounded shadow-lg"
                   poster="/img/logo.png"
                   controls="controls"
                 >
                   <source src="/video/misumi-video.mp4" type="video/mp4" />
                 </video>
                 <video
-                  className="w-96 max-w-screen flex-1 h-48 border-[3px] shadow-lg  rounded "
+                  className="w-96 max-w-screen flex-1 h-48 border-[3px] border-slate-300 shadow-lg  rounded "
                   poster="/img/logo.png"
                   controls="controls"
                 >
@@ -440,11 +450,12 @@ export function HomePage() {
           <div className="rotate-90">
             <ArrowIcon />
           </div>
-          <Link to="#" className="w-full text-center text-sm font-bold">
+          <Link to="/login" className="w-full text-center text-sm font-bold">
             Get an instant Qotation
           </Link>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

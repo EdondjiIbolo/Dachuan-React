@@ -5,7 +5,7 @@ export function Services() {
     <section
       id="Services"
       data-section="Services"
-      className="max-w-[1300px] m-auto py-10"
+      className="max-w-[1300px] m-auto py-10 px-4 "
     >
       <h2 className="text-center font-semibold text-2xl mb-4 pt-4 ">
         Services
@@ -13,8 +13,8 @@ export function Services() {
       <p className="max-w-[70ch] text-center m-auto pb-2 mb-4">
         All these Services are available in the Chuantai Instant Quoting Engine.
       </p>
-      <section className="grid md:grid-cols-3 md:grid-flow-col  ">
-        <article className="grid overflow-hidden  place-content-center  bg-gradient-to-l p-4  text-white to-green-500 from-green-700  gap-6 py-4 ">
+      <section className="grid md:grid-cols-3 md:grid-flow-col md:gap-4 gap-3  ">
+        <article className="grid overflow-hidden rounded shadow-xl  place-content-center  bg-gradient-to-l p-4  text-black to-slate-300 from-slate-400 gap-6 py-4 ">
           <picture className=" overflow-hidden flex items-center w-40 m-auto h-28">
             <img
               src="/img/Milling parts3.jpg"
@@ -42,7 +42,7 @@ export function Services() {
             </ul>
             <Link
               to="/machining-milling"
-              className="flex mt-12  items-center p-3 shadow-md rounded text-white bg-blue-900 w-full  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:border-orange-400 hover:outline hover:text-blue-700"
+              className="flex mt-12  items-center p-3 shadow-md rounded text-white bg-blue-900 w-[200px] md:w-1/2 m-auto font-semibold  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:outline hover:text-blue-700"
             >
               <div className="rotate-90">
                 <ArrowIcon />
@@ -51,7 +51,7 @@ export function Services() {
             </Link>
           </div>
         </article>
-        <article className="overflow-hidden grid place-content-center  bg-gradient-to-l p-4  text-white to-orange-500 from-orange-700  gap-6 py-4 ">
+        <article className="overflow-hidden grid place-content-center  bg-gradient-to-l p-4  text-black to-gray-300 from-gray-400 rounded shadow-md gap-6 py-4 ">
           <picture className=" flex items-center overflow-hidden w-40 m-auto h-28">
             <img
               src="/img/Turning-parts-2.jpeg"
@@ -81,7 +81,7 @@ export function Services() {
             </ul>
             <Link
               to="/machining-turning"
-              className="flex   items-center p-3 shadow-md rounded text-white bg-blue-900 w-full  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:border-orange-400 hover:outline hover:text-blue-700"
+              className="flex   items-center p-3 shadow-md rounded text-white bg-blue-900  w-[200px] md:w-1/2 m-auto font-semibold  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:outline hover:text-blue-700"
             >
               <div className="rotate-90 ">
                 <ArrowIcon />
@@ -90,7 +90,7 @@ export function Services() {
             </Link>
           </div>
         </article>
-        <article className="overflow-hidden grid place-content-center  bg-gradient-to-l p-4  text-white to-yellow-500 from-yellow-700  gap-6 py-4 ">
+        <article className="overflow-hidden grid place-content-center  bg-gradient-to-l p-4  text-black to-zinc-200 from-zinc-300 rounded shadow-md gap-6 py-4 ">
           <picture className=" flex items-center overflow-hidden w-40 m-auto h-28">
             <img
               src="/img/Drilling-product.png"
@@ -121,7 +121,7 @@ export function Services() {
             </ul>
             <Link
               to="/machining-drilling"
-              className="flex mt-6  items-center p-3 shadow-md rounded text-white bg-blue-900 w-full  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:border-orange-400 hover:outline hover:text-blue-700"
+              className="flex mt-6  items-center p-3 shadow-md rounded text-white bg-blue-900  w-[200px] md:w-1/2 m-auto font-semibold  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:outline hover:text-blue-700"
             >
               <div className="rotate-90 ">
                 <ArrowIcon />

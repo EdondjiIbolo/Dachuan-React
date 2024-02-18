@@ -64,13 +64,13 @@ export function Header() {
               <p className="w-12">Log in</p>
               <LoginIcon />
             </div>
-            <a
+            <Link
               onClick={closemenu}
-              href="#"
+              to="/login"
               className="bg-blue-800 font-semibold text-white p-2 text-nowrap rounded md:w-18 w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
             >
               Get a Quotation
-            </a>
+            </Link>
           </section>
         </section>
         <picture

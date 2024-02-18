@@ -115,10 +115,16 @@ export function Footer() {
             </p>
           </div>
           <div className="flex gap-3 flex-wrap justify-center sm:items-start text-xs sm:text-sm w-full sm:justify-between md:justify-end">
-            <a href="#" className="text-blue-500">
+            <a
+              href="#"
+              className="text-slate-300 hover:shadow-lg hover:drop-shadow-lg hover:text-white transition-all ease duration-200"
+            >
               沪ICP备2022003370号-1
             </a>
-            <a href="#" className="text-blue-500">
+            <a
+              href="#"
+              className="text-slate-300 hover:shadow-lg hover:drop-shadow-lg hover:text-white transition-all ease duration-200"
+            >
               沪公网安备31010902003376号
             </a>
           </div>

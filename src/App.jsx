@@ -18,7 +18,6 @@ function App() {
   }, []);
   return (
     <>
-      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/machining-drilling" element={<DrillingCnc />} />
@@ -27,9 +26,8 @@ function App() {
         <Route path="/materials" element={<Materials />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
-      <Footer />
-      {/* <Login /> */}
     </>
   );
 }
