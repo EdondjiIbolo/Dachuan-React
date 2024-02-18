@@ -49,7 +49,7 @@ export function DrillingCnc() {
       <Header />
       <main className=" relative  ">
         <main className=" w-full max-w-[1300px] m-auto pt-20">
-          <section className="relative flex items-center h-86 sm:h-96 overflow-hidden ">
+          <section className="relative flex items-center justify-end h-86 sm:h-96 overflow-hidden ">
             <picture className="absolute hidden sm:block z-5 top-0 left-0  w-full ">
               <img
                 src="/img/Drilling-method.webp"
@@ -59,7 +59,7 @@ export function DrillingCnc() {
             </picture>
             <section
               id="Services"
-              className="sm:px-12 p-4 sm:py-8 h-full flex flex-col z-10 relative w-full bg-white text-wrap gap-4  sm:w-[580px] sm:ml-24 sm:h-[320px] "
+              className="sm:px-12 p-4 sm:py-8 h-full flex flex-col z-10 relative w-full bg-white text-wrap gap-4  sm:w-[580px] sm:mr-24 sm:h-[320px] "
             >
               <h1 className="font-bold sm:text-2xl text-lg max-w-[40ch] uppercase text-wrap">
                 CNC MACHINING - {Drilling.Page}
