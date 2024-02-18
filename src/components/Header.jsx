@@ -57,13 +57,14 @@ export function Header() {
                 CH
               </span>
             </div>
-            <div
+            <Link
+              to="/login"
               className="flex gap-1 cursor-pointer hover:font-semibold hover:outline outline-2 outline-bg-blue-700 rounded p-1 flex-nowrap"
               onClick={closemenu}
             >
               <p className="w-12">Log in</p>
               <LoginIcon />
-            </div>
+            </Link>
             <Link
               onClick={closemenu}
               to="/login"

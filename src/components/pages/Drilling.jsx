@@ -85,7 +85,7 @@ export function DrillingCnc() {
                 Please upload your 3D files to receive real-time quotations.
               </p>
               <Link
-                to="#"
+                to="/login"
                 className="bg-blue-800 font-semibold text-white  p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
               >
                 Get a Quotation

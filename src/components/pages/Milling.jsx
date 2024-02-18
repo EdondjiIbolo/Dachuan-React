@@ -1,4 +1,4 @@
-import { CheckIcon2, SettingIcon } from "../Icons.jsx";
+import { CheckIcon2, SecureIcon, SettingIcon } from "../Icons.jsx";
 import "../sections/machining.css";
 import { Technologies } from "../../mock/headerData.json";
 import { AcordeonMaterial } from "../Acordeon.jsx";
@@ -56,6 +56,45 @@ export function MillingCnc() {
                 alt="Banner img"
               />
             </picture>
+            <section
+              id="Services"
+              data-section="Services"
+              className="sm:px-12 p-4 sm:py-8 h-full flex flex-col z-10 relative w-full bg-white text-wrap gap-4  sm:w-[580px] sm:ml-24 sm:h-[320px] "
+            >
+              <h1 className="font-bold sm:text-2xl text-lg max-w-[40ch] uppercase text-wrap">
+                CNC MACHINING - {Milling.Page}
+              </h1>
+              <ul className="">
+                <li className="text-zinc-500  text-sm sm:text-sm flex gap-2 items-center ">
+                  <p className=" text-black">
+                    Online order for CNC {Milling.Page} parts.
+                  </p>
+                </li>
+                <li className="text-zinc-500 text-sm sm:text-sm flex gap-2 items-center">
+                  <p className="text-black">
+                    Materials such as aluminum, steel, copper, polymers, etc.{" "}
+                  </p>
+                </li>
+                <li className="text-zinc-500 text-sm sm:text-sm flex gap-2 items-center">
+                  <p className="text-black">
+                    Rapid manufacturing to be completed within 10 days.
+                  </p>
+                </li>
+              </ul>
+              <p className="text-black font-semibold text-sm flex flex-row items-center gap-1 mb-2">
+                Please upload your 3D files to receive real-time quotations.
+              </p>
+              <Link
+                to="/login"
+                className="bg-blue-800 font-semibold text-white  p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
+              >
+                Get a Quotation
+              </Link>
+              <p className="text-zinc-500 text-xs flex flex-row items-center gap-1 mb-2">
+                <SecureIcon />
+                The documents you upload are strictly confidential and secure.
+              </p>
+            </section>
           </section>
           <ul className="flex px-2 sm:px-4 w-full justify-between sticky z-10 top-20 md:px-12 text-xs sm:text-base py-2 text-zinc-600 bg-zinc-50">
             <li>
