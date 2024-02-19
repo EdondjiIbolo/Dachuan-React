@@ -11,6 +11,8 @@ import { AboutUs } from "./components/pages/About";
 import { Contact } from "./components/pages/Contact";
 import { Login } from "./components/pages/Login";
 import { useEffect } from "react";
+import { SignUp } from "./components/pages/SignUp";
+import { Panel } from "./components/pages/Dashboard";
 
 function App() {
   useEffect(() => {
@@ -27,6 +29,8 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/panel" element={<Panel />} />
       </Routes>
     </>
   );

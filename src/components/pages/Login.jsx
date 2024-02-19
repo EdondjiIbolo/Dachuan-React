@@ -1,8 +1,47 @@
-import { Link, NavLink } from "react-router-dom";
-
+import { useEffect, useRef, useState } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import loginServices from "../../Hooks/login";
+import { useUser } from "../../Hooks/useUser";
+import { Loading } from "../Loading";
 export function Login() {
+  const [name, setname] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
+  const { setUser, user } = useUser();
+  const className = error
+    ? "w-full italic p-2 outline-none focus:outline-none outline-red-500 text-slate-800 bg-slate-100 shadow-lg rounded"
+    : "w-full italic p-2 outline-none focus:ring text-slate-800 bg-slate-100 shadow-lg rounded";
+  useEffect(() => {
+    if (user.token) {
+      navigate("/panel");
+    }
+  }, []);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      const userdata = await loginServices.login({
+        name,
+        password,
+      });
+      const newdata = userdata;
+      window.localStorage.setItem("user", JSON.stringify(newdata));
+      setUser(newdata);
+      console.log(user);
+      navigate("/panel");
+    } catch (err) {
+      setError(true);
+      console.log("Error : ", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
+      {loading && <Loading />}
       <header className="main-header  justify-center h-20  bg-white w-full flex fixed top-0 left-0 z-40  md:pr-5">
         <section className="flex w-full max-w-[1320px]  items-center  border-b-2  bg-white  m-auto justify-between  h-20 z-30  fixed   ">
           <Link to="/" className="w-36">
@@ -19,9 +58,9 @@ export function Login() {
           </section>
         </section>
       </header>
-      <main className="grid place-content-center bg-slate-200 min-h-screen">
+      <main className="flex items-center justify-center w-screen p-5 bg-slate-200 min-h-screen">
         <form
-          action=""
+          onSubmit={handleSubmit}
           className="w-screen relative max-w-[500px] bg-slate-500 h-[400px] px-5 flex flex-col items-center
         justify-center gap-4 rounded m-auto"
         >
@@ -30,15 +69,30 @@ export function Login() {
           </picture>
           <input
             type="text"
-            className="w-full italic p-2 outline-none text-slate-800 bg-slate-100 shadow-lg rounded"
+            name="email"
+            value={name}
+            className={className}
             placeholder="username or email"
+            onChange={({ target }) => setname(target.value)}
+            onFocus={() => setError(false)}
+            autoComplete="username"
           />
           <div className="w-full">
             <input
-              type="passswor"
-              className="w-full p-2 outline-none text-slate-800 bg-slate-100 shadow-lg rounded"
+              type="password"
+              name="password"
+              value={password}
+              onChange={({ target }) => setPassword(target.value)}
+              className={className}
               placeholder="password"
+              autoComplete="current-password"
+              onFocus={() => setError(false)}
             />
+            {error && (
+              <p className="text-red-400 mt-3 text-sm font-semibold italic text-left ">
+                Incorrect username or password. Please try again.
+              </p>
+            )}
             <Link className="text-blue-900 text-end w-full block p-1 hover:font-semibold hover:underline">
               Forget your password?
             </Link>
@@ -48,7 +102,9 @@ export function Login() {
           </button>
           <p className="text-white">
             Dont have an account ?{" "}
-            <Link className="text-blue-400">Sing Up </Link>
+            <Link to="/sign-up" className="text-blue-400">
+              Sing Up{" "}
+            </Link>
             now.
           </p>
         </form>

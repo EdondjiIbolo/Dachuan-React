@@ -20,12 +20,12 @@ import { Acordeon } from "../Acordeon.jsx";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 export function HomePage() {
-  // useEffect(() => {
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: "smooth",
-  //   });
-  // }, []);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   const [currentSection, setCurrentSection] = useState("");
 
