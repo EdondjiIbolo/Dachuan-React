@@ -31,7 +31,6 @@ export function SignUp() {
       console.log(user);
       navigate("/panel");
     } catch (err) {
-      setError(true);
       console.log("Error : ", err);
     } finally {
       setLoading(false);
