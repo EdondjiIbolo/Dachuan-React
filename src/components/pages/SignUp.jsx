@@ -1,7 +1,7 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import signServices from "../../Hooks/login";
 import "../sections/session.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useUser } from "../../Hooks/useUser";
 import { Loading } from "../Loading";
 export function SignUp() {
@@ -10,12 +10,59 @@ export function SignUp() {
   const [username, setUserame] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phone, setPhone] = useState(null);
+  const [verify, setVerify] = useState(false);
+  const [verifyCode, setVerifyCode] = useState(null);
+  const [verifytext, setVerifytext] = useState(false);
+  const [error, setError] = useState(false);
   const { setUser, user } = useUser();
   const navigate = useNavigate();
 
-  const handleClick = async (e) => {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (verifytext > 0) {
+        setVerifytext(verifytext - 1);
+        console.log(verifytext);
+      } else {
+        clearInterval(interval);
+
+        setVerify(false);
+        console.log(verifytext);
+      }
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [verifytext]);
+
+  const handleVerify = async (e) => {
     e.preventDefault();
+    if (!email) {
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 5000);
+      return;
+    }
+    setVerifytext(5);
+    setVerify(true);
+    try {
+      const userdata = await signServices.verifyCode({ email });
+    } catch (error) {
+      console.error("Error al enviar el código de verificación:", error);
+    } finally {
+      setVerify(false);
+    }
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!email) {
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 5000);
+      return;
+    }
     try {
       setLoading(true);
       const userdata = await signServices.signup({
@@ -23,6 +70,8 @@ export function SignUp() {
         password,
         email,
         phone,
+        username,
+        verifyCode,
       });
       const newdata = userdata;
       console.log(newdata);
@@ -50,42 +99,63 @@ export function SignUp() {
             />
           </Link>
           <section>
-            <Link className="w-16 bg-blue-600 px-3 py-2 hover:text-blue-600 hover:bg-white hover:border-2 border-blue-600 transition-all duration-150 ease rounded text-white">
+            <Link className="w-16 bg-blue-600 px-3 py-2 mr-3 sm:mr-0 hover:text-blue-600 hover:bg-white hover:border-2 border-blue-600 transition-all duration-150 ease rounded text-white">
               Sign Up
             </Link>
           </section>
         </section>
       </header>
-      <main className="flex items-center justify-center w-screen p-5 bg-slate-200 min-h-screen">
+      <main className="flex items-center min-h-screen justify-center w-screen px-5 pt-32 sm:pt-32 relative bg-slate-200 ">
         <form
+          onClick={handleSubmit}
           action=""
-          className=" relative w-full max-w-[600px] bg-slate-500 h-[500px] md:h-[400px] px-5 flex flex-col items-center
+          className=" sm:pt-4 relative w-full max-w-[600px] bg-slate-500 mb-8 sm:mb-auto h-[600px] sm:h-[400px] px-5 flex flex-col items-center
         justify-center gap-4 rounded m-auto"
         >
           <picture className="absolute -top-10 rounded-full overflow-hidden">
             <div className="w-24 bg-red-500 h-24"></div>
           </picture>
-          <input
-            type="text"
-            className="w-full sm:mt-6 mt-12 italic p-2 outline-none focus:ring text-slate-800 bg-slate-100 shadow-lg rounded"
-            placeholder="Name"
-            name="name"
-            value={name}
-            onChange={({ target }) => setName(target.value)}
-          />
+
           <section className="flex justify-between w-full flex-col sm:flex-row gap-4">
             <input
               type="text"
-              className="w-full italic p-2 outline-none focus:ring text-slate-800 bg-slate-100 shadow-lg rounded"
-              placeholder="Username"
-              name="username"
-              value={username}
-              onChange={({ target }) => setUserame(target.value)}
+              className={`w-full italic p-2 outline-none focus:ring text-slate-800 ${
+                error ? "border-red-500 border-2" : ""
+              } bg-slate-100 shadow-lg rounded`}
+              placeholder="Name"
+              name="name"
+              value={name}
+              onChange={({ target }) => setName(target.value)}
             />
             <div className="w-full">
               <input
                 type="text"
-                className="w-full p-2 outline-none text-slate-800 bg-slate-100 shadow-lg rounded"
+                className={`w-full italic p-2 outline-none focus:ring ${
+                  error ? "border-red-500 border-2" : ""
+                } text-slate-800 bg-slate-100 shadow-lg rounded`}
+                placeholder="Username"
+                name="username"
+                value={username}
+                onChange={({ target }) => setUserame(target.value)}
+              />
+            </div>
+          </section>
+          <section className="flex justify-between w-full flex-col sm:flex-row gap-4">
+            <input
+              type="password"
+              className={`w-full italic p-2 outline-none focus:ring ${
+                error ? "border-red-500 border-2" : ""
+              } text-slate-800 bg-slate-100 shadow-lg rounded`}
+              placeholder="password"
+              value={password}
+              onChange={({ target }) => setPassword(target.value)}
+            />
+            <div className="w-full">
+              <input
+                type="text"
+                className={`w-full p-2 outline-none text-slate-800 ${
+                  error ? "border-red-500 border-2" : ""
+                } bg-slate-100 shadow-lg rounded`}
                 placeholder="email"
                 value={email}
                 onChange={({ target }) => setEmail(target.value)}
@@ -94,29 +164,38 @@ export function SignUp() {
           </section>
           <section className="flex justify-between w-full flex-col sm:flex-row gap-4">
             <input
-              type="password"
-              className="w-full italic p-2 outline-none focus:ring text-slate-800 bg-slate-100 shadow-lg rounded"
-              placeholder="password"
-              value={password}
-              onChange={({ target }) => setPassword(target.value)}
+              type="number"
+              id="telefono"
+              name="telefono"
+              inputMode="numeric"
+              className={`w-full sm:w-1/2 p-2  focus:ring ${
+                error ? "border-red-500 border-2" : ""
+              } outline-none text-slate-800 bg-slate-100 shadow-lg rounded`}
+              placeholder="Phone number"
+              value={phone}
+              onChange={({ target }) => setPhone(target.value)}
             />
-            <div className="w-full">
+            <section className="grid grid-flow-col gap-2 sm:w-1/2 auto-cols-fr ">
               <input
                 type="number"
-                id="telefono"
-                name="telefono"
-                inputMode="numeric"
-                className="w-full p-2  focus:ring outline-none text-slate-800 bg-slate-100 shadow-lg rounded"
-                placeholder="Phone number"
-                value={phone}
-                onChange={({ target }) => setPhone(target.value)}
+                placeholder="verification code"
+                className={`w-full p-2  focus:ring ${
+                  error ? "border-red-500 border-2" : ""
+                } outline-none text-slate-800 bg-slate-100 shadow-lg rounded`}
+                value={verifyCode}
+                onChange={({ target }) => setVerifyCode(target.value)}
               />
-            </div>
+              <div>
+                <button
+                  className=" p-2 w-full text-white bg-blue-500  rounded-lg font-bold border-2 hover:bg-blue-900 hover:text-white hover:border-slate-300 transition-all  duration-200 ease border-slate-400"
+                  onClick={handleVerify}
+                >
+                  {!verify ? "verify code" : `${verifytext}s`}
+                </button>
+              </div>
+            </section>
           </section>
-          <button
-            className="text-white bg-blue-500 p-3 w-full sm:w-[250px] rounded-lg font-bold border-2 hover:bg-white hover:text-black hover:border-black transition-all mt-4 duration-200 ease border-slate-400"
-            onClick={handleClick}
-          >
+          <button className="text-white bg-blue-500 p-3 w-full sm:w-[250px] rounded-lg font-bold border-2 hover:bg-white hover:text-black hover:border-black transition-all mt-4 duration-200 ease border-slate-400">
             Sign Up
           </button>
           <p className="text-white">
@@ -126,6 +205,11 @@ export function SignUp() {
             </Link>
             now.
           </p>
+          {error && (
+            <p className="text-white absolute flex w-72 bottom-4 left-1/2 -translate-x-1/2 border-red-500 rounded p-1 px-3 text-lg bg-red-500 duration-250 transition-all ease-in ">
+              Error : every input is mandatory
+            </p>
+          )}
         </form>
       </main>
     </>

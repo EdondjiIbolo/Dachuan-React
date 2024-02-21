@@ -13,6 +13,9 @@ import { Login } from "./components/pages/Login";
 import { useEffect } from "react";
 import { SignUp } from "./components/pages/SignUp";
 import { Panel } from "./components/pages/Dashboard";
+import { Assistance } from "./components/pages/Assistance";
+import { Guide } from "./components/pages/Guide";
+import { Recover } from "./components/pages/Recover";
 
 function App() {
   useEffect(() => {
@@ -26,9 +29,12 @@ function App() {
         <Route path="/machining-milling" element={<MillingCnc />} />
         <Route path="/machining-turning" element={<TurningCnc />} />
         <Route path="/materials" element={<Materials />} />
+        <Route path="/assistance" element={<Assistance />} />
+        <Route path="/guide" element={<Guide />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<Recover />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/panel" element={<Panel />} />
       </Routes>

@@ -1,8 +1,12 @@
-import express, { json } from "express";
+import express from "express";
 import crypto from "node:crypto";
 import cors from "cors";
 import jwt from "jsonwebtoken";
 import mysql from "mysql2/promise";
+
+import bcrypt from "bcrypt";
+import { validateUserSignin, validateUserlogin } from "./schema/userSchema.mjs";
+import { sendVerifyCode } from "./service/mail.mjs";
 
 const config = {
   host: "localhost",
@@ -20,30 +24,37 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 app.disable("x-powered-by");
+
+//Rutas
+//TODO --> MIGRAR A ARQUITECTURA MVC
 app.use((req, res, next) => {
   //verificar si usuario cookies o login
   console.log("hilaaa");
   next();
 });
 app.post("/login", async (req, res) => {
-  const { name, password } = req.body;
-
-  const querdata = await connection.query(
-    "SELECT username, password FROM usuarios WHERE username = ? AND password = ?",
-    [name, password]
+  const validateData = validateUserlogin(req.body);
+  if (validateData.error) {
+    return res.status(400).json({ error: validateData.error.message });
+  }
+  const { email, password } = validateData.data;
+  const [querdata, _] = await connection.query(
+    "SELECT email, password FROM usuarios WHERE email = ? AND password = ?",
+    [email, password]
   );
-  const response = await querdata[0];
+  const response = await querdata;
+  console.log(email, password);
   if (response.length === 0) {
-    console.log("error");
     res.status(401).json({
       error: "invalid user or password",
     });
     return;
   }
   const userInfo = await connection.query(
-    "SELECT * FROM usuarios WHERE username = ?",
-    [name]
+    "SELECT * FROM usuarios WHERE email = ?",
+    [email]
   );
+
   const [user] = userInfo[0];
   const userForToken = {
     id: user.ID,
@@ -53,14 +64,57 @@ app.post("/login", async (req, res) => {
   const data = {
     name: user.name,
     username: user.username,
+    email: user.email,
     token,
   };
+
   res.status(200).json(data);
 });
+app.post("/verify", async (req, res) => {
+  const { email } = req.body;
+  const { otpCode } = await sendVerifyCode(email);
+  // verificar el codigo y almacenarlo DB
+  const saltRounds = 10;
+  const myPlaintextPassword = otpCode;
+  const salt = bcrypt.genSaltSync(saltRounds);
+  const encriptedCode = bcrypt.hashSync(myPlaintextPassword, salt);
 
+  const insertdata = await connection.query(
+    "INSERT INTO tokens ( email, secret_word ) VALUES (?,?)",
+    [email, encriptedCode]
+  );
+  res
+    .status(200)
+    .json({ message: "Codigo de Verificacion enviado correctamente" });
+});
 app.post("/sign-up", async (req, res) => {
-  const { name, username, email, password, phone } = req.body;
+  // validar
+  const validateData = validateUserSignin(req.body);
+  if (validateData.error) {
+    return res.status(400).json({ error: validateData.error.message });
+  }
+  const { name, username, email, password, phone, rol, verifyCode } =
+    validateData;
+  //manerjar el error
+  const [querdata, _] = await connection.query(
+    "SELECT email, secret_word FROM tokens WHERE email = ?",
+    [email]
+  );
 
+  const inputUser = verifyCode;
+  const codeValidate = querdata.map((data) => {
+    const code = data.secret_word;
+    //comparar codigos
+    const isValid = bcrypt.compareSync(inputUser, code);
+    return { inputUser };
+  });
+
+  if (!codeValidate) {
+    console.log("El código OTP no es válido");
+    return res.status(498).json({ error: "El código OTP no es válido" });
+  }
+  //exito: agregar usuario a base de datos
+  //loguear
   const user = {
     id: crypto.randomUUID(),
     name,
@@ -71,7 +125,7 @@ app.post("/sign-up", async (req, res) => {
   };
   const insertdata = await connection.query(
     "INSERT INTO usuarios (ID, name, username, email, password, rol_id,phone) VALUES (?,?,?,?,?,?,?)",
-    [crypto.randomUUID(), name, username, email, password, 2, phone]
+    [user.id, name, username, email, password, rol, phone]
   );
   const userForToken = {
     id: user.id,
@@ -83,11 +137,55 @@ app.post("/sign-up", async (req, res) => {
     username: user.username,
     token,
   };
-
   res.status(201).json(data);
 });
+app.post("/recover", async (req, res) => {
+  const validateData = validateUserlogin(req.body);
+  if (validateData.error) {
+    return res.status(400).json({ error: validateData.error.message });
+  }
+  const { email, password, verifyCode } = validateData.data;
+  //verificar el codigo de verificacion
+  const [querydata, a] = await connection.query(
+    "SELECT email, secret_word FROM tokens WHERE email = ?",
+    [email]
+  );
+
+  const inputUser = verifyCode;
+  const [codeValidate] = querydata.filter((data) => {
+    const code = data.secret_word;
+    //comparar codigos
+    const isValid = bcrypt.compareSync(inputUser, code);
+    if (isValid) return data;
+    return false;
+  });
+
+  if (!codeValidate) {
+    return res.status(498).json({ error: "El código OTP no es válido" });
+  }
+
+  const [userData, _] = await connection.query(
+    "SELECT * FROM usuarios WHERE email = ?",
+    [email]
+  );
+  const [data] = userData;
+
+  console.log(data);
+  const userEmail = data?.email;
+  if (!userEmail) {
+    console.log("no hay usuario");
+    return res
+      .status(400)
+      .send("No se ha encontrado un usuarion con este correo electronico");
+  }
+  const changePassword = await connection.query(
+    "UPDATE  usuarios SET password = ? WHERE email = ?",
+    [password, email]
+  );
+
+  res.status(200).send("Contraseña actualizado correctamente");
+});
 app.get("/", (req, res) => {
-  console.log("hola");
   res.status(200).send("Hola Mundo");
 });
 

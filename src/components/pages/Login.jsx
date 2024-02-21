@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import loginServices from "../../Hooks/login";
 import { useUser } from "../../Hooks/useUser";
 import { Loading } from "../Loading";
 export function Login() {
-  const [name, setname] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -23,7 +23,7 @@ export function Login() {
     try {
       setLoading(true);
       const userdata = await loginServices.login({
-        name,
+        email,
         password,
       });
       const newdata = userdata;
@@ -68,12 +68,12 @@ export function Login() {
             <div className="w-24 bg-red-500 h-24"></div>
           </picture>
           <input
-            type="text"
+            type="email"
             name="email"
-            value={name}
+            value={email}
             className={className}
-            placeholder="username or email"
-            onChange={({ target }) => setname(target.value)}
+            placeholder="Enter your email"
+            onChange={({ target }) => setEmail(target.value)}
             onFocus={() => setError(false)}
             autoComplete="username"
           />
@@ -93,7 +93,10 @@ export function Login() {
                 Incorrect username or password. Please try again.
               </p>
             )}
-            <Link className="text-blue-900 text-end w-full block p-1 hover:font-semibold hover:underline">
+            <Link
+              to="/forgot-password"
+              className="text-blue-900 text-end w-full block p-1 hover:font-semibold hover:underline"
+            >
               Forget your password?
             </Link>
           </div>

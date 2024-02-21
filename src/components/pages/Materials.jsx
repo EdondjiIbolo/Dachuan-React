@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SearchIcon } from "../Icons";
+
 import { MaterialCard } from "../MaterialCard";
 import "../sections/materials.css";
 import { Header } from "../Header.jsx";
