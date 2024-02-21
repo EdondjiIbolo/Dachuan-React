@@ -3,11 +3,12 @@ import crypto from "node:crypto";
 import cors from "cors";
 import jwt from "jsonwebtoken";
 import mysql from "mysql2/promise";
-
 import bcrypt from "bcrypt";
 import { validateUserSignin, validateUserlogin } from "./schema/userSchema.mjs";
 import { sendVerifyCode } from "./service/mail.mjs";
 
+const app = express();
+const PORT = process.env.PORT || 3000;
 const config = {
   host: "localhost",
   user: "root",
@@ -17,9 +18,7 @@ const config = {
 };
 
 const connection = await mysql.createConnection(config);
-const app = express();
 
-const PORT = process.env.PORT || 3000;
 //Middleware para capturar el body de una reques en un post
 app.use(cors());
 app.use(express.json());
