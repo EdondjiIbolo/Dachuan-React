@@ -168,7 +168,7 @@ export function Recover() {
             )}
           </div>
           <button className="text-white sm:w-1/2 bg-blue-500 p-3 w-full rounded-lg font-bold border-2 hover:bg-white hover:text-black hover:border-black transition-all duration-200 ease border-slate-400">
-            Login
+            Log in
           </button>
         </form>
       </main>
