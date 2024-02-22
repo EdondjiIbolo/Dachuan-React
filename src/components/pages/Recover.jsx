@@ -8,6 +8,7 @@ export function Recover() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [errorText, setErrorText] = useState("");
   const [verify, setVerify] = useState(false);
   const [verifyCode, setVerifyCode] = useState(null);
   const [verifytext, setVerifytext] = useState(false);
@@ -48,7 +49,11 @@ export function Recover() {
     try {
       const userdata = await RecoverServices.verifyCode({ email });
     } catch (error) {
-      console.error("Error al enviar el código de verificación:", error);
+      setError(true);
+      setErrorText("UP HUBO UN PROBLEMA AL ENVIAR EL SMS");
+      setTimeout(() => {
+        setError(false);
+      }, 5000);
     } finally {
       setVerify(false);
     }
@@ -76,7 +81,11 @@ export function Recover() {
       console.log(user);
       navigate("/login");
     } catch (err) {
-      console.log("Error : ", err);
+      setError(true);
+      setErrorText(err.response.data.message);
+      setTimeout(() => {
+        setError(false);
+      }, 5000);
     } finally {
       setLoading(false);
     }
@@ -151,8 +160,8 @@ export function Recover() {
               </div>
             </section>
             {error && (
-              <p className="text-red-400 mt-3 text-sm font-semibold italic text-left ">
-                Error, please check the data and try again
+              <p className="text-white absolute flex w-72 bottom-4 left-1/2 -translate-x-1/2 border-red-500 rounded p-1 px-3 text-lg bg-red-500 duration-250 transition-all  justify-center ease-in ">
+                Error : {errorText}
               </p>
             )}
           </div>
