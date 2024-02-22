@@ -107,7 +107,7 @@ export function SignUp() {
       </header>
       <main className="flex items-center min-h-screen justify-center w-screen px-5 pt-32 sm:pt-32 relative bg-slate-200 ">
         <form
-          onClick={handleSubmit}
+          onSubmit={handleSubmit}
           action=""
           className=" sm:pt-4 relative w-full max-w-[600px] bg-slate-500 mb-8 sm:mb-auto h-[600px] sm:h-[400px] px-5 flex flex-col items-center
         justify-center gap-4 rounded m-auto"
