@@ -33,6 +33,9 @@ export function Login() {
       navigate("/panel");
     } catch (err) {
       setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 5000);
       console.log("Error : ", err);
     } finally {
       setLoading(false);
@@ -109,7 +112,7 @@ export function Login() {
           <p className="text-white">
             Dont have an account ?{" "}
             <Link to="/sign-up" className="text-blue-400">
-              Sing Up{" "}
+              Sign Up{" "}
             </Link>
             now.
           </p>

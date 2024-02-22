@@ -38,8 +38,9 @@ export function SignUp() {
 
   const handleVerify = async (e) => {
     e.preventDefault();
-    if (!email) {
+    if (!phone) {
       setError(true);
+      setErrorText("The phone number is required");
       setTimeout(() => {
         setError(false);
       }, 5000);
@@ -48,7 +49,7 @@ export function SignUp() {
     setVerifytext(5);
     setVerify(true);
     try {
-      const userdata = await signServices.verifyCode({ email });
+      const userdata = await signServices.verifyCode({ phone });
     } catch (error) {
       console.error("Error al enviar el código de verificación:", error);
     } finally {
@@ -57,8 +58,9 @@ export function SignUp() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email) {
+    if (!(password && phone && verifyCode && username && email)) {
       setError(true);
+      setErrorText("All inputs must be filled");
       setTimeout(() => {
         setError(false);
       }, 5000);

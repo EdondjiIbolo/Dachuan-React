@@ -4,7 +4,7 @@ import RecoverServices from "../../Hooks/login";
 import { useUser } from "../../Hooks/useUser";
 import { Loading } from "../Loading";
 export function Recover() {
-  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -37,8 +37,9 @@ export function Recover() {
 
   const handleVerify = async (e) => {
     e.preventDefault();
-    if (!email) {
+    if (!phone) {
       setError(true);
+      setErrorText("Phone number is required");
       setTimeout(() => {
         setError(false);
       }, 5000);
@@ -47,10 +48,10 @@ export function Recover() {
     setVerifytext(5);
     setVerify(true);
     try {
-      const userdata = await RecoverServices.verifyCode({ email });
+      const userdata = await RecoverServices.verifyCode({ phone });
     } catch (error) {
       setError(true);
-      setErrorText("UP HUBO UN PROBLEMA AL ENVIAR EL SMS");
+      setErrorText("Ups error while sending sms");
       setTimeout(() => {
         setError(false);
       }, 5000);
@@ -60,8 +61,9 @@ export function Recover() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!(email && password && verifyCode)) {
+    if (!(phone && password && verifyCode)) {
       setError(true);
+      setErrorText("All inputs must be filled");
       setTimeout(() => {
         setError(false);
       }, 5000);
@@ -70,7 +72,7 @@ export function Recover() {
     try {
       setLoading(true);
       const userdata = await RecoverServices.recoverPassword({
-        email,
+        phone,
         password,
         verifyCode,
       });
@@ -122,18 +124,18 @@ export function Recover() {
             <div className="w-24 bg-red-500 h-24"></div>
           </picture>
           <input
-            type="text"
+            type="number"
             name="email"
-            value={email}
+            value={phone}
             className={className}
             placeholder="Enter email"
-            onChange={({ target }) => setEmail(target.value)}
+            onChange={({ target }) => setPhone(target.value)}
             onFocus={() => setError(false)}
             autoComplete="username"
           />
           <input
             type="text"
-            name="email"
+            name="password"
             value={password}
             className={className}
             placeholder="Set New password"
