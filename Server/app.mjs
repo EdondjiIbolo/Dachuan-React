@@ -90,7 +90,7 @@ app.post("/sign-up", async (req, res) => {
   // validar
   const validateData = validateUserSignin(req.body);
   if (validateData.error) {
-    return res.status(400).json({ error: validateData.error.message });
+    return res.status(400).json({ message: validateData.error.message });
   }
   const { name, username, email, password, phone, rol, verifyCode } =
     validateData;
@@ -110,7 +110,7 @@ app.post("/sign-up", async (req, res) => {
 
   if (!codeValidate) {
     console.log("El código OTP no es válido");
-    return res.status(498).json({ error: "El código OTP no es válido" });
+    return res.status(498).json({ message: "El código no es válido" });
   }
   //exito: agregar usuario a base de datos
   //loguear
