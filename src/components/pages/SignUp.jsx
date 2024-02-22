@@ -15,6 +15,7 @@ export function SignUp() {
   const [verifyCode, setVerifyCode] = useState(null);
   const [verifytext, setVerifytext] = useState(false);
   const [error, setError] = useState(false);
+  const [errorText, setErrorText] = useState("");
   const { setUser, user } = useUser();
   const navigate = useNavigate();
 
@@ -80,7 +81,12 @@ export function SignUp() {
       console.log(user);
       navigate("/panel");
     } catch (err) {
-      console.log("Error : ", err);
+      console.log(err.response.data.message);
+      setError(true);
+      setErrorText(err.response.data.message);
+      setTimeout(() => {
+        setError(false);
+      }, 5000);
     } finally {
       setLoading(false);
     }
@@ -206,8 +212,8 @@ export function SignUp() {
             now.
           </p>
           {error && (
-            <p className="text-white absolute flex w-72 bottom-4 left-1/2 -translate-x-1/2 border-red-500 rounded p-1 px-3 text-lg bg-red-500 duration-250 transition-all ease-in ">
-              Error : every input is mandatory
+            <p className="text-white absolute flex w-72 bottom-4 left-1/2 -translate-x-1/2 border-red-500 rounded p-1 px-3 text-lg bg-red-500 duration-250 transition-all  justify-center ease-in ">
+              Error : {errorText}
             </p>
           )}
         </form>
