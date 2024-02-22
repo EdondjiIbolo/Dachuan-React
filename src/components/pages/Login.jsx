@@ -52,7 +52,10 @@ export function Login() {
             />
           </Link>
           <section>
-            <Link className="w-16 bg-blue-600 px-3 py-2 hover:text-blue-600 hover:bg-white hover:border-2 border-blue-600 transition-all duration-150 ease rounded text-white">
+            <Link
+              to="/sign-up"
+              className="w-16 bg-blue-600 px-3 py-2 mr-5 sm:mr-3 hover:text-blue-600 hover:bg-white hover:border-2 border-blue-600 transition-all duration-150 ease rounded text-white"
+            >
               Sign Up
             </Link>
           </section>
