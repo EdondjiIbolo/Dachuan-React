@@ -4,6 +4,7 @@ const baseUrl = "https://api-deploy-production-5c13.up.railway.app/login";
 const baseUrlSign = "https://api-deploy-production-5c13.up.railway.app/sign-up";
 const baseVerify = "https://api-deploy-production-5c13.up.railway.app/verify";
 const baseRecover = "https://api-deploy-production-5c13.up.railway.app/recover";
+const baseContact = "https://api-deploy-production-5c13.up.railway.app/contact";
 const login = async (credentials) => {
   const { data } = await axios.post(baseUrl, credentials);
   return data;
@@ -20,4 +21,8 @@ const recoverPassword = async (credentials) => {
   const { data } = await axios.post(baseRecover, credentials);
   return data;
 };
-export default { login, signup, verifyCode, recoverPassword };
+const contactMessage = async (credentials) => {
+  const { data } = await axios.post(baseContact, credentials);
+  return data;
+};
+export default { login, signup, verifyCode, recoverPassword, contactMessage };

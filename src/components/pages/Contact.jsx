@@ -1,9 +1,74 @@
 import { Link } from "react-router-dom";
 import { Header } from "../Header.jsx";
 import { Footer } from "../Footer.jsx";
+import { Loading } from "../Loading.jsx";
+import { useEffect, useState } from "react";
+import contactService from "../../Hooks/login.js";
 export function Contact() {
+  const [name, setName] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(true);
+  const [errorText, setErrorText] = useState("");
+  const [surename, setSureName] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [check, setCheck] = useState(false);
+  useEffect(() => {
+    console.log({ check, name, companyName });
+  }, [check]);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    if (!(name && email && phone && companyName && message && phone)) {
+      setLoading(false);
+      setError(true);
+      setErrorText("All fields must be filled");
+      setTimeout(() => {
+        setError(false);
+      }, 4000);
+      return;
+    }
+    console.log({
+      name,
+      surename,
+      email,
+      companyName,
+      phone,
+      message,
+      check,
+    });
+    setTimeout(() => {
+      setError(false);
+    }, 2500);
+
+    try {
+      const sendMessage = await contactService.contactMessage({
+        name,
+        surename,
+        email,
+        companyName,
+        phone,
+        message,
+        check,
+      });
+      console.log(sendMessage);
+    } catch (error) {
+      setError(true);
+      console.log(error);
+      setErrorText(Error.message);
+      setTimeout(() => {
+        setError(false);
+      }, 4000);
+    } finally {
+      setLoading(false);
+    }
+    console.log({ name, surename, email, companyName, message });
+  };
   return (
     <>
+      {loading && <Loading />}
       <Header />
       <main className="pt-20">
         <main className="w-full max-w-[1310px] m-auto p-3">
@@ -66,19 +131,33 @@ export function Contact() {
 
             <section className="p-3 rounded shadow-sm bg-slate-100 ">
               <form
-                action=""
                 method="POST"
                 className="md:max-w-[90%] flex  m-auto flex-col gap-3"
+                onSubmit={handleSubmit}
               >
                 <div className=" flex lg:flex-row md:flex-col flex-wrap sm:flex-row gap-2 max-w-full lg:items-center">
                   <input
                     type="text"
-                    className=" p-2 border border-gray-400 rounded flex-grow shadow"
+                    name="Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className={`focus:ring ${
+                      error
+                        ? "border-red-600 border-2 shadow-red-400"
+                        : "border-gray-400"
+                    } p-2 border border-gray-400 rounded outline-none flex-grow shadow`}
                     placeholder="First Name"
                   />
                   <input
                     type="text"
-                    className=" p-2 border border-gray-400 rounded flex-grow shadow"
+                    name="Surename"
+                    value={surename}
+                    onChange={(e) => setSureName(e.target.value)}
+                    className={`focus:ring ${
+                      error
+                        ? "border-red-600 border-2 shadow-red-400"
+                        : "border-gray-400"
+                    } p-2 border border-gray-400 rounded outline-none flex-grow shadow`}
                     placeholder="Last Name"
                   />
                 </div>
@@ -86,21 +165,41 @@ export function Contact() {
                 <div className="w-full flex">
                   <input
                     type="text"
-                    className=" p-2 border border-gray-400 rounded flex-grow shadow"
+                    className={`focus:ring ${
+                      error
+                        ? "border-red-600 border-2 shadow-red-400"
+                        : "border-gray-400"
+                    } p-2 border border-gray-400 rounded outline-none flex-grow shadow`}
                     placeholder="Company"
+                    value={companyName}
+                    onChange={(e) => setCompanyName(e.target.value)}
                   />
                 </div>
                 <div className="w-full flex">
                   <input
                     type="email"
-                    className=" p-2 border border-gray-400 rounded flex-grow shadow"
+                    inputMode="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className={`focus:ring ${
+                      error
+                        ? "border-red-600 border-2 shadow-red-400"
+                        : "border-gray-400"
+                    } p-2 border border-gray-400 rounded outline-none flex-grow shadow`}
                     placeholder="Email"
                   />
                 </div>
                 <div className="w-full flex">
                   <input
                     type="tel"
-                    className=" p-2 border border-gray-400 rounded flex-grow shadow"
+                    inputMode="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className={`focus:ring ${
+                      error
+                        ? "border-red-600 border-2 shadow-red-400"
+                        : "border-gray-400"
+                    } p-2 border border-gray-400 rounded outline-none flex-grow shadow`}
                     placeholder="Phone"
                   />
                 </div>
@@ -108,18 +207,31 @@ export function Contact() {
                   <textarea
                     id="mensaje"
                     name="mensaje"
-                    className="border border-slate-400 outline-none p-1 h-40 flex-grow"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className={`focus:ring ${
+                      error
+                        ? "border-red-600 border-2 shadow-red-400"
+                        : "border-gray-400"
+                    }  border rounded resize-none shadow outline-none p-1 h-40 flex-grow`}
                     placeholder="Message"
-                    required
                   ></textarea>
                 </div>
+                {error && (
+                  <p className="text-white shadow-rose-500 shadow-sm italic  text-center border-red-500 rounded p-1 px-3 text-lg bg-red-500 duration-250 transition-all  justify-center ease-in ">
+                    Error : {errorText}
+                  </p>
+                )}
                 <div className="flex gap-2 items-start">
                   <input
                     type="checkbox"
                     id="terminos"
                     name="terminos"
                     className=" cursor-pointer  w-7 h-7"
+                    value={check}
+                    onChange={(e) => setCheck(e.target.checked)}
                   />
+
                   <div className="px-2 flex flex-col gap-2">
                     <label htmlFor="terminos">
                       Yes, I would like to receive updates about CNC
@@ -131,11 +243,9 @@ export function Contact() {
                     </p>
                   </div>
                 </div>
-                <input
-                  type="submit"
-                  value="Submit"
-                  className="bg-blue-800 font-semibold text-white  p-2 flex items-center justify-center text-nowrap rounded w-full   text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2 cursor-pointer hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
-                />
+                <button className="bg-blue-800 font-semibold text-white  p-2 flex items-center justify-center text-nowrap rounded w-full   text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2 cursor-pointer hover:outline hover:outline-bg-blue-800 hover:text-blue-800">
+                  Submit
+                </button>
               </form>
             </section>
           </article>

@@ -53,7 +53,7 @@ export function TurningCnc() {
           <section className="relative flex items-center h-86 sm:h-96 overflow-hidden ">
             <picture className="absolute hidden sm:block z-5 top-0 left-0  w-full ">
               <img
-                src="/img/banner-en-3.webp"
+                src="./img/banner-en-3.webp"
                 className="h-96 object-[-235px] sm:object-center sm:h-96 block object-cover w-full"
                 alt="Banner img"
               />
@@ -412,7 +412,7 @@ export function TurningCnc() {
           <section className="  p-4 sm:h-80  overflow-hidden flex items-center w-full  relative">
             <picture className="absolute  blur-3xl  w-full h-full top-0 left-0 z-10">
               <img
-                src="/img/Milling parts4.jpeg"
+                src="./img/Milling parts4.jpeg"
                 className="object-cover object-center h-full w-full"
                 alt=""
               />
