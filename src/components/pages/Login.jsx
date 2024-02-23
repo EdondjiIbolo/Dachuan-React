@@ -64,10 +64,10 @@ export function Login() {
           </section>
         </section>
       </header>
-      <main className="flex items-center justify-center w-screen p-5 bg-slate-200 min-h-screen">
+      <main className="grid place-content-center w-screen p-5 bg-slate-200 min-h-screen">
         <form
           onSubmit={handleSubmit}
-          className="w-screen relative max-w-[500px] bg-slate-500 h-[400px] px-5 flex flex-col items-center
+          className="w-full sm:w-screen relative max-w-[500px] bg-slate-500 h-[400px] px-5 flex flex-col items-center
         justify-center gap-4 rounded m-auto"
         >
           <picture className="absolute -top-10 rounded-full overflow-hidden">
