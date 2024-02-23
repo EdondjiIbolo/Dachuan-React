@@ -180,7 +180,7 @@ export function SignUp() {
           </section>
           <section className="flex justify-between w-full flex-col sm:flex-row gap-4">
             <input
-              type="number"
+              type="tel"
               id="telefono"
               name="telefono"
               inputMode="tel"
