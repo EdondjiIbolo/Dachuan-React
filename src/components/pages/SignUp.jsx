@@ -136,15 +136,18 @@ export function SignUp() {
               placeholder="Name"
               name="name"
               value={name}
+              autoComplete="current-name"
               onChange={({ target }) => setName(target.value)}
             />
             <div className="w-full">
               <input
                 type="text"
+                inputMode="text"
                 className={`w-full italic p-2 outline-none focus:ring ${
                   error ? "border-red-500 border-2" : ""
                 } text-slate-800 bg-slate-100 shadow-lg rounded`}
                 placeholder="Username"
+                autoComplete="current-Username"
                 name="username"
                 value={username}
                 onChange={({ target }) => setUserame(target.value)}
@@ -170,6 +173,7 @@ export function SignUp() {
                 } bg-slate-100 shadow-lg rounded`}
                 placeholder="email"
                 value={email}
+                autoComplete="current-email"
                 onChange={({ target }) => setEmail(target.value)}
               />
             </div>
@@ -185,6 +189,7 @@ export function SignUp() {
               } outline-none text-slate-800 bg-slate-100 shadow-lg rounded`}
               placeholder="+8611125666985"
               value={phone}
+              autoComplete="current-phone"
               onChange={({ target }) => setPhone(target.value)}
             />
             <section className="grid grid-flow-col gap-2 sm:w-1/2 auto-cols-fr ">
