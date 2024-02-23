@@ -80,7 +80,7 @@ export function Header() {
           className="h-12 w-12 md:hidden mr-2 flex items-center  relative"
         >
           <img
-            src="/img/menu.svg"
+            src="./img/menu.svg"
             alt="menu icon"
             className="w-12 h-12 fixed top-3 pointer-events-none right-1 "
           />
