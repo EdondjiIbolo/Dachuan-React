@@ -7,7 +7,7 @@ import contactService from "../../Hooks/login.js";
 export function Contact() {
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(false);
   const [succes, setSuccess] = useState(false);
   const [errorText, setErrorText] = useState("");
   const [surename, setSureName] = useState("");
@@ -31,18 +31,6 @@ export function Contact() {
       }, 4000);
       return;
     }
-    console.log({
-      name,
-      surename,
-      email,
-      companyName,
-      phone,
-      message,
-      check,
-    });
-    setTimeout(() => {
-      setError(false);
-    }, 2500);
 
     try {
       const sendMessage = await contactService.contactMessage({
@@ -58,7 +46,6 @@ export function Contact() {
       setTimeout(() => {
         setSuccess(false);
       }, 3500);
-      console.log(sendMessage);
     } catch (error) {
       setError(true);
       console.log(error);
