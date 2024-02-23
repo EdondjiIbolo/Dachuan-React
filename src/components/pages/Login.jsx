@@ -74,7 +74,7 @@ export function Login() {
             <div className="w-24 bg-red-500 h-24"></div>
           </picture>
           <input
-            type="number"
+            type="tel"
             name="number"
             value={phone}
             inputMode="tel"

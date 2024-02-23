@@ -124,7 +124,7 @@ export function Recover() {
             <div className="w-24 bg-red-500 h-24"></div>
           </picture>
           <input
-            type="number"
+            type="tel"
             name="phone"
             inputMode="tel"
             value={phone}
