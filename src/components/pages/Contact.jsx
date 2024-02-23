@@ -15,7 +15,7 @@ export function Contact() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [check, setCheck] = useState(false);
+  const [check, setCheck] = useState("no");
   useEffect(() => {
     console.log({ check, name, companyName });
   }, [check]);
