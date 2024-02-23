@@ -4,7 +4,7 @@ import loginServices from "../../Hooks/login";
 import { useUser } from "../../Hooks/useUser";
 import { Loading } from "../Loading";
 export function Login() {
-  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -23,7 +23,7 @@ export function Login() {
     try {
       setLoading(true);
       const userdata = await loginServices.login({
-        email,
+        phone,
         password,
       });
       const newdata = userdata;
@@ -74,14 +74,15 @@ export function Login() {
             <div className="w-24 bg-red-500 h-24"></div>
           </picture>
           <input
-            type="email"
-            name="email"
-            value={email}
+            type="nmber"
+            name="number"
+            value={phone}
+            inputMode="tel"
             className={className}
-            placeholder="Enter your email"
-            onChange={({ target }) => setEmail(target.value)}
+            placeholder="tel : +8611222578856"
+            onChange={({ target }) => setPhone(target.value)}
             onFocus={() => setError(false)}
-            autoComplete="username"
+            autoComplete="Phone Number"
           />
           <div className="w-full">
             <input

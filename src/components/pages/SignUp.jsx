@@ -178,17 +178,18 @@ export function SignUp() {
               type="number"
               id="telefono"
               name="telefono"
-              inputMode="numeric"
+              inputMode="tel"
               className={`w-full sm:w-1/2 p-2  focus:ring ${
                 error ? "border-red-500 border-2" : ""
               } outline-none text-slate-800 bg-slate-100 shadow-lg rounded`}
-              placeholder="tel: +8611125666985"
+              placeholder="+8611125666985"
               value={phone}
               onChange={({ target }) => setPhone(target.value)}
             />
             <section className="grid grid-flow-col gap-2 sm:w-1/2 auto-cols-fr ">
               <input
                 type="number"
+                inputMode="numeric"
                 placeholder="verification code"
                 className={`w-full p-2  focus:ring ${
                   error ? "border-red-500 border-2" : ""
