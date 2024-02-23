@@ -23,12 +23,10 @@ export function SignUp() {
     const interval = setInterval(() => {
       if (verifytext > 0) {
         setVerifytext(verifytext - 1);
-        console.log(verifytext);
       } else {
         clearInterval(interval);
 
         setVerify(false);
-        console.log(verifytext);
       }
     }, 1000);
     return () => {
@@ -77,13 +75,10 @@ export function SignUp() {
         verifyCode,
       });
       const newdata = userdata;
-      console.log(newdata);
       window.localStorage.setItem("user", JSON.stringify(newdata));
       setUser(newdata);
-      console.log(user);
       navigate("/panel");
     } catch (err) {
-      console.log(err.response.data.message);
       setError(true);
       setErrorText(err.response.data.message);
       setTimeout(() => {

@@ -16,9 +16,7 @@ export function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [check, setCheck] = useState("no");
-  useEffect(() => {
-    console.log({ check, name, companyName });
-  }, [check]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -48,7 +46,6 @@ export function Contact() {
       }, 3500);
     } catch (error) {
       setError(true);
-      console.log(error);
       setErrorText(Error.message);
       setTimeout(() => {
         setError(false);
@@ -56,7 +53,6 @@ export function Contact() {
     } finally {
       setLoading(false);
     }
-    console.log({ name, check, surename, email, companyName, message });
   };
   return (
     <>

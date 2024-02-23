@@ -22,12 +22,10 @@ export function Recover() {
     const interval = setInterval(() => {
       if (verifytext > 0) {
         setVerifytext(verifytext - 1);
-        console.log(verifytext);
       } else {
         clearInterval(interval);
 
         setVerify(false);
-        console.log(verifytext);
       }
     }, 1000);
     return () => {

@@ -31,12 +31,10 @@ export function TurningCnc() {
           window.scrollY < sectionTop + sectionHeight
         ) {
           activeSection = section.getAttribute("data-section");
-          console.log(activeSection);
         }
       });
 
       setCurrentSection(activeSection);
-      console.log(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);

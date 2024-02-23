@@ -6,7 +6,6 @@ import "./headerlistitem.css";
 
 export function HeaderListItem({ section, setMenu }) {
   const { section_list } = section;
-  console.log(section.Page);
   const closemenu = () => {
     if (section.section_list === undefined) {
       setMenu(false);
