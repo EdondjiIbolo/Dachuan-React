@@ -8,6 +8,7 @@ export function Contact() {
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(true);
+  const [succes, setSuccess] = useState(false);
   const [errorText, setErrorText] = useState("");
   const [surename, setSureName] = useState("");
   const [companyName, setCompanyName] = useState("");
@@ -53,6 +54,10 @@ export function Contact() {
         message,
         check,
       });
+      setSuccess(true);
+      setTimeout(() => {
+        setSuccess(false);
+      }, 3500);
       console.log(sendMessage);
     } catch (error) {
       setError(true);
@@ -64,7 +69,7 @@ export function Contact() {
     } finally {
       setLoading(false);
     }
-    console.log({ name, surename, email, companyName, message });
+    console.log({ name, check, surename, email, companyName, message });
   };
   return (
     <>
@@ -199,8 +204,8 @@ export function Contact() {
                       error
                         ? "border-red-600 border-2 shadow-red-400"
                         : "border-gray-400"
-                    } p-2 border border-gray-400 rounded outline-none flex-grow shadow`}
-                    placeholder="Phone"
+                    } p-2 border border-gray-400 italic focus:not-italic rounded outline-none flex-grow shadow`}
+                    placeholder="Tel : +8611125899856"
                   />
                 </div>
                 <div className="w-full flex">
@@ -222,6 +227,11 @@ export function Contact() {
                     Error : {errorText}
                   </p>
                 )}
+                {succes && (
+                  <p className="text-white shadow-sky-500 shadow-sm italic  text-center border-red-500 rounded p-1 px-3 text-lg bg-blue-500 duration-250 transition-all  justify-center ease-in ">
+                    Message have sent successfully
+                  </p>
+                )}
                 <div className="flex gap-2 items-start">
                   <input
                     type="checkbox"
@@ -229,7 +239,7 @@ export function Contact() {
                     name="terminos"
                     className=" cursor-pointer  w-7 h-7"
                     value={check}
-                    onChange={(e) => setCheck(e.target.checked)}
+                    onChange={(e) => setCheck(e.target.checked ? "yes" : "no")}
                   />
 
                   <div className="px-2 flex flex-col gap-2">
