@@ -164,6 +164,7 @@ export function SignUp() {
             <div className="w-full">
               <input
                 type="email"
+                inputMode="email"
                 className={`w-full p-2 outline-none text-slate-800 ${
                   error ? "border-red-500 border-2" : ""
                 } bg-slate-100 shadow-lg rounded`}

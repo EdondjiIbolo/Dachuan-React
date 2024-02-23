@@ -126,6 +126,7 @@ export function Recover() {
           <input
             type="number"
             name="phone"
+            inputMode="tel"
             value={phone}
             className={className}
             placeholder="ex. +861112275836"
@@ -147,6 +148,7 @@ export function Recover() {
             <section className="grid grid-flow-col gap-2 auto-cols-fr w-full">
               <input
                 type="number"
+                inputMode="numeric"
                 placeholder="verification code"
                 className={`w-full p-2  focus:ring ${
                   error ? "border-red-500 border-2" : ""
