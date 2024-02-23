@@ -125,13 +125,13 @@ export function Recover() {
           </picture>
           <input
             type="number"
-            name="email"
+            name="phone"
             value={phone}
             className={className}
-            placeholder="Enter email"
+            placeholder="ex. +861112275836"
             onChange={({ target }) => setPhone(target.value)}
             onFocus={() => setError(false)}
-            autoComplete="username"
+            autoComplete="Phone-number"
           />
           <input
             type="text"
