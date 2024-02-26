@@ -5,7 +5,7 @@ import { HomePage } from "./components/pages/Home";
 import { MillingCnc } from "./components/pages/Milling";
 import { DrillingCnc } from "./components/pages/Drilling";
 import { TurningCnc } from "./components/pages/Turning";
-import { Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import { Materials } from "./components/pages/Materials";
 import { AboutUs } from "./components/pages/About";
 import { Contact } from "./components/pages/Contact";
@@ -16,6 +16,8 @@ import { Panel } from "./components/pages/Dashboard";
 import { Assistance } from "./components/pages/Assistance";
 import { Guide } from "./components/pages/Guide";
 import { Recover } from "./components/pages/Recover";
+import { CreateQuotation } from "./components/pages/Buy Pages/CreateQuotation";
+import { DashboardHeader } from "./components/pages/Buy Pages/Header";
 
 function App() {
   useEffect(() => {
@@ -36,7 +38,18 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<Recover />} />
         <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/panel" element={<Panel />} />
+        <Route
+          path="/panel"
+          element={
+            <>
+              <DashboardHeader />
+              <Outlet />
+            </>
+          }
+        >
+          <Route index element={<Panel />} />
+          <Route path="new-quotation" element={<CreateQuotation />} />
+        </Route>
       </Routes>
     </>
   );

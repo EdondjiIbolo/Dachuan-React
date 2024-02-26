@@ -5,12 +5,12 @@ import { useEffect } from "react";
 export function Panel() {
   const navigate = useNavigate();
   const { user, setUser } = useUser();
-  useEffect(() => {
-    if (!user.token) {
-      console.log("no usuario");
-      return navigate("/login");
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (!user.token) {
+  //     console.log("no usuario");
+  //     return navigate("/login");
+  //   }
+  // }, [user]);
 
   const handleLogout = () => {
     setUser({});
@@ -18,7 +18,7 @@ export function Panel() {
     navigate("/login");
   };
   return (
-    <main className="panel w-screen min-h-screen">
+    <main className="main-body">
       <header className="main-header  justify-center h-20  bg-white w-full flex fixed top-0 left-0 z-40  md:pr-5">
         <section className="flex w-full max-w-[1320px]  items-center  border-b-2  bg-white  m-auto justify-between  h-20 z-30  fixed   ">
           <section className="h-20 overflow-hidden flex items-center">
