@@ -2,10 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import { ArrowIcon } from "./Icons.jsx";
 import { ListItemNav } from "./ListItemNav.jsx";
 import "./headerlistitem.css";
+import { useTranslation } from "react-i18next";
 // import { ArrowIcon } from "./Icons.jsx";
 
-export function HeaderListItem({ section, setMenu }) {
+export function HeaderListItem({ section, setMenu, index }) {
   const { section_list } = section;
+  const { t, i18n } = useTranslation();
   const closemenu = () => {
     if (section.section_list === undefined) {
       setMenu(false);
@@ -29,7 +31,7 @@ export function HeaderListItem({ section, setMenu }) {
             section?.page === "/" ? "pointer-events-none font-normal" : ""
           }`}
         >
-          {section?.section_title}
+          {t(`HEADER.SECTION_${index + 1}`)}
         </NavLink>
 
         {section_list && (
@@ -40,11 +42,11 @@ export function HeaderListItem({ section, setMenu }) {
       </div>
 
       {section_list && (
-        <ul className="hidden py-5 sm:px-8 sub-menu w-screen max-w-[1310px] flex-col md:flex-row gap-3 md:gap-0 md:justify-between md:items-center md:shadow-md bg-white md:absolute -left-40 top-[40px]  md:h-min">
+        <ul className="hidden py-4 sm:px-8 sub-menu w-screen max-w-[1310px] flex-col md:flex-row gap-3 md:gap-0 md:justify-between md:items-center md:shadow-md bg-white md:absolute -left-40 top-[40px]  md:h-min">
           {section_list?.map((item, index) => {
             return (
               <div key={index} onClick={() => setMenu(false)}>
-                <ListItemNav item={item} />
+                <ListItemNav index={index} item={item} />
               </div>
             );
           })}

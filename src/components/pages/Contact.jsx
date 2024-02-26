@@ -4,6 +4,7 @@ import { Footer } from "../Footer.jsx";
 import { Loading } from "../Loading.jsx";
 import { useEffect, useState } from "react";
 import contactService from "../../Hooks/login.js";
+import { useTranslation } from "react-i18next";
 export function Contact() {
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
@@ -16,7 +17,7 @@ export function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [check, setCheck] = useState("no");
-
+  const { t, i18n } = useTranslation();
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -62,7 +63,7 @@ export function Contact() {
         <main className="w-full max-w-[1310px] m-auto p-3">
           <header className="flex justify-between items-center md:px-3">
             <h1 className="font-bold text-2xl md:text-4xl p-3 md:text-center sm:mb-3">
-              Contact Us
+              {t("CONTACT.HEADER_TITLE")}
             </h1>
             <Link
               to="/#Services"
@@ -73,40 +74,38 @@ export function Contact() {
           </header>
           <article className="grid grid-cols-1 md:grid-flow-col md:auto-cols-fr gap-5">
             <section className="p-3 flex flex-col gap-3">
-              <h2 className="font-medium text-2xl">How to reach us </h2>
-              <p>Mon-Fri 08:00-18:00 (CET)</p>
+              <h2 className="font-medium text-2xl">
+                {t("CONTACT.SECTION_SUBTITLE")}
+              </h2>
+              <p>{t("CONTACT.DATE_SECTION")}</p>
               <address className="flex flex-col gap-1">
                 <p>
-                  <strong>Address:</strong> Avenida de los Álamos, 5678,
-                  Urbanización Los Robles, Colonia El Bosque, Ciudad, Estado,
-                  País, Código Postal <strong>300000</strong>
+                  <strong>{t("CONTACT.ADDRESS_STRONG")}</strong>{" "}
+                  {t("CONTACT.ADDRESS_LOCATION")}
+                  <strong>{t("CONTACT.POSTAL_STRONG")}</strong>
                 </p>
                 <p>
-                  <strong>Phone:</strong>{" "}
+                  <strong>{t("CONTACT.PHONE_STRONG")}</strong>{" "}
                   <a href="tel:+123456789" className="text-blue-600">
-                    +123456789
+                    {t("CONTACT.PHONE_NUMBER")}
                   </a>
                 </p>
                 <p>
-                  <strong>Email:</strong>{" "}
+                  <strong>{t("CONTACT.EMAIL_STRONG")}</strong>{" "}
                   <a
                     href="mailto:ejemplo@example.com"
                     className="text-blue-600"
                   >
-                    ejemplo@example.com
+                    {t("CONTACT.EMAIL_ADDRESS")}
                   </a>
                 </p>
               </address>
               <div className=" flex flex-col gap-3">
                 <h3 className=" font-medium text-lg">
-                  RFQs for turning and milling parts
+                  {t("CONTACT.SECTION_2_SUBTITLE")}
                 </h3>
                 <p className="text-base italic">
-                  With Dachuan, you can get instant quotes for your turning and
-                  milling parts. There you also have the possibility to submit
-                  RFQs, e.g. for larger quantities or materials, quickly and
-                  easily. Of course, we are always available to answer your
-                  questions.
+                  {t("CONTACT.SECTION_2_DESCRIPTION")}
                 </p>
                 <Link
                   to="/login"

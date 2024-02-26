@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-
 export function CheckIcon() {
   return (
     <svg
@@ -746,6 +744,62 @@ export function MachinesIcon() {
         d="m 561.16106,571.25413 c -2.21807,0 -4.00374,1.7857 -4.00374,4.0037 l 0,38.0355 c 0,2.2181 1.78567,4.0038 4.00374,4.0038 l 20.01869,0 0,8.0075 -8.00747,0 0,2.0018 -4.00374,0 0,2.0019 40.03738,0 0,-2.0019 -4.00373,0 0,-2.0018 -8.00748,0 0,-8.0075 20.01869,0 c 2.21807,0 4.00374,-1.7857 4.00374,-4.0038 l 0,-38.0355 c 0,-2.218 -1.78567,-4.0037 -4.00374,-4.0037 l -56.05234,0 z m 0,4.0037 56.05234,0 0,38.0355 -56.05234,0 0,-38.0355 z m 29.02711,7.5696 -10.88517,5.5051 10.88517,6.5061 11.13539,-6.5061 -11.13539,-5.5051 z m -10.88517,7.507 0,12.0112 10.00935,6.0056 0,-12.0112 -10.00935,-6.0056 z m 22.02056,0.062 -10.00934,6.0056 0,12.0112 10.00934,-6.0056 0,-12.0112 z"
         fill="#00bcf2"
         transform="translate(-557.157 -571.254)"
+      />
+    </svg>
+  );
+}
+
+export function EnFlag() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      id="flag-icons-gb"
+      viewBox="0 0 640 480"
+      className="w-8 h-4"
+    >
+      <path fill="#012169" d="M0 0h640v480H0z" />
+      <path
+        fill="#FFF"
+        d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0z"
+      />
+      <path
+        fill="#C8102E"
+        d="m424 281 216 159v40L369 281zm-184 20 6 35L54 480H0zM640 0v3L391 191l2-44L590 0zM0 0l239 176h-60L0 42z"
+      />
+      <path fill="#FFF" d="M241 0v480h160V0zM0 160v160h640V160z" />
+      <path fill="#C8102E" d="M0 193v96h640v-96zM273 0v480h96V0z" />
+    </svg>
+  );
+}
+export function CNFlag() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      id="flag-icons-cn"
+      className="w-8 h-4"
+      viewBox="0 0 640 480"
+    >
+      <defs>
+        <path id="cn-a" fill="#ff0" d="M-.6.8 0-1 .6.8-1-.3h2z" />
+      </defs>
+      <path fill="#ee1c25" d="M0 0h640v480H0z" />
+      <use xlinkHref="#cn-a" transform="matrix(71.9991 0 0 72 120 120)" />
+      <use
+        xlinkHref="#cn-a"
+        transform="matrix(-12.33562 -20.5871 20.58684 -12.33577 240.3 48)"
+      />
+      <use
+        xlinkHref="#cn-a"
+        transform="matrix(-3.38573 -23.75998 23.75968 -3.38578 288 95.8)"
+      />
+      <use
+        xlinkHref="#cn-a"
+        transform="matrix(6.5991 -23.0749 23.0746 6.59919 288 168)"
+      />
+      <use
+        xlinkHref="#cn-a"
+        transform="matrix(14.9991 -18.73557 18.73533 14.99929 240 216)"
       />
     </svg>
   );

@@ -1,50 +1,63 @@
 {
-  "sections": [
-    {
-      "section_title": "服务",
-      "section_list": [
-        {
-          "section_subtitle": "CNC加工",
-          "section_intro": "CNC加工铣削",
-          "section_description": "为您的加工项目提供高品质的CNC铣削服务。",
-          "section_img": "/img/miling1.svg",
-          "section_img_alt": "CNC加工铣削",
-          "Page": "/machining-milling"
-        },
-        {
-          "section_subtitle": "CNC加工",
-          "section_intro": "CNC加工车削",
-          "section_description": "为您的加工项目提供一流的CNC车削服务。",
-          "section_img": "/img/drilling1.svg",
-          "section_img_alt": "CNC加工车削",
-          "Page": "/machining-turning"
-        },
-        {
-          "section_subtitle": "CNC加工",
-          "section_intro": "CNC加工钻孔",
-          "section_description": "使用先进的CNC加工精确高效地钻孔。",
-          "section_img": "/img/turning.svg",
-          "section_img_alt": "CNC加工钻孔",
-          "Page": "/machining-drilling"
-        }
-      ]
-    },
-    {
-      "section_title": "材料",
-      "Page": "/materials"
-    },
-    {
-      "section_title": "设计帮助",
-      "Page": "/Assistance"
-    },
-    {
-      "section_title": "关于我们",
-      "Page": "/about"
-    },
-    {
-      "section_title": "联系",
-      "Page": "/Contact"
-    }
-  ],
-  "hello": "mandmamsneujs"
+  "HEADER": {
+    "SECTION_1": "服务",
+    "SECTION_1_SUBNAV_1": "铣削",
+    "SECTION_1_SUBNAV_1_DESCRIPTION": "为您的加工项目提供高质量的CNC铣削服务。",
+    "SECTION_1_SUBNAV_2": "车削",
+    "SECTION_1_SUBNAV_2_DESCRIPTION": "我们为您的加工项目提供一流的CNC车削服务。",
+    "SECTION_1_SUBNAV_3": "钻孔",
+    "SECTION_1_SUBNAV_3_DESCRIPTION": "使用先进的CNC加工进行精密高效的钻孔。",
+    "SECTION_2": "材料和后处理",
+    "SECTION_3": "设计帮助",
+    "SECTION_4": "关于我们",
+    "SECTION_5": "联系方式",
+    "SECTION_6": "登录"
+  },
+  "ABOUT": {
+    "BANNER_TITLE": "关于我们",
+    "BANNER_DESCRIPTION": "每个零件的精度-您可靠的高质量加工解决方案提供方",
+    "SECTION_1_TITLE_1": "我们是谁？",
+    "SECTION_1_DESCRIPTION_1": "Dachuan Technologies GmbH是一家总部位于慕尼黑的技术公司，为CNC车削和铣削零件提供制造平台。我们的目标是使个别图纸零件的制造对客户和供应商都尽可能快速高效，并因此形成一个高效网络连接的制造业的数字支撑。",
+    "SECTION_1_DESCRIPTION_2": "为了实现这一目标，我们拥有一支拥有丰富加工经验的高素质专业人才团队。我们利用先进的机械设备和先进技术，确保我们生产的每件产品在每个方面都是完美的。",
+    "SECTION_1_DESCRIPTION_3": "除了我们产品的质量外，我们还努力为客户提供优质的服务。我们的团队与您紧密合作，了解您的需求并超越您的期望。我们致力于提供适合您特定要求的个性化解决方案。",
+    "SECTION_1_DESCRIPTION_4": "信任是我们公司的核心价值。我们努力通过我们的操作透明性，交货及时性和产品质量稳定性赢得并保持客户的信任。",
+    "SECTION_1_DESCRIPTION_5": "在我们的公司，我们以提供客户最高质量的产品而自豪。我们的首要任务是确保离开我们工厂的每个零件符合最高的精度和准确度标准。",
+
+    "SECTION_2_TITLE_1": "我们的优先事项",
+    "SECTION_2_DESCRIPTION_1": "我们意识到市场上有很多选择，非常感谢您选择并信任我们。",
+    "SECTION_2_DESCRIPTION_2": "我们很自豪地宣布，我们在世界各地拥有庞大的客户网络。从北美到亚洲，从欧洲到大洋洲，我们的全球社区每天都在增长。这意味着我们不仅满足了客户的需求，还超出了他们的期望。",
+    "SECTION_2_DESCRIPTION_3": "我们对提供高质量产品和服务的奉献和热情使我们能够建立稳固持久的客户关系。我们深知他们的忠诚和支持，他们推动我们不断超越自己并进一步扩展。",
+    "SECTION_2_DESCRIPTION_4": "此外，我们很高兴与不同文化和传统背景的人合作。每个客户给我们公司带来独特的贡献，并用他们的观点和经验丰富我们。我们把每一次互动都视为学习和成长的机会，无论是在专业上还是在个人上。我们承诺改进和个性化我们的工作以满足他们的特定需求，并确保他们最大的满意度。",
+
+    "SECTION_3_TITLE_1": "我们的团队成员",
+    "SECTION_3_SUBTITLE_1": "专业头衔",
+    "SECTION_3_SUBTITLE_DESCRIPTION_1": "我们对提供高质量产品和服务的奉献和热情使我们能够建立稳固持久的客户关系。我们深知他们的忠诚和支持，他们推动我们不断超越自己并进一步扩展关系我们的客户。我们深知他们的忠诚和支持，他们推动我们不断超越自己并进一步扩展。",
+
+    "SECTION_3_SUBTITLE_2": "专业头衔",
+    "SECTION_3_SUBTITLE_DESCRIPTION_2": "我们对提供高质量产品和服务的奉献和热情使我们能够建立稳固持久的客户关系。我们深知他们的忠诚和支持，他们推动我们不断超越自己并进一步扩展关系我们的客户。我们深知他们的忠诚和支持，他们推动我们不断超越自己并进一步扩展。",
+
+    "SECTION_3_SUBTITLE_3": "专业头衔",
+    "SECTION_3_SUBTITLE_DESCRIPTION_3": "我们对提供高质量产品和服务的奉献和热情使我们能够建立稳固持久的客户关系。我们深知他们的忠诚和支持，他们推动我们不断超越自己并进一步扩展关系我们的客户。我们深知他们的忠诚和支持，他们推动我们不断超越自己并进一步扩展。",
+
+    "SECTION_4_TITLE_1": "我们的历史",
+    "SECTION_4_DESCRIPTION_1": "Dachuan Technologies GmbH是一家总部位于慕尼黑的技术公司，为CNC车削和铣削零件提供制造平台。我们的目标是使个别图纸零件的制造对客户和供应商都尽可能快速高效，并因此形成一个高效网络连接的制造业的数字支撑。",
+    "SECTION_4_DESCRIPTION_2": "为了实现这一目标，我们拥有一支拥有丰富加工经验的高素质专业人才团队。我们利用先进的机械设备和先进技术，确保我们生产的每件产品在每个方面都是完美的。",
+    "SECTION_4_DESCRIPTION_3": "除了我们产品的质量外，我们还努力为客户提供优质的服务。我们的团队与您紧密合作，了解您的需求并超越您的期望。我们致力于提供适合您特定要求的个性化解决方案。",
+    "SECTION_4_DESCRIPTION_4": "信任是我们公司的核心价值。我们努力通过我们的操作透明性，交货及时性和产品质量稳定性赢得并保持客户的信任。",
+    "SECTION_4_DESCRIPTION_5": "在我们的公司，我们以提供客户最高质量的产品而自豪。我们的首要任务是确保离开我们工厂的每个零件符合最高的精度和准确度标准。"
+  },
+  "CONTACT": {
+    "HEADER_TITLE": "联系我们",
+    "SECTION_SUBTITLE": "如何联系我们",
+    "DATE_SECTION": "周一至周五 08:00-18:00 (中欧时间)",
+    "ADDRESS_STRONG": "地址:",
+    "ADDRESS_LOCATION": "梧桐大道5678号，橡树小区，森林市, 城市,  国家, 邮政编码 ",
+    "POSTAL_STRONG": " 300000",
+    "PHONE_STRONG": "电话: ",
+    "PHONE_NUMBER": "+123456789",
+    "EMAIL_STRONG": "邮箱:",
+    "EMAIL_ADDRESS": "ejemplo@example.com",
+    "SECTION_2_SUBTITLE": "转和铣件的询价",
+    "SECTION_2_DESCRIPTION": "通过达川，您可以立即获取您的转和铣件的报价。在那里，您还可以轻松快速地提交询价，例如用于更大量或材料。当然，我们随时为您解答问题。"
+  }
 }

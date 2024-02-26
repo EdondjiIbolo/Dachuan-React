@@ -1,49 +1,63 @@
 {
-  "sections": [
-    {
-      "section_title": "Services",
-      "section_list": [
-        {
-          "section_subtitle": "CNC MACHINING",
-          "section_intro": " CNC MACHINING Milling",
-          "section_description": "High-quality CNC milling for your machining projects.",
-          "section_img": "/img/miling1.svg",
-          "section_img_alt": "CNC MACHINING MILLING",
-          "Page": "/machining-milling"
-        },
-        {
-          "section_subtitle": "CNC MACHINING",
-          "section_intro": " CNC MACHINING Turning",
-          "section_description": "We offer top-notch CNC turning services for your machining projects.",
-          "section_img": "/img/drilling1.svg",
-          "section_img_alt": "CNC MACHINING Turning",
-          "Page": "/machining-turning"
-        },
-        {
-          "section_subtitle": "CNC MACHINING",
-          "section_intro": "CNC MACHINING Drilling",
-          "section_description": "Drilling with precision and efficiency using advanced CNC machining.",
-          "section_img": "/img/turning.svg",
-          "section_img_alt": "CNC MACHINING Drilling",
-          "Page": "/machining-drilling"
-        }
-      ]
-    },
-    {
-      "section_title": "Material",
-      "Page": "/materials"
-    },
-    {
-      "section_title": "Design  Assistance",
-      "Page": "/Assistance"
-    },
-    {
-      "section_title": "About Us",
-      "Page": "/about"
-    },
-    {
-      "section_title": "Contact",
-      "Page": "/Contact"
-    }
-  ]
+  "HEADER": {
+    "SECTION_1": "Services",
+    "SECTION_1_SUBNAV_1": "Milling",
+    "SECTION_1_SUBNAV_1_DESCRIPTION": "High-quality CNC milling for your machining projects.",
+    "SECTION_1_SUBNAV_2": "Turning",
+    "SECTION_1_SUBNAV_2_DESCRIPTION": "We offer top-notch CNC turning services for your machining projects.",
+    "SECTION_1_SUBNAV_3": "Drilling",
+    "SECTION_1_SUBNAV_3_DESCRIPTION": "Drilling with precision and efficiency using advanced CNC machining.",
+    "SECTION_2": "Material & Post Processing",
+    "SECTION_3": "Dessign Assistance",
+    "SECTION_4": "About Us",
+    "SECTION_5": "Contact",
+    "SECTION_6": "Log in"
+  },
+  "ABOUT": {
+    "BANNER_TITLE": "About us",
+    "BANNER_DESCRIPTION": "Precision in Every Part – Your Reliable Source for High-Quality Machining Solutions",
+    "SECTION_1_TITLE_1": "Who we are ?",
+    "SECTION_1_DESCRIPTION_1": "Dachuan Technologies GmbH is a Munich-based technology company that provides a manufacturing platform for CNC turning and milling parts. It is our goal to make the manufacturing of individual drawing parts as fast and efficient as possible for both customers and suppliers, and thus forming the digital backbone of an efficiently networked manufacturing industry.",
+    "SECTION_1_DESCRIPTION_2": "To achieve this, we have a team of highly skilled professionals with extensive experience in the field of machining. We utilize state-of-the-art machinery and advanced technology to guarantee that every piece we produce is flawless in every aspect.",
+    "SECTION_1_DESCRIPTION_3": "In addition to the quality of our products, we strive to offer excellent service to our customers. Our team works closely with you to understand your needs and exceed your expectations. We are committed to providing personalized solutions that cater to your specific requirements.",
+    "SECTION_1_DESCRIPTION_4": "Trust is a core value in our company. We endeavour to earn and maintain the trust of our customers through transparency in our operations, punctuality in delivery, and consistency in the quality of our products.",
+    "SECTION_1_DESCRIPTION_5": "At our company, we take pride in providing our customers with the highest quality products. Our number one priority is to ensure that every part that leaves our facility meets the highest standards of precision and accuracy.",
+
+    "SECTION_2_TITLE_1": "Our Priority",
+    "SECTION_2_DESCRIPTION_1": "We are aware that there are numerous options in the market, and we are incredibly grateful for choosing and trusting in us.",
+    "SECTION_2_DESCRIPTION_2": "We take great pride in sharing that we have a vast network of clients spread across the world. From North America to Asia, from Europe to Oceania, our global community continues to grow each day. This signifies that not only have we met the needs of our clients, but we have also exceeded their expectations.",
+    "SECTION_2_DESCRIPTION_3": "Our dedication and passion for delivering high-quality products and services have enabled us to cultivate solid and lasting relationships with our clients. We deeply value their loyalty and support, as they propel us to continuously surpass ourselves and expand further.",
+    "SECTION_2_DESCRIPTION_4": "Furthermore, we are thrilled to collaborate with individuals from diverse cultures and traditions. Each client brings something unique to our company and enriches us with their perspective and experience. We consider every interaction as an opportunity to learn and grow, both professionally and personally. We pledge to adapt and personalize our work to meet their specific needs and ensure their utmost satisfaction.",
+
+    "SECTION_3_TITLE_1": "Our Team Members",
+    "SECTION_3_SUBTITLE_1": "Profession Title",
+    "SECTION_3_SUBTITLE_DESCRIPTION_1": "Our dedication and passion for delivering high-quality products and services have enabled us to cultivate solid and lasting relationships with our clients. We deeply value their loyalty and support, as they propel us to continuously surpass ourselves and expand further.relationships with our clients. We deeply value their loyalty and support, as they propel us to continuously surpass ourselves and expand further.",
+
+    "SECTION_3_SUBTITLE_2": "Profession Title",
+    "SECTION_3_SUBTITLE_DESCRIPTION_2": "Our dedication and passion for delivering high-quality products and services have enabled us to cultivate solid and lasting relationships with our clients. We deeply value their loyalty and support, as they propel us to continuously surpass ourselves and expand further.relationships with our clients. We deeply value their loyalty and support, as they propel us to continuously surpass ourselves and expand further.",
+
+    "SECTION_3_SUBTITLE_3": "Profession Title",
+    "SECTION_3_SUBTITLE_DESCRIPTION_3": "Our dedication and passion for delivering high-quality products and services have enabled us to cultivate solid and lasting relationships with our clients. We deeply value their loyalty and support, as they propel us to continuously surpass ourselves and expand further.relationships with our clients. We deeply value their loyalty and support, as they propel us to continuously surpass ourselves and expand further.",
+
+    "SECTION_4_TITLE_1": "Our History",
+    "SECTION_4_DESCRIPTION_1": "Dachuan Technologies GmbH is a Munich-based technology company that provides a manufacturing platform for CNC turning and milling parts. It is our goal to make the manufacturing of individual drawing parts as fast and efficient as possible for both customers and suppliers, and thus forming the digital backbone of an efficiently networked manufacturing industry.",
+    "SECTION_4_DESCRIPTION_2": "To achieve this, we have a team of highly skilled professionals with extensive experience in the field of machining. We utilize state-of-the-art machinery and advanced technology to guarantee that every piece we produce is flawless in every aspect.",
+    "SECTION_4_DESCRIPTION_3": "In addition to the quality of our products, we strive to offer excellent service to our customers. Our team works closely with you to understand your needs and exceed your expectations. We are committed to providing personalized solutions that cater to your specific requirements.",
+    "SECTION_4_DESCRIPTION_4": "Trust is a core value in our company. We endeavour to earn and maintain the trust of our customers through transparency in our operations, punctuality in delivery, and consistency in the quality of our products.",
+    "SECTION_4_DESCRIPTION_5": "At our company, we take pride in providing our customers with the highest quality products. Our number one priority is to ensure that every part that leaves our facility meets the highest standards of precision and accuracy."
+  },
+  "CONTACT": {
+    "HEADER_TITLE": "Contact Us",
+    "SECTION_SUBTITLE": "How to reach us",
+    "DATE_SECTION": "Mon-Fri 08:00-18:00 (CET)",
+    "ADDRESS_STRONG": "Address:",
+    "ADDRESS_LOCATION": "Avenida de los Álamos, 5678, Urbanización Los Robles, Colonia El Bosque, Ciudad, Estado, País, Código Postal ",
+    "POSTAL_STRONG": " 300000",
+    "PHONE_STRONG": "Phone: ",
+    "PHONE_NUMBER": "+123456789",
+    "EMAIL_STRONG": "Email:",
+    "EMAIL_ADDRESS": "ejemplo@example.com",
+    "SECTION_2_SUBTITLE": "RFQs for turning and milling parts",
+    "SECTION_2_DESCRIPTION": "With Dachuan, you can get instant quotes for your turning and milling parts. There you also have the possibility to submit RFQs, e.g. for larger quantities or materials, quickly and easily. Of course, we are always available to answer your questions."
+  }
 }

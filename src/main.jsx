@@ -5,11 +5,14 @@ import App from "./App.jsx";
 import "./index.css";
 import "./i18n/i18n.js";
 import { UserProvider } from "./Context/UserContext.jsx";
+import { LangContext, LangProvider } from "./Context/LangContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <UserProvider>
-      <App />
-    </UserProvider>
+    <LangProvider>
+      <UserProvider>
+        <App />
+      </UserProvider>
+    </LangProvider>
   </BrowserRouter>
 );

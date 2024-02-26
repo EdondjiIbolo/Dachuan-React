@@ -9,7 +9,13 @@
   height: 30px;
   width: 220px;
 }
-
+label:hover input[type="radio"]:checked p {
+  border-bottom: 2px solid red;
+}
+input[type="radio"]:checked ~ p {
+  font-weight: bold;
+  border-bottom: 2px solid red;
+}
 .menu__link:hover .sub-menu {
   display: flex;
 }

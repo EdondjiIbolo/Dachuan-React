@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-export function ListItemNav({ item }) {
+export function ListItemNav({ item, index }) {
+  const { t, i18n } = useTranslation();
   return (
     <Link
       to={item?.Page}
@@ -16,11 +18,11 @@ export function ListItemNav({ item }) {
       <section className="flex flex-col gap-2">
         <div>
           <p className="font-bold text-sm text-blue-800">
-            {item?.section_intro}
+            {t(`HEADER.SECTION_1_SUBNAV_${index + 1}`)}
           </p>
         </div>
         <p className="text-xs font-semibold max-w-[30ch] hidden md:block text-pretty">
-          {item?.section_description}
+          {t(`HEADER.SECTION_1_SUBNAV_${index + 1}_DESCRIPTION`)}
         </p>
       </section>
     </Link>
