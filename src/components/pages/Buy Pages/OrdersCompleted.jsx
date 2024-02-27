@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../../sections/session.css";
 import { Quote } from "./Quote";
 export function OrdersCompleted() {
@@ -7,9 +8,12 @@ export function OrdersCompleted() {
         <section className="bg-white flex flex-col gap-4  rounded shadow-sm p-4">
           <header className="flex justify-between items-center">
             <h2 className="font-semibold text-xl py-2">Orders Completed</h2>
-            <button className="bg-blue-600 rounded text-white p-2 font-medium border border-transparent hover:border-2 hover:border-blue-600 hover:text-blue-600 hover:bg-white transition-all duration-150 ease-linear">
+            <Link
+              to="/panel/new-quotation"
+              className="bg-blue-600 rounded text-white p-2 font-medium border border-transparent hover:border-2 hover:border-blue-600 hover:text-blue-600 hover:bg-white transition-all duration-150 ease-linear"
+            >
               New Quotation
-            </button>
+            </Link>
           </header>
           <table className="w-full">
             <thead>

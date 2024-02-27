@@ -85,12 +85,15 @@ export function Panel() {
               <UsersIcon />
               <p className="text-xs text-center font-medium">texto</p>
             </article>
-            <article className="flex flex-col justify-center hover:border-blue-900 hover:bg-cyan-50 transition-all duration-150 ease-linear cursor-pointer flex-grow  h-full items-center gap-2 p-3 border hover:border-2  border-blue-400 rounded">
+            <Link
+              to="orders-completed"
+              className="flex flex-col justify-center hover:border-blue-900 hover:bg-cyan-50 transition-all duration-150 ease-linear cursor-pointer flex-grow  h-full items-center gap-2 p-3 border hover:border-2  border-blue-400 rounded"
+            >
               <UsersIcon />
               <p className="text-xs text-center font-medium">
                 Orders Completed
               </p>
-            </article>
+            </Link>
             <article className="flex flex-col justify-center hover:border-blue-900 hover:bg-cyan-50 transition-all duration-150 ease-linear cursor-pointer flex-grow h-full items-center gap-2 p-3 border  hover:border-2 border-blue-400 rounded">
               <UsersIcon />
               <p className="text-xs text-center font-medium">Total Paid</p>
