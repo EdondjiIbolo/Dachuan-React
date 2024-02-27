@@ -3,45 +3,45 @@
   width: 100%;
   padding: 5%;
 }
-table {
+.container-table table {
   width: 100%;
   border-radius: 4px;
 }
-thead {
+.container-table thead {
   border-radius: 4px;
   border-bottom: 1px solid rgb(0, 0, 0);
 }
-th,
-td {
+.container-table th,
+.container-table td {
   border-bottom: 1px solid rgb(0, 0, 0);
   padding: 8px;
   background-color: rgba(255, 255, 255, 0.2);
   color: #000000;
 }
-tr {
+.container-table tr {
   border-left: 1px solid #000;
 }
-th {
+.container-table th {
   text-align: left;
 }
-td {
+.container-table td {
   border-right: 1px solid rgb(0, 0, 0);
   transition: all ease 350ms;
 }
-th {
+.container-table th {
   border-right: 1px solid rgb(0, 0, 0);
 }
 
-tr:hover {
+.container-table tr:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
-td:hover {
+.container-table td:hover {
   background-color: rgba(49, 29, 29, 0.363);
 }
-td {
+.container-table td {
   position: relative;
 }
-td:hover::before {
+.container-table td:hover::before {
   content: "";
   position: absolute;
   left: 0;
@@ -57,18 +57,18 @@ td:hover::before {
     padding: 15px;
     padding-bottom: 0;
   }
-  td {
+  .container-table td {
     padding: 7px;
     font-size: 0.6rem;
   }
-  td:nth-child(n + 3) {
+  .container-table td:nth-child(n + 3) {
     display: none;
   }
 }
 
 @media (max-width: 769px) {
   /* Dispositivos de mayor tamaño */
-  td:nth-child(n + 4) {
+  .container-table :td:nth-child(n + 4) {
     display: none;
   }
   .container {

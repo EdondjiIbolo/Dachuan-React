@@ -16,8 +16,11 @@ import { Panel } from "./components/pages/Dashboard";
 import { Assistance } from "./components/pages/Assistance";
 import { Guide } from "./components/pages/Guide";
 import { Recover } from "./components/pages/Recover";
-import { CreateQuotation } from "./components/pages/Buy Pages/CreateQuotation";
+// import { CreateQuotation } from "./components/pages/Buy Pages/CreateQuotation";
 import { DashboardHeader } from "./components/pages/Buy Pages/Header";
+import { MyQuotes } from "./components/pages/Buy Pages/MyQuotes";
+import { MyOrder } from "./components/pages/Buy Pages/MyOrder";
+import { QuoteComplete } from "./components/pages/Buy Pages/QuotesComplete";
 
 function App() {
   useEffect(() => {
@@ -48,7 +51,10 @@ function App() {
           }
         >
           <Route index element={<Panel />} />
-          <Route path="new-quotation" element={<CreateQuotation />} />
+          <Route path="my-quotes" element={<MyQuotes />} />
+          <Route path="quotes-completed" element={<QuoteComplete />} />
+          <Route path="my-orders" element={<MyOrder />} />
+          {/* <Route path="new-quotation" element={<CreateQuotation />} /> */}
         </Route>
       </Routes>
     </>

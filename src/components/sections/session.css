@@ -6,3 +6,6 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.t-body > tr:nth-child(odd) {
+  background-color: rgba(203, 213, 225, 0.644);
+}
