@@ -13,6 +13,7 @@
   height: 10px;
   position: relative;
   margin: 1rem 0;
+  overflow: hidden;
 }
 
 .load-bar::after {

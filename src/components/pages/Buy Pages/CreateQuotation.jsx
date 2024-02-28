@@ -1,19 +1,22 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { PdfFileIcon, SecureIcon, UploadFileIcon } from "../../Icons";
 import sendFileService from "../../../Hooks/login";
 import "../../sections/panel.css";
 export function CreateQuotation() {
   const [file, setFile] = useState(null);
   const [fileName, setFileName] = useState("");
-  const [progress, setProgress] = useState(null);
+  const [fileData, setFileData] = useState(null);
   const [dragging, setDragging] = useState(null);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const selectedFile = e.target.files[0];
     if (!selectedFile) return;
 
-    console.log(selectedFile.name);
+    setFileData(selectedFile);
     const newfileName =
       selectedFile.name.length > 10
         ? `${selectedFile?.name.slice(0, 5)}.${
@@ -32,11 +35,10 @@ export function CreateQuotation() {
         "--bar-width",
         `${percentLoaded}%`
       );
-      console.log(e);
+      console.log(fileName);
     };
-    reader.onload = (e) => {
+    reader.onload = () => {
       document.documentElement.style.setProperty("--bar-width", "100%");
-      console.log(e);
     };
   };
   const handleDelete = () => {
@@ -53,7 +55,6 @@ export function CreateQuotation() {
   const handleDragLeave = (e) => {
     e.preventDefault();
     setDragging(false);
-    console.log("salio");
   };
 
   const handleDrop = (e) => {
@@ -86,10 +87,26 @@ export function CreateQuotation() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.target));
-    console.log(e.target, data);
-    return;
-    const sendMachine = await sendFileService.sendFile();
+    const credentials = {
+      file: fileData,
+      name: fileName,
+    };
+
+    console.log(credentials);
+    try {
+      setLoading(true);
+      const sendMachine = await sendFileService.sendFile();
+      const response = await sendMachine;
+    } catch (err) {
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+        navigate("settings");
+      }, 3500);
+      return;
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -104,75 +121,90 @@ export function CreateQuotation() {
             className="bg-white h-[400px] rounded-lg shadow-sm"
             encType="multipart/form-data"
           >
-            <label
-              className={`border-2 hover:bg-slate-200 transition-all duration-150 ease-in border-dashed bg-slate-100 border-blue-800 cursor-pointer h-[400px] flex flex-col gap-4 justify-center items-center rounded-md ${
-                dragging ? "hover:bg-slate-200 cursor-move" : ""
-              }`}
-              draggable
-              onDragOver={(e) => {
-                e.preventDefault();
-                setDragging(true);
-              }}
-              onDragEnter={handleDragEnter}
-              onDragLeave={handleDragLeave}
-              onDrop={handleDrop}
-            >
-              <input
-                type="file"
-                name="machine"
-                className=""
-                multiple
-                onChange={handleChange}
-              />
-              {!file ? (
-                <>
-                  <div className="text-center flex flex-col items-center gap-2 p-4">
-                    <p>Drag & Drop Your Dessigns Or Browse</p>
-                    <p>You can upload multiple files at once</p>
-                    <UploadFileIcon />
-                  </div>
-                  <p className="max-w-[55ch] text-center">
-                    Manual quote: STEP, STP, SLDPRT, STL, SAT, 3DXML, 3MF, PRT,
-                    IPT, CATPART, X_T, PTC, X_B, DXF DWS, DWF, DWG, PDF All
+            {!file ? (
+              <label
+                className={`border-2 hover:bg-slate-200 transition-all duration-150 ease-in border-dashed bg-slate-100  border-blue-800 cursor-pointer h-[400px] flex flex-col gap-4 justify-center items-center rounded-md ${
+                  dragging ? "hover:bg-slate-200 cursor-move" : ""
+                }`}
+                draggable
+                onDragOver={(e) => {
+                  e.preventDefault();
+                  setDragging(true);
+                }}
+                onDragEnter={handleDragEnter}
+                onDragLeave={handleDragLeave}
+                onDrop={handleDrop}
+              >
+                <input
+                  type="file"
+                  name="machine"
+                  className="hidden"
+                  multiple
+                  onChange={handleChange}
+                />
+
+                <div className="text-center flex flex-col items-center gap-2 p-4">
+                  <p>Drag & Drop Your Dessigns Or Browse</p>
+                  <p>You can upload multiple files at once</p>
+                  <UploadFileIcon />
+                </div>
+                <p className="max-w-[55ch] text-center">
+                  Manual quote: STEP, STP, SLDPRT, STL, SAT, 3DXML, 3MF, PRT,
+                  IPT, CATPART, X_T, PTC, X_B, DXF DWS, DWF, DWG, PDF All
+                </p>
+                <p className="text-gray-500 flex gap-2 items-center">
+                  <SecureIcon /> uploads are secure and confidential
+                </p>
+              </label>
+            ) : (
+              <section
+                className={`flex border-2 rounded-md border-dashed  border-blue-800  flex-col justify-center items-center w-full h-full gap-4 ${
+                  error ? "border-red-600 border-4 animate-pulse" : ""
+                }`}
+              >
+                {error && (
+                  <p className="pt-3 font-semibold text-red-600 animate-pulse m-0">
+                    Error Uploading the file , file must be valid
                   </p>
-                  <p className="text-gray-500 flex gap-2 items-center">
-                    <SecureIcon /> uploads are secure and confidential
-                  </p>
-                </>
-              ) : (
-                <section className="flex  flex-col justify-center items-center w-full h-full gap-4">
-                  <picture className="w-32 h-32 rounded-sm border-gray-300 flex justify-center items-center overflow-hidden border-2 shadow-sm">
-                    {fileName.split(".")[1].toLowerCase() !== "pdf" ? (
-                      <img
-                        src={file}
-                        alt={fileName}
-                        className="w-32 h-32  object-cover"
-                      />
-                    ) : (
-                      <PdfFileIcon />
-                    )}
-                  </picture>
-                  <p>{file ? fileName : ""}</p>
-                  <div id="load-bar" className="load-bar">
-                    <span id="progress" className="progress"></span>
-                  </div>
-                  <div className="flex gap-6 capitalize">
-                    <button
-                      className="  hover:scale-110 transition-all duration-150 ease py-1 capitalize text-white bg-blue-700 font-bold px-4 rounded-sm"
-                      onClick={handleDelete}
-                    >
-                      delete
-                    </button>
-                    <button className="  hover:scale-110 transition-all duration-150 ease py-1 capitalize text-white bg-blue-700 font-bold px-4 rounded-sm">
-                      Next
-                    </button>
-                  </div>
-                </section>
-              )}
-            </label>
+                )}
+                <picture className="w-32 h-32 rounded-sm border-gray-300 flex justify-center items-center overflow-hidden border-2 shadow-sm">
+                  {fileName.split(".")[1].toLowerCase() !== "pdf" ? (
+                    <img
+                      src={file}
+                      alt={fileName}
+                      className="w-32 h-32  object-cover"
+                    />
+                  ) : (
+                    <PdfFileIcon />
+                  )}
+                </picture>
+                <p>{file ? fileName : ""}</p>
+                <div id="load-bar" className="load-bar rounded-lg">
+                  <span id="progress" className="progress "></span>
+                </div>
+                <div className="flex gap-6 capitalize">
+                  <button
+                    className="  hover:scale-110 transition-all duration-150 ease py-1 capitalize text-white bg-blue-700 font-bold px-4 rounded-sm"
+                    onClick={handleDelete}
+                  >
+                    delete
+                  </button>
+                  <button className="  hover:scale-110 transition-all duration-150 ease py-1 capitalize text-white bg-blue-700 font-bold px-4 rounded-sm">
+                    Next
+                  </button>
+                </div>
+              </section>
+            )}
           </form>
         </article>
       </section>
+      {loading && (
+        <section className="absolute w-screen h-screen inset-0 z-40 flex justify-center items-center ">
+          <div className="absolute w-screen h-screen inset-0 bg-black opacity-85 "></div>
+
+          <span className="loader-setting"></span>
+        </section>
+      )}
     </main>
   );
 }

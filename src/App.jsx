@@ -20,6 +20,7 @@ import { MyQuotes } from "./components/pages/Buy Pages/MyQuotes";
 import { MyOrder } from "./components/pages/Buy Pages/MyOrder";
 import { QuoteComplete } from "./components/pages/Buy Pages/QuotesComplete";
 import { OrdersCompleted } from "./components/pages/Buy Pages/OrdersCompleted";
+import { CustomQuotation } from "./components/pages/Buy Pages/CustomQuotation";
 
 function App() {
   useEffect(() => {
@@ -53,7 +54,10 @@ function App() {
           <Route path="my-quotes" element={<MyQuotes />} />
           <Route path="quotes-completed" element={<QuoteComplete />} />
           <Route path="my-orders" element={<MyOrder />} />
-          <Route path="new-quotation" element={<CreateQuotation />} />
+          <Route path="new-quotation">
+            <Route index element={<CreateQuotation />} />
+            <Route path="settings" element={<CustomQuotation />} />
+          </Route>
           <Route path="orders-completed" element={<OrdersCompleted />} />
         </Route>
       </Routes>
