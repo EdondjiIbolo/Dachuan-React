@@ -15,86 +15,56 @@ export function QuoteComplete() {
               New Quotation
             </Link>
           </header>
-          <table className="w-full">
+          <table className="table">
             <thead>
               <tr className=" w-full bg-slate-400 p-2 rounded px-3">
                 <th>
-                  <li
-                    className="list-none text-white text-sm p-2 font-medium"
-                    href=""
-                  >
+                  <li className="list-none text-white text-sm p-2 font-semibold">
                     询价单号
                   </li>
                 </th>
                 <th>
-                  <li
-                    className="list-none text-white text-sm p-2 font-medium"
-                    href=""
-                  >
+                  <li className="list-none text-white text-sm p-2 font-semibold">
                     名称
                   </li>
                 </th>
                 <th>
-                  <li
-                    className="list-none text-white text-sm p-2 font-medium"
-                    href=""
-                  >
+                  <li className="list-none text-white text-sm p-2 font-semibold">
                     询价时间
                   </li>
                 </th>
                 <th>
-                  <li
-                    className="list-none text-white text-sm p-2 font-medium"
-                    href=""
-                  >
+                  <li className="list-none text-white text-sm p-2 font-semibold">
                     零件款数
                   </li>
                 </th>
                 <th>
-                  <li
-                    className="list-none text-white text-sm p-2 font-medium"
-                    href=""
-                  >
+                  <li className="list-none text-white text-sm p-2 font-semibold">
                     总件数
                   </li>
                 </th>
                 <th>
-                  <li
-                    className="list-none text-white text-sm p-2 font-medium"
-                    href=""
-                  >
+                  <li className="list-none text-white text-sm p-2 font-semibold">
                     报价时间
                   </li>
                 </th>
                 <th>
-                  <li
-                    className="list-none text-white text-sm p-2 font-medium"
-                    href=""
-                  >
+                  <li className="list-none text-white text-sm p-2 font-semibold">
                     总价(¥)
                   </li>
                 </th>
                 <th>
-                  <li
-                    className="list-none text-white text-sm p-2 font-medium"
-                    href=""
-                  >
+                  <li className="list-none text-white text-sm p-2 font-semibold">
                     交货时间
                   </li>
                 </th>
                 <th>
-                  <li
-                    className="list-none text-white text-sm p-2 font-medium"
-                    href=""
-                  >
+                  <li className="list-none text-white text-sm p-2 font-semibold">
                     状态
                   </li>
                 </th>
                 <th>
-                  <li
-                    className="list-none text-white text-sm p-2 font-medium"
-                    href=""
-                  >
+                  <li className="list-none text-white text-sm p-2 font-semibold">
                     操作
                   </li>
                 </th>
@@ -102,6 +72,9 @@ export function QuoteComplete() {
             </thead>
 
             <tbody className="sm:text-base t-body text-xs ">
+              <Quote />
+              <Quote />
+              <Quote />
               <Quote />
               <Quote />
               <Quote />

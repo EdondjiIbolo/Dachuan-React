@@ -1,3 +1,5 @@
+import { SecureIcon } from "../../Icons";
+
 <main className="main-body pt-20 flex flex-col justify-center items-center">
   <section className=" flex flex-col max-w-[75%] m-auto gap-4 w-full h-full">
     <h1 className="text-2xl bg-blue-50 sticky top-20 p-2 font-bold">
