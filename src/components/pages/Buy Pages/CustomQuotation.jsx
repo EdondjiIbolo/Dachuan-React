@@ -19,7 +19,7 @@ export function CustomQuotation() {
           </button>
         </article>
       </header>
-      <main className="md:px-32 px-2 py-5 flex gap-16 flex-col sm:flex-row">
+      <form className="md:px-32 px-2 py-5 flex gap-16 flex-col sm:flex-row">
         <section className="sm:w-2/3 flex flex-col  gap-3">
           <section className="  shadow rounded flex flex-col gap-3 bg-white p-3 ">
             <header className="flex sm:flex-row flex-col gap-2 border-b-2 pb-2 justify-between items-center">
@@ -91,7 +91,7 @@ export function CustomQuotation() {
             <header className="flex border-b-2 pb-2 justify-between items-center">
               <h2 className="font-semibold"> Configurations</h2>
             </header>
-            <form className="flex gap-5 flex-col pl-5">
+            <main className="flex gap-5 flex-col pl-5">
               <label className="flex flex-col gap-1">
                 <p className="font-semibold">Quantity</p>
                 <input
@@ -196,7 +196,7 @@ export function CustomQuotation() {
                   </p>
                 </label>
               </div>
-            </form>
+            </main>
           </section>
         </section>
         <section className="sm:w-1/3 flex flex-col gap-3">
@@ -239,7 +239,7 @@ export function CustomQuotation() {
             </button>
           </section>
         </section>
-      </main>
+      </form>
     </main>
   );
 }
