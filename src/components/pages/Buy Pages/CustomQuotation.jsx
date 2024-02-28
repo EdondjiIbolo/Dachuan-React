@@ -230,10 +230,13 @@ export function CustomQuotation() {
               <p>ahoiuhushisah</p>
             </article>
           </article>
-          <section className="flex-grow bg-white rounded shadow p-2 px-4">
+          <section className="flex-grow bg-white rounded shadow p-2 px-4 flex flex-col justify-between">
             <picture>
               <div className="w-full aspect-square rounded bg-zinc-500"></div>
             </picture>
+            <button className="bg-blue-700 text-white w-full p-2 rounded font-bold">
+              Request For Quotation
+            </button>
           </section>
         </section>
       </main>
