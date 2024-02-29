@@ -20,30 +20,41 @@ export function Status({ showStatus, setShowStatus }) {
         </div>
         <h2 className="text-xl font-bold">Order Status</h2>
         <article className="flex flex-grow items-center ">
-          <article className="flex items-center  flex-col gap-1">
-            <h3>text</h3>
-            <div className=" h-24 w-24 rounded-full  bg-blue-300"></div>
-            <p>description</p>
+          <article className="flex items-center  flex-col gap-3">
+            <h3>Order Placed</h3>
+            <div className=" h-16 w-16 rounded-full  bg-blue-300"></div>
+            <p className="text-xs">2024-01-22 14:34:53</p>
           </article>
-          <hr className=" flex-grow border-2 border-blue-600" />
-          <article className="flex items-center  flex-col gap-1">
-            <h3>text</h3>
-            <div className=" h-24 w-24 rounded-full  bg-blue-300"></div>
-            <p>description</p>
+
+          <article className="flex items-center  flex-col gap-3">
+            <h3>Payment</h3>
+            <div className=" h-16 w-16 rounded-full  bg-blue-300"></div>
+            <p className="text-xs">2024-01-22 14:34:53</p>
+          </article>
+
+          <article className="flex items-center  flex-col gap-3">
+            <h3>In Production</h3>
+            <div className=" h-16 w-16 rounded-full  bg-blue-300"></div>
+            <p className="text-xs">2024-01-22 14:34:53</p>
           </article>
 
           <hr className=" flex-grow border-2 border-slate-300" />
-          <article className="flex items-center  flex-col gap-1">
-            <h3>text</h3>
-            <div className=" h-24 w-24 rounded-full  bg-blue-300"></div>
-            <p>description</p>
+          <article className="flex items-center  flex-col gap-3">
+            <h3>Shipment</h3>
+            <div className=" h-16 w-16 rounded-full  bg-blue-300"></div>
+            <p className="text-xs">2024-01-22 14:34:53</p>
           </article>
-
           <hr className=" flex-grow border-2 border-slate-300" />
-          <article className="flex items-center  flex-col gap-1">
-            <h3>text</h3>
-            <div className=" h-24 w-24 rounded-full  bg-blue-300"></div>
-            <p>description</p>
+          <article className="flex items-center  flex-col gap-3">
+            <h3>Delivery</h3>
+            <div className=" h-16 w-16 rounded-full  bg-blue-300"></div>
+            <p className="text-xs">2024-01-22 14:34:53</p>
+          </article>
+          <hr className=" flex-grow border-2 border-slate-300" />
+          <article className="flex items-center  flex-col gap-3">
+            <h3>Order Completed</h3>
+            <div className=" h-16 w-16 rounded-full  bg-blue-300"></div>
+            <p className="text-xs">2024-01-22 14:34:53</p>
           </article>
         </article>
       </section>

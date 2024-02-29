@@ -1,4 +1,4 @@
-import { UploadFileIcon, UploadIcon } from "../../Icons";
+import { SecureIcon, UploadFileIcon, UploadIcon } from "../../Icons";
 import "../../sections/quotations.css";
 
 export function CustomQuotation() {
@@ -199,42 +199,122 @@ export function CustomQuotation() {
             </main>
           </section>
         </section>
-        <section className="sm:w-1/3 flex flex-col gap-3">
+        <section className="sm:w-1/3 flex flex-col gap-3 mb-3">
           <article>
-            <header className="px-2 p-1">holaaa</header>
+            <header>
+              <p className="font-semibold flex gap-2 items-center pb-1 text-blue-800">
+                <SecureIcon /> Lead Time
+              </p>
+            </header>
             <article className=" bg-white p-2 py-4 flex flex-col gap-3 rounded shadow-sm">
               <p className="text-xs">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Blanditiis eligendi mollitia error labore incidunt minima
-                pariatur consectetur quos molestiae a!
+                The lead time will be evaluated with the quote or you can tell
+                us your expected lead time.
               </p>
+              <label htmlFor="">
+                <p className="text-sm text-left p-1">Business days</p>
+                <input
+                  type="text"
+                  inputMode="text"
+                  placeholder="Enetr your expexted lead time"
+                  className="p-2 border rounded border-gray-400 w-full "
+                />
+              </label>
+            </article>
+          </article>
+          <article>
+            <header>
+              <p className="font-semibold flex gap-2 items-center pb-1 text-blue-800">
+                <SecureIcon /> Shipping Option
+              </p>
+            </header>
+            <article className=" bg-white p-2 rounded shadow-sm flex flex-col ">
+              <label className="flex gap-3 items-center cursor-pointer hover:bg-zinc-50 border-b border-gray-700 p-2">
+                <input
+                  type="radio"
+                  name="shipping"
+                  value="Standard"
+                  inputMode="text"
+                  className="rounded-full w-4 h-4"
+                />
+                <span className="text-sm flex justify-between grow text-gray-500 font-medium">
+                  <p>Standard</p>
+                  <p>7-10 Business days</p>
+                </span>
+              </label>
+              <label className="flex gap-3 items-center cursor-pointer hover:bg-zinc-50 p-2">
+                <input
+                  type="radio"
+                  name="shipping"
+                  value="Standard"
+                  inputMode="text"
+                  className="rounded-full w-4 h-4"
+                />
+                <span className="text-sm flex justify-between grow text-gray-500 font-medium">
+                  <p>Economy</p>
+                  <p>5-8 Business days</p>
+                </span>
+              </label>
+            </article>
+          </article>
+          <article>
+            <header>
+              <p className="font-semibold flex gap-2 items-center pb-1 text-blue-800">
+                <SecureIcon /> Shipping Shipping Addrss
+              </p>
+            </header>
+            <article className=" bg-white p-2  rounded shadow-sm flex flex-row  gap-3 items-center ">
               <input
-                type="text"
+                type="radio"
+                name="address"
+                value={{
+                  name: "lino",
+                  address: "rongtaicheng",
+                  phone: "+ 1326717532",
+                }}
                 inputMode="text"
-                placeholder="Enetr your expexted lead time"
-                className="p-2 border rounded border-gray-400 w-full "
+                className="rounded-full w-5 h-5"
               />
-            </article>
-          </article>
-          <article>
-            <header>holaaa</header>
-            <article className=" bg-white p-2 rounded shadow-sm flex gap-4">
-              <input type="checkbox" inputMode="text" />
-              <p>textasasasaso</p>
-            </article>
-          </article>
-          <article>
-            <header>holaaa</header>
-            <article className=" bg-white p-2 rounded shadow-sm flex gap-4">
-              <input type="checkbox" inputMode="text" />
-              <p>ahoiuhushisah</p>
+              <div className="text-sm text-gray-500 font-medium">
+                <p>lino dachuan</p> <p>rongtaicheng</p> <p>+ 1326717532</p>
+              </div>
             </article>
           </article>
           <section className="flex-grow bg-white rounded shadow p-2 px-4 flex flex-col justify-between">
             <picture>
               <div className="w-full aspect-square rounded bg-zinc-500"></div>
             </picture>
-            <button className="bg-blue-700 text-white w-full p-2 rounded font-bold">
+            <section className="flex flex-col py-2">
+              <div className="flex p-2 py-4 items-center justify-between border-b border-gray-300">
+                <p className="text-base">Subtotal</p>
+                <p>--</p>
+              </div>
+              <div className="flex p-2 py-4 items-center justify-between border-b border-gray-300">
+                <p className="text-base">Shipping Cost</p>
+                <p>--</p>
+              </div>
+              <div className="flex p-2 py-4 items-center justify-between border-b border-gray-300">
+                <p className="text-base">Lead Time</p>
+                <p>--</p>
+              </div>
+              <div className="flex p-2 py-4 items-center justify-between border-b border-gray-300">
+                <p className="text-base">Shipping Method</p>
+                <div>
+                  <p className="font-bold text-sm">
+                    5-8 business days (Standard)
+                  </p>
+                  <p className="text-center text-gray-500  text-xs">
+                    Estim.. Delivery{" "}
+                    <span className="font-medium">Mar 12 2024</span>
+                  </p>
+                </div>
+              </div>
+              <div className="flex p-2 py-4 items-center justify-between ">
+                <p className="text-base">Total</p>
+                <p className="font-bold text-2xl text-blue-600">Quote</p>
+              </div>
+            </section>
+            <button className="bg-blue-700 hover:bg-white mb-2 hover:text-blue-800 transition-all duration-150 ease-linear hover:border-2 border-blue-700 text-white w-full p-3 rounded font-bold">
               Request For Quotation
             </button>
           </section>

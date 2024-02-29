@@ -11,7 +11,7 @@ export function Quote({ id = "45236" }) {
           className="text-center text-xs p-2 cursor-pointer hover:text-blue-600 hover:font-medium"
           data-label=" 询价单号"
         >
-          <Link to={`list/:${id}`}> SQ7241705373578506</Link>
+          <Link to={`/panel/order/${id}`}> SQ7241705373578506</Link>
         </td>
         <td className="text-center text-xs p-2" data-label=" 名称">
           零件2303093
