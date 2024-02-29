@@ -5,8 +5,14 @@ const baseUrlSign = "https://api-deploy-production-5c13.up.railway.app/sign-up";
 const baseVerify = "https://api-deploy-production-5c13.up.railway.app/verify";
 const baseRecover = "https://api-deploy-production-5c13.up.railway.app/recover";
 const baseContact = "https://api-deploy-production-5c13.up.railway.app/contact";
-const SendFileURL =
-  "https://api-deploy-production-5c13.up.railway.app/send-file";
+
+//entorno Dev
+// const baseUrl = "http://localhost:3000/login";
+// const baseUrlSign = "http://localhost:3000/sign-up";
+// const baseVerify = "http://localhost:3000/verify";
+// const baseRecover = "http://localhost:3000/recover";
+// const baseContact = "http://localhost:3000/contact";
+// const SendFileURL = "http://localhost:3000/send-file";
 const login = async (credentials) => {
   const { data } = await axios.post(baseUrl, credentials);
   return data;

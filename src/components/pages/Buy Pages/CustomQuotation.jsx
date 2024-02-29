@@ -4,7 +4,7 @@ import "../../sections/quotations.css";
 export function CustomQuotation() {
   return (
     <main className="pt-20  min-h-screen main-body">
-      <header className="sm:h-16 h-24 flex items-center  bg-white shadow-md  ">
+      <header className="sm:h-16 h-24 flex items-center fixed top-20 w-screen bg-white shadow-md  ">
         <article className="flex flex-col gap-3 sm:flex-row w-full items-center justify-between max-w-[1310px] m-auto">
           <section className="flex gap-4 items-center ">
             <p className="sm:text-base text-xs">
@@ -19,7 +19,7 @@ export function CustomQuotation() {
           </button>
         </article>
       </header>
-      <form className="md:px-32 px-2 py-5 flex gap-16 flex-col sm:flex-row">
+      <form className="md:px-32 px-2 pb-5 pt-20 flex gap-16 flex-col sm:flex-row">
         <section className="sm:w-2/3 flex flex-col  gap-3">
           <section className="  shadow rounded flex flex-col gap-3 bg-white p-3 ">
             <header className="flex sm:flex-row flex-col gap-2 border-b-2 pb-2 justify-between items-center">
