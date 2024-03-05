@@ -71,7 +71,7 @@ export function HomePage() {
 
           <section className="sm:px-12 p-4 sm:py-8 flex flex-col z-10  text-wrap  relative  gap-4 w-full h-full sm:w-[580px] sm:ml-24 sm:h-[320px]">
             <span className="text-zinc-500 text-sm font-semibold">
-              One-stop service
+              One-stop services
             </span>
             <h1 className="font-bold text-2xl max-w-[40ch] text-wrap">
               Rapid prototype and mass production of components.

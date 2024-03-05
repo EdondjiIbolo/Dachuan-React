@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Header } from "../Header.jsx";
 import { Footer } from "../Footer.jsx";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 const { Milling } = Technologies;
 
 export function MillingCnc() {
@@ -16,6 +17,8 @@ export function MillingCnc() {
       behavior: "smooth",
     });
   }, []);
+  const { t, i18n } = useTranslation();
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section[data-section]");
@@ -60,33 +63,27 @@ export function MillingCnc() {
               className="sm:px-12 p-4 sm:py-8 h-full flex flex-col z-10 relative w-full bg-white text-wrap gap-4  sm:w-[580px] sm:ml-24 sm:h-[320px] "
             >
               <h1 className="font-bold sm:text-2xl text-lg max-w-[40ch] uppercase text-wrap">
-                CNC MACHINING - {Milling.Page}
+                {t("MILLING.MILLING_TITLE")}
               </h1>
               <ul className="">
                 <li className="text-zinc-500  text-sm sm:text-sm flex gap-2 items-center ">
-                  <p className=" text-black">
-                    Online order for CNC {Milling.Page} parts.
-                  </p>
+                  <p className=" text-black">{t("MILLING.INTRODUCTION_1")}</p>
                 </li>
                 <li className="text-zinc-500 text-sm sm:text-sm flex gap-2 items-center">
-                  <p className="text-black">
-                    Materials such as aluminum, steel, copper, polymers, etc.{" "}
-                  </p>
+                  <p className="text-black">{t("MILLING.INTRODUCTION_2")}</p>
                 </li>
                 <li className="text-zinc-500 text-sm sm:text-sm flex gap-2 items-center">
-                  <p className="text-black">
-                    Rapid manufacturing to be completed within 10 days.
-                  </p>
+                  <p className="text-black">{t("MILLING.INTRODUCTION_3")}</p>
                 </li>
               </ul>
               <p className="text-black font-semibold text-sm flex flex-row items-center gap-1 mb-2">
-                Please upload your 3D files to receive real-time quotations.
+                {t("MILLING.INTRODUCTION_4")}
               </p>
               <Link
                 to="/login"
                 className="bg-blue-800 font-semibold text-white  p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
               >
-                Get a Quotation
+                {t("MILLING.INTRODUCTION_BUTTON")}
               </Link>
               <p className="text-zinc-500 text-xs flex flex-row items-center gap-1 mb-2">
                 <SecureIcon />
@@ -157,10 +154,10 @@ export function MillingCnc() {
             </li>
           </ul>
           <section className="grid grid-cols-1 md:grid-cols-[400px,auto] gap-8 p-10">
-            <h2 className="text-2xl">{Milling.introduction}</h2>
+            <h2 className="text-2xl">{t("MILLING.SERVICE_TITLE")}</h2>
             <article className="text-pretty text-sm flex flex-col gap-2">
-              <p>{Milling.description_1}</p>
-              <p>{Milling.description_2}</p>
+              <p>{t("MILLING.SERVICE_DESCRIPTION_1")}</p>
+              <p>{t("MILLING.SERVICE_DESCRIPTION_2")}</p>
             </article>
           </section>
           <section
@@ -168,69 +165,53 @@ export function MillingCnc() {
             data-section="Advantages"
             className="p-8 flex flex-col gap-8 from-slate-100 to-slate-200 bg-gradient-to-b"
           >
-            <h2 className="text-2xl text-center">{Milling.advantage_title}</h2>
+            <h2 className="text-2xl text-center">
+              {t("MILLING.ADVANTAGE_SECTION_TITLE")}
+            </h2>
             <article className="grid sm:grid-flow-col auto-cols-fr gap-6 max-w-[80%] m-auto">
               <div className="flex flex-col  gap-4">
                 <div className="flex gap-8 p-2 border rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
                   <SettingIcon />
                   <div className="flex flex-col gap-2 max-w-[55ch]">
-                    <strong>Fast delivery</strong>
-                    <p>
-                      Dachuan uses new CNC Milling machines to produce
-                      high-precision parts quickly within 10 days.
-                    </p>
+                    <strong>{t("MILLING.ADVANTAGE_1_TITLE")}</strong>
+                    <p>{t("MILLING.ADVANTAGE_1_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
                 <div className="flex gap-8 p-2 border rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <SettingIcon />{" "}
+                  <SettingIcon />
                   <div className="flex flex-col gap-2 max-w-[55ch]">
-                    <strong>Fast delivery</strong>
-                    <p>
-                      Dachuan uses new CNC Milling machines to produce
-                      high-precision parts quickly within 10 days.
-                    </p>
+                    <strong>{t("MILLING.ADVANTAGE_2_TITLE")}</strong>
+                    <p>{t("MILLING.ADVANTAGE_2_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
                 <div className="flex gap-8 p-2 border rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <SettingIcon />{" "}
+                  <SettingIcon />
                   <div className="flex flex-col gap-2 max-w-[55ch]">
-                    <strong>Fast delivery</strong>
-                    <p>
-                      Dachuan uses new CNC Milling machines to produce
-                      high-precision parts quickly within 10 days.
-                    </p>
+                    <strong>{t("MILLING.ADVANTAGE_3_TITLE")}</strong>
+                    <p>{t("MILLING.ADVANTAGE_3_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
                 <div className="flex gap-8 p-2 border rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <SettingIcon />{" "}
+                  <SettingIcon />
                   <div className="flex flex-col gap-2 max-w-[55ch]">
-                    <strong>Fast delivery</strong>
-                    <p>
-                      Dachuan uses new CNC Milling machines to produce
-                      high-precision parts quickly within 10 days.
-                    </p>
+                    <strong>{t("MILLING.ADVANTAGE_4_TITLE")}</strong>
+                    <p>{t("MILLING.ADVANTAGE_4_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
                 <div className="flex gap-8 p-2 border rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <SettingIcon />{" "}
+                  <SettingIcon />
                   <div className="flex flex-col gap-2 max-w-[55ch]">
-                    <strong>Fast delivery</strong>
-                    <p>
-                      Dachuan uses new CNC Milling machines to produce
-                      high-precision parts quickly within 10 days.
-                    </p>
+                    <strong>{t("MILLING.ADVANTAGE_5_TITLE")}</strong>
+                    <p>{t("MILLING.ADVANTAGE_5_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
                 <div className="flex gap-8 p-2 border rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <SettingIcon />{" "}
+                  <SettingIcon />
                   <div className="flex flex-col gap-2 max-w-[55ch]">
-                    <strong>Fast delivery</strong>
-                    <p>
-                      Dachuan uses new CNC Milling machines to produce
-                      high-precision parts quickly within 10 days.
-                    </p>
+                    <strong>{t("MILLING.ADVANTAGE_6_TITLE")}</strong>
+                    <p>{t("MILLING.ADVANTAGE_6_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
               </div>
@@ -243,12 +224,10 @@ export function MillingCnc() {
           >
             <article className="section-art text-center items-center flex flex-col gap-4">
               <p className="text__title font-semibold text-xl">
-                CNC {Milling.Page} materials
+                {t("MILLING.MATERIALS.MATERIAL_SECTION_TITLE")}
               </p>
               <p className="max-w-[80ch] ">
-                All these materials are available in the Chuantai Instant
-                Quoting Engine. If you require a different, material please
-                specify it as custom when you make a request.
+                {t("MILLING.MATERIALS.MATERIAL_SECTION_DESCRIPTION")}
               </p>
             </article>
             <article className="section-qs">
@@ -257,7 +236,11 @@ export function MillingCnc() {
                   {Milling.materials.map((material, index) => {
                     return (
                       <li key={index}>
-                        <AcordeonMaterial item={material} />
+                        <AcordeonMaterial
+                          item={material}
+                          section={"MATERIALS"}
+                          index={index}
+                        />
                       </li>
                     );
                   })}
@@ -272,21 +255,23 @@ export function MillingCnc() {
           >
             <article className="section-art text-center items-center flex flex-col gap-4">
               <p className="text__title font-semibold text-xl">
-                CNC Milling Finishing Options
+                {t("MILLING.FINISHING.FINISHING_SECTION_TITLE")}
               </p>
               <p className="max-w-[80ch] ">
-                All these Finishing Options are available in the Chuantai
-                Instant Quoting Engine. If you require a different, Finishing
-                Options please specify it as custom when you make a request.
+                {t("MILLING.FINISHING.FINISHING_SECTION_DESCRIPTION")}
               </p>
             </article>
             <article className="section-qs">
               <ol className="qs-list">
                 <div className="list__item">
-                  {Milling.Finishing.map((Finish, index) => {
+                  {Milling.Finishing.map((finishing, index) => {
                     return (
                       <li key={index}>
-                        <AcordeonMaterial item={Finish} />
+                        <AcordeonMaterial
+                          item={finishing}
+                          section={"FINISHING"}
+                          index={index}
+                        />
                       </li>
                     );
                   })}
@@ -295,11 +280,14 @@ export function MillingCnc() {
             </article>
           </section>
           <section className="grid grid-cols-1 md:grid-cols-[400px,auto] gap-8 p-10">
-            <h2 className="text-2xl">{Milling.Sumerise.Sumerise_title}</h2>
+            <h2 className="text-2xl">
+              {" "}
+              <p>{t("MILLING.SUMERISE_TITLE")}</p>
+            </h2>
             <article className="text-pretty text-sm flex flex-col gap-2">
-              <p>{Milling.Sumerise.Sumerise_description_1}</p>
-              <p>{Milling.Sumerise?.Sumerise_description_2}</p>
-              <p>{Milling.Sumerise?.Sumerise_description_3}</p>
+              <p>{t("MILLING.SUMERISE_DESCRIPTION_1")}</p>
+              <p>{t("MILLING.SUMERISE_DESCRIPTION_2")}</p>
+              <p>{t("MILLING.SUMERISE_DESCRIPTION_3")}</p>
             </article>
           </section>
         </main>
@@ -389,7 +377,7 @@ export function MillingCnc() {
                   to="login"
                   className="p-2 text-center shadow-md rounded text-white hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2   hover:outline-orange-400 hover:outline hover:text-orange-400  bg-orange-500  w-36 "
                 >
-                  Get a Quotation
+                  {t("MILLING.INTRODUCTION_BUTTON")}
                 </Link>
               </section>
               <picture className="hidden sm:block   relative ">
@@ -415,17 +403,22 @@ export function MillingCnc() {
             </picture>
             <article className="max-w-[1300px] w-full m-auto relative  z-20 ">
               <h4 className="text-center m-auto text-4xl font-semibold mb-4">
-                Ready to Order Your Parts Online?
+                {t("MILLING.PREFOOTER.PREFOOTER_HEADER")}
               </h4>
               <div className="flex flex-wrap gap-4 sm:gap-1 justify-center sm:justify-between items-center lg:px-44 lg:py-12">
                 <div className="flex md:justify-start justify-center gap-10 text-center sm:border-r-2 w-full sm:w-[50%] border-gray-400">
                   <span>
-                    <strong>Customers</strong>
-                    <p className="text-3xl font-light">40,000 +</p>
+                    <strong>{t("MILLING.PREFOOTER.STRONG_1")}</strong>
+                    <p className="text-3xl font-light">
+                      {t("MILLING.PREFOOTER.DESCRIPTION_1")}
+                    </p>
                   </span>
                   <span>
-                    <strong>Parts Quoted</strong>
-                    <p className="text-3xl font-light">1 Millon +</p>
+                    <strong>{t("MILLING.PREFOOTER.STRONG_2")}</strong>
+                    <p className="text-3xl font-light">
+                      {" "}
+                      {t("MILLING.PREFOOTER.DESCRIPTION_2")}
+                    </p>
                   </span>
                 </div>
                 <div className="flex  flex-col justify-center items-center gap-1">
@@ -433,10 +426,10 @@ export function MillingCnc() {
                     to="/login"
                     className="bg-blue-800 font-semibold text-white p-2 text-nowrap rounded md:w-18 w-44 text-center hover:bg-white  transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-blue-800 hover:text-blue-700"
                   >
-                    Get an Instant Qote
+                    {t("MILLING.PREFOOTER.BUTTON_TEXT")}
                   </Link>
                   <p className="italic font-normal">
-                    All uploads are secure and confidential.
+                    {t("MILLING.PREFOOTER.ITALIC")}.
                   </p>
                 </div>
               </div>

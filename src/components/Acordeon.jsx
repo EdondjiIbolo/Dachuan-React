@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ArrowIcon } from "./Icons";
 import "./sections/acordeon.css";
+import { useTranslation } from "react-i18next";
+
 export function AcordeonItem({ question }) {
   const [show, setShow] = useState(false);
   const { question: qs, ans } = question;
@@ -21,7 +23,8 @@ export function AcordeonItem({ question }) {
     </>
   );
 }
-export function AcordeonMaterial({ item }) {
+export function AcordeonMaterial({ item, index, section }) {
+  const { t, i18n } = useTranslation();
   const [show, setShow] = useState(false);
   const className = show
     ? "qs-ans   flex flex-col  gap-2 ans-show"
@@ -35,16 +38,23 @@ export function AcordeonMaterial({ item }) {
         className=" list__header flex border-b-[1px]  border-gray-300 items-center justify-between"
         onClick={() => setShow(!show)}
       >
-        <p className="font-bold text-lg p-2">{item.name}</p>
+        <p className="font-bold text-lg p-2">
+          {/* {t("MILLING.MATERIALS_1_TITLE")} */}
+          {t(`MILLING.${section}.${section}_${index + 1}_TITLE`)}
+        </p>
         <div className={className2}>
           <ArrowIcon />
         </div>
       </header>
       <ul className={className}>
-        {item.Features.map((feature, index) => {
+        {item.Features.map((feature, index2) => {
           return (
             <li key={index} className="font-semibold ml-8 text-base">
-              {feature}
+              {t(
+                `MILLING.${section}.${section}_${index + 1}_FEATURE_${
+                  index2 + 1
+                }`
+              )}
             </li>
           );
         })}
