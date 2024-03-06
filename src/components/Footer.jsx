@@ -1,18 +1,20 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 export function Footer() {
+  const { t, i18n } = useTranslation();
   return (
     <footer className="bg-indigo-950 w-full h-auto text-white ">
       <section className="p-12 pb-4 max-w-[1300px] m-auto">
         <ul className="grid sm:grid-cols-2 md:grid-cols-4 pb-8 gap-16 border-b-[1px] :mdjustify-center border-zinc-500">
           <ul className="flex flex-col gap-3  text-sm">
-            <p className="text-zinc-400">CNC Machining</p>
+            <p className="text-zinc-400">{t("FOOTER.HEADER_1")}</p>
             <li>
               <a
                 href="/machining-milling"
                 className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
               >
-                CNC Milling
+                {t("FOOTER.COLUMN_1_DATA_1")}
               </a>
             </li>
             <li>
@@ -20,7 +22,7 @@ export function Footer() {
                 href="/machining-turning"
                 className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
               >
-                CNC Turning
+                {t("FOOTER.COLUMN_1_DATA_2")}
               </a>
             </li>
             <li>
@@ -28,18 +30,18 @@ export function Footer() {
                 href="/machining-drilling"
                 className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
               >
-                CNC Drilling
+                {t("FOOTER.COLUMN_1_DATA_3")}
               </a>
             </li>
           </ul>
           <ul className="flex flex-col gap-3  text-sm">
-            <p className="text-zinc-400"> Resources</p>
+            <p className="text-zinc-400">{t("FOOTER.HEADER_2")}</p>
             <li>
               <Link
                 to="/guide"
                 className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
               >
-                Guide
+                {t("FOOTER.COLUMN_2_DATA_1")}
               </Link>
             </li>
             <li>
@@ -47,7 +49,7 @@ export function Footer() {
                 href="/materials"
                 className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
               >
-                Materials
+                {t("FOOTER.COLUMN_2_DATA_2")}
               </a>
             </li>
             <li>
@@ -55,18 +57,18 @@ export function Footer() {
                 to="/assistance"
                 className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
               >
-                Design Assistance
+                {t("FOOTER.COLUMN_2_DATA_3")}
               </Link>
             </li>
           </ul>
           <ul className="flex flex-col gap-3  text-sm">
-            <p className="text-zinc-400">Others</p>
+            <p className="text-zinc-400">{t("FOOTER.HEADER_3")}</p>
             <li>
               <a
                 href="/about"
                 className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
               >
-                About Us
+                {t("FOOTER.COLUMN_3_DATA_1")}
               </a>
             </li>
             <li>
@@ -74,7 +76,7 @@ export function Footer() {
                 href="#"
                 className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
               >
-                Questions
+                {t("FOOTER.COLUMN_3_DATA_2")}
               </a>
             </li>
             <li>
@@ -82,15 +84,15 @@ export function Footer() {
                 href="#"
                 className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
               >
-                News
+                {t("FOOTER.COLUMN_3_DATA_3")}
               </a>
             </li>
           </ul>
           <ul className="flex flex-col gap-3  text-sm">
-            <p className="text-zinc-400">Contact Us</p>
+            <p className="text-zinc-400">{t("FOOTER.HEADER_4")}</p>
             <li>
               <a href="tel:999 999 999" className="hover:text-blue-400 ">
-                Phone : 999 999 999
+                {t("FOOTER.COLUMN_4_DATA_1")}
               </a>
             </li>
             <li>
@@ -98,7 +100,7 @@ export function Footer() {
                 href="mailto:example@gmail.com"
                 className="hover:text-blue-400 "
               >
-                Email : example@gmail.com
+                {t("FOOTER.COLUMN_4_DATA_2")}
               </a>
             </li>
           </ul>

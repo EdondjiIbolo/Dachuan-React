@@ -42,15 +42,17 @@ export function HeaderListItem({ section, setMenu, index }) {
       </div>
 
       {section_list && (
-        <ul className="hidden py-4 sm:px-8 sub-menu w-screen max-w-[1310px] flex-col md:flex-row gap-3 md:gap-0 md:justify-between md:items-center md:shadow-md bg-white md:absolute -left-40 top-[40px]  md:h-min">
-          {section_list?.map((item, index) => {
-            return (
-              <div key={index} onClick={() => setMenu(false)}>
-                <ListItemNav index={index} item={item} />
-              </div>
-            );
-          })}
-        </ul>
+        <nav className="hidden   sub-menu w-screen left-0 flex-col md:flex-row gap-3 md:gap-0 md:justify-between md:items-center md:shadow-md bg-white md:fixed top-[65px]  md:h-min">
+          <ul className="  py-4 sm:px-8   w-screen left-0 flex-col md:flex-row gap-3 md:gap-0 md:justify-between md:items-center flex justify-between max-w-[1310px] m-auto bg">
+            {section_list?.map((item, index) => {
+              return (
+                <div key={index} onClick={() => setMenu(false)}>
+                  <ListItemNav index={index} item={item} />
+                </div>
+              );
+            })}
+          </ul>
+        </nav>
       )}
     </div>
   );

@@ -335,7 +335,11 @@ export function HomePage() {
             className=" bg-gray-300 bg-opacity-20"
           >
             <Assistance />
-            <section className="bg-slate-300 bg-opacity-50">
+            <section
+              id="Introduction"
+              data-section="Introduction"
+              className="bg-slate-300 bg-opacity-50"
+            >
               <section className="flex flex-col max-w-[1310px] m-auto   gap-8 p-16">
                 <h3 className="w-full text-center font-medium">
                   Chuantai Select Power Technology provides strong support for
@@ -401,11 +405,7 @@ export function HomePage() {
         </section>
 
         <section className="bg-slate-300 bg-opacity-40">
-          <section
-            id="Introduction"
-            data-section="Introduction"
-            className="flex flex-col justufy-center bg-slate-70 pt-20 pb-5 px-4 items-center gap-8"
-          >
+          <section className="flex flex-col justufy-center bg-slate-70 pt-20 pb-5 px-4 items-center gap-8">
             <h4 className="font-bold text-2xl text-center">
               Video tutorial to quickly understand Chuantai
             </h4>

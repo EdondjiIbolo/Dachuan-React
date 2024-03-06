@@ -46,6 +46,23 @@
     "SECTION_4_DESCRIPTION_4": "Trust is a core value in our company. We endeavour to earn and maintain the trust of our customers through transparency in our operations, punctuality in delivery, and consistency in the quality of our products.",
     "SECTION_4_DESCRIPTION_5": "At our company, we take pride in providing our customers with the highest quality products. Our number one priority is to ensure that every part that leaves our facility meets the highest standards of precision and accuracy."
   },
+  "FOOTER": {
+    "HEADER_1": "CNC Machining",
+    "COLUMN_1_DATA_1": "CNC Milling",
+    "COLUMN_1_DATA_2": "CNC Turning",
+    "COLUMN_1_DATA_3": "CNC Drilling",
+    "HEADER_2": "Resources",
+    "COLUMN_2_DATA_1": "Guide",
+    "COLUMN_2_DATA_2": "Materials",
+    "COLUMN_2_DATA_3": "Design Assistance",
+    "HEADER_3": "Others",
+    "COLUMN_3_DATA_1": "About Us",
+    "COLUMN_3_DATA_2": "Questions",
+    "COLUMN_3_DATA_3": "News",
+    "HEADER_4": "Contact Us",
+    "COLUMN_4_DATA_1": "Phone : 999 999 999",
+    "COLUMN_4_DATA_2": "Email : example@gmail.com"
+  },
   "CONTACT": {
     "HEADER_TITLE": "Contact Us",
     "SECTION_SUBTITLE": "How to reach us",

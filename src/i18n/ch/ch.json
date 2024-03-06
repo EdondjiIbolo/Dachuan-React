@@ -13,6 +13,23 @@
     "SECTION_5": "联系方式",
     "SECTION_6": "登录"
   },
+  "FOOTER": {
+    "HEADER_1": "数控加工",
+    "COLUMN_1_DATA_1": "数控铣削",
+    "COLUMN_1_DATA_2": "数控车削",
+    "COLUMN_1_DATA_3": "数控钻削",
+    "HEADER_2": "资源",
+    "COLUMN_2_DATA_1": "指南",
+    "COLUMN_2_DATA_2": "材料",
+    "COLUMN_2_DATA_3": "设计协助",
+    "HEADER_3": "其他",
+    "COLUMN_3_DATA_1": "关于我们",
+    "COLUMN_3_DATA_2": "问题",
+    "COLUMN_3_DATA_3": "新闻",
+    "HEADER_4": "联系我们",
+    "COLUMN_4_DATA_1": "电话：999 999 999",
+    "COLUMN_4_DATA_2": "邮箱：example@gmail.com"
+  },
   "ABOUT": {
     "BANNER_TITLE": "关于我们",
     "BANNER_DESCRIPTION": "每个零件的精度-您可靠的高质量加工解决方案提供方",
@@ -86,9 +103,6 @@
     "MATERIALS": {
       "MATERIAL_SECTION_TITLE": "CNC 铣削材料",
       "MATERIAL_SECTION_DESCRIPTION": "所有这些材料都可在悌昂泰即时报价引擎中获得。如果您需要不同的材料，请在请求时指定为自定义。",
-
-      "MATERIAL_SECTION_TITLE": "CNC铣削材料",
-      "MATERIAL_SECTION_DESCRIPTION": "所有这些材料都可以在传泰即时报价引擎中使用。如果您需要不同的材料，请在请求时指定为定制材料。",
       "MATERIALS_1_TITLE": "铝",
       "MATERIALS_1_FEATURE_1": "EN AW-2007 / 3.1645 / AlCuMgPb",
       "MATERIALS_1_FEATURE_2": "EN AW-6060 / 3.3206 / Al-MgSi",
