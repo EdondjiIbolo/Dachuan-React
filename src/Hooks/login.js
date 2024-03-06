@@ -1,10 +1,17 @@
 import axios from "axios";
 
-const baseUrl = "https://api-deploy-production-5c13.up.railway.app/login";
-const baseUrlSign = "https://api-deploy-production-5c13.up.railway.app/sign-up";
-const baseVerify = "https://api-deploy-production-5c13.up.railway.app/verify";
-const baseRecover = "https://api-deploy-production-5c13.up.railway.app/recover";
-const baseContact = "https://api-deploy-production-5c13.up.railway.app/contact";
+// const baseUrl = "https://api-deploy-production-5c13.up.railway.app/login";
+// const baseUrlSign = "https://api-deploy-production-5c13.up.railway.app/sign-up";
+// const baseVerify = "https://api-deploy-production-5c13.up.railway.app/verify";
+// const baseRecover = "https://api-deploy-production-5c13.up.railway.app/recover";
+// const baseContact = "https://api-deploy-production-5c13.up.railway.app/contact";
+// const SendFileURL =
+//   "https://api-deploy-production-5c13.up.railway.app/send-file";
+const baseUrl = "http://localhost:3000/service/login";
+const baseUrlSign = "http://localhost:3000/service/sign-up";
+const baseVerify = "http://localhost:3000/service/verify";
+const baseRecover = "http://localhost:3000/service/recover";
+const baseContact = "http://localhost:3000/service/message-contact";
 const SendFileURL =
   "https://api-deploy-production-5c13.up.railway.app/send-file";
 const login = async (credentials) => {
