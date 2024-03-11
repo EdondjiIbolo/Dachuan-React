@@ -9,7 +9,7 @@ export function MaterialTable() {
         quote platform. If you need a different material, please specify it as
         custom when you make a request.
       </p>
-      <table>
+      <table className="mytable m-auto">
         <thead>
           <tr>
             <th>Materials</th>
@@ -18,21 +18,21 @@ export function MaterialTable() {
         </thead>
         <tbody>
           <tr>
-            <td className="font-semibold">Stell</td>
+            <td className="font-semibold text-left">Stell</td>
             <td>SA-285</td>
             <td>SA-285</td>
             <td>1045</td>
             <td>GCr15L3</td>
           </tr>
           <tr>
-            <td className="font-semibold">Aluminum</td>
+            <td className="font-semibold text-left">Aluminum</td>
             <td>AW6060</td>
             <td>AA 6061</td>
             <td>AA 6061</td>
             <td>A9 7075</td>
           </tr>
           <tr>
-            <td className="font-semibold">Copper</td>
+            <td className="font-semibold text-left">Copper</td>
             <td>H90</td>
             <td>C22000</td>
             <td>TU1(99.97)</td>
@@ -40,11 +40,11 @@ export function MaterialTable() {
           </tr>
 
           <tr>
-            <td className="font-semibold">Plastic</td>
+            <td className="font-semibold text-left">Plastic</td>
             <td>Polyurethane</td>
             <td>Polyoxymethylene</td>
             <td>Nylon</td>
-            <td colSpan="5">PC</td>
+            <td>PC</td>
           </tr>
         </tbody>
       </table>

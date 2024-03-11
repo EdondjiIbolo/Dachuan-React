@@ -1,52 +1,43 @@
-table {
+.mytable {
   width: 100%;
   max-width: 900px;
-  margin: auto;
   border-collapse: separate;
-  border-spacing: 8px;
+  border-spacing: 0 8px;
 }
 
-th,
-td {
+.mytable th,
+.mytable td {
   padding: 18px;
 
   text-align: left;
   border: 1px solid #ccc;
 }
 
-th {
-  background-color: #f2f2f2;
+.mytable th {
   color: aliceblue;
-}
-th {
   font-weight: bold;
   background-color: rgba(13, 40, 85, 0.6);
 }
 
-tr:first-child {
+.mytable tr:first-child {
   background-color: rgb(13, 40, 85, 0.5);
 }
-tr:last-child {
+.mytable tr:last-child {
   background-color: rgb(13, 40, 85, 0.2);
 }
-tr:nth-child(2) {
+.mytable tr:nth-child(2) {
   background-color: rgb(13, 40, 85, 0.4);
 }
-tr:nth-child(3) {
+.mytable tr:nth-child(3) {
   background-color: rgb(13, 40, 85, 0.3);
 }
 
-td {
-  font-weight: 400;
+.mytable tbody tr td:not(:first-child) {
   text-align: center;
-
+  padding: 10px;
   font-size: 20px;
 }
-td[rowspan] {
+.mytable td[rowspan] {
   vertical-align: middle;
   border: none;
 }
-
-/* td[colspan] {
-  font-weight: bold;
-} */
