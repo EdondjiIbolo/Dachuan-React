@@ -161,7 +161,7 @@ export function HomePage() {
                 Materials
               </a>
             </li>
-            <li>
+            <li className="text-nowrap text-ellipsis overflow-hidden">
               <a
                 href="#Assistance"
                 className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
@@ -199,8 +199,7 @@ export function HomePage() {
                 How to place an order?
               </h3>
               <p className="text-blue-900 text-lg">
-                You can place your order in just{" "}
-                <strong className="font-extrabold text-lg">3</strong> steps
+                You can place your order in just <strong>3</strong> steps
               </p>
               <div className="items-container md:mb-4 ">
                 <article className="item">
@@ -363,49 +362,49 @@ export function HomePage() {
                   is our top priority to receive the product quickly and to your
                   satisfaction
                 </h3>
-                <div className=" grid grid-cols-1 md:grid-cols-3 text-balance content-center gap-6  justify-center">
-                  <article className="flex  text-center gap-4 flex-col">
+                <div className=" grid grid-cols-1 md:grid-cols-3 text-balance content-center sm:gap-6 gap-20  justify-center">
+                  <article className="flex  text-center gap-6 sm:gap-4 flex-col">
                     <picture className="flex justify-center">
                       <img
-                        className="w-36 h-36 block"
-                        src="/img/masive.svg"
+                        className="w-24 h-24 block"
+                        src="./images/safety.png"
                         alt="Capabilitie"
                       />
                     </picture>
                     <h4>Stay safe</h4>
-                    <p className="max-w-[60ch] m-auto text-center">
+                    <p className="max-w-[60ch]   sm:text-center">
                       Our manufacturing network strictly adheres to
                       confidentiality agreements to protect customer privacy We
                       will also regularly update our security procedures to
                       protect your account and design security
                     </p>
                   </article>
-                  <article className="flex   text-center gap-4 flex-col">
+                  <article className="flex   sm:text-center gap-4 flex-col">
                     <picture className="flex justify-center">
                       <img
-                        className="w-36 h-36 block"
-                        src="/img/check.svg"
+                        className="w-24 h-24 block"
+                        src="./images/feedback.png"
                         alt="Capabilitie"
                       />
                     </picture>
                     <h4>Timely feedback </h4>
-                    <p className="max-w-[60ch] m-auto text-center ">
+                    <p className="max-w-[60ch]   sm:text-center ">
                       You can know the delivery time and quotation and other
                       information in real time, and the Chuantai real-time
                       quotation engine can make it easy for you to choose the
                       right price/delivery time for your project
                     </p>
                   </article>
-                  <article className="flex   text-center gap-4 flex-col">
+                  <article className="flex   sm:text-center gap-4 flex-col">
                     <picture className="flex justify-center">
                       <img
-                        className="w-36 h-36 block"
-                        src="/img/order.svg"
+                        className="w-24 h-24 block"
+                        src="./images/logistic.png"
                         alt="Capabilitie"
                       />
                     </picture>
                     <h4>Precision Logistics</h4>
-                    <p className="max-w-[60ch] m-auto text-center">
+                    <p className="max-w-[60ch]   sm:text-center">
                       Through strict quality assurance, we update the product
                       order and shipping status in real time, and we can ensure
                       that the products you order are delivered 100% on time

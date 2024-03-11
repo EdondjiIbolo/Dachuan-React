@@ -2,14 +2,14 @@ import { ArrowIcon } from "./Icons";
 
 export function Assistance() {
   return (
-    <section className="w-full max-w-[1300px] m-auto py-20 px-10 bg-opacity-80">
+    <section className="w-full max-w-[1300px] m-auto py-20 px-10 bg-opacity-80 flex flex-col gap-8">
       <h3 className=" font-medium text-2xl mb-8 max-w-[50ch] text-center text-pretty m-auto">
         Our priority is your satisfaction: We are always available to address
         your queries and needs.
       </h3>
-      <section className="grid sm:grid-flow-col gap-8 sm:ga-6 sm:auto-cols-fr">
-        <article className="flex flex-col text-center sm:text-left gap-4">
-          <div className="flex   sm:items-start items-center flex-col gap-4">
+      <section className="grid sm:grid-flow-col gap-8 sm:ga-6 sm:auto-cols-fr ">
+        <article className="flex flex-col text-center sm:text-left gap-4 ">
+          <div className="flex   sm:items-start items-center flex-col gap-4 max-w-[60ch]">
             <p>
               Chuantai design assistant platform is committed to providing
               detailed information about mechanical design, helping you to
@@ -37,12 +37,12 @@ export function Assistance() {
         </article>
         <picture className="flex justify-center">
           <img
-            src="./images/assistance.jpeg"
+            src="./images/assistance.png"
             alt=""
             className="object-cover "
             style={{
               filter:
-                " grayscale(40%) blur(1.5px) opacity(0.9) brightness(100%) contrast(100%)",
+                " grayscale(40%) blur(0.8px) opacity(0.9) brightness(100%) contrast(100%)",
             }}
           />
         </picture>

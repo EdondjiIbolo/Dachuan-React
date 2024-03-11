@@ -20,8 +20,8 @@ export function Services() {
         CNC milling, CNC turning, CNC drilling All of these services will be
         provided to you in the ChuanTai instant quote platform
       </p>
-      <section className="grid md:grid-cols-3 md:grid-flow-col md:gap-4 gap-3  ">
-        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4  text-black to-slate-300 from-slate-400 gap-6 py-4 ">
+      <section className="grid md:grid-cols-3 md:grid-flow-col md:gap-4 gap-8  ">
+        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4 pt-8 text-black to-slate-300 from-slate-400 gap-6 py-4 ">
           <picture className=" pt-2  flex items-center w-40 m-auto h-28">
             <img
               src="./images/milling.png"
@@ -30,7 +30,7 @@ export function Services() {
             />
           </picture>
 
-          <div className="flex  flex-col gap-4 p-4 ">
+          <div className="flex  flex-col gap-4 p-4 pt-1">
             <h3 className="font-bold text-lg border-b py-4">CNC Milling</h3>
 
             <ul className="flex flex-col gap-2 ">
@@ -53,7 +53,7 @@ export function Services() {
             </div>
           </div>
         </article>
-        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4   text-black to-gray-300 from-gray-400 gap-6 py-4 ">
+        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4  pt-8 text-black to-gray-300 from-gray-400 gap-6 py-4 ">
           <picture className="  pt-2 flex items-center w-40 m-auto h-28">
             <img
               src="./images/turning.png"
@@ -62,7 +62,7 @@ export function Services() {
             />
           </picture>
 
-          <div className="flex  flex-col gap-4 p-4   flex-1">
+          <div className="flex  flex-col gap-4 p-4 pt-1  flex-1">
             <h3 className="font-bold text-lg border-b py-4">CNC Turning</h3>
 
             <ul className="flex flex-col gap-2 ">
@@ -84,7 +84,7 @@ export function Services() {
             </div>
           </div>
         </article>
-        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4  text-black  to-zinc-300 from-zinc-400 gap-6 py-4 ">
+        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4 pt-8 text-black  to-zinc-300 from-zinc-400 gap-6 py-4 ">
           <picture className="  pt-2 flex items-center w-40 m-auto h-28">
             <img
               src="./images/drilling.png"
