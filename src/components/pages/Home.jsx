@@ -1,17 +1,7 @@
-import {
-  ArrowIcon,
-  CheckIcon,
-  ShippingIcon,
-  UploadIcon,
-  SecureIcon,
-  QualityIcon,
-  TimeIcon,
-  SettingIcon,
-  Quotation,
-} from "../Icons.jsx";
+import { ArrowIcon, CheckIcon, SecureIcon } from "../Icons.jsx";
 
 import { Assistance } from "../Assistance.jsx";
-import { Material } from "../Material.jsx";
+
 import { Services } from "../Services.jsx";
 import { Header } from "../Header.jsx";
 import { Footer } from "../Footer.jsx";
@@ -195,7 +185,7 @@ export function HomePage() {
             data-section="Advantages"
             className="flex    bg-slate-100 flex-wrap"
           >
-            <article className="w-full max-w-[1300px] m-auto pt-20 flex justify-center items-center gap-8  p-4 flex-col">
+            <article className="w-full max-w-[1300px] m-auto pt-20 flex justify-center items-center gap-10  p-4 flex-col">
               <h3 className="font-bold text-2xl mb-2">
                 How to place an order?
               </h3>
