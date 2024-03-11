@@ -1,17 +1,62 @@
+import { useParams } from "react-router-dom";
 import { SecureIcon, UploadFileIcon, UploadIcon } from "../../Icons";
 import "../../sections/quotations.css";
+import { useEffect, useState } from "react";
+import axios, { Axios } from "axios";
+import { useUser } from "../../../Hooks/useUser";
 
 export function CustomQuotation() {
+  const { id } = useParams();
+  const { user } = useUser();
+  const [orderId, setOrderId] = useState(id);
+  const [material, setMaterial] = useState("Stainless Steel 1.4571");
+  const [finishing, setFinishing] = useState("Polishing / Electropolishing");
+  const [technology, setTechnology] = useState("CNC MILLING");
+  const [tolerance, setTolerance] = useState("0.5mm to 3mm");
+  const [roughness, setRoughness] = useState("Ra1.6μm");
+  const [quantity, setQuantity] = useState(1);
+  const [notes, setNotes] = useState(false);
+
+  useEffect(() => {
+    console.log(user);
+    const getData = async () => {
+      const { data } = await axios.get(`http://localhost:3000/quote/${id}`);
+      console.log(data);
+    };
+    getData();
+  }, [id]);
+  const handdleAdd = () => {
+    setQuantity(quantity + 1);
+  };
+  const handleDiff = () => {
+    if (quantity <= 0) return;
+    setQuantity(quantity - 1);
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = Object.fromEntries(new FormData(e.target));
+    const newData = {
+      ...formData,
+      ...user,
+      Quotation_id: id,
+    };
+
+    try {
+      const { data } = axios.post("http://localhost:3000/send-quote", newData);
+      const response = await data;
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <main className="pt-20  min-h-screen main-body">
       <header className="sm:h-16 h-24 flex items-center fixed top-20 w-screen bg-white shadow-md  ">
         <article className="flex flex-col gap-3 sm:flex-row w-full items-center justify-between max-w-[1310px] m-auto">
           <section className="flex gap-4 items-center ">
             <p className="sm:text-base text-xs">
-              <b>Quote Name :</b> Name
-            </p>
-            <p className="sm:text-base text-xs">
-              <b>Quote No: SQ000125555669</b>
+              <b>Quote No: </b>
+              {id}
             </p>
           </section>
           <button className="p-2 px-2 w-44 bg-blue-200 rounded-md hover:bg-blue-400 transition-all duration-150 ease-linear hover:scale-x-[1.02] hover:text-white text blue-800">
@@ -19,7 +64,10 @@ export function CustomQuotation() {
           </button>
         </article>
       </header>
-      <form className="md:px-32 px-2 pb-5 pt-20 flex gap-16 flex-col sm:flex-row">
+      <form
+        className="md:px-32 px-2 pb-5 pt-20 flex gap-16 flex-col sm:flex-row"
+        onSubmit={handleSubmit}
+      >
         <section className="sm:w-2/3 flex flex-col  gap-3">
           <section className="  shadow rounded flex flex-col gap-3 bg-white p-3 ">
             <header className="flex sm:flex-row flex-col gap-2 border-b-2 pb-2 justify-between items-center">
@@ -39,7 +87,7 @@ export function CustomQuotation() {
                   <img src="/img/CNC.webp" className="w-20 h-20" alt="" />
                 </picture>
                 <p>
-                  <b>Part Name :</b> nombre
+                  <b>Part Name :</b> {technology}
                 </p>
                 <p>
                   <b>Dimensions :</b> dimensiones
@@ -50,38 +98,45 @@ export function CustomQuotation() {
               </article>
               <article>
                 <p>
-                  <b>Material</b> Aluminum 6061-T6
+                  <b>Material</b> {material}
                 </p>
                 <p>
-                  <b>Finishing</b> Sand Blasting-Grit 80#
+                  <b>Finishing</b> {finishing}
                 </p>
                 <p>
-                  <b>Tolerance</b> ISO 2768 Medium (m)
+                  <b>Tolerance</b> {tolerance}
                 </p>
                 <p>
-                  <b>Roughness</b> Ra1.6μm
+                  <b>Roughness</b> {roughness}
                 </p>
-                <p>
-                  <b>Part Marking</b> None
-                </p>
+
                 <p>
                   <b>Threads</b> None
                 </p>
                 <p>
-                  <b>Notes</b> None
+                  <b>Notes</b> {notes ? "yes" : "none"}
                 </p>
               </article>
               <div className="bg-slate-200 p-1 rounded-md w-24 flex justify-between items-center">
-                <button className="p-1 font-bold text-gray-700 hover:text-black  hover:bg-slate-300 rounded">
+                <button
+                  className="p-1 font-bold text-gray-700 hover:text-black  hover:bg-slate-300 rounded"
+                  onClick={handdleAdd}
+                >
                   +
                 </button>
                 <input
                   type="number"
                   inputMode="number"
-                  defaultValue={1}
+                  name="quantity"
+                  value={quantity}
+                  min={0}
+                  onChange={handleDiff}
                   className="border-gray-400 border w-10 pl-1 rounded focus:border focus:outline-none"
                 />
-                <button className="p-1 font-bold text-gray-700 hover:text-black  hover:bg-slate-300 rounded">
+                <button
+                  className="p-1 font-bold text-gray-700 hover:text-black  hover:bg-slate-300 rounded"
+                  onClick={handleDiff}
+                >
                   -
                 </button>
               </div>
@@ -97,21 +152,37 @@ export function CustomQuotation() {
                 <input
                   type="number"
                   inputMode="number"
-                  defaultValue={1}
+                  value={quantity}
+                  onChange={(e) => setQuantity(e.target.value)}
                   className="bg-slate-200 w-72 p-1 rounded border outline-none border-gray-400"
                 />
               </label>
               <label className="flex flex-col gap-1">
+                <p className="font-semibold">Technology</p>
+                <select
+                  name="Technology"
+                  className="p-1 w-72 border rounded border-gray-500 outline-none"
+                  onChange={(e) => setTechnology(e.target.value)}
+                >
+                  <option value="CNC MILLING">CNC MILLING</option>
+                  <option value="CNC TURNING">CNC TURNING</option>
+                  <option value="CNC DRILLING">CNC DRILLING</option>
+                </select>
+              </label>
+              <label className="flex flex-col gap-1">
                 <p className="font-semibold">Material</p>
                 <select
-                  name="Maetrial"
+                  name="Material"
                   className="p-1 w-72 border rounded border-gray-500 outline-none"
+                  onChange={(e) => setMaterial(e.target.value)}
                 >
-                  <option value="Aluminium 6061-T6">Aluminium 6061-T6</option>
-                  <option value="Aluminium 6061-T6">Aluminium 6061-T6</option>
-                  <option value="Aluminium 6061-T6">Aluminium 6061-T6</option>
-                  <option value="Aluminium 6061-T6">Aluminium 6061-T6</option>
-                  <option value="Aluminium 6061-T6">Aluminium 6061-T6</option>
+                  <option value="Stainless Steel 1.4571">
+                    Stainless Steel 1.4571
+                  </option>
+                  <option value="Aluminium 3.4365">Aluminium 3.4365</option>
+                  <option value="Aluminium 3.4365">Aluminium 3.4365</option>
+                  <option value="Steel 1.0570">Steel 1.0570</option>
+                  <option value="Steel 1.7225">Steel 1.7225</option>
                 </select>
               </label>
               <label className="flex flex-col gap-1">
@@ -119,19 +190,16 @@ export function CustomQuotation() {
                 <select
                   name="Finishing"
                   className="p-1 w-72 border rounded border-gray-500 outline-none"
+                  onChange={(e) => setFinishing(e.target.value)}
                 >
-                  <option value="Conductive Anodizing Type II">
-                    Conductive Anodizing Type II
+                  <option value="Polishing / Electropolishing">
+                    Polishing / Electropolishing
                   </option>
-                  <option value="Conductive Anodizing Type II">
-                    Conductive Anodizing Type II
+                  <option value="Bead Blasting">Bead Blasting</option>
+                  <option value="Painting & Powder Coating">
+                    Painting & Powder Coating
                   </option>
-                  <option value="Conductive Anodizing Type II">
-                    Conductive Anodizing Type II
-                  </option>
-                  <option value="Conductive Anodizing Type II">
-                    Conductive Anodizing Type II
-                  </option>
+                  <option value="Case Hardening">Case Hardening</option>
                   <option value="Conductive Anodizing Type II">
                     Conductive Anodizing Type II
                   </option>
@@ -140,23 +208,16 @@ export function CustomQuotation() {
               <label className="flex flex-col gap-1">
                 <p className="font-semibold">Tolerance</p>
                 <select
-                  name="Finishing"
+                  name="Tolerance"
                   className="p-1 w-72 border rounded border-gray-500 outline-none"
+                  onChange={(e) => setTolerance(e.target.value)}
                 >
-                  <option value=" ISO 2768 Medium (m) ">
-                    ISO 2768 Medium (m)
-                  </option>
-                  <option value=" ISO 2768 Medium (m) ">
-                    ISO 2768 Medium (m)
-                  </option>
-                  <option value=" ISO 2768 Medium (m) ">
-                    ISO 2768 Medium (m)
-                  </option>
-                  <option value=" ISO 2768 Medium (m) ">
-                    ISO 2768 Medium (m)
-                  </option>
-                  <option value=" ISO 2768 Medium (m) ">
-                    ISO 2768 Medium (m)
+                  <option value="0.5mm to 3mm">0.5mm to 3mm</option>
+                  <option value="Over 3mm to 6mm">Over 3mm to 6mm</option>
+                  <option value="Over 6mm to 30mm">Over 6mm to 30mm</option>
+                  <option value="Over 30mm to 120mm">Over 30mm to 120mm</option>
+                  <option value="Over 120mm to 400mm">
+                    Over 120mm to 400mm
                   </option>
                 </select>
               </label>
@@ -165,11 +226,8 @@ export function CustomQuotation() {
                 <select
                   name="Roughness"
                   className="p-1 w-72 border rounded border-gray-500 outline-none"
+                  onChange={(e) => setRoughness(e.target.value)}
                 >
-                  Ra1.6μm
-                  <option value="Ra1.6μm">Ra1.6μm</option>
-                  <option value="Ra1.6μm">Ra1.6μm</option>
-                  <option value="Ra1.6μm">Ra1.6μm</option>
                   <option value="Ra1.6μm">Ra1.6μm</option>
                   <option value="Ra1.6μm">Ra1.6μm</option>
                 </select>
@@ -216,6 +274,7 @@ export function CustomQuotation() {
                 <input
                   type="text"
                   inputMode="text"
+                  name="lead_time"
                   placeholder="Enetr your expexted lead time"
                   className="p-2 border rounded border-gray-400 w-full "
                 />
@@ -246,7 +305,7 @@ export function CustomQuotation() {
                 <input
                   type="radio"
                   name="shipping"
-                  value="Standard"
+                  value="Economy"
                   inputMode="text"
                   className="rounded-full w-4 h-4"
                 />
@@ -267,11 +326,7 @@ export function CustomQuotation() {
               <input
                 type="radio"
                 name="address"
-                value={{
-                  name: "lino",
-                  address: "rongtaicheng",
-                  phone: "+ 1326717532",
-                }}
+                value={`lino dachuan / rongtaicheng / + 1326717532`}
                 inputMode="text"
                 className="rounded-full w-5 h-5"
               />
@@ -300,7 +355,7 @@ export function CustomQuotation() {
               <div className="flex p-2 py-4 items-center justify-between border-b border-gray-300">
                 <p className="text-base">Shipping Method</p>
                 <div>
-                  <p className="font-bold text-sm">
+                  <p className="font-bold text-right pr-3 text-sm">
                     5-8 business days (Standard)
                   </p>
                   <p className="text-center text-gray-500  text-xs">
@@ -323,3 +378,5 @@ export function CustomQuotation() {
     </main>
   );
 }
+
+// onClick={(e)=> e.preventDefault()}

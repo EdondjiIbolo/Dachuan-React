@@ -12,8 +12,7 @@ const baseUrlSign = "http://localhost:3000/service/sign-up";
 const baseVerify = "http://localhost:3000/service/verify";
 const baseRecover = "http://localhost:3000/service/recover";
 const baseContact = "http://localhost:3000/service/message-contact";
-const SendFileURL =
-  "https://api-deploy-production-5c13.up.railway.app/send-file";
+const SendFileURL = "http://localhost:3000/new-quote";
 const login = async (credentials) => {
   const { data } = await axios.post(baseUrl, credentials);
   return data;

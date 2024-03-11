@@ -22,6 +22,7 @@ import { QuoteComplete } from "./components/pages/Buy Pages/QuotesComplete";
 import { OrdersCompleted } from "./components/pages/Buy Pages/OrdersCompleted";
 import { CustomQuotation } from "./components/pages/Buy Pages/CustomQuotation";
 import { OrderInfo } from "./components/pages/Buy Pages/OrderInfo";
+import { AssistanceQuotes } from "./components/pages/Buy Pages/Assistant/AssistantQuotes";
 
 function App() {
   useEffect(() => {
@@ -57,10 +58,11 @@ function App() {
           <Route path="my-orders" element={<MyOrder />} />
           <Route path="new-quotation">
             <Route index element={<CreateQuotation />} />
-            <Route path="settings" element={<CustomQuotation />} />
+            <Route path="settings/:id" element={<CustomQuotation />} />
           </Route>
           <Route path="orders-completed" element={<OrdersCompleted />} />
           <Route path={`order/:id`} element={<OrderInfo />} />
+          <Route path={`assistant-quotes`} element={<AssistanceQuotes />} />
         </Route>
       </Routes>
     </>

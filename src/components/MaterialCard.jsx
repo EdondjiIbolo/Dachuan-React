@@ -6,8 +6,8 @@ export function MaterialCard({ id }) {
       <picture className="w-full flex justify-center overflow-hidden">
         <img src="/img/Milling3.png" alt="" className="h-36 object-cover" />
       </picture>
-      <article className="p-3 flex flex-col gap-3 h-[520px]">
-        <h3 className="font-bold text-lg">Feature material</h3>
+      <article className="p-3 flex flex-col gap-3 h-min text-sm">
+        <h3 className="font-bold text-lg">Feature material Name</h3>
         <div className="flex justify-between items-center">
           <span className="p-2 text-center font-semibold text-sm text-blue-700 bg-blue-200 rounded-3xl uppercase">
             service type
@@ -18,20 +18,24 @@ export function MaterialCard({ id }) {
             &#165;&#165;&#165;
           </div>
         </div>
-        <div className="text-balance">
-          <strong>Alias:</strong>{" "}
+        <div className="text-pretty">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+            {" "}
+            <b>Alternative Designations:</b> EN AW-2007 / 3.1645 / AlCuMgPb
           </p>
         </div>
         <div>
-          <strong>Caracteristicas clave:</strong>{" "}
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-            corrupti ratione quia harum placeat aut.
+            <b>Key features: </b>
+            High strength • Tough • Resistant to fatigue • Excellent
+            machinability
           </p>
         </div>
-        <span>descripcion : Lorem ipsum dolor, sit amet consectetur</span>
+        <span>
+          descripcion : Aluminium 3.4365/EN-AW7075 has high strength (57MPa),
+          toughness and excellent resistance to fatigue. It has very good
+          machinability.
+        </span>
         <div className="flex-grow flex justify-center items-end ">
           <Link
             to={`matelial/${id}`}

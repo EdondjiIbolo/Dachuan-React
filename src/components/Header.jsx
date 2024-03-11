@@ -33,7 +33,7 @@ export function Header() {
             onClick={closemenu}
           >
             <img
-              src="/img/logo.png"
+              src="./images/logo.png"
               alt="Logo"
               className="w-full object-cover object-top"
             />

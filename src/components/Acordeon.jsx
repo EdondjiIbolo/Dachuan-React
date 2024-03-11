@@ -80,13 +80,16 @@ export function Acordeon() {
 
   return (
     <section className="  sm:p-6 p-2">
-      <article className="section-art text-center flex flex-col gap-3">
-        <p className="text__title font-semibold text-xl">
+      <article
+        className="section-art text-center flex flex-col py-6
+      gap-3"
+      >
+        <p className="text__title font-semibold text-xl ">
           Frequently Asked Questions
         </p>
         <p className="text__description">
-          Here are some of our FAQs. If you have any other questions you’d like
-          answered please feel free to email us.
+          Here are some of our FAQs, and if you have any other questions
+          you&apos;d like to know, feel free to email us
         </p>
       </article>
       <article className="section-qs">

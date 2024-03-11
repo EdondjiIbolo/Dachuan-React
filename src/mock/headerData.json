@@ -7,7 +7,7 @@
           "section_subtitle": "CNC MACHINING",
           "section_intro": " CNC MACHINING Milling",
           "section_description": "High-quality CNC milling for your machining projects.",
-          "section_img": "img/Milling parts3.jpg",
+          "section_img": "./images/milling.png",
           "section_img_alt": "CNC MACHINING MILLING",
           "Page": "/machining-milling"
         },
@@ -15,7 +15,7 @@
           "section_subtitle": "CNC MACHINING",
           "section_intro": " CNC MACHINING Turning",
           "section_description": "We offer top-notch CNC turning services for your machining projects.",
-          "section_img": "/img/Turning-parts-2.jpeg",
+          "section_img": "./images/turning.png",
           "section_img_alt": "CNC MACHINING Turning",
           "Page": "/machining-turning"
         },
@@ -23,7 +23,8 @@
           "section_subtitle": "CNC MACHINING",
           "section_intro": "CNC MACHINING Drilling",
           "section_description": "Drilling with precision and efficiency using advanced CNC machining.",
-          "section_img": "/img/Drilling-product.png",
+          "section_img": "./images/drilling.png",
+
           "section_img_alt": "CNC MACHINING Drilling",
           "Page": "/machining-drilling"
         }

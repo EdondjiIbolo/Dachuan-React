@@ -5,9 +5,9 @@ export function Material() {
     <div className="container container-table max-w-[1300px] pt-20 flex flex-col gap-2">
       <h2 className="text-center font-semibold text-2xl mb-8 ">Materials</h2>
       <p className="max-w-[70ch] text-center m-auto pb-2">
-        All these materials are available in the Chuantai Instant Quoting
-        Engine. If you require a different, material please specify it as custom
-        when you make a request.
+        All of these materials can be found on the Chuantai Technology instant
+        quote platform. If you need a different material, please specify it as
+        custom when you make a request.
       </p>
       <table className=" shadow-sm">
         <thead>
