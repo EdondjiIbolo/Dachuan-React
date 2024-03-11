@@ -219,7 +219,7 @@ export function HomePage() {
                     2
                   </span>
                   <picture className="flex justify-center">
-                    <img src="./images/edit.webp" className="w-14 " />
+                    <img src="./images/select.webp" className="w-14 " />
                   </picture>
                   <p className="font-semibold  max-w-[16ch] text-center">
                     Select processes
