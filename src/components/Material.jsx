@@ -1,5 +1,5 @@
 import { ArrowIcon } from "./Icons";
-import "./sections/material.css";
+// import "./sections/material.css";
 export function Material() {
   return (
     <div className="container container-table max-w-[1300px] pt-20 flex flex-col gap-2">

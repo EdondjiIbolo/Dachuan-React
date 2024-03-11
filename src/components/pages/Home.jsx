@@ -19,6 +19,7 @@ import "../sections/home.css";
 import { Acordeon } from "../Acordeon.jsx";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { MaterialTable } from "../MaterialsTable.jsx";
 export function HomePage() {
   // useEffect(() => {
   //   window.scrollTo({
@@ -219,7 +220,7 @@ export function HomePage() {
                     2
                   </span>
                   <picture className="flex justify-center">
-                    <img src="./images/select.webp" className="w-14 " />
+                    <img src="./images/select.png" className="w-14 " />
                   </picture>
                   <p className="font-semibold  max-w-[16ch] text-center">
                     Select processes
@@ -280,10 +281,10 @@ export function HomePage() {
                   </header>
                   <div className="flex-grow flex flex-col sm:gap-4 h-full justify-center items-center py-2">
                     <picture className="h-16 w-full flex justify-center items-center">
-                      <img src="./images/edit.webp" alt="" className="w-14 " />
+                      <img src="./images/edit.png" alt="" className="w-14 " />
                     </picture>
                     <div className="flex-col flex gap-0 text-xs max-w-[20ch] font-semibold">
-                      <p>High-quality materials</p>
+                      <p>A variety of materials to choose </p>
                     </div>
                   </div>
                 </div>
@@ -312,13 +313,13 @@ export function HomePage() {
                   <div className="flex-grow  flex flex-col sm:gap-4  justify-center items-center py-2">
                     <picture className="h-16 w-16 flex justify-center items-center">
                       <img
-                        src="./images/setting.webp"
+                        src="./images/setting.png"
                         alt=""
                         className="w-14 "
                       />
                     </picture>
                     <div className="flex-col flex gap-0 text-xs max-w-[20ch] font-semibold">
-                      <p>Express shipping in 1 day, faster. </p>
+                      <p>Many Post-Processing options to choose </p>
                     </div>
                   </div>
                 </div>
@@ -343,7 +344,8 @@ export function HomePage() {
             data-section="Materials"
             className="relative flex justify-center bg-slate-200 w-full"
           >
-            <Material />
+            {/* <Material /> */}
+            <MaterialTable />
           </section>
           <section
             id="Assistance"
