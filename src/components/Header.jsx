@@ -9,8 +9,9 @@ import { useTranslation } from "react-i18next";
 
 export function Header() {
   const [menu, setMenu] = useState(false);
-  const { changeLanguage } = useLang();
+  const { changeLanguage, lang } = useLang();
   const className = menu ? " main-nav show sm:flex-1" : "main-nav sm:flex-1";
+
   const { t, i18n } = useTranslation();
   const handleclick = () => {
     setMenu(!menu);
@@ -62,6 +63,7 @@ export function Header() {
                   name="lang"
                   value="en"
                   className=" hidden hover:font-semibold"
+                  defaultChecked={lang == "en"}
                   onClick={handleChange}
                 />
                 <p className="w-full text-center">En</p>
@@ -72,7 +74,7 @@ export function Header() {
                   type="radio"
                   name="lang"
                   value="ch"
-                  defaultChecked
+                  defaultChecked={lang == "ch"}
                   className=" hidden hover:font-semibold"
                   onClick={handleChange}
                 />
@@ -93,7 +95,7 @@ export function Header() {
               to="/login"
               className="bg-blue-800 font-semibold sm:ml-2 text-white p-2 text-nowrap rounded md:w-18 w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
             >
-              Get a Quotation
+              {t("BUTTON_QUOTATION")}
             </Link>
           </section>
         </section>

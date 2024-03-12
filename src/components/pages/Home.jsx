@@ -125,7 +125,7 @@ export function HomePage() {
                     : ""
                 }`}
               >
-                Services
+                {t("MAIN_PAGE.NAV_ITEM_1")}
               </a>
             </li>
             <li>
@@ -137,7 +137,7 @@ export function HomePage() {
                     : ""
                 }`}
               >
-                Advantages
+                {t("MAIN_PAGE.NAV_ITEM_2")}
               </a>
             </li>
             <li>
@@ -149,7 +149,7 @@ export function HomePage() {
                     : ""
                 }`}
               >
-                Materials
+                {t("MAIN_PAGE.NAV_ITEM_3")}
               </a>
             </li>
             <li className="text-nowrap text-ellipsis overflow-hidden">
@@ -161,7 +161,7 @@ export function HomePage() {
                     : ""
                 }`}
               >
-                Design Assistance
+                {t("MAIN_PAGE.NAV_ITEM_4")}
               </a>
             </li>
             <li>
@@ -173,7 +173,7 @@ export function HomePage() {
                     : ""
                 }`}
               >
-                Introduction
+                {t("MAIN_PAGE.NAV_ITEM_5")}
               </a>
             </li>
           </ul>
