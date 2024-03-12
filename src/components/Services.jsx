@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowIcon } from "./Icons.jsx";
+import { useTranslation } from "react-i18next";
 export function Services() {
+  const { t, i18n } = useTranslation();
   return (
     <section
       id="Services"
@@ -8,18 +10,15 @@ export function Services() {
       className="max-w-[1300px] m-auto py-10 px-4 "
     >
       <h2 className="text-center font-semibold text-2xl mb-4 pt-4 ">
-        Services
+        {t("MAIN_PAGE.SERVICE_SECTION_TITLE")}
       </h2>
       <p className="max-w-[120ch] text-balance text-center m-auto pb-1 mb-2">
-        We are well aware that every customer has their own unique needs.
-        Therefore, we are committed to providing personalized custom services,
-        from instant quoting to production and delivery, in as quickly as 10
-        days, ensuring that we meet every detail requirement of yours.
+        {t("MAIN_PAGE.SERVICE_SECTION_DESCRIPTION_1")}
       </p>
-      <p className="max-w-[100ch] text-balance  text-center m-auto pb-2 mb-4">
-        CNC milling, CNC turning, CNC drilling All of these services will be
-        provided to you in the ChuanTai instant quote platform
+      <p className="max-w-[120ch] text-balance text-center m-auto pb-1 mb-2">
+        {t("MAIN_PAGE.SERVICE_SECTION_DESCRIPTION_2")}
       </p>
+
       <section className="grid md:grid-cols-3 md:grid-flow-col md:gap-4 gap-8  ">
         <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4 pt-8 text-black to-slate-300 from-slate-400 gap-6 py-4 ">
           <picture className=" pt-2  flex items-center w-40 m-auto h-28">
@@ -31,13 +30,13 @@ export function Services() {
           </picture>
 
           <div className="flex  flex-col gap-4 p-4 pt-1">
-            <h3 className="font-bold text-lg border-b py-4">CNC Milling</h3>
+            <h3 className="font-bold text-lg border-b py-4">
+              {t("MAIN_PAGE.SERVICE_SECTION_MILLING_TITLE")}
+            </h3>
 
             <ul className="flex flex-col gap-2 ">
               <li className="list-disc text-md ">
-                We are committed to providing high-precision CNC milling
-                services, utilizing a wide range of high-quality materials to
-                efficiently customize parts to your specific specifications.
+                {t("MAIN_PAGE.SERVICE_SECTION_MILLING_DESCRIPTION")}
               </li>
             </ul>
             <div className=" flex-1 flex items-end justify-center">
@@ -48,7 +47,7 @@ export function Services() {
                 <div className="rotate-90">
                   <ArrowIcon />
                 </div>
-                <p className="text-center w-full">See More</p>
+                <p className="text-center w-full">{t("BUTTON_SEE_MORE")}</p>
               </Link>
             </div>
           </div>
@@ -63,12 +62,14 @@ export function Services() {
           </picture>
 
           <div className="flex  flex-col gap-4 p-4 pt-1  flex-1">
-            <h3 className="font-bold text-lg border-b py-4">CNC Turning</h3>
+            <h3 className="font-bold text-lg border-b py-4">
+              {" "}
+              {t("MAIN_PAGE.SERVICE_SECTION_TURNING_TITLE")}
+            </h3>
 
             <ul className="flex flex-col gap-2 ">
               <li className="list-disc text-md ">
-                Our CNC turning services utilize state-of-the-art CNC lathes to
-                efficiently produce cylindrical components with complex shapes.
+                {t("MAIN_PAGE.SERVICE_SECTION_TURNING_DESCRIPTION")}
               </li>
             </ul>
             <div className=" flex-1 flex items-end justify-center">
@@ -79,7 +80,7 @@ export function Services() {
                 <div className="rotate-90">
                   <ArrowIcon />
                 </div>
-                <p className="text-center w-full">See More</p>
+                <p className="text-center w-full"> {t("BUTTON_SEE_MORE")}</p>
               </Link>
             </div>
           </div>
@@ -94,12 +95,13 @@ export function Services() {
           </picture>
 
           <div className="flex  flex-col gap-4 p-4 flex-1">
-            <h3 className="font-bold text-lg border-b py-4">CNC Drilling</h3>
+            <h3 className="font-bold text-lg border-b py-4">
+              {t("MAIN_PAGE.SERVICE_SECTION_DRILLING_TITLE")}
+            </h3>
 
             <ul className="flex flex-col gap-2 ">
               <li className="list-disc text-md ">
-                Our CNC drilling services provide efficient drilling solutions
-                for a wide range of metals, plastics, and more.
+                {t("MAIN_PAGE.SERVICE_SECTION_DRILLING_DESCRIPTION")}
               </li>
             </ul>
             <div className=" flex-1 flex items-end justify-center">
@@ -110,7 +112,7 @@ export function Services() {
                 <div className="rotate-90">
                   <ArrowIcon />
                 </div>
-                <p className="text-center w-full">See More</p>
+                <p className="text-center w-full">{t("BUTTON_SEE_MORE")}</p>
               </Link>
             </div>
           </div>
