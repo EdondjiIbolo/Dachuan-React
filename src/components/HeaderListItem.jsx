@@ -42,8 +42,8 @@ export function HeaderListItem({ section, setMenu, index }) {
       </div>
 
       {section_list && (
-        <nav className="hidden   sub-menu w-screen left-0 flex-col md:flex-row gap-3 md:gap-0 md:justify-between md:items-center md:shadow-md bg-white md:fixed top-[65px]  md:h-min">
-          <ul className="  py-4 md:px-8   w-screen left-0 flex-col md:flex-row gap-3 md:gap-0 md:justify-between md:items-center flex justify-between max-w-[1310px] m-auto bg">
+        <nav className="hidden   sub-menu w-screen left-0 flex-col md:flex-row gap-3 md:gap-0 md:justify-between md:items-center md:shadow-md  md:h-min">
+          <ul className="">
             {section_list?.map((item, index) => {
               return (
                 <div key={index} onClick={() => setMenu(false)}>
