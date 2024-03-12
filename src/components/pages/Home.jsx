@@ -430,35 +430,38 @@ export function HomePage() {
                   <source src="/video/misumi-video.mp4" type="video/mp4" />
                 </video>
               </section>
-              <div
-                className="flex p-2 my-2 items-center shadow-md rounded    transition-all duration-200 ease-in hover:outline-2  bg-blue-800 font-semibold text-white hover:bg-white hover:outline
+              <div className="flex gap-10 sm:flex-row flex-col justify-center items-center">
+                <div
+                  className="flex p-2 my-2 items-center shadow-md rounded    transition-all duration-200 ease-in hover:outline-2  bg-blue-800 font-semibold text-white hover:bg-white hover:outline
               hover:outline-bg-blue-800 hover:text-blue-800 w-40 "
-              >
-                <div className="rotate-90">
-                  <ArrowIcon />
+                >
+                  <div className="rotate-90">
+                    <ArrowIcon />
+                  </div>
+                  <Link to="#" className="w-full text-center text-sm font-bold">
+                    See More
+                  </Link>
                 </div>
-                <Link to="#" className="w-full text-center text-sm font-bold">
-                  See More
-                </Link>
+                <div
+                  className="flex p-2 items-center shadow-md rounded m-auto   transition-all duration-200 ease-in hover:outline-2  bg-blue-800 font-semibold text-white hover:bg-white hover:outline
+              hover:outline-bg-blue-800 hover:text-blue-800 w-44 "
+                >
+                  <div className="rotate-90">
+                    <ArrowIcon />
+                  </div>
+                  <Link
+                    to="/login"
+                    className="w-full text-center text-sm font-bold"
+                  >
+                    Get a Quotation
+                  </Link>
+                </div>
               </div>
             </article>
           </section>
         </section>
       </main>
-      <section className="bg-slate-50 pb-8 ">
-        <Acordeon />
-        <div
-          className="flex p-2 items-center shadow-md rounded m-auto   transition-all duration-200 ease-in hover:outline-2  bg-blue-800 font-semibold text-white hover:bg-white hover:outline
-              hover:outline-bg-blue-800 hover:text-blue-800 w-56 "
-        >
-          <div className="rotate-90">
-            <ArrowIcon />
-          </div>
-          <Link to="/login" className="w-full text-center text-sm font-bold">
-            Get an instant Qotation
-          </Link>
-        </div>
-      </section>
+
       <Footer />
     </>
   );
