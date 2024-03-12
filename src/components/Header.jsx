@@ -57,7 +57,7 @@ export function Header() {
 
           <section className="log flex flex-nowrap relative items-center justify-center gap-3 ">
             <div className="flex gap-2 flex-nowrap">
-              <label className="flex cursor-pointer hover:font-bold   w-6 text-center hover:text-blue-800 items-center">
+              <label className="flex cursor-pointer hover:font-bold mr-2  w-6 text-center hover:text-blue-800 items-center">
                 <input
                   type="radio"
                   name="lang"
@@ -66,7 +66,9 @@ export function Header() {
                   defaultChecked={lang == "en"}
                   onClick={handleChange}
                 />
-                <p className="w-full text-center">En</p>
+                <p className="w-full text-center text-nowrap ">
+                  {t("HEADER.EN")}
+                </p>
               </label>
               |
               <label className="flex items-center cursor-pointer hover:font-bold  hover:text-blue-800">
@@ -79,7 +81,7 @@ export function Header() {
                   onClick={handleChange}
                 />
 
-                <p>Ch</p>
+                <p>{t("HEADER.CH")}</p>
               </label>
             </div>
             <Link
