@@ -152,7 +152,8 @@ export function HomePage() {
                 {t("MAIN_PAGE.NAV_ITEM_3")}
               </a>
             </li>
-            <li className="text-nowrap text-ellipsis overflow-hidden">
+
+            <li>
               <a
                 href="#Assistance"
                 className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${

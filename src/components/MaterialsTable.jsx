@@ -60,7 +60,6 @@ export function MaterialTable() {
         </div>
         <a href="/Materials" className="w-full text-center text-sm font-bold">
           {t("BUTTON_SEE_MORE")}
-          See More
         </a>
       </div>
     </div>

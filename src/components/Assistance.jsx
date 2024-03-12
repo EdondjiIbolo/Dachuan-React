@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { ArrowIcon } from "./Icons";
 
 export function Assistance() {
-  const { t, i18next } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <section className="w-full max-w-[1300px] m-auto py-20 px-10 bg-opacity-80 flex flex-col gap-8">
       <h3 className=" font-medium text-2xl mb-8 max-w-[50ch] text-center text-pretty m-auto">
