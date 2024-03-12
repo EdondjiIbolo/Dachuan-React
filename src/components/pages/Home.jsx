@@ -334,7 +334,6 @@ export function HomePage() {
             data-section="Materials"
             className="relative flex justify-center bg-slate-200 w-full"
           >
-            {/* <Material /> */}
             <MaterialTable />
           </section>
           <section
@@ -355,7 +354,7 @@ export function HomePage() {
                   satisfaction
                 </h3>
                 <div className=" grid grid-cols-1 md:grid-cols-3 text-balance content-center sm:gap-6 gap-20  justify-center">
-                  <article className="flex  text-center gap-6 sm:gap-4 flex-col">
+                  <article className="flex   sm:text-center gap-4 flex-col">
                     <picture className="flex justify-center">
                       <img
                         className="w-24 h-24 block"
@@ -363,7 +362,7 @@ export function HomePage() {
                         alt="Capabilitie"
                       />
                     </picture>
-                    <h4>Stay safe</h4>
+                    <h4 className="font-medium">Stay safe</h4>
                     <p className="max-w-[60ch]   sm:text-center">
                       Our manufacturing network strictly adheres to
                       confidentiality agreements to protect customer privacy We
@@ -379,7 +378,7 @@ export function HomePage() {
                         alt="Capabilitie"
                       />
                     </picture>
-                    <h4>Timely feedback </h4>
+                    <h4 className="font-medium">Timely feedback </h4>
                     <p className="max-w-[60ch]   sm:text-center ">
                       You can know the delivery time and quotation and other
                       information in real time, and the Chuantai real-time
@@ -395,7 +394,7 @@ export function HomePage() {
                         alt="Capabilitie"
                       />
                     </picture>
-                    <h4>Precision Logistics</h4>
+                    <h4 className="font-medium">Precision Logistics</h4>
                     <p className="max-w-[60ch]   sm:text-center">
                       Through strict quality assurance, we update the product
                       order and shipping status in real time, and we can ensure
@@ -410,7 +409,10 @@ export function HomePage() {
 
         <section className="bg-slate-300 bg-opacity-40">
           <section className="flex flex-col justufy-center bg-slate-70 pt-20 pb-5 px-4 items-center gap-8">
-            <h4 className="font-bold text-2xl text-center">
+            <h4
+              className="font-medium"
+              className="font-bold text-2xl text-center"
+            >
               Video tutorial to quickly understand Chuantai
             </h4>
             <article className=" flex flex-col gap-8 items-center">
