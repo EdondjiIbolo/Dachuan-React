@@ -26,7 +26,7 @@ export function Header() {
   return (
     <header className="main-header  justify-center h-20  bg-white w-full flex fixed top-0 left-0 z-40  md:pr-5">
       <section className="flex w-full max-w-[1320px]  items-center  border-b-2  bg-white  m-auto justify-between  h-20 z-30  fixed   ">
-        <section className="header__container--right">
+        <section className="header__container--right pl-2">
           <a
             href="/"
             className="w-44 h-20  flex items-center overflow-hidden"
@@ -91,7 +91,7 @@ export function Header() {
             <Link
               onClick={closemenu}
               to="/login"
-              className="bg-blue-800 font-semibold sm:ml text-white p-2 text-nowrap rounded md:w-18 w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
+              className="bg-blue-800 font-semibold sm:ml-2 text-white p-2 text-nowrap rounded md:w-18 w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
             >
               Get a Quotation
             </Link>
@@ -100,7 +100,7 @@ export function Header() {
         <picture
           onClick={handleclick}
           id="toggle"
-          className="h-12 w-12 md:hidden mr-2 flex items-center  relative"
+          className="h-12 w-12 mr-2 flex items-center  relative"
         >
           <img
             src="./img/menu.svg"

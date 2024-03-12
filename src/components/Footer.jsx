@@ -107,10 +107,10 @@ export function Footer() {
         </ul>
         <ul className="flex-col md:flex-row flex  md:justify-between items-center relative">
           <div className="flex h-32 gap-3 items-center justify-center flex-col sm:flex-row w-min ">
-            <picture className=" h-20 overflow-hidden w-20 flex justify-start cursor-pointer text-zinc-500 ">
+            <picture className=" h-10 bg-white w-28 flex justify-center items-center cursor-pointer text-zinc-500 ">
               <img
-                className="object-cover  "
-                src="img/logo.png"
+                className="w-24 h-8  "
+                src="./images/logo.png"
                 alt="Dachuan Logo"
               />
             </picture>

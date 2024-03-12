@@ -63,7 +63,7 @@ export function HomePage() {
             />
           </picture>
 
-          <section className="sm:px-12 p-4 sm:py-8 flex flex-col z-10  text-wrap  relative  gap-4 w-full h-full sm:w-[580px] sm:ml-24 sm:h-[320px]">
+          <section className="sm:px-12 p-4 sm:py-8 bg-white lg:bg-transparent  sm:mt-4 lg:mt-0 flex flex-col z-10  text-wrap  relative  gap-4 w-full h-full sm:w-[580px] sm:ml-10 sm:h-[350px]">
             <span className="text-zinc-500 text-sm font-semibold">
               One-stop services
             </span>
@@ -231,8 +231,8 @@ export function HomePage() {
               </div>
               <Link
                 to="/login"
-                className="flex p-2 shadow-md rounded  transition-all duration-200 ease-in hover:outline-2  bg-blue-800 font-semibold text-white hover:bg-white hover:outline
-              hover:outline-bg-blue-800 hover:text-blue-800 w-1/2 md:w-40 "
+                className="flex items-center justify-center p-2 shadow-md rounded  transition-all duration-200 ease-in hover:outline-2  bg-blue-800 font-semibold text-white hover:bg-white hover:outline
+              hover:outline-bg-blue-800 hover:text-blue-800 w-44 md:w-44 "
               >
                 <div className="rotate-90">
                   <ArrowIcon />
@@ -250,9 +250,9 @@ export function HomePage() {
                 Receive your products with ease and speed, because your
                 satisfaction is our priority!
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-4 sm:gap-10 gap-4  py-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 sm:gap-10 gap-8  py-8">
                 <div className="item2 ">
-                  <header className="bg-blue-800 p-2 w-full text-center font-semibold text-white sm:text-sm">
+                  <header className="bg-blue-500 p-2 w-full text-center font-semibold text-white sm:text-sm">
                     <p className="font-semibold">Easy and Fast</p>
                   </header>
                   <div className="flex-grow flex flex-col sm:gap-4  justify-center items-center py-2">
@@ -266,7 +266,7 @@ export function HomePage() {
                   </div>
                 </div>
                 <div className="item2 ">
-                  <header className="bg-blue-800 p-2 w-full text-center font-semibold text-white sm:text-sm">
+                  <header className="bg-blue-500 p-2 w-full text-center font-semibold text-white sm:text-sm">
                     <p className="font-semibold">Materials</p>
                   </header>
                   <div className="flex-grow flex flex-col sm:gap-4 h-full justify-center items-center py-2">
@@ -280,7 +280,7 @@ export function HomePage() {
                 </div>
 
                 <div className="item2 ">
-                  <header className="bg-blue-800 p-2 w-full text-center font-semibold text-white sm:text-sm">
+                  <header className="bg-blue-500 p-2 w-full text-center font-semibold text-white sm:text-sm">
                     <p className="font-semibold">Quality Assurance</p>
                   </header>
                   <div className=" flex-grow flex flex-col sm:gap-4  justify-center items-center py-2">
@@ -297,7 +297,7 @@ export function HomePage() {
                   </div>
                 </div>
                 <div className="item2 ">
-                  <header className="bg-blue-800 p-2 w-full text-center font-semibold text-white sm:text-sm">
+                  <header className="bg-blue-500 p-2 w-full text-center font-semibold text-white sm:text-sm">
                     <p className="font-semibold">Post-processing</p>
                   </header>
                   <div className="flex-grow  flex flex-col sm:gap-4  justify-center items-center py-2">
@@ -315,10 +315,10 @@ export function HomePage() {
                 </div>
               </div>
               <div className="flex items-center flex-col justify-center py-3">
-                <picture className="h-10 flex  items-center justify-center overflow-hidden">
+                <picture className="h-10 w-44 flex  items-center justify-center ">
                   <img
-                    src="/img/logo.png"
-                    className="h-24 oblockbject-cover"
+                    src="./images/logo.png"
+                    className="h-8 object-cover"
                     alt="order-file"
                   />
                 </picture>
@@ -359,7 +359,7 @@ export function HomePage() {
                     <picture className="flex justify-center">
                       <img
                         className="w-24 h-24 block"
-                        src="./images/safety.png"
+                        src="./images/assurance.png"
                         alt="Capabilitie"
                       />
                     </picture>
@@ -375,7 +375,7 @@ export function HomePage() {
                     <picture className="flex justify-center">
                       <img
                         className="w-24 h-24 block"
-                        src="./images/feedback.png"
+                        src="./images/time.png"
                         alt="Capabilitie"
                       />
                     </picture>
@@ -391,7 +391,7 @@ export function HomePage() {
                     <picture className="flex justify-center">
                       <img
                         className="w-24 h-24 block"
-                        src="./images/logistic.png"
+                        src="./images/fast.png"
                         alt="Capabilitie"
                       />
                     </picture>
