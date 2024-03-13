@@ -1,10 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { SecureIcon, UploadFileIcon, UploadIcon } from "../../Icons";
 import "../../sections/quotations.css";
 import { useEffect, useState } from "react";
 import axios, { Axios } from "axios";
 import { useUser } from "../../../Hooks/useUser";
-
+import FetchCustomQuote from "../../../Hooks/login";
 export function CustomQuotation() {
   const { id } = useParams();
   const { user } = useUser();
@@ -16,7 +16,7 @@ export function CustomQuotation() {
   const [roughness, setRoughness] = useState("Ra1.6μm");
   const [quantity, setQuantity] = useState(1);
   const [notes, setNotes] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     console.log(user);
     const getData = async () => {
@@ -42,9 +42,11 @@ export function CustomQuotation() {
     };
 
     try {
-      const { data } = axios.post("http://localhost:3000/send-quote", newData);
-      const response = await data;
+      const response = await FetchCustomQuote.customQuote(newData);
       console.log(response);
+      setTimeout(() => {
+        navigate("/panel/my-quotes");
+      }, 1200);
     } catch (err) {
       console.log(err);
     }

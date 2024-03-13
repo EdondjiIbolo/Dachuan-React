@@ -8,7 +8,7 @@ export function Status({ showStatus, setShowStatus }) {
     setShowStatus(false);
   };
   return (
-    <article className={className}>
+    <div className={className}>
       <section className=" w-full h-full absolute  inset-0 bg-gray-900 opacity-70"></section>
       <section className="flex flex-col w-full h-52 rounded relative bg-slate-50 p-3 px-5">
         <div
@@ -58,6 +58,6 @@ export function Status({ showStatus, setShowStatus }) {
           </article>
         </article>
       </section>
-    </article>
+    </div>
   );
 }

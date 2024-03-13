@@ -291,10 +291,8 @@ export function CreateQuotation() {
 
     try {
       setLoading(true);
-      const { data } = await axios.post("http://localhost:3000/new-quote", fd);
-
-      const { quoteId } = await data;
-      console.log(quoteId);
+      const result = await sendFileService.createQuote(fd);
+      const { quoteId } = await result;
       navigate(`settings/${quoteId}`);
       return;
     } catch (err) {

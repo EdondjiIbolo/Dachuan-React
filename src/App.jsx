@@ -21,7 +21,7 @@ import { MyOrder } from "./components/pages/Buy Pages/MyOrder";
 import { QuoteComplete } from "./components/pages/Buy Pages/QuotesComplete";
 import { OrdersCompleted } from "./components/pages/Buy Pages/OrdersCompleted";
 import { CustomQuotation } from "./components/pages/Buy Pages/CustomQuotation";
-import { OrderInfo } from "./components/pages/Buy Pages/OrderInfo";
+import { QuoteInfo } from "./components/pages/Buy Pages/QuoteInfo";
 import { AssistanceQuotes } from "./components/pages/Buy Pages/Assistant/AssistantQuotes";
 
 function App() {
@@ -61,7 +61,7 @@ function App() {
             <Route path="settings/:id" element={<CustomQuotation />} />
           </Route>
           <Route path="orders-completed" element={<OrdersCompleted />} />
-          <Route path={`order/:id`} element={<OrderInfo />} />
+          <Route path={`quote/:id`} element={<QuoteInfo />} />
           <Route path={`assistant-quotes`} element={<AssistanceQuotes />} />
         </Route>
       </Routes>

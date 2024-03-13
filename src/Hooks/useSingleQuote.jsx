@@ -1,19 +1,18 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export function useQuotes() {
-  const [quotesData, setQuotesData] = useState([]);
+export function useSingleQuote({ id }) {
+  const [quote, setQuotesData] = useState({});
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getQuotes = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get(
-          "http://localhost:3000/assistant-quote"
-        );
-        const { quotes } = await data;
-        setQuotesData(quotes);
+        const { data } = await axios.get(`http://localhost:3000/quote/${id}`);
+        const result = await data;
+        console.log(result.quantity);
+        setQuotesData(result);
       } catch (err) {
         return err;
       } finally {
@@ -21,7 +20,7 @@ export function useQuotes() {
       }
     };
     getQuotes();
-  }, []);
+  }, [id]);
 
-  return { quotesData, loading };
+  return { quote, loading };
 }

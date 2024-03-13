@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useUser } from "./useUser";
 
-export function useQuotes() {
+export function useUserQuote() {
+  const { user } = useUser();
+  const { email } = user;
   const [quotesData, setQuotesData] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -10,9 +13,10 @@ export function useQuotes() {
       try {
         setLoading(true);
         const { data } = await axios.get(
-          "http://localhost:3000/assistant-quote"
+          `http://localhost:3000/customer-quote/${email}`
         );
         const { quotes } = await data;
+        console.log(quotes);
         setQuotesData(quotes);
       } catch (err) {
         return err;
@@ -21,7 +25,7 @@ export function useQuotes() {
       }
     };
     getQuotes();
-  }, []);
+  }, [email]);
 
   return { quotesData, loading };
 }

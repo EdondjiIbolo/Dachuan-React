@@ -37,6 +37,24 @@ const sendFile = async (credentials) => {
   const { data } = await axios.post(SendFileURL, credentials);
   return data;
 };
+const sendChanges = async (credentials) => {
+  const { data } = await axios.post(
+    "http://localhost:3000/assistant-changes",
+    credentials
+  );
+  return data;
+};
+const createQuote = async (credentials) => {
+  const { data } = await axios.post(
+    "http://localhost:3000/new-quote",
+    credentials
+  );
+  return data;
+};
+const customQuote = async (credentials) => {
+  const { data } = axios.post("http://localhost:3000/send-quote", credentials);
+  return data;
+};
 export default {
   login,
   signup,
@@ -44,4 +62,7 @@ export default {
   recoverPassword,
   contactMessage,
   sendFile,
+  sendChanges,
+  createQuote,
+  customQuote,
 };

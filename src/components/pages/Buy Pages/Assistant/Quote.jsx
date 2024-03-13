@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Loading } from "../../../Loading";
-
+import FetchChanges from "../../../../Hooks/login";
 export function Quotes({ quote }) {
   const [actions, setAcctions] = useState(false);
   const [show, setShow] = useState(false);
@@ -19,16 +19,17 @@ export function Quotes({ quote }) {
     const formData = Object.fromEntries(new FormData(e.target));
     try {
       setLoading(true);
-      const sendChanges = await axios.post(
-        "http://localhost:3000/assistant-changes",
-        { ...formData, id: quote.id }
-      );
-      const { data } = await sendChanges;
+      const sendChanges = await FetchChanges.sendChanges({
+        ...formData,
+        id: quote.id,
+      });
+
+      const data = await sendChanges;
       const { message } = await data;
+
       setTimeout(() => {
         window.location.reload();
       }, 1500);
-      console.log(message);
     } catch (err) {
       console.log(err);
     } finally {
@@ -96,7 +97,6 @@ export function Quotes({ quote }) {
             Download
           </a>
         </div>
-        <p></p>
       </td>
       <td>
         <button
@@ -107,7 +107,7 @@ export function Quotes({ quote }) {
           change status
         </button>
         {show && (
-          <section className="fixed z-50 flex justify-center p-5 items-center  bg-opacity-85 top-0 left-0 w-screen h-screen bg-blue-900">
+          <div className="fixed z-50 flex justify-center p-5 items-center  bg-opacity-85 top-0 left-0 w-screen h-screen bg-blue-900">
             <form
               className="w-full relative md:w-[500px] bg-slate-50 h-[400px] px-4 flex flex-col rounded shadow-xl border-2 border-red-400"
               onSubmit={handlesubmit}
@@ -159,7 +159,6 @@ export function Quotes({ quote }) {
                   </p>
                   <input
                     type="number"
-                    inputMode="number"
                     name="price"
                     defaultValue={quote.price ?? 0}
                     className="flex-grow  border-2 border-blue-300 rounded p-1 focus:ring-1 focus:outline-none"
@@ -170,7 +169,7 @@ export function Quotes({ quote }) {
                 </button>
               </section>
             </form>
-          </section>
+          </div>
         )}
       </td>
     </>

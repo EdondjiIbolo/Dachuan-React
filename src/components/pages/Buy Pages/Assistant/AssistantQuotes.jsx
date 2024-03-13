@@ -5,6 +5,7 @@ import { Quotes } from "./Quote";
 import { useQuotes } from "../../../../Hooks/useQuotes";
 export function AssistanceQuotes() {
   const { quotesData, loading } = useQuotes();
+  console.log({ quotesData });
   const mappedQuotes = quotesData.map((quote) => ({
     id: quote.id_quotation,
     phone: quote.telefono,
