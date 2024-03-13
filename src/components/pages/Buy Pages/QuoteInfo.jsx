@@ -11,7 +11,7 @@ export function QuoteInfo() {
     <>
       {loading && <Loading />}
       <main className="pt-20  min-h-screen main-body">
-        <header className="sm:h-16 h-24 flex items-center fixed top-20 w-screen bg-white shadow-md  ">
+        <header className="sm:h-16 h-24 flex items-center fixed z-40 top-20 w-screen bg-white shadow-md  ">
           <article className="flex flex-col gap-3 sm:flex-row w-full items-center justify-between max-w-[1310px] m-auto">
             <section className="flex gap-4 items-center ">
               <p className="sm:text-base text-xs">
