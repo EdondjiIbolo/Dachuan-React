@@ -40,7 +40,7 @@ export function AcordeonMaterial({ item, index, section }) {
       >
         <p className="font-bold text-lg p-2">
           {/* {t("MILLING.MATERIALS_1_TITLE")} */}
-          {t(`MILLING.${section}.${section}_${index + 1}_TITLE`)}
+          {item.name}
         </p>
         <div className={className2}>
           <ArrowIcon />
@@ -49,12 +49,8 @@ export function AcordeonMaterial({ item, index, section }) {
       <ul className={className}>
         {item.Features.map((feature, index2) => {
           return (
-            <li key={index} className="font-semibold ml-8 text-base">
-              {t(
-                `MILLING.${section}.${section}_${index + 1}_FEATURE_${
-                  index2 + 1
-                }`
-              )}
+            <li key={index2} className="font-semibold ml-8 text-base">
+              {feature.name}
             </li>
           );
         })}
