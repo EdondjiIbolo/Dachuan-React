@@ -457,7 +457,7 @@ export function SettingIcon() {
       viewBox="0 0 227.6167 222.3201"
       enableBackground="new 0 0 227.6167 222.3201"
       xmlSpace="preserve"
-      className="w-20 h-20"
+      className="w-12 h-12"
     >
       <g>
         <path

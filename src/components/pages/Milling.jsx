@@ -1,4 +1,4 @@
-import { CheckIcon2, SecureIcon, SettingIcon } from "../Icons.jsx";
+import { CheckIcon, CheckIcon2, SecureIcon, SettingIcon } from "../Icons.jsx";
 import "../sections/machining.css";
 import { Technologies } from "../../mock/headerData.json";
 import { AcordeonMaterial } from "../Acordeon.jsx";
@@ -48,7 +48,7 @@ export function MillingCnc() {
     <>
       <Header />
       <main className=" relative  ">
-        <main className=" w-full max-w-[1300px] m-auto pt-20">
+        <section className=" w-full max-w-[1310px] m-auto pt-20">
           <section className="relative flex items-center h-86 sm:h-96 overflow-hidden ">
             <picture className="absolute hidden sm:block z-5 top-0 left-0  w-full ">
               <img
@@ -66,28 +66,47 @@ export function MillingCnc() {
                 {t("MILLING.MILLING_TITLE")}
               </h1>
               <ul className="">
-                <li className="text-zinc-500  text-sm sm:text-sm flex gap-2 items-center ">
-                  <p className=" text-black">{t("MILLING.INTRODUCTION_1")}</p>
+                <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
+                  <CheckIcon />
+                  <strong className="text-blue-700 text-xs md:text-sm">
+                    {t("MILLING.BANNER_STRONG_1")}
+                  </strong>{" "}
+                  {t("MILLING.BANNER_DESCRIPTION_1")}
                 </li>
-                <li className="text-zinc-500 text-sm sm:text-sm flex gap-2 items-center">
-                  <p className="text-black">{t("MILLING.INTRODUCTION_2")}</p>
+                <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
+                  <CheckIcon />
+                  <strong className="text-blue-700 text-xs md:text-sm">
+                    {t("MILLING.BANNER_STRONG_2")}
+                  </strong>{" "}
+                  {t("MILLING.BANNER_DESCRIPTION_2")}
                 </li>
-                <li className="text-zinc-500 text-sm sm:text-sm flex gap-2 items-center">
-                  <p className="text-black">{t("MILLING.INTRODUCTION_3")}</p>
+                <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
+                  <CheckIcon />
+                  <strong className="text-blue-700 text-xs md:text-sm">
+                    {t("MILLING.BANNER_STRONG_3")}
+                  </strong>{" "}
+                  {t("MILLING.BANNER_DESCRIPTION_3")}
+                </li>
+                <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
+                  <CheckIcon />
+                  <strong className="text-blue-700 text-xs md:text-sm">
+                    {t("MILLING.BANNER_STRONG_4")}
+                  </strong>{" "}
+                  {t("MILLING.BANNER_DESCRIPTION_4")}
                 </li>
               </ul>
               <p className="text-black font-semibold text-sm flex flex-row items-center gap-1 mb-2">
-                {t("MILLING.INTRODUCTION_4")}
+                {t("MILLING.BANNER_DESCRIPTION_6")}
               </p>
               <Link
                 to="/login"
                 className="bg-blue-800 font-semibold text-white  p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
               >
-                {t("MILLING.INTRODUCTION_BUTTON")}
+                {t("BUTTON_QUOTATION")}
               </Link>
               <p className="text-zinc-500 text-xs flex flex-row items-center gap-1 mb-2">
                 <SecureIcon />
-                The documents you upload are strictly confidential and secure.
+                {t("MILLING.BANNER_DESCRIPTION_5")}
               </p>
             </section>
           </section>
@@ -160,56 +179,70 @@ export function MillingCnc() {
               <p>{t("MILLING.SERVICE_DESCRIPTION_2")}</p>
             </article>
           </section>
+        </section>
+        <section className="w-full from-slate-100 to-slate-200 bg-gradient-to-b ">
           <section
             id="Advantages"
             data-section="Advantages"
-            className="p-8 flex flex-col gap-8 from-slate-100 to-slate-200 bg-gradient-to-b"
+            className="p-8 flex flex-col gap-8  max-w-[1310px] m-auto "
           >
             <h2 className="text-2xl text-center">
               {t("MILLING.ADVANTAGE_SECTION_TITLE")}
             </h2>
             <article className="grid sm:grid-flow-col auto-cols-fr gap-6 max-w-[80%] m-auto">
               <div className="flex flex-col  gap-4">
-                <div className="flex gap-8 p-2 border rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <SettingIcon />
-                  <div className="flex flex-col gap-2 max-w-[55ch]">
+                <div className="flex gap-8 p-2 border h-24 border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                  <div className="h-10 w-10 items-stretch">
+                    <SettingIcon />
+                  </div>
+                  <div className="flex flex-col gap-2  flex-grow max-w-[50ch] text-sm">
                     <strong>{t("MILLING.ADVANTAGE_1_TITLE")}</strong>
                     <p>{t("MILLING.ADVANTAGE_1_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
-                <div className="flex gap-8 p-2 border rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <SettingIcon />
-                  <div className="flex flex-col gap-2 max-w-[55ch]">
+                <div className="flex gap-8 p-2 border h-24 border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                  <div className="h-10 w-10 items-stretch">
+                    <SettingIcon />
+                  </div>
+                  <div className="flex flex-col gap-2 h-24  justify-center flex-grow max-w-[50ch] text-sm">
                     <strong>{t("MILLING.ADVANTAGE_2_TITLE")}</strong>
                     <p>{t("MILLING.ADVANTAGE_2_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
-                <div className="flex gap-8 p-2 border rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <SettingIcon />
-                  <div className="flex flex-col gap-2 max-w-[55ch]">
+                <div className="flex gap-8 p-2 border flex-grow border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                  <div className="h-10 w-10 items-stretch">
+                    <SettingIcon />
+                  </div>
+                  <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
                     <strong>{t("MILLING.ADVANTAGE_3_TITLE")}</strong>
                     <p>{t("MILLING.ADVANTAGE_3_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
-                <div className="flex gap-8 p-2 border rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <SettingIcon />
-                  <div className="flex flex-col gap-2 max-w-[55ch]">
+                <div className="flex gap-8 p-2 border h-24  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                  <div className="h-10 w-10 items-stretch">
+                    <SettingIcon />
+                  </div>
+                  <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
                     <strong>{t("MILLING.ADVANTAGE_4_TITLE")}</strong>
                     <p>{t("MILLING.ADVANTAGE_4_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
-                <div className="flex gap-8 p-2 border rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <SettingIcon />
-                  <div className="flex flex-col gap-2 max-w-[55ch]">
+                <div className="flex gap-8 p-2 border h-24  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                  <div className="h-10 w-10 items-stretch">
+                    <SettingIcon />
+                  </div>
+                  <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
                     <strong>{t("MILLING.ADVANTAGE_5_TITLE")}</strong>
                     <p>{t("MILLING.ADVANTAGE_5_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
-                <div className="flex gap-8 p-2 border rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <SettingIcon />
-                  <div className="flex flex-col gap-2 max-w-[55ch]">
+                <div className="flex gap-8 p-2 border flex-grow  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                  <div className="h-10 w-10 items-stretch">
+                    <SettingIcon />
+                  </div>
+                  <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
                     <strong>{t("MILLING.ADVANTAGE_6_TITLE")}</strong>
                     <p>{t("MILLING.ADVANTAGE_6_TITLE_DESCRIPTION")}</p>
                   </div>
@@ -217,80 +250,81 @@ export function MillingCnc() {
               </div>
             </article>
           </section>
-          <section
-            id="Materials"
-            data-section="Materials"
-            className=" bg-slate-100 p-8"
-          >
-            <article className="section-art text-center items-center flex flex-col gap-4">
-              <p className="text__title font-semibold text-xl">
-                {t("MILLING.MATERIALS.MATERIAL_SECTION_TITLE")}
-              </p>
-              <p className="max-w-[80ch] ">
-                {t("MILLING.MATERIALS.MATERIAL_SECTION_DESCRIPTION")}
-              </p>
-            </article>
-            <article className="section-qs">
-              <ol className="qs-list">
-                <div className="list__item">
-                  {Milling.materials.map((material, index) => {
-                    return (
-                      <li key={index}>
-                        <AcordeonMaterial
-                          item={material}
-                          section={"MATERIALS"}
-                          index={index}
-                        />
-                      </li>
-                    );
-                  })}
-                </div>
-              </ol>
-            </article>
-          </section>
-          <section
-            id="Finishing"
-            data-section="Finishing"
-            className=" bg-slate-100 p-8"
-          >
-            <article className="section-art text-center items-center flex flex-col gap-4">
-              <p className="text__title font-semibold text-xl">
-                {t("MILLING.FINISHING.FINISHING_SECTION_TITLE")}
-              </p>
-              <p className="max-w-[80ch] ">
-                {t("MILLING.FINISHING.FINISHING_SECTION_DESCRIPTION")}
-              </p>
-            </article>
-            <article className="section-qs">
-              <ol className="qs-list">
-                <div className="list__item">
-                  {Milling.Finishing.map((finishing, index) => {
-                    return (
-                      <li key={index}>
-                        <AcordeonMaterial
-                          item={finishing}
-                          section={"FINISHING"}
-                          index={index}
-                        />
-                      </li>
-                    );
-                  })}
-                </div>
-              </ol>
-            </article>
-          </section>
-          <section className="grid grid-cols-1 md:grid-cols-[400px,auto] gap-8 p-10">
-            <h2 className="text-2xl">
-              {" "}
-              <p>{t("MILLING.SUMERISE_TITLE")}</p>
-            </h2>
-            <article className="text-pretty text-sm flex flex-col gap-2">
-              <p>{t("MILLING.SUMERISE_DESCRIPTION_1")}</p>
-              <p>{t("MILLING.SUMERISE_DESCRIPTION_2")}</p>
-              <p>{t("MILLING.SUMERISE_DESCRIPTION_3")}</p>
-            </article>
-          </section>
-        </main>
+        </section>
+        <section
+          id="Materials"
+          data-section="Materials"
+          className=" bg-slate-100 p-8"
+        >
+          <article className=" text-center items-center flex flex-col gap-4">
+            <p className="text__title font-semibold text-xl">
+              {t("MILLING.MATERIALS.MATERIAL_SECTION_TITLE")}
+            </p>
+            <p className="max-w-[80ch] ">
+              {t("MILLING.MATERIALS.MATERIAL_SECTION_DESCRIPTION")}
+            </p>
+          </article>
+          <article className="section-qs">
+            <ol className="qs-list">
+              <div className="list__item">
+                {Milling.materials.map((material, index) => {
+                  return (
+                    <li key={index}>
+                      <AcordeonMaterial
+                        item={material}
+                        section={"MATERIALS"}
+                        index={index}
+                      />
+                    </li>
+                  );
+                })}
+              </div>
+            </ol>
+          </article>
+        </section>
+        <section
+          id="Finishing"
+          data-section="Finishing"
+          className=" bg-slate-100 p-8"
+        >
+          <article className="section-art text-center items-center flex flex-col gap-4">
+            <p className="text__title font-semibold text-xl">
+              {t("MILLING.FINISHING.FINISHING_SECTION_TITLE")}
+            </p>
+            <p className="max-w-[80ch] ">
+              {t("MILLING.FINISHING.FINISHING_SECTION_DESCRIPTION")}
+            </p>
+          </article>
+          <article className="section-qs">
+            <ol className="qs-list">
+              <div className="list__item">
+                {Milling.Finishing.map((finishing, index) => {
+                  return (
+                    <li key={index}>
+                      <AcordeonMaterial
+                        item={finishing}
+                        section={"FINISHING"}
+                        index={index}
+                      />
+                    </li>
+                  );
+                })}
+              </div>
+            </ol>
+          </article>
+        </section>
+        <section className="grid grid-cols-1 md:grid-cols-[400px,auto] w-full max-w-[1310px] m-auto gap-8 p-10">
+          <h2 className="text-2xl">
+            {" "}
+            <p>{t("MILLING.SUMERISE_TITLE")}</p>
+          </h2>
+          <article className="text-pretty text-sm flex flex-col gap-2">
+            <p>{t("MILLING.SUMERISE_DESCRIPTION_1")}</p>
+            <p>{t("MILLING.SUMERISE_DESCRIPTION_2")}</p>
+            <p>{t("MILLING.SUMERISE_DESCRIPTION_3")}</p>
+          </article>
+        </section>
+
         <section className=" m-auto ">
           <section className="h-70 relative bg-blue-700   ">
             <section className="  m-auto flex text-wrap max-w-[1300px] relative  gap-4  h-full ">
@@ -304,13 +338,6 @@ export function MillingCnc() {
                 </h1>
                 <ol className="flex gap-5">
                   <ul className="  max-w-[60ch]">
-                    <li className="text-white text-xs sm:text-sm flex gap-2   items-center ">
-                      <CheckIcon2 />
-                      <strong className="text-yellow-400  text-xs md:text-sm">
-                        50000+
-                      </strong>
-                      Customers
-                    </li>
                     <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
                       <CheckIcon2 />
                       <strong className="text-yellow-400 text-xs md:text-sm">
@@ -377,7 +404,7 @@ export function MillingCnc() {
                   to="login"
                   className="p-2 text-center shadow-md rounded text-white hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2   hover:outline-orange-400 hover:outline hover:text-orange-400  bg-orange-500  w-36 "
                 >
-                  {t("MILLING.INTRODUCTION_BUTTON")}
+                  {t("BUTTON_QUOTATION")}
                 </Link>
               </section>
               <picture className="hidden sm:block   relative ">
