@@ -60,7 +60,7 @@ export function TurningCnc() {
             <section
               id="Services"
               data-section="Services"
-              className="sm:px-12 p-4 sm:py-8 h-full flex flex-col z-10 relative w-full bg-white text-wrap gap-4  sm:w-[580px] sm:ml-24 sm:h-[320px] "
+              className="sm:px-12 p-4 sm:py-8 h-full flex flex-col z-10 relative w-full bg-white text-wrap gap-4  sm:w-[580px] sm:ml-24 sm:h-[340px] "
             >
               <h1 className="font-bold sm:text-2xl text-lg max-w-[40ch] uppercase text-wrap">
                 {t("TURNING.TURNING_TITLE")}
@@ -181,75 +181,66 @@ export function TurningCnc() {
           </section>
         </section>
         <section className="w-full from-slate-100 to-slate-200 bg-gradient-to-b ">
-          <section
-            id="Advantages"
-            data-section="Advantages"
-            className="p-8 flex flex-col gap-8  max-w-[1310px] m-auto "
-          >
-            <h2 className="text-2xl text-center">
-              {t("TURNING.ADVANTAGE_SECTION_TITLE")}
-            </h2>
-            <article className="grid sm:grid-flow-col auto-cols-fr gap-6 max-w-[80%] m-auto">
-              <div className="flex flex-col  gap-4">
-                <div className="flex gap-8 p-2 border h-24 border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <div className="h-10 w-10 items-stretch">
-                    <SettingIcon />
-                  </div>
-                  <div className="flex flex-col gap-2  flex-grow max-w-[50ch] text-sm">
-                    <strong>{t("TURNING.ADVANTAGE_1_TITLE")}</strong>
-                    <p>{t("TURNING.ADVANTAGE_1_TITLE_DESCRIPTION")}</p>
-                  </div>
-                </div>
-                <div className="flex gap-8 p-2 border h-24 border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <div className="h-10 w-10 items-stretch">
-                    <SettingIcon />
-                  </div>
-                  <div className="flex flex-col gap-2 h-24  justify-center flex-grow max-w-[50ch] text-sm">
-                    <strong>{t("TURNING.ADVANTAGE_2_TITLE")}</strong>
-                    <p>{t("TURNING.ADVANTAGE_2_TITLE_DESCRIPTION")}</p>
-                  </div>
-                </div>
-                <div className="flex gap-8 p-2 border flex-grow border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <div className="h-10 w-10 items-stretch">
-                    <SettingIcon />
-                  </div>
-                  <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
-                    <strong>{t("TURNING.ADVANTAGE_3_TITLE")}</strong>
-                    <p>{t("TURNING.ADVANTAGE_3_TITLE_DESCRIPTION")}</p>
-                  </div>
+          <article className="grid sm:grid-flow-col auto-cols-fr gap-6 max-w-[80%] m-auto">
+            <div className="flex flex-col  gap-4">
+              <div className="flex gap-8 p-2 border pl-3 h-min sm:h-24 border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                <picture className="h-10 w-10 items-stretch">
+                  <img src="./images/advantage-2.png" alt="advantage icon" />
+                </picture>
+                <div className="flex flex-col gap-2  flex-grow max-w-[50ch] text-sm">
+                  <strong>{t("TURNING.ADVANTAGE_1_TITLE")}</strong>
+                  <p>{t("TURNING.ADVANTAGE_1_TITLE_DESCRIPTION")}</p>
                 </div>
               </div>
-              <div className="flex flex-col gap-4">
-                <div className="flex gap-8 p-2 border h-24  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <div className="h-10 w-10 items-stretch">
-                    <SettingIcon />
-                  </div>
-                  <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
-                    <strong>{t("TURNING.ADVANTAGE_4_TITLE")}</strong>
-                    <p>{t("TURNING.ADVANTAGE_4_TITLE_DESCRIPTION")}</p>
-                  </div>
-                </div>
-                <div className="flex gap-8 p-2 border h-24  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <div className="h-10 w-10 items-stretch">
-                    <SettingIcon />
-                  </div>
-                  <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
-                    <strong>{t("TURNING.ADVANTAGE_5_TITLE")}</strong>
-                    <p>{t("TURNING.ADVANTAGE_5_TITLE_DESCRIPTION")}</p>
-                  </div>
-                </div>
-                <div className="flex gap-8 p-2 border flex-grow  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <div className="h-10 w-10 items-stretch">
-                    <SettingIcon />
-                  </div>
-                  <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
-                    <strong>{t("TURNING.ADVANTAGE_6_TITLE")}</strong>
-                    <p>{t("TURNING.ADVANTAGE_6_TITLE_DESCRIPTION")}</p>
-                  </div>
+              <div className="flex gap-8 p-2 border pl-3 h-min sm:h-24 border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                <picture className="h-10 w-10 items-stretch">
+                  <img src="./images/advantage-1.png" alt="advantage icon" />
+                </picture>
+                <div className="flex flex-col gap-2 h-min sm:h-24  justify-center flex-grow max-w-[50ch] text-sm">
+                  <strong>{t("TURNING.ADVANTAGE_2_TITLE")}</strong>
+                  <p>{t("TURNING.ADVANTAGE_2_TITLE_DESCRIPTION")}</p>
                 </div>
               </div>
-            </article>
-          </section>
+              <div className="flex gap-8 p-2 border pl-3 flex-grow border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                <picture className="h-10 w-10 items-stretch">
+                  <img src="./images/advantage-4.png" alt="advantage icon" />
+                </picture>
+                <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
+                  <strong>{t("TURNING.ADVANTAGE_3_TITLE")}</strong>
+                  <p>{t("TURNING.ADVANTAGE_3_TITLE_DESCRIPTION")}</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4">
+              <div className="flex gap-8 p-2 border pl-3 h-min sm:h-24  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                <picture className="h-10 w-10 items-stretch">
+                  <img src="./images/advantage-3.png" alt="advantage icon" />
+                </picture>
+                <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
+                  <strong>{t("TURNING.ADVANTAGE_4_TITLE")}</strong>
+                  <p>{t("TURNING.ADVANTAGE_4_TITLE_DESCRIPTION")}</p>
+                </div>
+              </div>
+              <div className="flex gap-8 p-2 border pl-3 h-min sm:h-24  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                <picture className="h-10 w-10 items-stretch">
+                  <img src="./images/advantage-6.png" alt="advantage icon" />
+                </picture>
+                <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
+                  <strong>{t("TURNING.ADVANTAGE_5_TITLE")}</strong>
+                  <p>{t("TURNING.ADVANTAGE_5_TITLE_DESCRIPTION")}</p>
+                </div>
+              </div>
+              <div className="flex gap-8 p-2 border pl-3 flex-grow  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                <picture className="h-10 w-10 items-stretch">
+                  <img src="./images/advantage-5.png" alt="advantage icon" />
+                </picture>
+                <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
+                  <strong>{t("TURNING.ADVANTAGE_6_TITLE")}</strong>
+                  <p>{t("TURNING.ADVANTAGE_6_TITLE_DESCRIPTION")}</p>
+                </div>
+              </div>
+            </div>
+          </article>
         </section>
         <section
           id="Materials"
@@ -331,51 +322,29 @@ export function TurningCnc() {
               <section
                 id="Quotation"
                 data-section="Quotation"
-                className=" flex sm:justify-center items-center sm:items-start py-4 sm:ml-4 sm-py-0 sm:w-[100ch] m-auto  flex-col gap-3"
+                className=" flex sm:justify-center items-center sm:items-start py-4 sm:ml-4 sm-py-0 sm:w-[110ch] m-auto  flex-col gap-3"
               >
-                <h1 className="font-bold text-xl sm:max-w-[80ch] text-white">
-                  Rapid prototype and{" "}
-                </h1>
+                <h3 className="font-medium text-xl sm:max-w-[80ch] text-white">
+                  <p>{t("TURNING.PREFOOTER.PREFOOTER_HEADER")}</p>
+                </h3>
+                <h3 className="font-normal text-md sm:max-w-[80ch] text-white">
+                  <p>{t("TURNING.PREFOOTER.PREFOOTER_SUBTITLE")}</p>
+                </h3>
                 <ol className="flex gap-5">
                   <ul className="  max-w-[60ch]">
                     <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
                       <CheckIcon2 />
                       <strong className="text-yellow-400 text-xs md:text-sm">
-                        100%
+                        {t("TURNING.PREFOOTER.STRONG_1")}
                       </strong>
-                      Fully inspected
-                    </li>
-
-                    <li className="text-white text-xs sm:text-sm flex gap-2 items-center">
-                      <CheckIcon2 />
-                      <strong className="text-yellow-400  text-sm md:text-sm">
-                        97%
-                      </strong>
-                      On-time one day.
-                    </li>
-                  </ul>
-                  <ul className="  max-w-[60ch]">
-                    <li className="text-white text-xs sm:text-sm flex gap-2   items-center ">
-                      <CheckIcon2 />
-                      <strong className="text-yellow-400  text-xs md:text-sm">
-                        50000+
-                      </strong>
-                      Customers
+                      {t("TURNING.PREFOOTER.DESCRIPTION_1")}
                     </li>
                     <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
                       <CheckIcon2 />
                       <strong className="text-yellow-400 text-xs md:text-sm">
-                        100%
+                        {t("TURNING.PREFOOTER.STRONG_2")}
                       </strong>
-                      Fully inspected
-                    </li>
-
-                    <li className="text-white text-xs sm:text-sm flex gap-2 items-center">
-                      <CheckIcon2 />
-                      <strong className="text-yellow-400  text-sm md:text-sm">
-                        97%
-                      </strong>
-                      On-time one day.
+                      {t("TURNING.PREFOOTER.DESCRIPTION_2")}
                     </li>
                   </ul>
                 </ol>
@@ -398,7 +367,7 @@ export function TurningCnc() {
                                     H24v-8c0-4.418,3.582-8,8-8s8,3.582,8,8V24z"
                     />
                   </svg>
-                  All uploaded drawings are strictly confidential.
+                  {t("TURNING.PREFOOTER.ITALIC")}
                 </p>
                 <Link
                   to="login"
@@ -423,7 +392,7 @@ export function TurningCnc() {
           <section className="  p-4 sm:h-80  overflow-hidden flex items-center w-full  relative">
             <picture className="absolute  blur-3xl  w-full h-full top-0 left-0 z-10">
               <img
-                src="/img/TURNING parts4.jpeg"
+                src="/img/Milling parts4.jpeg"
                 className="object-cover object-center h-full w-full"
                 alt=""
               />

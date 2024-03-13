@@ -27,6 +27,12 @@ const materiales = [
 export function Guide() {
   const [currentSection, setCurrentSection] = useState("");
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+  useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section[data-section]");
       let activeSection = "";

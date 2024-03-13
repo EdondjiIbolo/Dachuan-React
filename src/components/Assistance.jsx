@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { ArrowIcon } from "./Icons";
+import { Link } from "react-router-dom";
 
 export function Assistance() {
   const { t, i18n } = useTranslation();
@@ -14,17 +15,18 @@ export function Assistance() {
             <p>{t("MAIN_PAGE.ASSISTANCE_SECTION_DESCRIPTION_1")}</p>
             <p>{t("MAIN_PAGE.ASSISTANCE_SECTION_DESCRIPTION_2")}</p>
 
-            <div
+            <Link
+              to="/assistance"
               className="sm:justify-start mt-5 justify-center flex p-2 items-center shadow-md rounded  transition-all duration-200 ease-in hover:outline-2  bg-blue-800 font-semibold text-white hover:bg-white hover:outline
               hover:outline-bg-blue-800 hover:text-blue-800  w-36 "
             >
               <div className="rotate-90">
                 <ArrowIcon />
               </div>
-              <a href="#" className="w-full text-center text-sm font-bold">
+              <p className="w-full text-center text-sm font-bold">
                 {t("BUTTON_SEE_MORE")}
-              </a>
-            </div>
+              </p>
+            </Link>
           </div>
         </article>
         <picture className="flex justify-center">

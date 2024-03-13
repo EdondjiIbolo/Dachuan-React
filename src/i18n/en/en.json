@@ -237,6 +237,7 @@
     },
     "PREFOOTER": {
       "PREFOOTER_HEADER": "Ready to Order Your Parts Online?",
+      "PREFOOTER_SUBTITLE": "Our engineers will be online in real time to provide you with a free quote. Once your design is uploaded, we will review it and provide you with a quote within 1 hour.",
       "STRONG_1": "Customers",
       "DESCRIPTION_1": "40,000 +",
       "STRONG_2": "Parts Quoted",
@@ -345,6 +346,7 @@
     },
     "PREFOOTER": {
       "PREFOOTER_HEADER": "Ready to Order Your Parts Online?",
+      "PREFOOTER_SUBTITLE": "Our engineers will be online in real time to provide you with a free quote. Once your design is uploaded, we will review it and provide you with a quote within 1 hour.",
       "STRONG_1": "Customers",
       "DESCRIPTION_1": "40,000 +",
       "STRONG_2": "Parts Quoted",
@@ -452,6 +454,7 @@
     },
     "PREFOOTER": {
       "PREFOOTER_HEADER": "Ready to Order Your Parts Online?",
+      "PREFOOTER_SUBTITLE": "Our engineers will be online in real time to provide you with a free quote. Once your design is uploaded, we will review it and provide you with a quote within 1 hour.",
       "STRONG_1": "Customers",
       "DESCRIPTION_1": "40,000 +",
       "STRONG_2": "Parts Quoted",

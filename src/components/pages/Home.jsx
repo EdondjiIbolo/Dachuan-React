@@ -6,18 +6,17 @@ import { Services } from "../Services.jsx";
 import { Header } from "../Header.jsx";
 import { Footer } from "../Footer.jsx";
 import "../sections/home.css";
-import { Acordeon } from "../Acordeon.jsx";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MaterialTable } from "../MaterialsTable.jsx";
 import { useTranslation } from "react-i18next";
 export function HomePage() {
-  // useEffect(() => {
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: "smooth",
-  //   });
-  // }, []);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   const [currentSection, setCurrentSection] = useState("");
   const { t, i18n } = useTranslation();
@@ -453,7 +452,10 @@ export function HomePage() {
                   <div className="rotate-90">
                     <ArrowIcon />
                   </div>
-                  <Link to="#" className="w-full text-center text-sm font-bold">
+                  <Link
+                    to="/guide"
+                    className="w-full text-center text-sm font-bold"
+                  >
                     {t("BUTTON_SEE_MORE")}
                   </Link>
                 </div>

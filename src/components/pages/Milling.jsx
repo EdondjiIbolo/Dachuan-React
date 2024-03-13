@@ -191,28 +191,28 @@ export function MillingCnc() {
             </h2>
             <article className="grid sm:grid-flow-col auto-cols-fr gap-6 max-w-[80%] m-auto">
               <div className="flex flex-col  gap-4">
-                <div className="flex gap-8 p-2 border h-24 border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <div className="h-10 w-10 items-stretch">
-                    <SettingIcon />
-                  </div>
+                <div className="flex gap-8 p-2 border pl-3 h-min sm:h-24 border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                  <picture className="h-10 w-10 items-stretch">
+                    <img src="./images/advantage-2.png" alt="advantage icon" />
+                  </picture>
                   <div className="flex flex-col gap-2  flex-grow max-w-[50ch] text-sm">
                     <strong>{t("MILLING.ADVANTAGE_1_TITLE")}</strong>
                     <p>{t("MILLING.ADVANTAGE_1_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
-                <div className="flex gap-8 p-2 border h-24 border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <div className="h-10 w-10 items-stretch">
-                    <SettingIcon />
-                  </div>
-                  <div className="flex flex-col gap-2 h-24  justify-center flex-grow max-w-[50ch] text-sm">
+                <div className="flex gap-8 p-2 border pl-3 h-min sm:h-24 border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                  <picture className="h-10 w-10 items-stretch">
+                    <img src="./images/advantage-1.png" alt="advantage icon" />
+                  </picture>
+                  <div className="flex flex-col gap-2 h-min sm:h-24  justify-center flex-grow max-w-[50ch] text-sm">
                     <strong>{t("MILLING.ADVANTAGE_2_TITLE")}</strong>
                     <p>{t("MILLING.ADVANTAGE_2_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
-                <div className="flex gap-8 p-2 border flex-grow border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <div className="h-10 w-10 items-stretch">
-                    <SettingIcon />
-                  </div>
+                <div className="flex gap-8 p-2 border pl-3 flex-grow border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                  <picture className="h-10 w-10 items-stretch">
+                    <img src="./images/advantage-4.png" alt="advantage icon" />
+                  </picture>
                   <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
                     <strong>{t("MILLING.ADVANTAGE_3_TITLE")}</strong>
                     <p>{t("MILLING.ADVANTAGE_3_TITLE_DESCRIPTION")}</p>
@@ -220,28 +220,28 @@ export function MillingCnc() {
                 </div>
               </div>
               <div className="flex flex-col gap-4">
-                <div className="flex gap-8 p-2 border h-24  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <div className="h-10 w-10 items-stretch">
-                    <SettingIcon />
-                  </div>
+                <div className="flex gap-8 p-2 border pl-3 h-min sm:h-24  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                  <picture className="h-10 w-10 items-stretch">
+                    <img src="./images/advantage-3.png" alt="advantage icon" />
+                  </picture>
                   <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
                     <strong>{t("MILLING.ADVANTAGE_4_TITLE")}</strong>
                     <p>{t("MILLING.ADVANTAGE_4_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
-                <div className="flex gap-8 p-2 border h-24  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <div className="h-10 w-10 items-stretch">
-                    <SettingIcon />
-                  </div>
+                <div className="flex gap-8 p-2 border pl-3 h-min sm:h-24  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                  <picture className="h-10 w-10 items-stretch">
+                    <img src="./images/advantage-6.png" alt="advantage icon" />
+                  </picture>
                   <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
                     <strong>{t("MILLING.ADVANTAGE_5_TITLE")}</strong>
                     <p>{t("MILLING.ADVANTAGE_5_TITLE_DESCRIPTION")}</p>
                   </div>
                 </div>
-                <div className="flex gap-8 p-2 border flex-grow  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
-                  <div className="h-10 w-10 items-stretch">
-                    <SettingIcon />
-                  </div>
+                <div className="flex gap-8 p-2 border pl-3 flex-grow  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
+                  <picture className="h-10 w-10 items-stretch">
+                    <img src="./images/advantage-5.png" alt="advantage icon" />
+                  </picture>
                   <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
                     <strong>{t("MILLING.ADVANTAGE_6_TITLE")}</strong>
                     <p>{t("MILLING.ADVANTAGE_6_TITLE_DESCRIPTION")}</p>
@@ -331,51 +331,29 @@ export function MillingCnc() {
               <section
                 id="Quotation"
                 data-section="Quotation"
-                className=" flex sm:justify-center items-center sm:items-start py-4 sm:ml-4 sm-py-0 sm:w-[100ch] m-auto  flex-col gap-3"
+                className=" flex sm:justify-center items-center sm:items-start py-4 sm:ml-4 sm-py-0 sm:w-[110ch] m-auto  flex-col gap-3"
               >
-                <h1 className="font-bold text-xl sm:max-w-[80ch] text-white">
-                  Rapid prototype and{" "}
-                </h1>
+                <h3 className="font-medium text-xl sm:max-w-[80ch] text-white">
+                  <p>{t("MILLING.PREFOOTER.PREFOOTER_HEADER")}</p>
+                </h3>
+                <h3 className="font-normal text-md sm:max-w-[80ch] text-white">
+                  <p>{t("MILLING.PREFOOTER.PREFOOTER_SUBTITLE")}</p>
+                </h3>
                 <ol className="flex gap-5">
                   <ul className="  max-w-[60ch]">
                     <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
                       <CheckIcon2 />
                       <strong className="text-yellow-400 text-xs md:text-sm">
-                        100%
+                        {t("MILLING.PREFOOTER.STRONG_1")}
                       </strong>
-                      Fully inspected
-                    </li>
-
-                    <li className="text-white text-xs sm:text-sm flex gap-2 items-center">
-                      <CheckIcon2 />
-                      <strong className="text-yellow-400  text-sm md:text-sm">
-                        97%
-                      </strong>
-                      On-time one day.
-                    </li>
-                  </ul>
-                  <ul className="  max-w-[60ch]">
-                    <li className="text-white text-xs sm:text-sm flex gap-2   items-center ">
-                      <CheckIcon2 />
-                      <strong className="text-yellow-400  text-xs md:text-sm">
-                        50000+
-                      </strong>
-                      Customers
+                      {t("MILLING.PREFOOTER.DESCRIPTION_1")}
                     </li>
                     <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
                       <CheckIcon2 />
                       <strong className="text-yellow-400 text-xs md:text-sm">
-                        100%
+                        {t("MILLING.PREFOOTER.STRONG_2")}
                       </strong>
-                      Fully inspected
-                    </li>
-
-                    <li className="text-white text-xs sm:text-sm flex gap-2 items-center">
-                      <CheckIcon2 />
-                      <strong className="text-yellow-400  text-sm md:text-sm">
-                        97%
-                      </strong>
-                      On-time one day.
+                      {t("MILLING.PREFOOTER.DESCRIPTION_2")}
                     </li>
                   </ul>
                 </ol>
@@ -398,7 +376,7 @@ export function MillingCnc() {
                                     H24v-8c0-4.418,3.582-8,8-8s8,3.582,8,8V24z"
                     />
                   </svg>
-                  All uploaded drawings are strictly confidential.
+                  {t("MILLING.PREFOOTER.ITALIC")}
                 </p>
                 <Link
                   to="login"
