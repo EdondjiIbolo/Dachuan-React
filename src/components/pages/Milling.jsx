@@ -27,7 +27,7 @@ export function MillingCnc() {
       const sections = document.querySelectorAll("section[data-section]");
       let activeSection = "";
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 300;
+        const sectionTop = section.offsetTop - 150;
         const sectionHeight = section.clientHeight;
 
         if (
@@ -51,7 +51,7 @@ export function MillingCnc() {
     <>
       <Header />
       <main className=" relative  ">
-        <section className=" w-full max-w-[1310px] m-auto pt-20">
+        <section id="Services" className=" w-full max-w-[1310px] m-auto pt-20">
           <section className="relative flex items-center h-86 sm:h-96 overflow-hidden ">
             <picture className="absolute hidden sm:block z-5 top-0 left-0  w-full ">
               <img
@@ -60,11 +60,7 @@ export function MillingCnc() {
                 alt="Banner img"
               />
             </picture>
-            <section
-              id="Services"
-              data-section="Services"
-              className="sm:px-12 p-4 sm:py-8 h-full flex flex-col z-10 relative w-full bg-white text-wrap gap-4  sm:w-[580px] sm:ml-24 sm:h-[320px] "
-            >
+            <section className="sm:px-12 p-4 sm:py-8 h-full flex flex-col z-10 relative w-full bg-white text-wrap gap-4  sm:w-[580px] sm:ml-24 sm:h-[320px] ">
               <h1 className="font-bold sm:text-2xl text-lg max-w-[40ch] uppercase text-wrap">
                 {t("MILLING.MILLING_TITLE")}
               </h1>
@@ -113,78 +109,9 @@ export function MillingCnc() {
               </p>
             </section>
           </section>
-          <ul className="flex px-2 sm:px-4 w-full justify-between sticky z-10 top-20 md:px-12 text-xs sm:text-base py-2 text-zinc-600 bg-zinc-50">
-            <li>
-              <a
-                href="#Services"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
-                  currentSection === "Services"
-                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
-                    : ""
-                }`}
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#Advantages"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
-                  currentSection === "Advantages"
-                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
-                    : ""
-                }`}
-              >
-                Advantages
-              </a>
-            </li>
-            <li>
-              <a
-                href="#Materials"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
-                  currentSection === "Materials"
-                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
-                    : ""
-                }`}
-              >
-                Materials
-              </a>
-            </li>
-            <li>
-              <a
-                href="#Finishing"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
-                  currentSection === "Finishing"
-                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
-                    : ""
-                }`}
-              >
-                Finishing
-              </a>
-            </li>
-            <li>
-              <a
-                href="#Quotation"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
-                  currentSection === "Quotation"
-                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
-                    : ""
-                }`}
-              >
-                Get Quotation
-              </a>
-            </li>
-          </ul>
-          <section className="grid grid-cols-1 md:grid-cols-[400px,auto] gap-8 p-10">
-            <h2 className="text-2xl">{t("MILLING.SERVICE_TITLE")}</h2>
-            <article className="text-pretty text-sm flex flex-col gap-2">
-              <p>{t("MILLING.SERVICE_DESCRIPTION_1")}</p>
-              <p>{t("MILLING.SERVICE_DESCRIPTION_2")}</p>
-            </article>
-          </section>
         </section>
         <article className="relative">
-          <nav className="sticky z-10 w-screen top-20 bg-zinc-50">
+          <nav className="sticky z-10 top-20 bg-zinc-50">
             <ul className="flex px-2 sm:px-4 max-w-[1310px]  mx-auto w-full justify-between  md:px-12 text-xs sm:text-base py-2 text-zinc-600 ">
               <li>
                 <a
@@ -248,7 +175,11 @@ export function MillingCnc() {
               </li>
             </ul>
           </nav>
-          <section className="grid grid-cols-1 md:grid-cols-[400px,auto] max-w-[1310px] m-auto gap-8 p-10">
+          <section
+            id="Services"
+            data-section="Services"
+            className="grid grid-cols-1 md:grid-cols-[400px,auto] max-w-[1310px] m-auto gap-8 p-10"
+          >
             <h2 className="text-2xl">{t("MILLING.SERVICE_TITLE")}</h2>
             <article className="text-pretty text-sm flex flex-col gap-2">
               <p>{t("MILLING.SERVICE_DESCRIPTION_1")}</p>
@@ -256,12 +187,12 @@ export function MillingCnc() {
             </article>
           </section>
 
-          <section className="w-full from-slate-100 to-slate-200 bg-gradient-to-b ">
-            <section
-              id="Advantages"
-              data-section="Advantages"
-              className="p-8 flex flex-col gap-8  max-w-[1310px] m-auto "
-            >
+          <section
+            id="Advantages"
+            data-section="Advantages"
+            className="w-full from-slate-100 to-slate-200 bg-gradient-to-b "
+          >
+            <section className="p-8 flex flex-col gap-8  max-w-[1310px] m-auto ">
               <h2 className="text-2xl text-center">
                 {t("MILLING.ADVANTAGE_SECTION_TITLE")}
               </h2>
@@ -360,7 +291,7 @@ export function MillingCnc() {
             </article>
             <article className="section-qs">
               <ol className="qs-list">
-                <div className="list__item">
+                <div id="Finishing" className="list__item">
                   {Milling?.materials?.map((material, index) => {
                     return (
                       <li key={index}>
@@ -376,11 +307,7 @@ export function MillingCnc() {
               </ol>
             </article>
           </section>
-          <section
-            id="Finishing"
-            data-section="Finishing"
-            className=" bg-slate-100 p-8"
-          >
+          <section data-section="Finishing" className=" bg-slate-100 p-8">
             <article className=" text-center items-center flex flex-col gap-4">
               <p className="text__title font-semibold text-xl">
                 {t("MILLING.FINISHING.FINISHING_SECTION_TITLE")}
@@ -407,6 +334,8 @@ export function MillingCnc() {
               </ol>
             </article>
           </section>
+        </article>
+        <section id="Quotation" data-section="Quotation" className=" m-auto ">
           <section className="grid grid-cols-1 md:grid-cols-[400px,auto] w-full max-w-[1310px] m-auto gap-8 p-10">
             <h2 className="text-2xl">
               {" "}
@@ -418,15 +347,9 @@ export function MillingCnc() {
               <p>{t("MILLING.SUMERISE_DESCRIPTION_3")}</p>
             </article>
           </section>
-        </article>
-        <section className=" m-auto ">
           <section className="h-80 relative bg-blue-700   ">
             <section className="  m-auto flex text-wrap max-w-[1300px] relative  gap-4  h-full ">
-              <section
-                id="Quotation"
-                data-section="Quotation"
-                className=" flex sm:justify-center items-center sm:items-start p-4 sm:ml-4 sm-py-0 sm:w-[110ch] m-auto  flex-col gap-3"
-              >
+              <section className=" flex sm:justify-center items-center sm:items-start p-4 sm:ml-4 sm-py-0 sm:w-[110ch] m-auto  flex-col gap-3">
                 <h3 className="font-medium text-xl sm:max-w-[80ch] text-white">
                   <p>{t("MILLING.PREFOOTER.PREFOOTER_HEADER")}</p>
                 </h3>

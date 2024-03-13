@@ -127,7 +127,7 @@ export function DrillingCnc() {
                       : ""
                   }`}
                 >
-                  Services
+                  {t("TURNING.NAV_ITEM_1")}
                 </a>
               </li>
               <li>
@@ -139,7 +139,7 @@ export function DrillingCnc() {
                       : ""
                   }`}
                 >
-                  Advantages
+                  {t("TURNING.NAV_ITEM_2")}
                 </a>
               </li>
               <li>
@@ -151,7 +151,7 @@ export function DrillingCnc() {
                       : ""
                   }`}
                 >
-                  Materials
+                  {t("TURNING.NAV_ITEM_3")}
                 </a>
               </li>
               <li>
@@ -163,7 +163,7 @@ export function DrillingCnc() {
                       : ""
                   }`}
                 >
-                  Finishing
+                  {t("TURNING.NAV_ITEM_4")}
                 </a>
               </li>
               <li>
@@ -175,7 +175,7 @@ export function DrillingCnc() {
                       : ""
                   }`}
                 >
-                  Get Quotation
+                  {t("TURNING.NAV_ITEM_5")}
                 </a>
               </li>
             </ul>

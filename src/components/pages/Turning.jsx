@@ -114,75 +114,6 @@ export function TurningCnc() {
               </p>
             </section>
           </section>
-          <ul className="flex px-2 sm:px-4 w-full justify-between sticky z-10 top-20 md:px-12 text-xs sm:text-base py-2 text-zinc-600 bg-zinc-50">
-            <li>
-              <a
-                href="#Services"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
-                  currentSection === "Services"
-                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
-                    : ""
-                }`}
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#Advantages"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
-                  currentSection === "Advantages"
-                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
-                    : ""
-                }`}
-              >
-                Advantages
-              </a>
-            </li>
-            <li>
-              <a
-                href="#Materials"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
-                  currentSection === "Materials"
-                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
-                    : ""
-                }`}
-              >
-                Materials
-              </a>
-            </li>
-            <li>
-              <a
-                href="#Finishing"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
-                  currentSection === "Finishing"
-                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
-                    : ""
-                }`}
-              >
-                Finishing
-              </a>
-            </li>
-            <li>
-              <a
-                href="#Quotation"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
-                  currentSection === "Quotation"
-                    ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
-                    : ""
-                }`}
-              >
-                Get Quotation
-              </a>
-            </li>
-          </ul>
-          <section className="grid grid-cols-1 md:grid-cols-[400px,auto] gap-8 p-10">
-            <h2 className="text-2xl">{t("TURNING.SERVICE_TITLE")}</h2>
-            <article className="text-pretty text-sm flex flex-col gap-2">
-              <p>{t("TURNING.SERVICE_DESCRIPTION_1")}</p>
-              <p>{t("TURNING.SERVICE_DESCRIPTION_2")}</p>
-            </article>
-          </section>
         </section>
         <article className="relative">
           <nav className="sticky z-10 w-screen top-20 bg-zinc-50">
@@ -196,7 +127,7 @@ export function TurningCnc() {
                       : ""
                   }`}
                 >
-                  Services
+                  {t("TURNING.NAV_ITEM_1")}
                 </a>
               </li>
               <li>
@@ -208,7 +139,7 @@ export function TurningCnc() {
                       : ""
                   }`}
                 >
-                  Advantages
+                  {t("TURNING.NAV_ITEM_2")}
                 </a>
               </li>
               <li>
@@ -220,7 +151,7 @@ export function TurningCnc() {
                       : ""
                   }`}
                 >
-                  Materials
+                  {t("TURNING.NAV_ITEM_3")}
                 </a>
               </li>
               <li>
@@ -232,7 +163,7 @@ export function TurningCnc() {
                       : ""
                   }`}
                 >
-                  Finishing
+                  {t("TURNING.NAV_ITEM_4")}
                 </a>
               </li>
               <li>
@@ -244,7 +175,7 @@ export function TurningCnc() {
                       : ""
                   }`}
                 >
-                  Get Quotation
+                  {t("TURNING.NAV_ITEM_5")}
                 </a>
               </li>
             </ul>
