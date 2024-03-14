@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MaterialTable } from "../MaterialsTable.jsx";
 import { useTranslation } from "react-i18next";
+import { FinishingTable } from "../FinishingTable.jsx";
 export function HomePage() {
   useEffect(() => {
     window.scrollTo({
@@ -65,7 +66,7 @@ export function HomePage() {
 
           <section className="sm:px-12 p-4 sm:py-8 bg-white lg:bg-transparent  sm:mt-4 lg:mt-0 flex flex-col z-10  text-wrap  relative  gap-4 w-full h-full sm:w-[580px] sm:ml-10 sm:h-[350px]">
             <span className="text-zinc-500 text-sm font-semibold">
-              One-stop services
+              {t("MAIN_PAGE.BANNER_SUBTITLE")}
             </span>
             <h1 className="font-bold text-2xl max-w-[40ch] text-wrap">
               {t("MAIN_PAGE.BANNER_INTRODUCTION_TITLE")}
@@ -228,6 +229,17 @@ export function HomePage() {
                     {t("MAIN_PAGE.ADVANTAGE_SECTION_CARD_3")}
                   </p>
                 </article>
+                <article className="item">
+                  <span className="absolute -top-2 -left-2 bg-blue-800 text-white  text-xl p-3 h-12 w-12 rounded-full flex justify-center items-center font-semibold ">
+                    4
+                  </span>
+                  <picture className="flex justify-center">
+                    <img src="./images/orderd.webp" alt="" className="w-14 " />
+                  </picture>
+                  <p className="font-semibold  max-w-[16ch] text-center">
+                    {t("MAIN_PAGE.ADVANTAGE_SECTION_CARD_4")}
+                  </p>
+                </article>
               </div>
               <Link
                 to="/login"
@@ -242,6 +254,7 @@ export function HomePage() {
                 </p>
               </Link>
             </article>
+
             <article className="items-container2 p-2 bg-slate-100">
               <h3 className="font-bold text-xl m-auto text-center mb-2">
                 {t("MAIN_PAGE.ADVANTAGE_SECTION_TITLE_2")}
@@ -329,25 +342,26 @@ export function HomePage() {
                 </div>
               </div>
               <div className="flex items-center flex-col justify-center py-3">
-                <picture className="h-10 w-44 flex  items-center justify-center ">
-                  <img
-                    src="./images/logo.png"
-                    className="h-8 object-cover"
-                    alt="order-file"
-                  />
-                </picture>
                 <p className="text-lg p-3 sm:p-0 m-0 text-blue-700 text-center font-bold">
                   {t("MAIN_PAGE.ADVANTAGE_SECTION_DESCRIPTION_3")}
                 </p>
               </div>
             </article>
           </section>
+
           <section
             id="Materials"
             data-section="Materials"
             className="relative flex justify-center bg-slate-200 w-full"
           >
             <MaterialTable />
+          </section>
+          <section
+            id="Materials"
+            data-section="Materials"
+            className="relative flex justify-center bg-slate-200 w-full"
+          >
+            <FinishingTable />
           </section>
           <section
             id="Assistance"
@@ -360,10 +374,15 @@ export function HomePage() {
               data-section="Introduction"
               className="bg-slate-300 bg-opacity-50"
             >
-              <section className="flex flex-col max-w-[1310px] m-auto   gap-8 p-16">
-                <h3 className="w-full text-center max-w-[70ch] mx-auto my-2 font-medium">
-                  {t("MAIN_PAGE.ADVANTAGE_SECTION_2_TITLE")}
-                </h3>
+              <section className="flex flex-col max-w-[1310px] m-auto   gap-10 p-16">
+                <header className="mb-2">
+                  <h3 className="w-full text-center max-w-[80ch] mx-auto my-2 font-meidum text-2xl">
+                    {t("MAIN_PAGE.ADVANTAGE_SECTION_2_TITLE")}
+                  </h3>
+                  <h3 className="w-full text-center max-w-[80ch] mx-auto  font-medium">
+                    {t("MAIN_PAGE.ADVANTAGE_SECTION_2_SUBTITLE")}
+                  </h3>
+                </header>
                 <div className=" grid grid-cols-1 md:grid-cols-3 text-balance content-center sm:gap-6 gap-20  justify-center">
                   <article className="flex   sm:text-center gap-4 flex-col">
                     <picture className="flex justify-center">
@@ -424,7 +443,7 @@ export function HomePage() {
 
         <section className="bg-slate-300 bg-opacity-40">
           <section className="flex flex-col justufy-center bg-slate-70 pt-20 pb-5 px-4 items-center gap-8">
-            <h4 className="font-bold text-2xl text-center">
+            <h4 className="font-bold text-2xl text-center ">
               {t("MAIN_PAGE.VIDEO_SECTION_TITLE")}
             </h4>
             <article className=" flex flex-col gap-8 items-center">

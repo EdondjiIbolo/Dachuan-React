@@ -1,21 +1,21 @@
 import { useTranslation } from "react-i18next";
 import { ArrowIcon } from "./Icons";
 import "./sections/materialstable.css";
-export function MaterialTable() {
+export function FinishingTable() {
   const { t, i18n } = useTranslation();
   return (
-    <div className="container container-table max-w-[1300px] pt-20 flex flex-col gap-2">
+    <div className="container container-table max-w-[1300px] pt-10 flex flex-col gap-2">
       <h2 className="text-center font-semibold text-2xl mb-4 ">
-        {t("MAIN_PAGE.MATERIALS_SECTION_TITLE")}
+        {t("MAIN_PAGE.FINISHING_SECTION_TITLE")}
       </h2>
 
       <p className="max-w-[88ch] text-center m-auto pb-4">
-        {t("MAIN_PAGE.MATERIALS_SECTION_DESCRIPTION")}
+        {t("MAIN_PAGE.FINISHING_SECTION_DESCRIPTION")}
       </p>
       <table className="mytable m-auto">
         <thead>
           <tr>
-            <th>Materials</th>
+            <th>Finishing</th>
             <th colSpan={4}>Features</th>
           </tr>
         </thead>
@@ -58,7 +58,7 @@ export function MaterialTable() {
         <div className="rotate-90">
           <ArrowIcon />
         </div>
-        <a href="/Materials" className="w-full text-center text-sm font-bold">
+        <a href="/finishing" className="w-full text-center text-sm font-bold">
           {t("BUTTON_SEE_MORE")}
         </a>
       </div>

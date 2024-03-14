@@ -4,10 +4,12 @@
   border-collapse: separate;
   border-spacing: 0 8px;
 }
-
+.mytable th:last-child {
+  text-align: center;
+}
 .mytable th,
 .mytable td {
-  padding: 18px;
+  padding: 12px;
 
   text-align: left;
   border: 1px solid #ccc;

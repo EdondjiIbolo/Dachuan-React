@@ -12,16 +12,16 @@ export function Services() {
       <h2 className="text-center font-semibold text-2xl mb-4 pt-4 ">
         {t("MAIN_PAGE.SERVICE_SECTION_TITLE")}
       </h2>
-      <p className="max-w-[120ch] text-balance text-center m-auto pb-1 mb-2">
+      <p className="max-w-[120ch] text-balance text-center m-auto pb-0 mb-1">
         {t("MAIN_PAGE.SERVICE_SECTION_DESCRIPTION_1")}
       </p>
-      <p className="max-w-[120ch] text-balance text-center m-auto pb-1 mb-2">
+      <p className="max-w-[85ch] text-pretty text-center m-auto pb-4 mb-2">
         {t("MAIN_PAGE.SERVICE_SECTION_DESCRIPTION_2")}
       </p>
 
-      <section className="grid md:grid-cols-3 md:grid-flow-col md:gap-4 gap-8  ">
-        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4 pt-8 text-black to-slate-300 from-slate-400 gap-6 py-4 ">
-          <picture className=" pt-2  flex items-center w-40 m-auto h-28">
+      <section className="grid md:grid-cols-3 md:grid-flow-col md:gap-4 gap-8 max-w-[1110px] m-auto ">
+        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4 pt-4 text-black to-slate-300 from-slate-400 gap-2 py-4 ">
+          <picture className=" pt-2  flex items-end w-56 mx-auto h-36">
             <img
               src="./images/milling.png"
               className="object-cover h-full w-full"
@@ -29,8 +29,8 @@ export function Services() {
             />
           </picture>
 
-          <div className="flex  flex-col gap-4 p-4 pt-1">
-            <h3 className="font-bold text-lg border-b py-4">
+          <div className="flex flex-grow flex-col gap-2 p-4 pt-1">
+            <h3 className="font-bold text-lg border-b pt-4 pb-2">
               {t("MAIN_PAGE.SERVICE_SECTION_MILLING_TITLE")}
             </h3>
 
@@ -42,7 +42,7 @@ export function Services() {
             <div className=" flex-1 flex items-end justify-center">
               <Link
                 to="/machining-milling"
-                className="flex mt-12  items-center p-3 shadow-md rounded text-white bg-blue-900 w-[200px] md:w-1/2 m-auto font-semibold  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:outline hover:text-blue-700"
+                className="flex mt-6  items-center p-3 flex-grow shadow-md rounded text-white bg-blue-900 max-w-[200px] md:w-1/2 mx-auto font-semibold  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:outline hover:text-blue-700"
               >
                 <div className="rotate-90">
                   <ArrowIcon />
@@ -52,8 +52,8 @@ export function Services() {
             </div>
           </div>
         </article>
-        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4  pt-8 text-black to-gray-300 from-gray-400 gap-6 py-4 ">
-          <picture className="  pt-2 flex items-center w-40 m-auto h-28">
+        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4 pt-4 text-black  to-neutral-300 from-neutral-400 gap-2 py-4 ">
+          <picture className=" pt-2 flex items-end w-56 mx-auto h-36">
             <img
               src="./images/turning.png"
               className="object-cover h-full w-full"
@@ -61,9 +61,8 @@ export function Services() {
             />
           </picture>
 
-          <div className="flex  flex-col gap-4 p-4 pt-1  flex-1">
-            <h3 className="font-bold text-lg border-b py-4">
-              {" "}
+          <div className="flex flex-grow flex-col gap-2 p-4 pt-1">
+            <h3 className="font-bold text-lg border-b pt-4 pb-2">
               {t("MAIN_PAGE.SERVICE_SECTION_TURNING_TITLE")}
             </h3>
 
@@ -75,18 +74,18 @@ export function Services() {
             <div className=" flex-1 flex items-end justify-center">
               <Link
                 to="/machining-turning"
-                className="flex mt-12  items-end p-3 shadow-md rounded text-white bg-blue-900 w-[200px] md:w-1/2  font-semibold  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:outline hover:text-blue-700"
+                className="flex mt-6  items-center p-3 flex-grow shadow-md rounded text-white bg-blue-900 max-w-[200px] md:w-1/2 mx-auto font-semibold  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:outline hover:text-blue-700"
               >
                 <div className="rotate-90">
                   <ArrowIcon />
                 </div>
-                <p className="text-center w-full"> {t("BUTTON_SEE_MORE")}</p>
+                <p className="text-center w-full">{t("BUTTON_SEE_MORE")}</p>
               </Link>
             </div>
           </div>
         </article>
-        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4 pt-8 text-black  to-zinc-300 from-zinc-400 gap-6 py-4 ">
-          <picture className="  pt-2 flex items-center w-40 m-auto h-28">
+        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4 pt-4 text-black to-slate-200 from-slate-400 gap-2 py-4 ">
+          <picture className=" pt-2 flex items-end w-56 mx-auto h-36">
             <img
               src="./images/drilling.png"
               className="object-cover h-full w-full"
@@ -94,8 +93,8 @@ export function Services() {
             />
           </picture>
 
-          <div className="flex  flex-col gap-4 p-4 flex-1">
-            <h3 className="font-bold text-lg border-b py-4">
+          <div className="flex flex-grow  flex-col gap-2 p-4 pt-1">
+            <h3 className="font-bold text-lg border-b pt-4 pb-2">
               {t("MAIN_PAGE.SERVICE_SECTION_DRILLING_TITLE")}
             </h3>
 
@@ -107,7 +106,7 @@ export function Services() {
             <div className=" flex-1 flex items-end justify-center">
               <Link
                 to="/machining-drilling"
-                className="flex mt-12  items-end p-3 shadow-md rounded text-white bg-blue-900 w-[200px] md:w-1/2  font-semibold  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:outline hover:text-blue-700"
+                className="flex mt-6 flex-grow items-end p-3 shadow-md rounded text-white bg-blue-900 max-w-[200px] md:w-1/2 mx-auto font-semibold  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:outline hover:text-blue-700"
               >
                 <div className="rotate-90">
                   <ArrowIcon />

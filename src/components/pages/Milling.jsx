@@ -14,12 +14,12 @@ export function MillingCnc() {
   const Milling = info;
 
   const [currentSection, setCurrentSection] = useState("");
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth",
+  //   });
+  // }, []);
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export function MillingCnc() {
       const sections = document.querySelectorAll("section[data-section]");
       let activeSection = "";
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 150;
+        const sectionTop = section.offsetTop + 10;
         const sectionHeight = section.clientHeight;
 
         if (
@@ -347,17 +347,19 @@ export function MillingCnc() {
               <p>{t("MILLING.SUMERISE_DESCRIPTION_3")}</p>
             </article>
           </section>
-          <section className="h-80 relative bg-blue-700   ">
-            <section className="  m-auto flex text-wrap max-w-[1300px] relative  gap-4  h-full ">
-              <section className=" flex sm:justify-center items-center sm:items-start p-4 sm:ml-4 sm-py-0 sm:w-[110ch] m-auto  flex-col gap-3">
-                <h3 className="font-medium text-xl sm:max-w-[80ch] text-white">
+          <section className="h-[420px] py-4 relative bg-blue-800   ">
+            <section className="  m-auto flex text-wrap max-w-[1300px] relative justify-between gap-4  h-full ">
+              {/* flex text-center sm:text-left items-center sm:items-start p-4
+              sm:ml-4 sm-py-0 m-auto flex-col gap-3 */}
+              <section className="flex flex-col justify-center ">
+                <h3 className="font-medium text-xl sm:max-w-[70ch] text-white">
                   <p>{t("MILLING.PREFOOTER.PREFOOTER_HEADER")}</p>
                 </h3>
-                <h3 className="font-normal text-md sm:max-w-[80ch] text-white">
+                <h3 className="font-normal text-md sm:max-w-[50ch] text-white">
                   <p>{t("MILLING.PREFOOTER.PREFOOTER_SUBTITLE")}</p>
                 </h3>
                 <ol className="flex gap-5">
-                  <ul className="  max-w-[60ch]">
+                  <ul className="  max-w-[40ch]">
                     <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
                       <CheckIcon2 />
                       <strong className="text-yellow-400 text-xs md:text-sm">
@@ -402,60 +404,14 @@ export function MillingCnc() {
                   {t("BUTTON_QUOTATION")}
                 </Link>
               </section>
-              <picture className="hidden sm:block   relative ">
+              <picture className="hidden sm:block pr-4 w-[400px] relative ">
                 <img
-                  src="./img/banner-cn-2.png"
-                  className="h-full  relative z-5  object-cover object-right"
+                  src="/images/CNC2.webp"
+                  className="h-full  relative z-5  object-cover "
                   alt=""
-                  style={{
-                    clipPath:
-                      " polygon(52% 0, 100% 0, 100% 100%, 50% 100%, 29% 50%)",
-                  }}
                 />
               </picture>
             </section>
-          </section>
-          <section className="  p-4 sm:h-80  overflow-hidden flex items-center w-full  relative">
-            <picture className="absolute  blur-3xl  w-full h-full top-0 left-0 z-10">
-              <img
-                src="/img/Milling parts4.jpeg"
-                className="object-cover object-center h-full w-full"
-                alt=""
-              />
-            </picture>
-            <article className="max-w-[1300px] w-full m-auto relative  z-20 ">
-              <h4 className="text-center m-auto text-4xl font-semibold mb-4">
-                {t("MILLING.PREFOOTER.PREFOOTER_HEADER")}
-              </h4>
-              <div className="flex flex-wrap gap-4 sm:gap-1 justify-center sm:justify-between items-center lg:px-44 lg:py-12">
-                <div className="flex md:justify-start justify-center gap-10 text-center sm:border-r-2 w-full sm:w-[50%] border-gray-400">
-                  <span>
-                    <strong>{t("MILLING.PREFOOTER.STRONG_1")}</strong>
-                    <p className="text-3xl font-light">
-                      {t("MILLING.PREFOOTER.DESCRIPTION_1")}
-                    </p>
-                  </span>
-                  <span>
-                    <strong>{t("MILLING.PREFOOTER.STRONG_2")}</strong>
-                    <p className="text-3xl font-light">
-                      {" "}
-                      {t("MILLING.PREFOOTER.DESCRIPTION_2")}
-                    </p>
-                  </span>
-                </div>
-                <div className="flex  flex-col justify-center items-center gap-1">
-                  <Link
-                    to="/login"
-                    className="bg-blue-800 font-semibold text-white p-2 text-nowrap rounded md:w-18 w-44 text-center hover:bg-white  transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-blue-800 hover:text-blue-700"
-                  >
-                    {t("MILLING.PREFOOTER.BUTTON_TEXT")}
-                  </Link>
-                  <p className="italic font-normal">
-                    {t("MILLING.PREFOOTER.ITALIC")}.
-                  </p>
-                </div>
-              </div>
-            </article>
           </section>
         </section>
       </main>

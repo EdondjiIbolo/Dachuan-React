@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "../../sections/session.css";
 import { Quote } from "./Quote";
 export function MyOrder() {
+  const quote = {};
   return (
     <main className="main-body flex flex-col gap-3 pt-20 pb-7 p-3 sm:px-24">
       <main className="w-full h-full pt-5">
@@ -72,8 +73,8 @@ export function MyOrder() {
             </thead>
 
             <tbody className="sm:text-base t-body text-xs ">
-              <Quote />
-              <Quote />
+              <Quote quote={quote} />
+              <Quote quote={quote} />
             </tbody>
           </table>
         </section>
