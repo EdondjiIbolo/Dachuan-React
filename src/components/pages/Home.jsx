@@ -384,7 +384,7 @@ export function HomePage() {
                   </h3>
                 </header>
                 <div className=" grid grid-cols-1 md:grid-cols-3 text-balance content-center sm:gap-6 gap-20  justify-center">
-                  <article className="flex   sm:text-center gap-4 flex-col">
+                  <article className="flex    text-center gap-4 flex-col">
                     <picture className="flex justify-center">
                       <img
                         className="w-24 h-24 block"
@@ -395,13 +395,13 @@ export function HomePage() {
                     <h4 className="font-medium">
                       {t("MAIN_PAGE.ADVANTAGE_SECTION_2_ARTICLE_1_TITLE")}
                     </h4>
-                    <p className="max-w-[60ch]   sm:text-center">
+                    <p className="max-w-[60ch]   text-center">
                       {t(
                         "MAIN_PAGE.ADVANTAGE_SECTION_2_ARTICLE_1_DESCRIPTION_1"
                       )}
                     </p>
                   </article>
-                  <article className="flex   sm:text-center gap-4 flex-col">
+                  <article className="flex    text-center gap-4 flex-col">
                     <picture className="flex justify-center">
                       <img
                         className="w-24 h-24 block"
@@ -412,13 +412,13 @@ export function HomePage() {
                     <h4 className="font-medium">
                       {t("MAIN_PAGE.ADVANTAGE_SECTION_2_ARTICLE_2_TITLE")}
                     </h4>
-                    <p className="max-w-[60ch]   sm:text-center">
+                    <p className="max-w-[60ch]    text-center">
                       {t(
                         "MAIN_PAGE.ADVANTAGE_SECTION_2_ARTICLE_1_DESCRIPTION_2"
                       )}
                     </p>
                   </article>
-                  <article className="flex   sm:text-center gap-4 flex-col">
+                  <article className="flex    text-center gap-4 flex-col">
                     <picture className="flex justify-center">
                       <img
                         className="w-24 h-24 block"
@@ -429,7 +429,7 @@ export function HomePage() {
                     <h4 className="font-medium">
                       {t("MAIN_PAGE.ADVANTAGE_SECTION_2_ARTICLE_3_TITLE")}
                     </h4>
-                    <p className="max-w-[60ch]   sm:text-center">
+                    <p className="max-w-[60ch]    text-center">
                       {t(
                         "MAIN_PAGE.ADVANTAGE_SECTION_2_ARTICLE_1_DESCRIPTION_3"
                       )}

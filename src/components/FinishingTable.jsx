@@ -15,39 +15,83 @@ export function FinishingTable() {
       <table className="mytable m-auto">
         <thead>
           <tr>
-            <th>Finishing</th>
-            <th colSpan={4}>Features</th>
+            <th>{t("MAIN_PAGE.FINISHINGS.TABLE_FINISHING")}</th>
+            <th colSpan={4}>{t("MAIN_PAGE.FINISHINGS.TABLE_FEATURE")}</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className="font-semibold sm:text-left">Stell</td>
-            <td data-label="Feature">SA-285</td>
-            <td data-label="Feature">SA-285</td>
-            <td data-label="Feature">1045</td>
-            <td data-label="Feature">GCr15L3</td>
-          </tr>
-          <tr>
-            <td className="font-semibold sm:text-left">Aluminum</td>
-            <td data-label="Feature">AW6060</td>
-            <td data-label="Feature">AA 6061</td>
-            <td data-label="Feature">AA 6061</td>
-            <td data-label="Feature">A9 7075</td>
-          </tr>
-          <tr>
-            <td className="font-semibold sm:text-left">Copper</td>
-            <td data-label="Feature">H90</td>
-            <td data-label="Feature">C22000</td>
-            <td data-label="Feature">TU1(99.97)</td>
-            <td data-label="Feature">QSn4-4-4</td>
+            <td className="font-semibold sm:text-left">
+              {" "}
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_1_NAME")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_1_FEATURE_1")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_1_FEATURE_2")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_1_FEATURE_3")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_1_FEATURE_4")}
+            </td>
           </tr>
 
           <tr>
-            <td className="font-semibold sm:text-left">Plastic</td>
-            <td data-label="Feature">Polyurethane</td>
-            <td data-label="Feature">Polyoxymethylene</td>
-            <td data-label="Feature">Nylon</td>
-            <td data-label="Feature">PC</td>
+            <td className="font-semibold sm:text-left">
+              {" "}
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_2_NAME")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_2_FEATURE_1")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_2_FEATURE_2")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_2_FEATURE_3")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_2_FEATURE_4")}
+            </td>
+          </tr>
+          <tr>
+            <td className="font-semibold sm:text-left">
+              {" "}
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_3_NAME")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_3_FEATURE_1")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_3_FEATURE_2")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_3_FEATURE_3")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_3_FEATURE_4")}
+            </td>
+          </tr>
+          <tr>
+            <td className="font-semibold sm:text-left">
+              {" "}
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_4_NAME")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_4_FEATURE_1")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_4_FEATURE_2")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_4_FEATURE_3")}
+            </td>
+            <td data-label="Feature">
+              {t("MAIN_PAGE.FINISHINGS.FINISHING_4_FEATURE_4")}
+            </td>
           </tr>
         </tbody>
       </table>
