@@ -87,7 +87,7 @@ export function HomePage() {
                 {t("MAIN_PAGE.BANNER_DESCRIPTION_2")}
               </li>
 
-              <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
+              <li className="text-zinc-500 text-xs sm:text-sm flex gap-2    items-center ">
                 <CheckIcon />
                 <strong className="text-blue-700 text-xs md:text-sm">
                   {t("MAIN_PAGE.BANNER_STRONG_3")}
@@ -140,10 +140,10 @@ export function HomePage() {
                 {t("MAIN_PAGE.NAV_ITEM_2")}
               </a>
             </li>
-            <li>
+            <li className="overflow-hidden text-ellipsis">
               <a
                 href="#Materials"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
+                className={`sm:p-1 p-[6px] hover:font-medium transition-all  text-nowrap duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
                   currentSection === "Materials"
                     ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
                     : ""
@@ -153,10 +153,10 @@ export function HomePage() {
               </a>
             </li>
 
-            <li>
+            <li className="overflow-hidden text-ellipsis">
               <a
                 href="#Assistance"
-                className={`sm:p-1 p-[6px] hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
+                className={`sm:p-1 p-[6px] text-nowrap   hover:font-medium transition-all duration-250 ease-linear hover:border-b-4 hover:border-orange-500 ${
                   currentSection === "Assistance"
                     ? "font-bold  border-blue-700  border-b-4 hover:border-blue-500"
                     : ""
@@ -199,7 +199,7 @@ export function HomePage() {
                     1
                   </span>
                   <picture className="flex justify-center mb-3">
-                    <img src="./images/upload.webp" className="w-14 " />
+                    <img src="./images/upload.webp" className="w-14" />
                   </picture>
                   <p className="font-semibold  max-w-[16ch] text-center">
                     {t("MAIN_PAGE.ADVANTAGE_SECTION_CARD_1")}
@@ -211,7 +211,11 @@ export function HomePage() {
                     2
                   </span>
                   <picture className="flex justify-center">
-                    <img src="./images/select.png" className="w-14 " />
+                    <img
+                      src="./images/iconos/select.png"
+                      alt=""
+                      className="w-14 "
+                    />
                   </picture>
                   <p className="font-semibold  max-w-[16ch] text-center">
                     {t("MAIN_PAGE.ADVANTAGE_SECTION_CARD_2")}
@@ -223,7 +227,11 @@ export function HomePage() {
                     3
                   </span>
                   <picture className="flex justify-center">
-                    <img src="./images/orderd.webp" alt="" className="w-14 " />
+                    <img
+                      src="./images/iconos/order.png"
+                      alt=""
+                      className="w-14 "
+                    />
                   </picture>
                   <p className="font-semibold  max-w-[16ch] text-center">
                     {t("MAIN_PAGE.ADVANTAGE_SECTION_CARD_3")}
@@ -234,7 +242,11 @@ export function HomePage() {
                     4
                   </span>
                   <picture className="flex justify-center">
-                    <img src="./images/orderd.webp" alt="" className="w-14 " />
+                    <img
+                      src="./images/iconos/shipping.png"
+                      alt=""
+                      className="w-16 h-10"
+                    />
                   </picture>
                   <p className="font-semibold  max-w-[16ch] text-center">
                     {t("MAIN_PAGE.ADVANTAGE_SECTION_CARD_4")}
@@ -287,7 +299,11 @@ export function HomePage() {
                   </header>
                   <div className="flex-grow flex flex-col sm:gap-4 h-full justify-center items-center py-2">
                     <picture className="h-16 w-full flex justify-center items-center">
-                      <img src="./images/edit.png" alt="" className="w-14 " />
+                      <img
+                        src="./images/iconos/material.png"
+                        alt=""
+                        className="w-14 "
+                      />
                     </picture>
                     <div className="flex-col flex gap-0 text-xs max-w-[20ch] font-semibold">
                       <p>
@@ -306,7 +322,7 @@ export function HomePage() {
                   <div className=" flex-grow flex flex-col sm:gap-4  justify-center items-center py-2">
                     <picture className="h-16 w-full flex justify-center items-center">
                       <img
-                        src="./images/assurance.webp"
+                        src="./images/iconos/assurance.png"
                         alt=""
                         className="w-14 "
                       />
@@ -327,7 +343,7 @@ export function HomePage() {
                   <div className="flex-grow  flex flex-col sm:gap-4  justify-center items-center py-2">
                     <picture className="h-16 w-16 flex justify-center items-center">
                       <img
-                        src="./images/setting.png"
+                        src="./images/iconos/finishing.png"
                         alt=""
                         className="w-14 "
                       />
@@ -422,7 +438,7 @@ export function HomePage() {
                     <picture className="flex justify-center">
                       <img
                         className="w-24 h-24 block"
-                        src="./images/fast.png"
+                        src="./images/iconos/location.png"
                         alt="Capabilitie"
                       />
                     </picture>

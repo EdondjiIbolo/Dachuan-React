@@ -13,7 +13,6 @@ import { useData } from "../../Hooks/useData.jsx";
 export function TurningCnc() {
   const { loading, info } = useData();
   const Turning = info;
-  console.log(Turning);
   const [currentSection, setCurrentSection] = useState("");
   // useEffect(() => {
   //   window.scrollTo({
@@ -28,7 +27,7 @@ export function TurningCnc() {
       const sections = document.querySelectorAll("section[data-section]");
       let activeSection = "";
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 10;
+        const sectionTop = section.offsetTop + 100;
         const sectionHeight = section.clientHeight;
 
         if (
@@ -36,7 +35,6 @@ export function TurningCnc() {
           window.scrollY < sectionTop + sectionHeight
         ) {
           activeSection = section.getAttribute("data-section");
-          console.log(activeSection);
         }
       });
 
@@ -53,67 +51,69 @@ export function TurningCnc() {
     <>
       <Header />
       <main className=" relative  ">
-        <section className=" w-full max-w-[1300px] m-auto pt-20">
-          <section className="relative flex items-center h-86 sm:h-96 overflow-hidden ">
-            <picture className="absolute hidden sm:block z-5 top-0 left-0  w-full ">
-              <img
-                src="/img/banner-en-3.webp"
-                className="h-96 object-[-235px] sm:object-center sm:h-96 block object-cover w-full"
-                alt="Banner img"
-              />
-            </picture>
-            <section
-              id="Services"
-              data-section="Services"
-              className="sm:px-12 p-4 sm:py-8 h-full flex flex-col z-10 relative w-full bg-white text-wrap gap-4  sm:w-[580px] sm:ml-24 sm:h-[340px] "
-            >
-              <h1 className="font-bold sm:text-2xl text-lg max-w-[40ch] uppercase text-wrap">
-                {t("TURNING.TURNING_TITLE")}
-              </h1>
-              <ul className="">
-                <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
-                  <CheckIcon />
-                  <strong className="text-blue-700 text-xs md:text-sm">
-                    {t("TURNING.BANNER_STRONG_1")}
-                  </strong>{" "}
-                  {t("TURNING.BANNER_DESCRIPTION_1")}
-                </li>
-                <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
-                  <CheckIcon />
-                  <strong className="text-blue-700 text-xs md:text-sm">
-                    {t("TURNING.BANNER_STRONG_2")}
-                  </strong>{" "}
-                  {t("TURNING.BANNER_DESCRIPTION_2")}
-                </li>
-                <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
-                  <CheckIcon />
-                  <strong className="text-blue-700 text-xs md:text-sm">
-                    {t("TURNING.BANNER_STRONG_3")}
-                  </strong>{" "}
-                  {t("TURNING.BANNER_DESCRIPTION_3")}
-                </li>
-                <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
-                  <CheckIcon />
-                  <strong className="text-blue-700 text-xs md:text-sm">
-                    {t("TURNING.BANNER_STRONG_4")}
-                  </strong>{" "}
-                  {t("TURNING.BANNER_DESCRIPTION_4")}
-                </li>
-              </ul>
-              <p className="text-black font-semibold text-sm flex flex-row items-center gap-1 mb-2">
-                {t("TURNING.BANNER_DESCRIPTION_6")}
-              </p>
-              <Link
-                to="/login"
-                className="bg-blue-800 font-semibold text-white  p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
-              >
-                {t("BUTTON_QUOTATION")}
-              </Link>
-              <p className="text-zinc-500 text-xs flex flex-row items-center gap-1 mb-2">
-                <SecureIcon />
-                {t("TURNING.BANNER_DESCRIPTION_5")}
-              </p>
-            </section>
+        <section
+          id="Services"
+          data-section="Services"
+          className=" w-full m-auto pt-20"
+        >
+          <section className="relative flex items-center h-86 sm:h-[450px] overflow-hidden ">
+            <article className="w-full max-w-[1310px] mx-auto">
+              <picture className="absolute hidden sm:block z-5 h-[450px] top-0 left-0  w-screen ">
+                <img
+                  src="/img/banner-en-3.webp"
+                  className="h-full object-[-235px]  sm:object-center block object-cover w-full"
+                  alt="Banner img"
+                />
+              </picture>
+              <section className="sm:px-12 p-4 sm:py-8 h-full flex flex-col z-10 relative w-full bg-white text-wrap gap-4  sm:w-[580px] sm:ml-24 sm:h-[340px] ">
+                <h1 className="font-bold sm:text-2xl text-lg max-w-[40ch] uppercase text-wrap">
+                  {t("TURNING.TURNING_TITLE")}
+                </h1>
+                <ul className="">
+                  <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
+                    <CheckIcon />
+                    <strong className="text-blue-700 text-xs md:text-sm">
+                      {t("TURNING.BANNER_STRONG_1")}
+                    </strong>{" "}
+                    {t("TURNING.BANNER_DESCRIPTION_1")}
+                  </li>
+                  <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
+                    <CheckIcon />
+                    <strong className="text-blue-700 text-xs md:text-sm">
+                      {t("TURNING.BANNER_STRONG_2")}
+                    </strong>{" "}
+                    {t("TURNING.BANNER_DESCRIPTION_2")}
+                  </li>
+                  <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
+                    <CheckIcon />
+                    <strong className="text-blue-700 text-xs md:text-sm">
+                      {t("TURNING.BANNER_STRONG_3")}
+                    </strong>{" "}
+                    {t("TURNING.BANNER_DESCRIPTION_3")}
+                  </li>
+                  <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
+                    <CheckIcon />
+                    <strong className="text-blue-700 text-xs md:text-sm">
+                      {t("TURNING.BANNER_STRONG_4")}
+                    </strong>{" "}
+                    {t("TURNING.BANNER_DESCRIPTION_4")}
+                  </li>
+                </ul>
+                <p className="text-black font-semibold text-sm flex flex-row items-center gap-1 mb-2">
+                  {t("TURNING.BANNER_DESCRIPTION_6")}
+                </p>
+                <Link
+                  to="/login"
+                  className="bg-blue-800 font-semibold text-white  p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
+                >
+                  {t("BUTTON_QUOTATION")}
+                </Link>
+                <p className="text-zinc-500 text-xs flex flex-row items-center gap-1 mb-2">
+                  <SecureIcon />
+                  {t("TURNING.BANNER_DESCRIPTION_5")}
+                </p>
+              </section>
+            </article>
           </section>
         </section>
         <article className="relative">
@@ -183,7 +183,10 @@ export function TurningCnc() {
           </nav>
           <section className="grid grid-cols-1 md:grid-cols-[400px,auto] max-w-[1310px] m-auto gap-8 p-10">
             <h2 className="text-2xl">{t("TURNING.SERVICE_TITLE")}</h2>
-            <article className="text-pretty text-sm flex flex-col gap-2">
+            <article
+              id="Advantages"
+              className="text-pretty text-sm flex flex-col gap-2"
+            >
               <p>{t("TURNING.SERVICE_DESCRIPTION_1")}</p>
               <p>{t("TURNING.SERVICE_DESCRIPTION_2")}</p>
             </article>
@@ -191,7 +194,6 @@ export function TurningCnc() {
 
           <section className="w-full from-slate-100 to-slate-200 bg-gradient-to-b ">
             <section
-              id="Advantages"
               data-section="Advantages"
               className="p-8 flex flex-col gap-8  max-w-[1310px] m-auto "
             >
@@ -215,7 +217,7 @@ export function TurningCnc() {
                   <div className="flex gap-8 p-2 border pl-3 h-min sm:h-24 border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
                     <picture className="h-10 w-10 items-stretch">
                       <img
-                        src="./images/advantage-1.png"
+                        src="./images/iconos/assurance.png"
                         alt="advantage icon"
                       />
                     </picture>
@@ -241,7 +243,7 @@ export function TurningCnc() {
                   <div className="flex gap-8 p-2 border pl-3 h-min sm:h-24  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
                     <picture className="h-10 w-10 items-stretch">
                       <img
-                        src="./images/advantage-3.png"
+                        src="./images/iconos/finishing.png"
                         alt="advantage icon"
                       />
                     </picture>
@@ -253,7 +255,7 @@ export function TurningCnc() {
                   <div className="flex gap-8 p-2 border pl-3 h-min sm:h-24  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
                     <picture className="h-10 w-10 items-stretch">
                       <img
-                        src="./images/advantage-6.png"
+                        src="./images/iconos/material.png"
                         alt="advantage icon"
                       />
                     </picture>
@@ -269,7 +271,10 @@ export function TurningCnc() {
                         alt="advantage icon"
                       />
                     </picture>
-                    <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
+                    <div
+                      id="Materials"
+                      className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm"
+                    >
                       <strong>{t("TURNING.ADVANTAGE_6_TITLE")}</strong>
                       <p>{t("TURNING.ADVANTAGE_6_TITLE_DESCRIPTION")}</p>
                     </div>
@@ -278,11 +283,7 @@ export function TurningCnc() {
               </article>
             </section>
           </section>
-          <section
-            id="Materials"
-            data-section="Materials"
-            className=" bg-slate-100 p-8"
-          >
+          <section data-section="Materials" className=" bg-slate-100 p-8">
             <article className="section-art text-center items-center flex flex-col gap-4">
               <p className="text__title font-semibold text-xl">
                 {t("TURNING.MATERIALS.MATERIAL_SECTION_TITLE")}
@@ -292,7 +293,7 @@ export function TurningCnc() {
               </p>
             </article>
             <article className="section-qs">
-              <ol className="qs-list">
+              <ol id="Finishing" className="qs-list">
                 <div className="list__item">
                   {Turning?.materials?.map((material, index) => {
                     return (
@@ -309,11 +310,7 @@ export function TurningCnc() {
               </ol>
             </article>
           </section>
-          <section
-            id="Finishing"
-            data-section="Finishing"
-            className=" bg-slate-100 p-8"
-          >
+          <section data-section="Finishing" className=" bg-slate-100 p-8">
             <article className=" text-center items-center flex flex-col gap-4">
               <p className="text__title font-semibold text-xl">
                 {t("TURNING.FINISHING.FINISHING_SECTION_TITLE")}
@@ -322,7 +319,7 @@ export function TurningCnc() {
                 {t("TURNING.FINISHING.FINISHING_SECTION_DESCRIPTION")}
               </p>
             </article>
-            <article className="section-qs">
+            <article id="Quotation" className="section-qs">
               <ol className="qs-list">
                 <div className="list__item">
                   {Turning?.Finishing?.map((finishing, index) => {
@@ -340,48 +337,47 @@ export function TurningCnc() {
               </ol>
             </article>
           </section>
-          <section className="grid grid-cols-1 md:grid-cols-[400px,auto] w-full max-w-[1310px] m-auto gap-8 p-10">
+          <section
+            data-section="Quotation"
+            className="grid grid-cols-1 md:grid-cols-[400px,auto] w-full max-w-[1310px] m-auto gap-8 p-10"
+          >
             <h2 className="text-2xl">
               {" "}
               <p>{t("TURNING.SUMERISE_TITLE")}</p>
             </h2>
 
-            <article
-              data-section="Quotation"
-              className="text-pretty text-sm flex flex-col gap-2"
-            >
+            <article className="text-pretty text-sm flex flex-col gap-2">
               <p>{t("TURNING.SUMERISE_DESCRIPTION_1")}</p>
               <p>{t("TURNING.SUMERISE_DESCRIPTION_2")}</p>
-              <p>{t("TURNING.SUMERISE_DESCRIPTION_3")}</p>
             </article>
           </section>
         </article>
-        <section className="h-[420px]  py-4 relative bg-blue-800   ">
+        <section className="h-[420px] px-3 py-4 relative bg-blue-800 sm:text-left  ">
           <section className="  m-auto flex text-wrap max-w-[1300px] relative justify-between gap-4  h-full ">
             {/* flex text-center sm:text-left items-center sm:items-start p-4
               sm:ml-4 sm-py-0 m-auto flex-col gap-3 */}
-            <section className="flex flex-col justify-center ">
+            <section className="flex flex-col justify-center gap-3 sm:gap-1 items-center text-center sm:text-left sm:items-start">
               <h3 className="font-medium text-xl sm:max-w-[70ch] text-white">
-                <p>{t("MILLING.PREFOOTER.PREFOOTER_HEADER")}</p>
+                <p>{t("TURNING.PREFOOTER.PREFOOTER_HEADER")}</p>
               </h3>
               <h3 className="font-normal text-md sm:max-w-[50ch] text-white">
-                <p>{t("MILLING.PREFOOTER.PREFOOTER_SUBTITLE")}</p>
+                <p>{t("TURNING.PREFOOTER.PREFOOTER_SUBTITLE")}</p>
               </h3>
               <ol className="flex gap-5">
                 <ul className="  max-w-[40ch]">
                   <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
                     <CheckIcon2 />
                     <strong className="text-yellow-400 text-xs md:text-sm">
-                      {t("MILLING.PREFOOTER.STRONG_1")}
+                      {t("TURNING.PREFOOTER.STRONG_1")}
                     </strong>
-                    {t("MILLING.PREFOOTER.DESCRIPTION_1")}
+                    {t("TURNING.PREFOOTER.DESCRIPTION_1")}
                   </li>
                   <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
                     <CheckIcon2 />
                     <strong className="text-yellow-400 text-xs md:text-sm">
-                      {t("MILLING.PREFOOTER.STRONG_2")}
+                      {t("TURNING.PREFOOTER.STRONG_2")}
                     </strong>
-                    {t("MILLING.PREFOOTER.DESCRIPTION_2")}
+                    {t("TURNING.PREFOOTER.DESCRIPTION_2")}
                   </li>
                 </ul>
               </ol>
@@ -404,11 +400,11 @@ export function TurningCnc() {
                                       H24v-8c0-4.418,3.582-8,8-8s8,3.582,8,8V24z"
                   />
                 </svg>
-                {t("MILLING.PREFOOTER.ITALIC")}
+                {t("TURNING.PREFOOTER.ITALIC")}
               </p>
               <Link
                 to="login"
-                className="p-2 text-center shadow-md rounded text-white hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2   hover:outline-orange-400 hover:outline hover:text-orange-400  bg-orange-500  w-36 "
+                className="p-2 mt-4 text-center  shadow-md rounded text-white hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2   hover:outline-orange-400 hover:outline hover:text-orange-400  bg-orange-500  w-36 "
               >
                 {t("BUTTON_QUOTATION")}
               </Link>

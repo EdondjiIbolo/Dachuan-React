@@ -130,7 +130,7 @@
     "FINISHING_SECTION_TITLE": "Finishing",
     "FINISHING_SECTION_DESCRIPTION": "All of these finishing can be found on the Chuantai Technology instant quote platform. If you need a different finishing, please specify it as custom when you make a request.",
     "MATERIALS_SECTION_TITLE": "Materials",
-    "MATERIALS_SECTION_DESCRIPTION": "All these materials and surface treatment processes can be found in the real-time quotation platform of Chuantai Technology。 If you need a different material, specify it as custom when you request a quote.",
+    "MATERIALS_SECTION_DESCRIPTION": "All of these surface treatment processes can be found on the Chuantai Technology instant quote platform。 If you need a different material, specify it as custom when you request a quote.",
 
     "MATERIALS": {
       "TABLE_MATERIAL": "Material",
@@ -215,7 +215,9 @@
     "NAV_ITEM_5": "Introduction",
     "SERVICE_TITLE": "CNC Milling Service",
     "SERVICE_DESCRIPTION_1": "Our CNC milling services employ 3-, 4-, and 5-axis machining processes to efficiently produce high-quality parts，and provide you with advanced CNC machining solutions to ensure the quality and delivery time of your industrial projects.",
-    "SERVICE_DESCRIPTION_2": "3-axis CNC milling, this technology will be your best choice for simple parts to meet the requirements of precision and economy at the same time. 5-axis CNC milling for the highest precision advanced machining for complex and delicate part designs. 4-axis CNC milling, Which is easier for multi-sided machining as designed, provides greater accuracy than 3-axis milling.",
+    "SERVICE_DESCRIPTION_2": "3-axis CNC milling, this technology will be your best choice for simple parts to meet the requirements of precision and economy at the same time.",
+    "SERVICE_DESCRIPTION_3": "4-axis CNC milling, Which is easier for multi-sided machining as designed, provides greater accuracy than 3-axis milling.",
+    "SERVICE_DESCRIPTION_4": "5-axis CNC milling for the highest precision advanced machining for complex and delicate part designs.",
 
     "ADVANTAGE_SECTION_TITLE": "Advantages of Dachuan's CNC Milling service",
     "ADVANTAGE_1_TITLE": "Easy and Fast",

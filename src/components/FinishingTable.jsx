@@ -9,7 +9,7 @@ export function FinishingTable() {
         {t("MAIN_PAGE.FINISHING_SECTION_TITLE")}
       </h2>
 
-      <p className="max-w-[88ch] text-center m-auto pb-4">
+      <p className="max-w-[75ch] text-center m-auto pb-4">
         {t("MAIN_PAGE.FINISHING_SECTION_DESCRIPTION")}
       </p>
       <table className="mytable m-auto">

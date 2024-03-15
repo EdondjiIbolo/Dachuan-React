@@ -37,7 +37,7 @@ export function DashboardHeader() {
         </section>
         <section className="flex items-center gap-3 pr-2 sm:pr-0">
           <p className="font-semibold hover:uderline text-base sm:text-lg text-blue-900">
-            {user.name}
+            {`${user.name} ${user.username}`}
           </p>
           <button
             onClick={handleLogout}

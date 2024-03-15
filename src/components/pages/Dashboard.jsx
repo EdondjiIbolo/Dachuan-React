@@ -30,11 +30,11 @@ export function Panel() {
             />
           </picture>
           <article className="">
-            <p className="font-bold text-2xl capitalize">lino dachuan</p>
+            <p className="font-bold text-2xl capitalize">{`${user.name} ${user.username}`}</p>
             <span className="flex gap-3">
               <p className="text-xs border-r px-1 border-gray-400">yewu</p>
               <p className="text-xs border-l px-1 border-gray-400">
-                enzombul@gmail.com
+                {user.email}
               </p>
             </span>
           </article>

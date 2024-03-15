@@ -53,67 +53,73 @@ export function MillingCnc() {
     <>
       <Header />
       <main className=" relative  ">
-        <section id="Services" className=" w-full max-w-[1310px] m-auto pt-20">
-          <section className="relative flex items-center h-86 sm:h-96 overflow-hidden ">
-            <picture className="absolute hidden sm:block z-5 top-0 left-0  w-full ">
-              <img
-                src="/img/Milling-method.webp"
-                className="h-96 object-[-235px] sm:object-center sm:h-96 block object-cover w-full"
-                alt="Banner img"
-              />
-            </picture>
-            <section className="sm:px-12 p-4 sm:py-8 h-full flex flex-col z-10 relative w-full bg-white text-wrap gap-4  sm:w-[580px] sm:ml-24 sm:h-[320px] ">
-              <h1 className="font-bold sm:text-2xl text-lg max-w-[40ch] uppercase text-wrap">
-                {t("MILLING.MILLING_TITLE")}
-              </h1>
-              <ul className="">
-                <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
-                  <CheckIcon />
-                  <strong className="text-blue-700 text-xs md:text-sm">
-                    {t("MILLING.BANNER_STRONG_1")}
-                  </strong>{" "}
-                  {t("MILLING.BANNER_DESCRIPTION_1")}
-                </li>
-                <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
-                  <CheckIcon />
-                  <strong className="text-blue-700 text-xs md:text-sm">
-                    {t("MILLING.BANNER_STRONG_2")}
-                  </strong>{" "}
-                  {t("MILLING.BANNER_DESCRIPTION_2")}
-                </li>
-                <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
-                  <CheckIcon />
-                  <strong className="text-blue-700 text-xs md:text-sm">
-                    {t("MILLING.BANNER_STRONG_3")}
-                  </strong>{" "}
-                  {t("MILLING.BANNER_DESCRIPTION_3")}
-                </li>
-                <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
-                  <CheckIcon />
-                  <strong className="text-blue-700 text-xs md:text-sm">
-                    {t("MILLING.BANNER_STRONG_4")}
-                  </strong>{" "}
-                  {t("MILLING.BANNER_DESCRIPTION_4")}
-                </li>
-              </ul>
-              <p className="text-black font-semibold text-sm flex flex-row items-center gap-1 mb-2">
-                {t("MILLING.BANNER_DESCRIPTION_6")}
-              </p>
-              <Link
-                to="/login"
-                className="bg-blue-800 font-semibold text-white  p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
-              >
-                {t("BUTTON_QUOTATION")}
-              </Link>
-              <p className="text-zinc-500 text-xs flex flex-row items-center gap-1 mb-2">
-                <SecureIcon />
-                {t("MILLING.BANNER_DESCRIPTION_5")}
-              </p>
-            </section>
+        <section
+          id="Services"
+          data-section="Services"
+          className=" w-full m-auto pt-20"
+        >
+          <section className="relative flex items-center h-86 sm:h-[450px] overflow-hidden ">
+            <article className="w-full max-w-[1310px] mx-auto">
+              <picture className="absolute hidden sm:block z-5 h-[450px] top-0 left-0  w-screen ">
+                <img
+                  src="/img/Milling-method.webp"
+                  className="h-full object-[-235px]  sm:object-center block object-cover w-full"
+                  alt="Banner img"
+                />
+              </picture>
+              <section className="sm:px-12 p-4 sm:py-8 h-full flex flex-col z-10 relative w-full bg-white text-wrap gap-4  sm:w-[580px] sm:ml-24 sm:h-[320px] ">
+                <h1 className="font-bold sm:text-2xl text-lg max-w-[40ch] uppercase text-wrap">
+                  {t("MILLING.MILLING_TITLE")}
+                </h1>
+                <ul className="">
+                  <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
+                    <CheckIcon />
+                    <strong className="text-blue-700 text-xs md:text-sm">
+                      {t("MILLING.BANNER_STRONG_1")}
+                    </strong>{" "}
+                    {t("MILLING.BANNER_DESCRIPTION_1")}
+                  </li>
+                  <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
+                    <CheckIcon />
+                    <strong className="text-blue-700 text-xs md:text-sm">
+                      {t("MILLING.BANNER_STRONG_2")}
+                    </strong>{" "}
+                    {t("MILLING.BANNER_DESCRIPTION_2")}
+                  </li>
+                  <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
+                    <CheckIcon />
+                    <strong className="text-blue-700 text-xs md:text-sm">
+                      {t("MILLING.BANNER_STRONG_3")}
+                    </strong>{" "}
+                    {t("MILLING.BANNER_DESCRIPTION_3")}
+                  </li>
+                  <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
+                    <CheckIcon />
+                    <strong className="text-blue-700 text-xs md:text-sm">
+                      {t("MILLING.BANNER_STRONG_4")}
+                    </strong>{" "}
+                    {t("MILLING.BANNER_DESCRIPTION_4")}
+                  </li>
+                </ul>
+                <p className="text-black font-semibold text-sm flex flex-row items-center gap-1 mb-2">
+                  {t("MILLING.BANNER_DESCRIPTION_6")}
+                </p>
+                <Link
+                  to="/login"
+                  className="bg-blue-800 font-semibold text-white  p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
+                >
+                  {t("BUTTON_QUOTATION")}
+                </Link>
+                <p className="text-zinc-500 text-xs flex flex-row items-center gap-1 mb-2">
+                  <SecureIcon />
+                  {t("MILLING.BANNER_DESCRIPTION_5")}
+                </p>
+              </section>
+            </article>
           </section>
         </section>
         <article className="relative">
-          <nav className="sticky z-10 top-20 bg-zinc-50 shadow-md">
+          <nav className="sticky z-10 w-full top-20 bg-zinc-50">
             <ul className="flex px-2 sm:px-4 max-w-[1310px]  mx-auto w-full justify-between  md:px-12 text-xs sm:text-base py-2 text-zinc-600 ">
               <li>
                 <a
@@ -124,7 +130,7 @@ export function MillingCnc() {
                       : ""
                   }`}
                 >
-                  Services
+                  {t("MILLING.NAV_ITEM_1")}
                 </a>
               </li>
               <li>
@@ -136,7 +142,7 @@ export function MillingCnc() {
                       : ""
                   }`}
                 >
-                  Advantages
+                  {t("MILLING.NAV_ITEM_2")}
                 </a>
               </li>
               <li>
@@ -148,7 +154,7 @@ export function MillingCnc() {
                       : ""
                   }`}
                 >
-                  Materials
+                  {t("MILLING.NAV_ITEM_3")}
                 </a>
               </li>
               <li>
@@ -160,7 +166,7 @@ export function MillingCnc() {
                       : ""
                   }`}
                 >
-                  Finishing
+                  {t("MILLING.NAV_ITEM_4")}
                 </a>
               </li>
               <li>
@@ -172,29 +178,39 @@ export function MillingCnc() {
                       : ""
                   }`}
                 >
-                  Get Quotation
+                  {t("MILLING.NAV_ITEM_5")}
                 </a>
               </li>
             </ul>
           </nav>
-          <section
-            id="Services"
-            data-section="Services"
-            className="grid grid-cols-1 md:grid-cols-[400px,auto] max-w-[1310px] m-auto gap-8 p-10"
-          >
+          <section className="grid grid-cols-1 md:grid-cols-[350px,auto] max-w-[1310px] m-auto gap-8 px-3 py-10">
             <h2 className="text-2xl">{t("MILLING.SERVICE_TITLE")}</h2>
-            <article className="text-pretty text-sm flex flex-col gap-2">
-              <p>{t("MILLING.SERVICE_DESCRIPTION_1")}</p>
-              <p>{t("MILLING.SERVICE_DESCRIPTION_2")}</p>
+            <article
+              id="Advantages"
+              className="text-pretty [line-height] text-sm flex flex-col gap-2"
+            >
+              <p className="text-base m-0">
+                {t("MILLING.SERVICE_DESCRIPTION_1")}
+              </p>
+              <div>
+                <p className="text-base ">
+                  {t("MILLING.SERVICE_DESCRIPTION_2")}
+                </p>
+                <p className="text-base ">
+                  {t("MILLING.SERVICE_DESCRIPTION_3")}
+                </p>
+                <p className="text-base ">
+                  {t("MILLING.SERVICE_DESCRIPTION_4")}
+                </p>
+              </div>
             </article>
           </section>
 
-          <section
-            id="Advantages"
-            data-section="Advantages"
-            className="w-full from-slate-100 to-slate-200 bg-gradient-to-b "
-          >
-            <section className="p-8 flex flex-col gap-8  max-w-[1310px] m-auto ">
+          <section className="w-full from-slate-100 to-slate-200 bg-gradient-to-b ">
+            <section
+              data-section="Advantages"
+              className="p-8 flex flex-col gap-8  max-w-[1310px] m-auto "
+            >
               <h2 className="text-2xl text-center">
                 {t("MILLING.ADVANTAGE_SECTION_TITLE")}
               </h2>
@@ -215,7 +231,7 @@ export function MillingCnc() {
                   <div className="flex gap-8 p-2 border pl-3 h-min sm:h-24 border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
                     <picture className="h-10 w-10 items-stretch">
                       <img
-                        src="./images/advantage-1.png"
+                        src="./images/iconos/assurance.png"
                         alt="advantage icon"
                       />
                     </picture>
@@ -241,7 +257,7 @@ export function MillingCnc() {
                   <div className="flex gap-8 p-2 border pl-3 h-min sm:h-24  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
                     <picture className="h-10 w-10 items-stretch">
                       <img
-                        src="./images/advantage-3.png"
+                        src="./images/iconos/finishing.png"
                         alt="advantage icon"
                       />
                     </picture>
@@ -253,7 +269,7 @@ export function MillingCnc() {
                   <div className="flex gap-8 p-2 border pl-3 h-min sm:h-24  border-zinc-300 rounded flex-wrap justify-center items-center text-center md:text-left md:flex-nowrap">
                     <picture className="h-10 w-10 items-stretch">
                       <img
-                        src="./images/advantage-6.png"
+                        src="./images/iconos/material.png"
                         alt="advantage icon"
                       />
                     </picture>
@@ -269,7 +285,10 @@ export function MillingCnc() {
                         alt="advantage icon"
                       />
                     </picture>
-                    <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
+                    <div
+                      id="Materials"
+                      className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm"
+                    >
                       <strong>{t("MILLING.ADVANTAGE_6_TITLE")}</strong>
                       <p>{t("MILLING.ADVANTAGE_6_TITLE_DESCRIPTION")}</p>
                     </div>
@@ -278,11 +297,7 @@ export function MillingCnc() {
               </article>
             </section>
           </section>
-          <section
-            id="Materials"
-            data-section="Materials"
-            className=" bg-slate-100 p-8"
-          >
+          <section data-section="Materials" className=" bg-slate-100 p-8">
             <article className="section-art text-center items-center flex flex-col gap-4">
               <p className="text__title font-semibold text-xl">
                 {t("MILLING.MATERIALS.MATERIAL_SECTION_TITLE")}
@@ -292,8 +307,8 @@ export function MillingCnc() {
               </p>
             </article>
             <article className="section-qs">
-              <ol className="qs-list">
-                <div id="Finishing" className="list__item">
+              <ol id="Finishing" className="qs-list">
+                <div className="list__item">
                   {Milling?.materials?.map((material, index) => {
                     return (
                       <li key={index}>
@@ -309,11 +324,7 @@ export function MillingCnc() {
               </ol>
             </article>
           </section>
-          <section
-            data-section="Finishing"
-            id="Finishing"
-            className=" bg-slate-100 p-8"
-          >
+          <section data-section="Finishing" className=" bg-slate-100 p-8">
             <article className=" text-center items-center flex flex-col gap-4">
               <p className="text__title font-semibold text-xl">
                 {t("MILLING.FINISHING.FINISHING_SECTION_TITLE")}
@@ -322,7 +333,7 @@ export function MillingCnc() {
                 {t("MILLING.FINISHING.FINISHING_SECTION_DESCRIPTION")}
               </p>
             </article>
-            <article className="section-qs">
+            <article id="Quotation" className="section-qs">
               <ol className="qs-list">
                 <div className="list__item">
                   {Milling?.Finishing?.map((finishing, index) => {
@@ -340,88 +351,86 @@ export function MillingCnc() {
               </ol>
             </article>
           </section>
-        </article>
-
-        <section className=" m-auto " id="Quotation">
-          <section className="grid grid-cols-1 md:grid-cols-[400px,auto] w-full max-w-[1310px] m-auto gap-8 p-10">
+          <section
+            data-section="Quotation"
+            className="grid grid-cols-1 md:grid-cols-[400px,auto] w-full max-w-[1310px] m-auto gap-8 p-10"
+          >
             <h2 className="text-2xl">
               {" "}
               <p>{t("MILLING.SUMERISE_TITLE")}</p>
             </h2>
-            <article
-              data-section="Quotation"
-              className="text-pretty text-sm flex flex-col gap-2"
-            >
+
+            <article className="text-pretty text-sm flex flex-col gap-2">
               <p>{t("MILLING.SUMERISE_DESCRIPTION_1")}</p>
               <p>{t("MILLING.SUMERISE_DESCRIPTION_2")}</p>
               <p>{t("MILLING.SUMERISE_DESCRIPTION_3")}</p>
             </article>
           </section>
-          <section className="h-[420px]  py-4 relative bg-blue-800   ">
-            <section className="  m-auto flex text-wrap max-w-[1300px] relative justify-between gap-4  h-full ">
-              {/* flex text-center sm:text-left items-center sm:items-start p-4
+        </article>
+        <section className="h-[420px] px-3 py-4 relative bg-blue-800   ">
+          <section className="  m-auto flex text-wrap max-w-[1300px] relative justify-between gap-4  h-full ">
+            {/* flex text-center sm:text-left items-center sm:items-start p-4
               sm:ml-4 sm-py-0 m-auto flex-col gap-3 */}
-              <section className="flex flex-col justify-center ">
-                <h3 className="font-medium text-xl sm:max-w-[70ch] text-white">
-                  <p>{t("MILLING.PREFOOTER.PREFOOTER_HEADER")}</p>
-                </h3>
-                <h3 className="font-normal text-md sm:max-w-[50ch] text-white">
-                  <p>{t("MILLING.PREFOOTER.PREFOOTER_SUBTITLE")}</p>
-                </h3>
-                <ol className="flex gap-5">
-                  <ul className="  max-w-[40ch]">
-                    <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
-                      <CheckIcon2 />
-                      <strong className="text-yellow-400 text-xs md:text-sm">
-                        {t("MILLING.PREFOOTER.STRONG_1")}
-                      </strong>
-                      {t("MILLING.PREFOOTER.DESCRIPTION_1")}
-                    </li>
-                    <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
-                      <CheckIcon2 />
-                      <strong className="text-yellow-400 text-xs md:text-sm">
-                        {t("MILLING.PREFOOTER.STRONG_2")}
-                      </strong>
-                      {t("MILLING.PREFOOTER.DESCRIPTION_2")}
-                    </li>
-                  </ul>
-                </ol>
+            <section className="flex flex-col justify-center ">
+              <h3 className="font-medium text-xl sm:max-w-[70ch] text-white">
+                <p>{t("MILLING.PREFOOTER.PREFOOTER_HEADER")}</p>
+              </h3>
+              <h3 className="font-normal text-md sm:max-w-[50ch] text-white">
+                <p>{t("MILLING.PREFOOTER.PREFOOTER_SUBTITLE")}</p>
+              </h3>
+              <ol className="flex gap-5">
+                <ul className="  max-w-[40ch]">
+                  <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
+                    <CheckIcon2 />
+                    <strong className="text-yellow-400 text-xs md:text-sm">
+                      {t("MILLING.PREFOOTER.STRONG_1")}
+                    </strong>
+                    {t("MILLING.PREFOOTER.DESCRIPTION_1")}
+                  </li>
+                  <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
+                    <CheckIcon2 />
+                    <strong className="text-yellow-400 text-xs md:text-sm">
+                      {t("MILLING.PREFOOTER.STRONG_2")}
+                    </strong>
+                    {t("MILLING.PREFOOTER.DESCRIPTION_2")}
+                  </li>
+                </ul>
+              </ol>
 
-                <p className="text-white text-xs flex flex-row items-center gap-1 mb-2">
-                  <svg
-                    version="1.0"
-                    id="Layer_1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    className="h-4 w-4"
-                    viewBox="0 0 64 64"
-                    enableBackground="new 0 0 64 64"
-                    xmlSpace="preserve"
-                  >
-                    <path
-                      fill="#fff"
-                      d="M52,24h-4v-8c0-8.836-7.164-16-16-16S16,7.164,16,16v8h-4c-2.211,0-4,1.789-4,4v32c0,2.211,1.789,4,4,4h40
+              <p className="text-white text-xs flex flex-row items-center gap-1 mb-2">
+                <svg
+                  version="1.0"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  className="h-4 w-4"
+                  viewBox="0 0 64 64"
+                  enableBackground="new 0 0 64 64"
+                  xmlSpace="preserve"
+                >
+                  <path
+                    fill="#fff"
+                    d="M52,24h-4v-8c0-8.836-7.164-16-16-16S16,7.164,16,16v8h-4c-2.211,0-4,1.789-4,4v32c0,2.211,1.789,4,4,4h40
                                       c2.211,0,4-1.789,4-4V28C56,25.789,54.211,24,52,24z M32,48c-2.211,0-4-1.789-4-4s1.789-4,4-4s4,1.789,4,4S34.211,48,32,48z M40,24
                                       H24v-8c0-4.418,3.582-8,8-8s8,3.582,8,8V24z"
-                    />
-                  </svg>
-                  {t("MILLING.PREFOOTER.ITALIC")}
-                </p>
-                <Link
-                  to="login"
-                  className="p-2 text-center shadow-md rounded text-white hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2   hover:outline-orange-400 hover:outline hover:text-orange-400  bg-orange-500  w-36 "
-                >
-                  {t("BUTTON_QUOTATION")}
-                </Link>
-              </section>
-              <picture className="hidden sm:block pr-4 w-[400px] relative ">
-                <img
-                  src="/images/CNC2.webp"
-                  className="h-full  relative z-5  object-cover "
-                  alt=""
-                />
-              </picture>
+                  />
+                </svg>
+                {t("MILLING.PREFOOTER.ITALIC")}
+              </p>
+              <Link
+                to="login"
+                className="p-2 mt-4 text-center shadow-md rounded text-white hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2   hover:outline-orange-400 hover:outline hover:text-orange-400  bg-orange-500  w-36 "
+              >
+                {t("BUTTON_QUOTATION")}
+              </Link>
             </section>
+            <picture className="hidden sm:block pr-4 w-[400px] relative ">
+              <img
+                src="/images/CNC2.webp"
+                className="h-full  relative z-5  object-cover "
+                alt=""
+              />
+            </picture>
           </section>
         </section>
       </main>

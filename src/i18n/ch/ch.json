@@ -218,7 +218,9 @@
     "NAV_ITEM_5": "介绍",
     "SERVICE_TITLE": "CNC 铣削服务",
     "SERVICE_DESCRIPTION_1": "我们的数控铣削服务采用3轴、4轴、5轴加工工艺来高效生产高质量的零部件，并为您提供先进的数控加工解决方案，保证您工业项目的质量和出货时间。",
-    "SERVICE_DESCRIPTION_2": "3轴CNC铣削，该技术对于简单零件在满足精度的同时，满足经济性要求，这将是您的最优选。5轴CNC铣削，为复杂精密的零件设计提供最高精度的先进加工。4轴 CNC铣削，对于设计的多边加工更加简单，可提供比3轴铣削更高的精度。",
+    "SERVICE_DESCRIPTION_2": "3轴CNC铣削，该技术对于简单零件在满足精度的同时，满足经济性要求，这将是您的最优选。",
+    "SERVICE_DESCRIPTION_3": "4轴 CNC铣削，对于设计的多边加工更加简单，可提供比3轴铣削更高的精度。",
+    "SERVICE_DESCRIPTION_4": "5轴CNC铣削，为复杂精密的零件设计提供最高精度的先进加工。",
     "ADVANTAGE_SECTION_TITLE": "大川 CNC 铣削服务优势",
     "ADVANTAGE_1_TITLE": "简单快捷",
     "ADVANTAGE_1_TITLE_DESCRIPTION": "报价快速生成，线上即时订购，10日内完成交货",
@@ -269,7 +271,7 @@
 
     "FINISHING": {
       "FINISHING_SECTION_TITLE": "数控铣削精加工选项",
-      "FINISHING_SECTION_DESCRIPTION": "所有这些精加工选项都可以在传泰即时报价引擎中选择。如果需要不同的精加工选项，请在提交请求时进行指定。",
+      "FINISHING_SECTION_DESCRIPTION": "所有这些精加工选项都可以在川泰即时报价引擎中选择。如果需要不同的精加工选项，请在提交请求时进行指定。",
       "FINISHING_1_TITLE": "精铣",
       "FINISHING_1_FEATURE_1": "这是最快速完成的选项。零件表面留有可见的刀具痕迹和可能存在的锋利边缘和毛刺，可根据请求进行去除。",
       "FINISHING_2_TITLE": "涂层服务",
@@ -375,7 +377,7 @@
 
     "FINISHING": {
       "FINISHING_SECTION_TITLE": "数控车削精加工选项",
-      "FINISHING_SECTION_DESCRIPTION": "所有这些精加工选项都可以在传泰即时报价引擎中选择。如果需要不同的精加工选项，请在提交请求时进行指定。",
+      "FINISHING_SECTION_DESCRIPTION": "所有这些精加工选项都可以在川泰即时报价引擎中选择。如果需要不同的精加工选项，请在提交请求时进行指定。",
       "FINISHING_1_TITLE": "精铣",
       "FINISHING_1_FEATURE_1": "这是最快速完成的选项。零件表面留有可见的刀具痕迹和可能存在的锋利边缘和毛刺，可根据请求进行去除。",
       "FINISHING_2_TITLE": "涂层服务",
@@ -480,7 +482,7 @@
 
     "FINISHING": {
       "FINISHING_SECTION_TITLE": "数控钻孔精加工选项",
-      "FINISHING_SECTION_DESCRIPTION": "所有这些精加工选项都可以在传泰即时报价引擎中选择。如果需要不同的精加工选项，请在提交请求时进行指定。",
+      "FINISHING_SECTION_DESCRIPTION": "所有这些精加工选项都可以在川泰即时报价引擎中选择。如果需要不同的精加工选项，请在提交请求时进行指定。",
       "FINISHING_1_TITLE": "精铣",
       "FINISHING_1_FEATURE_1": "这是最快速完成的选项。零件表面留有可见的刀具痕迹和可能存在的锋利边缘和毛刺，可根据请求进行去除。",
       "FINISHING_2_TITLE": "涂层服务",
