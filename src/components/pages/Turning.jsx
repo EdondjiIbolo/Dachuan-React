@@ -15,12 +15,12 @@ export function TurningCnc() {
   const Turning = info;
   console.log(Turning);
   const [currentSection, setCurrentSection] = useState("");
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth",
+  //   });
+  // }, []);
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export function TurningCnc() {
       const sections = document.querySelectorAll("section[data-section]");
       let activeSection = "";
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 300;
+        const sectionTop = section.offsetTop - 10;
         const sectionHeight = section.clientHeight;
 
         if (
@@ -36,6 +36,7 @@ export function TurningCnc() {
           window.scrollY < sectionTop + sectionHeight
         ) {
           activeSection = section.getAttribute("data-section");
+          console.log(activeSection);
         }
       });
 
@@ -116,7 +117,7 @@ export function TurningCnc() {
           </section>
         </section>
         <article className="relative">
-          <nav className="sticky z-10 w-screen top-20 bg-zinc-50">
+          <nav className="sticky z-10 w-full top-20 bg-zinc-50">
             <ul className="flex px-2 sm:px-4 max-w-[1310px]  mx-auto w-full justify-between  md:px-12 text-xs sm:text-base py-2 text-zinc-600 ">
               <li>
                 <a
@@ -344,127 +345,81 @@ export function TurningCnc() {
               {" "}
               <p>{t("TURNING.SUMERISE_TITLE")}</p>
             </h2>
-            <article className="text-pretty text-sm flex flex-col gap-2">
+
+            <article
+              data-section="Quotation"
+              className="text-pretty text-sm flex flex-col gap-2"
+            >
               <p>{t("TURNING.SUMERISE_DESCRIPTION_1")}</p>
               <p>{t("TURNING.SUMERISE_DESCRIPTION_2")}</p>
               <p>{t("TURNING.SUMERISE_DESCRIPTION_3")}</p>
             </article>
           </section>
         </article>
-        <section className=" m-auto ">
-          <section className="h-80 relative bg-blue-700   ">
-            <section className="  m-auto flex text-wrap max-w-[1300px] relative  gap-4  h-full ">
-              <section
-                id="Quotation"
-                data-section="Quotation"
-                className=" flex sm:justify-center items-center sm:items-start p-4 sm:ml-4 sm-py-0 sm:w-[110ch] m-auto  flex-col gap-3"
-              >
-                <h3 className="font-medium text-xl sm:max-w-[80ch] text-white">
-                  <p>{t("TURNING.PREFOOTER.PREFOOTER_HEADER")}</p>
-                </h3>
-                <h3 className="font-normal text-md sm:max-w-[80ch] text-white">
-                  <p>{t("TURNING.PREFOOTER.PREFOOTER_SUBTITLE")}</p>
-                </h3>
-                <ol className="flex gap-5">
-                  <ul className="  max-w-[60ch]">
-                    <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
-                      <CheckIcon2 />
-                      <strong className="text-yellow-400 text-xs md:text-sm">
-                        {t("TURNING.PREFOOTER.STRONG_1")}
-                      </strong>
-                      {t("TURNING.PREFOOTER.DESCRIPTION_1")}
-                    </li>
-                    <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
-                      <CheckIcon2 />
-                      <strong className="text-yellow-400 text-xs md:text-sm">
-                        {t("TURNING.PREFOOTER.STRONG_2")}
-                      </strong>
-                      {t("TURNING.PREFOOTER.DESCRIPTION_2")}
-                    </li>
-                  </ul>
-                </ol>
+        <section className="h-[420px]  py-4 relative bg-blue-800   ">
+          <section className="  m-auto flex text-wrap max-w-[1300px] relative justify-between gap-4  h-full ">
+            {/* flex text-center sm:text-left items-center sm:items-start p-4
+              sm:ml-4 sm-py-0 m-auto flex-col gap-3 */}
+            <section className="flex flex-col justify-center ">
+              <h3 className="font-medium text-xl sm:max-w-[70ch] text-white">
+                <p>{t("MILLING.PREFOOTER.PREFOOTER_HEADER")}</p>
+              </h3>
+              <h3 className="font-normal text-md sm:max-w-[50ch] text-white">
+                <p>{t("MILLING.PREFOOTER.PREFOOTER_SUBTITLE")}</p>
+              </h3>
+              <ol className="flex gap-5">
+                <ul className="  max-w-[40ch]">
+                  <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
+                    <CheckIcon2 />
+                    <strong className="text-yellow-400 text-xs md:text-sm">
+                      {t("MILLING.PREFOOTER.STRONG_1")}
+                    </strong>
+                    {t("MILLING.PREFOOTER.DESCRIPTION_1")}
+                  </li>
+                  <li className="text-white text-xs  sm:text-sm flex gap-2 items-center">
+                    <CheckIcon2 />
+                    <strong className="text-yellow-400 text-xs md:text-sm">
+                      {t("MILLING.PREFOOTER.STRONG_2")}
+                    </strong>
+                    {t("MILLING.PREFOOTER.DESCRIPTION_2")}
+                  </li>
+                </ul>
+              </ol>
 
-                <p className="text-white text-xs flex flex-row items-center gap-1 mb-2">
-                  <svg
-                    version="1.0"
-                    id="Layer_1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    className="h-4 w-4"
-                    viewBox="0 0 64 64"
-                    enableBackground="new 0 0 64 64"
-                    xmlSpace="preserve"
-                  >
-                    <path
-                      fill="#fff"
-                      d="M52,24h-4v-8c0-8.836-7.164-16-16-16S16,7.164,16,16v8h-4c-2.211,0-4,1.789-4,4v32c0,2.211,1.789,4,4,4h40
+              <p className="text-white text-xs flex flex-row items-center gap-1 mb-2">
+                <svg
+                  version="1.0"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  className="h-4 w-4"
+                  viewBox="0 0 64 64"
+                  enableBackground="new 0 0 64 64"
+                  xmlSpace="preserve"
+                >
+                  <path
+                    fill="#fff"
+                    d="M52,24h-4v-8c0-8.836-7.164-16-16-16S16,7.164,16,16v8h-4c-2.211,0-4,1.789-4,4v32c0,2.211,1.789,4,4,4h40
                                       c2.211,0,4-1.789,4-4V28C56,25.789,54.211,24,52,24z M32,48c-2.211,0-4-1.789-4-4s1.789-4,4-4s4,1.789,4,4S34.211,48,32,48z M40,24
                                       H24v-8c0-4.418,3.582-8,8-8s8,3.582,8,8V24z"
-                    />
-                  </svg>
-                  {t("TURNING.PREFOOTER.ITALIC")}
-                </p>
-                <Link
-                  to="login"
-                  className="p-2 text-center shadow-md rounded text-white hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2   hover:outline-orange-400 hover:outline hover:text-orange-400  bg-orange-500  w-36 "
-                >
-                  {t("BUTTON_QUOTATION")}
-                </Link>
-              </section>
-              <picture className="hidden sm:block   relative ">
-                <img
-                  src="./img/banner-cn-2.png"
-                  className="h-full  relative z-5  object-cover object-right"
-                  alt=""
-                  style={{
-                    clipPath:
-                      " polygon(52% 0, 100% 0, 100% 100%, 50% 100%, 29% 50%)",
-                  }}
-                />
-              </picture>
+                  />
+                </svg>
+                {t("MILLING.PREFOOTER.ITALIC")}
+              </p>
+              <Link
+                to="login"
+                className="p-2 text-center shadow-md rounded text-white hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2   hover:outline-orange-400 hover:outline hover:text-orange-400  bg-orange-500  w-36 "
+              >
+                {t("BUTTON_QUOTATION")}
+              </Link>
             </section>
-          </section>
-          <section className="  p-4 sm:h-80  overflow-hidden flex items-center w-full  relative">
-            <picture className="absolute  blur-3xl  w-full h-full top-0 left-0 z-10">
+            <picture className="hidden sm:block pr-4 w-[400px] relative ">
               <img
-                src="/img/Milling parts4.jpeg"
-                className="object-cover object-center h-full w-full"
+                src="/images/CNC2.webp"
+                className="h-full  relative z-5  object-cover "
                 alt=""
               />
             </picture>
-            <article className="max-w-[1300px] w-full m-auto relative  z-20 ">
-              <h4 className="text-center m-auto text-4xl font-semibold mb-4">
-                {t("TURNING.PREFOOTER.PREFOOTER_HEADER")}
-              </h4>
-              <div className="flex flex-wrap gap-4 sm:gap-1 justify-center sm:justify-between items-center lg:px-44 lg:py-12">
-                <div className="flex md:justify-start justify-center gap-10 text-center sm:border-r-2 w-full sm:w-[50%] border-gray-400">
-                  <span>
-                    <strong>{t("TURNING.PREFOOTER.STRONG_1")}</strong>
-                    <p className="text-3xl font-light">
-                      {t("TURNING.PREFOOTER.DESCRIPTION_1")}
-                    </p>
-                  </span>
-                  <span>
-                    <strong>{t("TURNING.PREFOOTER.STRONG_2")}</strong>
-                    <p className="text-3xl font-light">
-                      {" "}
-                      {t("TURNING.PREFOOTER.DESCRIPTION_2")}
-                    </p>
-                  </span>
-                </div>
-                <div className="flex  flex-col justify-center items-center gap-1">
-                  <Link
-                    to="/login"
-                    className="bg-blue-800 font-semibold text-white p-2 text-nowrap rounded md:w-18 w-44 text-center hover:bg-white  transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-blue-800 hover:text-blue-700"
-                  >
-                    {t("TURNING.PREFOOTER.BUTTON_TEXT")}
-                  </Link>
-                  <p className="italic font-normal">
-                    {t("TURNING.PREFOOTER.ITALIC")}.
-                  </p>
-                </div>
-              </div>
-            </article>
           </section>
         </section>
       </main>

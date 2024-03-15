@@ -95,17 +95,18 @@ export function MaterialTable() {
           </tr>
         </tbody>
       </table>
-      <div
+      <a
+        href="/Materials"
         className="flex p-2 px-4 w-44 items-center m-auto my-8 shadow-md rounded   transition-all duration-200 ease-in hover:outline-2  bg-blue-800 font-semibold text-white hover:bg-white hover:outline
               hover:outline-bg-blue-800 hover:text-blue-800 "
       >
         <div className="rotate-90">
           <ArrowIcon />
         </div>
-        <a href="/Materials" className="w-full text-center text-sm font-bold">
+        <p className="w-full text-center text-sm font-bold">
           {t("BUTTON_SEE_MORE")}
-        </a>
-      </div>
+        </p>
+      </a>
     </div>
   );
 }

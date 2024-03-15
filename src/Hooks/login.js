@@ -7,11 +7,11 @@ import axios from "axios";
 // const baseContact = "https://api-deploy-production-5c13.up.railway.app/contact";
 // const SendFileURL =
 //   "https://api-deploy-production-5c13.up.railway.app/send-file";
-const baseUrl = "http://localhost:3000/service/login";
-const baseUrlSign = "http://localhost:3000/service/sign-up";
-const baseVerify = "http://localhost:3000/service/verify";
-const baseRecover = "http://localhost:3000/service/recover";
-const baseContact = "http://localhost:3000/service/message-contact";
+const baseUrl = "http://localhost:3000/login";
+const baseUrlSign = "http://localhost:3000/sign-up";
+const baseVerify = "http://localhost:3000/verify";
+const baseRecover = "http://localhost:3000/recover";
+const baseContact = "http://localhost:3000/message-contact";
 const SendFileURL = "http://localhost:3000/new-quote";
 const login = async (credentials) => {
   const { data } = await axios.post(baseUrl, credentials);

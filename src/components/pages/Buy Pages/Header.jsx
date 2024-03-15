@@ -19,14 +19,14 @@ export function DashboardHeader() {
   };
   return (
     <header className="main-header  justify-center h-20  bg-white w-full flex fixed top-0 left-0 z-40  md:pr-5">
-      <section className="flex w-full max-w-[1320px]  items-center  border-b-2  bg-white  m-auto justify-between  h-20 z-30  fixed   ">
-        <section className="h-20 overflow-hidden flex items-center">
+      <section className="flex w-full max-w-[1310px]  items-center  border-b-2  bg-white  m-auto justify-between  h-20 z-30  fixed   ">
+        <section className="h-20  flex items-center">
           <Link
             to="/"
-            className="w-28 sm:w-36 h-full flex items-center justify-center"
+            className="w-28 sm:w-40 h-full flex items-center justify-center"
           >
             <img
-              src="/img/logo.png"
+              src="/images/logo.png"
               alt="Logo"
               className="w-full sm:mr-5 object-cover object-top"
             />

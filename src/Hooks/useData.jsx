@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 export function useData() {
   const [info, setInfo] = useState({});
   const [loading, setLoading] = useState(false);
-  console.log("aaquiiii");
   useEffect(() => {
     const getInfo = async () => {
       try {

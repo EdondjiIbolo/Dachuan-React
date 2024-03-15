@@ -25,9 +25,10 @@ export function MillingCnc() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section[data-section]");
+
       let activeSection = "";
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop + 10;
+        const sectionTop = section.offsetTop - 10;
         const sectionHeight = section.clientHeight;
 
         if (
@@ -39,6 +40,7 @@ export function MillingCnc() {
       });
 
       setCurrentSection(activeSection);
+      console.log(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -111,7 +113,7 @@ export function MillingCnc() {
           </section>
         </section>
         <article className="relative">
-          <nav className="sticky z-10 top-20 bg-zinc-50">
+          <nav className="sticky z-10 top-20 bg-zinc-50 shadow-md">
             <ul className="flex px-2 sm:px-4 max-w-[1310px]  mx-auto w-full justify-between  md:px-12 text-xs sm:text-base py-2 text-zinc-600 ">
               <li>
                 <a
@@ -307,7 +309,11 @@ export function MillingCnc() {
               </ol>
             </article>
           </section>
-          <section data-section="Finishing" className=" bg-slate-100 p-8">
+          <section
+            data-section="Finishing"
+            id="Finishing"
+            className=" bg-slate-100 p-8"
+          >
             <article className=" text-center items-center flex flex-col gap-4">
               <p className="text__title font-semibold text-xl">
                 {t("MILLING.FINISHING.FINISHING_SECTION_TITLE")}
@@ -335,19 +341,23 @@ export function MillingCnc() {
             </article>
           </section>
         </article>
-        <section id="Quotation" data-section="Quotation" className=" m-auto ">
+
+        <section className=" m-auto " id="Quotation">
           <section className="grid grid-cols-1 md:grid-cols-[400px,auto] w-full max-w-[1310px] m-auto gap-8 p-10">
             <h2 className="text-2xl">
               {" "}
               <p>{t("MILLING.SUMERISE_TITLE")}</p>
             </h2>
-            <article className="text-pretty text-sm flex flex-col gap-2">
+            <article
+              data-section="Quotation"
+              className="text-pretty text-sm flex flex-col gap-2"
+            >
               <p>{t("MILLING.SUMERISE_DESCRIPTION_1")}</p>
               <p>{t("MILLING.SUMERISE_DESCRIPTION_2")}</p>
               <p>{t("MILLING.SUMERISE_DESCRIPTION_3")}</p>
             </article>
           </section>
-          <section className="h-[420px] py-4 relative bg-blue-800   ">
+          <section className="h-[420px]  py-4 relative bg-blue-800   ">
             <section className="  m-auto flex text-wrap max-w-[1300px] relative justify-between gap-4  h-full ">
               {/* flex text-center sm:text-left items-center sm:items-start p-4
               sm:ml-4 sm-py-0 m-auto flex-col gap-3 */}

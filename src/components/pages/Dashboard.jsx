@@ -12,7 +12,7 @@ export function Panel() {
   //     return navigate("/login");
   //   }
   // }, [user]);
-  console.log(qty);
+
   const handleLogout = () => {
     setUser({});
     localStorage.removeItem("user");

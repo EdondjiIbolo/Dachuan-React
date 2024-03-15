@@ -67,15 +67,18 @@ export function Recover() {
       }, 5000);
       return;
     }
+
     try {
-      setLoading(true);
+      // setLoading(true);
+
       const userdata = await RecoverServices.recoverPassword({
         phone,
         password,
         verifyCode,
       });
-      const newdata = userdata;
-      console.log(newdata);
+
+      const newdata = await userdata;
+      console.log("hola");
       window.localStorage.setItem("user", JSON.stringify(newdata));
       setUser(newdata);
       console.log(user);
