@@ -24,12 +24,14 @@ export function Quotes({ quote }) {
         id: quote.id,
       });
 
-      const data = await sendChanges;
-      const { message } = await data;
-
-      setTimeout(() => {
-        window.location.reload();
-      }, 1500);
+      const data = sendChanges;
+      const { message } = data;
+      console.log(message);
+      if (data) {
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
+      }
     } catch (err) {
       console.log(err);
     } finally {
@@ -148,7 +150,7 @@ export function Quotes({ quote }) {
                   >
                     <option value="quoting">Quoting</option>
                     <option value="quoted">quoted</option>
-                    <option value="oderes">oderes</option>
+                    <option value="ordered">ordered</option>
                     <option value="In production">In production</option>
                     <option value="delivered">delivered</option>
                   </select>

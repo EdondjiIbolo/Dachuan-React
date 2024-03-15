@@ -48,6 +48,7 @@ export function SignUp() {
     setVerify(true);
     try {
       const userdata = await signServices.verifyCode({ phone });
+      console.log(userdata);
     } catch (error) {
       console.error("Error al enviar el código de verificación:", error);
     } finally {
@@ -74,7 +75,7 @@ export function SignUp() {
         username,
         verifyCode,
       });
-      const newdata = userdata;
+      const newdata = await userdata;
       window.localStorage.setItem("user", JSON.stringify(newdata));
       setUser(newdata);
       navigate("/panel");
@@ -111,15 +112,15 @@ export function SignUp() {
           </section>
         </section>
       </header>
-      <main className="flex items-center min-h-screen justify-center w-screen px-5 pt-32 sm:pt-32 relative bg-slate-200 ">
+      <main className="flex items-start min-h-screen justify-center w-screen px-5 pt-32 sm:pt-32 relative bg-slate-200 ">
         <form
           onSubmit={handleSubmit}
           action=""
-          className=" sm:pt-4 relative w-full max-w-[600px] bg-slate-500 mb-8 sm:mb-auto h-[600px] sm:h-[400px] px-5 flex flex-col items-center
+          className=" sm:pt-4 relative w-full max-w-[600px] bg-slate-500  sm:mb-auto h-[500px] sm:h-[400px] px-5 flex flex-col items-center
         justify-center gap-4 rounded m-auto"
         >
           <picture className="absolute -top-10 rounded-full overflow-hidden">
-            <div className="w-24 bg-red-500 h-24"></div>
+            <div className="sm:w-24 w-16 h-16 bg-red-500 sm:-24"></div>
           </picture>
 
           <section className="flex justify-between w-full flex-col sm:flex-row gap-4">
@@ -134,10 +135,20 @@ export function SignUp() {
               autoComplete="current-name"
               onChange={({ target }) => setName(target.value)}
             />
-            <div className="w-full">
+            <input
+              type="text"
+              className={`w-full italic p-2 outline-none focus:ring text-slate-800 ${
+                error ? "border-red-500 border-2" : ""
+              } bg-slate-100 shadow-lg rounded`}
+              placeholder="Username"
+              name="username"
+              autoComplete="current-Username"
+              value={username}
+              onChange={({ target }) => setUserame(target.value)}
+            />
+            {/* <div className="w-full">
               <input
                 type="text"
-                inputMode="text"
                 className={`w-full italic p-2 outline-none focus:ring ${
                   error ? "border-red-500 border-2" : ""
                 } text-slate-800 bg-slate-100 shadow-lg rounded`}
@@ -147,7 +158,7 @@ export function SignUp() {
                 value={username}
                 onChange={({ target }) => setUserame(target.value)}
               />
-            </div>
+            </div> */}
           </section>
           <section className="flex justify-between w-full flex-col sm:flex-row gap-4">
             <input
@@ -176,7 +187,7 @@ export function SignUp() {
           <section className="flex justify-between w-full flex-col sm:flex-row gap-4">
             <input
               type="tel"
-              id="telefono"
+              id="numreic"
               name="telefono"
               inputMode="tel"
               className={`w-full sm:w-1/2 p-2  focus:ring ${

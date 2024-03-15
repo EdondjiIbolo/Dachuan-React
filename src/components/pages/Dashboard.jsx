@@ -18,6 +18,7 @@ export function Panel() {
     localStorage.removeItem("user");
     navigate("/login");
   };
+  console.log(user);
   return (
     <main className="main-body flex flex-col  gap-3 pt-20  p-3 sm:px-20">
       <header className="w-full sm:h-28 gap-4 rounded shadow flex sm:flex-row flex-col  justify-between items-center p-3 sm:p-2 px-3 sm:gap-3 bg-white mt-3 ">
@@ -30,7 +31,7 @@ export function Panel() {
             />
           </picture>
           <article className="">
-            <p className="font-bold text-2xl capitalize">{`${user.name} ${user.username}`}</p>
+            <p className="font-bold text-2xl capitalize">{user.name} </p>
             <span className="flex gap-3">
               <p className="text-xs border-r px-1 border-gray-400">yewu</p>
               <p className="text-xs border-l px-1 border-gray-400">

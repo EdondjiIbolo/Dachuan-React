@@ -23,7 +23,7 @@ export function DashboardHeader() {
         <section className="h-20  flex items-center">
           <Link
             to="/"
-            className="w-28 sm:w-40 h-full flex items-center justify-center"
+            className="w-28 ml-3 sm:ml-0 sm:w-40 h-full flex items-center justify-center"
           >
             <img
               src="/images/logo.png"
@@ -37,7 +37,7 @@ export function DashboardHeader() {
         </section>
         <section className="flex items-center gap-3 pr-2 sm:pr-0">
           <p className="font-semibold hover:uderline text-base sm:text-lg text-blue-900">
-            {`${user.name} ${user.username}`}
+            {user.name}
           </p>
           <button
             onClick={handleLogout}

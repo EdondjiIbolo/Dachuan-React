@@ -107,15 +107,15 @@ export function Footer() {
         </ul>
         <ul className="flex-col md:flex-row flex  md:justify-between items-center relative">
           <div className="flex h-32 gap-3 items-center justify-center flex-col sm:flex-row w-min ">
-            <picture className=" w-44 h-12 px-2 bg-white flex justify-center items-center cursor-pointer text-zinc-500 ">
-              <a href="/" className="  flex items-center overflow-hidden">
+            <a href="/" className="  flex items-center overflow-hidden">
+              <picture className=" w-44 h-12 px-2 bg-white flex justify-center items-center cursor-pointer text-zinc-500 ">
                 <img
                   src="./images/logo.png"
                   alt="Logo"
                   className="w-full object-cover object-top"
                 />
-              </a>
-            </picture>
+              </picture>
+            </a>
             <p className="text-nowrap w-min flex">
               &copy; 2024 , Chuantai Enterprise
             </p>

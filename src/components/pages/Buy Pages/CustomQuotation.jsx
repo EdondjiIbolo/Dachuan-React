@@ -25,10 +25,12 @@ export function CustomQuotation() {
     };
     getData();
   }, [id]);
-  const handdleAdd = () => {
+  const handdleAdd = (e) => {
+    e.preventDefault();
     setQuantity(quantity + 1);
   };
-  const handleDiff = () => {
+  const handleDiff = (e) => {
+    e.preventDefault();
     if (quantity <= 0) return;
     setQuantity(quantity - 1);
   };
@@ -42,11 +44,13 @@ export function CustomQuotation() {
     };
 
     try {
-      const response = await FetchCustomQuote.customQuote(newData);
-      console.log(response);
-      setTimeout(() => {
-        navigate("/panel/my-quotes");
-      }, 1200);
+      const response = FetchCustomQuote.customQuote(newData);
+
+      if (response) {
+        setTimeout(() => {
+          navigate("/panel/my-quotes");
+        }, 1200);
+      }
     } catch (err) {
       console.log(err);
     }

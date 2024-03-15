@@ -38,6 +38,12 @@ export function AssistanceQuotes() {
             <section className="bg-white flex flex-col gap-4  rounded shadow-sm p-4">
               <header className="flex justify-between items-center">
                 <h2 className="font-semibold text-xl py-2">Customer Quotes</h2>
+                <Link
+                  to="/panel"
+                  className="flex   text-center p-3 px-8 shadow-md rounded text-white bg-blue-600    font-semibold  hover:bg-emerald-50 transition-all duration-200 ease-in hover:outline-2  hover:outline hover:text-blue-700"
+                >
+                  Back
+                </Link>
               </header>
               <table className="table">
                 <thead>
