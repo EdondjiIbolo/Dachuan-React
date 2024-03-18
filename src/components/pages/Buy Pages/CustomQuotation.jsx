@@ -18,7 +18,6 @@ export function CustomQuotation() {
   const [notes, setNotes] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
-    console.log(user);
     const getData = async () => {
       const { data } = await axios.get(`http://localhost:3000/quote/${id}`);
       console.log(data);
@@ -36,7 +35,10 @@ export function CustomQuotation() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const formData = Object.fromEntries(new FormData(e.target));
+    console.log(formData);
+
     const newData = {
       ...formData,
       ...user,
@@ -124,27 +126,26 @@ export function CustomQuotation() {
                 </p>
               </article>
               <div className="bg-slate-200 p-1 rounded-md w-24 flex justify-between items-center">
-                <button
+                <div
                   className="p-1 font-bold text-gray-700 hover:text-black  hover:bg-slate-300 rounded"
                   onClick={handdleAdd}
                 >
                   +
-                </button>
+                </div>
                 <input
                   type="number"
                   inputMode="number"
                   name="quantity"
                   value={quantity}
                   min={0}
-                  onChange={handleDiff}
                   className="border-gray-400 border w-10 pl-1 rounded focus:border focus:outline-none"
                 />
-                <button
+                <div
                   className="p-1 font-bold text-gray-700 hover:text-black  hover:bg-slate-300 rounded"
                   onClick={handleDiff}
                 >
                   -
-                </button>
+                </div>
               </div>
             </section>
           </section>

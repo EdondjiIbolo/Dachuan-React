@@ -5,6 +5,7 @@ import { useUser } from "../../../Hooks/useUser";
 import { useOrders } from "../../../Hooks/useOrders";
 import { Loading } from "../../Loading";
 import { Quotes } from "./Assistant/Quote";
+import { Order } from "./Order";
 export function MyOrder() {
   const { user } = useUser();
   const { email } = user;
@@ -38,7 +39,7 @@ export function MyOrder() {
         <main className="w-full h-full pt-5">
           <section className="bg-white flex flex-col gap-4  rounded shadow-sm p-4">
             <header className="flex justify-between items-center">
-              <h2 className="font-semibold text-xl py-2">Completed Orders</h2>
+              <h2 className="font-semibold text-xl py-2">My Orders</h2>
               <div className="flex items-center justify-between gap-3  ">
                 <Link
                   to="/panel"
@@ -127,11 +128,6 @@ export function MyOrder() {
                       file
                     </li>
                   </th>
-                  <th>
-                    <li className="list-none text-white text-xs  p-2 font-semibold">
-                      Acction
-                    </li>
-                  </th>
                 </tr>
               </thead>
 
@@ -142,7 +138,7 @@ export function MyOrder() {
                       className="p-4 border border-gray-400 rounded"
                       key={order.id}
                     >
-                      <Quotes quote={order} />
+                      <Order quote={order} />
                     </tr>
                   );
                 })}

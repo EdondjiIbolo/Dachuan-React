@@ -111,7 +111,7 @@ export function Quotes({ quote }) {
         {show && (
           <div className="fixed z-50 flex justify-center p-5 items-center  bg-opacity-85 top-0 left-0 w-screen h-screen bg-blue-900">
             <form
-              className="w-full relative md:w-[500px] bg-slate-50 h-[400px] px-4 flex flex-col rounded shadow-xl border-2 border-red-400"
+              className="w-full relative md:w-[500px] bg-slate-50 h-[500px] px-4 flex flex-col rounded shadow-xl border-2 border-red-400"
               onSubmit={handlesubmit}
             >
               <div
@@ -136,6 +136,41 @@ export function Quotes({ quote }) {
                   {" "}
                   <b>Phone : </b>
                   {quote.phone}
+                </p>
+                <p>
+                  {" "}
+                  <b>Technology : </b>
+                  {quote.technology}
+                </p>
+                <p>
+                  {" "}
+                  <b>Finishing : </b>
+                  {quote.finishing}
+                </p>
+                <p>
+                  {" "}
+                  <b>Material : </b>
+                  {quote.material}
+                </p>
+                <p>
+                  {" "}
+                  <b>Tolerance : </b>
+                  {quote.tolerance}
+                </p>
+                <p>
+                  {" "}
+                  <b>Quantity : </b>
+                  {quote.quantity}
+                </p>
+                <p>
+                  {" "}
+                  <b>Shipping date : </b>
+                  {quote.shipping_date}
+                </p>
+                <p>
+                  {" "}
+                  <b>Address : </b>
+                  {quote.address}
                 </p>
               </article>
               <section className="flex flex-col items-center justify-center gap-3 flex-grow ">
@@ -166,7 +201,7 @@ export function Quotes({ quote }) {
                     className="flex-grow  border-2 border-blue-300 rounded p-1 focus:ring-1 focus:outline-none"
                   />
                 </label>
-                <button className="bg-orange-500 mt-6 p-2 w-32 text-white border-2 border-white font-medium rounded shadow-lg hover:bg-white hover:text-orange-500   transition-all duration-100 ease-linear hover:border-orange-500">
+                <button className="bg-orange-500 mt-2 p-2 w-32 text-white border-2 border-white font-medium rounded shadow-lg hover:bg-white hover:text-orange-500   transition-all duration-100 ease-linear hover:border-orange-500">
                   Confirm
                 </button>
               </section>

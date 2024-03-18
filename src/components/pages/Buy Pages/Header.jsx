@@ -1,16 +1,17 @@
 import { Link, useNavigate } from "react-router-dom";
 import "../../sections/panel.css";
 import { useUser } from "../../../Hooks/useUser";
+import { useEffect } from "react";
 
 export function DashboardHeader() {
   const navigate = useNavigate();
   const { user, setUser } = useUser();
-  // useEffect(() => {
-  //   if (!user.token) {
-  //     console.log("no usuario");
-  //     return navigate("/login");
-  //   }
-  // }, [user]);
+  useEffect(() => {
+    if (!user.token) {
+      console.log("no usuario");
+      return navigate("/login");
+    }
+  }, [user]);
 
   const handleLogout = () => {
     setUser({});

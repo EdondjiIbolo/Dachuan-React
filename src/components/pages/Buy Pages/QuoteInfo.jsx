@@ -6,7 +6,7 @@ import { Loading } from "../../Loading";
 export function QuoteInfo() {
   const { id } = useParams();
   const { quote, loading } = useSingleQuote({ id });
-
+  console.log(quote);
   return (
     <>
       {loading && <Loading />}
@@ -69,22 +69,21 @@ export function QuoteInfo() {
                   </p>
                 </article>
                 <div className="bg-slate-200 p-1 rounded-md w-24 flex justify-between items-center">
-                  <button className="p-1 font-bold text-gray-700 hover:text-black  hover:bg-slate-300 rounded">
+                  <div className="p-1 font-bold text-gray-700 hover:text-black  hover:bg-slate-300 rounded">
                     +
-                  </button>
+                  </div>
                   <input
-                    disabled
                     type="number"
                     inputMode="number"
-                    name="quantity"
-                    value={quote?.quantity}
                     disabled
+                    name="quantity"
+                    value={quote.quantity}
                     min={0}
-                    className="border-gray-400 border-0 w-10 pl-1 rounded focus:border focus:outline-none"
+                    className="border-gray-400 border w-10 pl-1 rounded focus:border focus:outline-none"
                   />
-                  <button className="p-1 font-bold text-gray-700 hover:text-black  hover:bg-slate-300 rounded">
+                  <div className="p-1 font-bold text-gray-700 hover:text-black  hover:bg-slate-300 rounded">
                     -
-                  </button>
+                  </div>
                 </div>
               </section>
             </section>
@@ -102,7 +101,6 @@ export function QuoteInfo() {
                     value={quote?.quantity}
                     className="bg-slate-200 w-72 p-1 rounded border outline-none border-gray-400"
                   />
-                  <p>{quote?.quantity}</p>
                 </label>
                 <label className="flex flex-col gap-1">
                   <p className="font-semibold">Technology</p>
@@ -320,12 +318,26 @@ export function QuoteInfo() {
                 </div>
                 <div className="flex p-2 py-4 items-center justify-between ">
                   <p className="text-base">Total</p>
-                  <p className="font-bold text-2xl text-blue-600">Quote</p>
+                  <p className="font-bold text-2xl text-blue-600">
+                    {quote.price ?? "Quote"} &yen;
+                  </p>
                 </div>
               </section>
-              <button className="bg-blue-700 hover:bg-white mb-2 hover:text-blue-800 transition-all duration-150 ease-linear hover:border-2 border-blue-700 text-white w-full p-3 rounded font-bold">
-                Request For Quotation
-              </button>
+              <section>
+                {quote.status === "quoting" ? (
+                  <button className="bg-blue-700 hover:bg-white mb-2 hover:text-blue-800 transition-all duration-150 ease-linear hover:border-2 border-blue-700 text-white w-full p-3 rounded font-bold">
+                    Request For Quotation
+                  </button>
+                ) : quote.status === "quoted" ? (
+                  <button className="bg-orange-600 hover:bg-white mb-2 hover:text-blue-800 transition-all duration-150 ease-linear hover:border-2 border-blue-700 text-white w-full p-3 rounded font-bold">
+                    Order now
+                  </button>
+                ) : (
+                  <button className="bg-orange-600 hover:bg-white mb-2 hover:text-blue-800 transition-all duration-150 ease-linear hover:border-2 border-blue-700 text-white w-full p-3 rounded font-bold">
+                    Pay now
+                  </button>
+                )}
+              </section>
             </section>
           </section>
         </form>

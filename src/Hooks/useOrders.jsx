@@ -22,5 +22,6 @@ export function useOrders({ email }) {
     getOrders();
     console.log(orders);
   }, [email]);
+
   return { orders, loading };
 }

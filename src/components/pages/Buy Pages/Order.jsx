@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-export function Quote({ quote }) {
-  console.log(quote.url);
+export function Order({ quote }) {
   return (
     <>
       <td
@@ -57,7 +57,7 @@ export function Quote({ quote }) {
           <a
             href={`http://localhost:3000/file/${quote.url}`}
             download
-            className="p-1 bg-orange-500 text-white min-w-min text-nowrap hover:scale-110 transition-all duration-150 ease-linear hover:shadow-md rounded"
+            className="p-2 bg-orange-500 text-white min-w-min text-nowrap hover:scale-110 transition-all duration-150 ease-linear hover:shadow-md rounded"
           >
             view File
           </a>

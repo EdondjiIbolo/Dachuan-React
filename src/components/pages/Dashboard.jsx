@@ -1,24 +1,50 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../sections/panel.css";
 import { useUser } from "../../Hooks/useUser";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 export function Panel() {
   const [qty, setQty] = useState(1);
-  const navigate = useNavigate();
-  const { user, setUser } = useUser();
-  // useEffect(() => {
-  //   if (!user.token) {
-  //     console.log("no usuario");
-  //     return navigate("/login");
-  //   }
-  // }, [user]);
 
-  const handleLogout = () => {
-    setUser({});
-    localStorage.removeItem("user");
-    navigate("/login");
+  const { user } = useUser();
+  const { email } = user;
+  const useQuotesInfo = () => {
+    const [info, setInfo] = useState([]);
+    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+      const getData = async () => {
+        setLoading(true);
+        try {
+          const { data } = await axios.get(
+            `http://localhost:3000/panel-info?email=${email}`
+          );
+          const { quotes } = await data;
+          setInfo(quotes);
+        } catch (err) {
+          console.log(err);
+        } finally {
+          setLoading(false);
+        }
+      };
+      getData();
+    }, []);
+    console.log(info);
+    return { info, loading };
   };
-  console.log(user);
+  let quotedAmount = 0;
+  const { info } = useQuotesInfo();
+  const quotations = info?.filter((quote) => quote.status === "quoting").length;
+  const quoted = info?.filter((quote) => quote.status === "quoted").length;
+  const ordered = info?.filter((quote) => quote.status === "ordered").length;
+  const quotesQuoted = info?.filter((quote) => {
+    return quote.status === "quoted";
+  });
+  const getquotesAmount = quotesQuoted.map((quote) => {
+    quotedAmount += Number(quote.price);
+  });
+
+  console.log(quotedAmount, quotesQuoted);
+
   return (
     <main className="main-body flex flex-col  gap-3 pt-20  p-3 sm:px-20">
       <header className="w-full sm:h-28 gap-4 rounded shadow flex sm:flex-row flex-col  justify-between items-center p-3 sm:p-2 px-3 sm:gap-3 bg-white mt-3 ">
@@ -56,7 +82,9 @@ export function Panel() {
                 <img src="./img/quoted.png" alt="" className=" " />
               </picture>
               <div className="flex items-center gap-0 flex-col text-blue-700">
-                <p className=" text-center font-bold text-base m-0 p-0">0</p>
+                <p className=" text-center font-bold text-base m-0 p-0">
+                  {quotations + quoted}
+                </p>
                 <p className=" text-center text-sm m-0 p-0">Total Quotation</p>
               </div>
             </article>
@@ -68,7 +96,9 @@ export function Panel() {
                 <img src="./img/in-quoting.png" alt="" className=" " />
               </picture>
               <div className="flex items-center gap-0 flex-col text-blue-700">
-                <p className=" text-center font-bold text-base m-0 p-0">0</p>
+                <p className=" text-center font-bold text-base m-0 p-0">
+                  {quotations}
+                </p>
                 <p className=" text-center text-sm m-0 p-0">Quotations</p>
               </div>
             </Link>
@@ -80,7 +110,9 @@ export function Panel() {
                 <img src="./img/quoting-amount.png" alt="" className=" " />
               </picture>
               <div className="flex items-center gap-0 flex-col text-blue-700">
-                <p className=" text-center font-bold text-base m-0 p-0">0</p>
+                <p className=" text-center font-bold text-base m-0 p-0">
+                  {quoted}
+                </p>
                 <p className=" text-center text-sm m-0 p-0">Quotes completed</p>
               </div>
             </Link>
@@ -90,7 +122,9 @@ export function Panel() {
                 <img src="./img/Amount.png" alt="" className=" " />
               </picture>
               <div className="flex items-center gap-0 flex-col">
-                <p className=" text-center font-bold text-base m-0 p-0">135$</p>
+                <p className=" text-center font-bold text-base m-0 p-0">
+                  {quotedAmount}$
+                </p>
                 <p className=" text-center text-sm m-0 p-0">Quotes Amount</p>
               </div>
             </article>
@@ -107,7 +141,9 @@ export function Panel() {
                 <img src="./img/orders.png" alt="" className=" " />
               </picture>
               <div className="flex items-center gap-0 flex-col text-blue-700">
-                <p className=" text-center font-bold text-base m-0 p-0">0</p>
+                <p className=" text-center font-bold text-base m-0 p-0">
+                  {ordered}
+                </p>
                 <p className="text-sm text-center font-medium">Orders</p>
               </div>
             </Link>
