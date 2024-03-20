@@ -10,8 +10,10 @@ import { useTranslation } from "react-i18next";
 import { useData } from "../../Hooks/useData.jsx";
 
 export function MillingCnc() {
-  const { loading, info } = useData("false");
-  const Milling = info;
+  const material = undefined;
+  const { loading, info } = useData({ material });
+  const { dataInfo } = info;
+  const Milling = dataInfo;
 
   const [currentSection, setCurrentSection] = useState("");
 
@@ -301,7 +303,7 @@ export function MillingCnc() {
                 {t("MILLING.MATERIALS.MATERIAL_SECTION_DESCRIPTION")}
               </p>
             </article>
-            <article className="section-qs">
+            <article className="section-qs flex flex-col gap-8">
               <ol id="Finishing" className="qs-list">
                 <div className="list__item">
                   {Milling?.materials?.map((material, index) => {
@@ -311,12 +313,19 @@ export function MillingCnc() {
                           item={material}
                           section={"MATERIALS"}
                           index={index}
+                          page={"MILLING"}
                         />
                       </li>
                     );
                   })}
                 </div>
               </ol>
+              <Link
+                to="/materials"
+                className="bg-blue-800 font-semibold text-white m-auto p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
+              >
+                {t("BUTTON_SEE_MORE")}
+              </Link>
             </article>
           </section>
           <section data-section="Finishing" className=" bg-slate-100 p-8">
@@ -328,7 +337,7 @@ export function MillingCnc() {
                 {t("MILLING.FINISHING.FINISHING_SECTION_DESCRIPTION")}
               </p>
             </article>
-            <article id="Quotation" className="section-qs">
+            <article id="Quotation" className="section-qs flex flex-col gap-8">
               <ol className="qs-list">
                 <div className="list__item">
                   {Milling?.Finishing?.map((finishing, index) => {
@@ -338,12 +347,19 @@ export function MillingCnc() {
                           item={finishing}
                           section={"FINISHING"}
                           index={index}
+                          page={"MILLING"}
                         />
                       </li>
                     );
                   })}
                 </div>
               </ol>
+              <Link
+                to="/finishing"
+                className="bg-blue-800 font-semibold text-white m-auto p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
+              >
+                {t("BUTTON_SEE_MORE")}
+              </Link>
             </article>
           </section>
           <section
@@ -364,8 +380,6 @@ export function MillingCnc() {
         </article>
         <section className="h-[420px] px-3 py-4 relative bg-blue-800   ">
           <section className="  m-auto flex text-wrap max-w-[1300px] relative justify-between gap-4  h-full ">
-            {/* flex text-center sm:text-left items-center sm:items-start p-4
-              sm:ml-4 sm-py-0 m-auto flex-col gap-3 */}
             <section className="flex flex-col justify-center ">
               <h3 className="font-medium text-xl sm:max-w-[70ch] text-white">
                 <p>{t("MILLING.PREFOOTER.PREFOOTER_HEADER")}</p>

@@ -23,7 +23,7 @@ export function AcordeonItem({ question }) {
     </>
   );
 }
-export function AcordeonMaterial({ item, index, section }) {
+export function AcordeonMaterial({ item, index, section, page }) {
   const { t, i18n } = useTranslation();
   const [show, setShow] = useState(false);
   const className = show
@@ -39,8 +39,8 @@ export function AcordeonMaterial({ item, index, section }) {
         onClick={() => setShow(!show)}
       >
         <p className="font-bold text-lg p-2">
-          {/* {t("MILLING.MATERIALS_1_TITLE")} */}
-          {item.name}
+          {t(`${page}.${section}.${section}_${index + 1}_TITLE`)}
+          {/* {item.name} */}
         </p>
         <div className={className2}>
           <ArrowIcon />
@@ -50,7 +50,11 @@ export function AcordeonMaterial({ item, index, section }) {
         {item.Features.map((feature, index2) => {
           return (
             <li key={index2} className="font-semibold ml-8 text-base">
-              {feature.name}
+              {t(
+                `${page}.${section}.${section}_${index + 1}_FEATURE_${
+                  index2 + 1
+                }`
+              )}
             </li>
           );
         })}

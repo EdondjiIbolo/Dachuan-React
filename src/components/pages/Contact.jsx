@@ -111,7 +111,7 @@ export function Contact() {
                   to="/login"
                   className="bg-blue-800 font-semibold text-white  p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
                 >
-                  Get a Quotation
+                  {t("BUTTON_QUOTATION")}
                 </Link>
               </div>
             </section>
@@ -219,24 +219,22 @@ export function Contact() {
                     type="checkbox"
                     id="terminos"
                     name="terminos"
-                    className=" cursor-pointer  w-7 h-7"
+                    className=" cursor-pointer w-8 h-8"
                     value={check}
                     onChange={(e) => setCheck(e.target.checked ? "yes" : "no")}
                   />
 
                   <div className="px-2 flex flex-col gap-2">
-                    <label htmlFor="terminos">
-                      Yes, I would like to receive updates about CNC
-                      manufacturing and solutions from Dachuan approximately
-                      once a month.
+                    <label htmlFor="terminos" className="text-[.85rem]">
+                      {t("CONTACT.SECTION_2_DESCRIPTION_2")}
                     </label>
                     <p className="italic text-xs text-orange-800">
-                      By submitting the form you agree to our Privacy policy .
+                      {t("CONTACT.SECTION_2_DESCRIPTION_3")}
                     </p>
                   </div>
                 </div>
                 <button className="bg-blue-800 font-semibold text-white  p-2 flex items-center justify-center text-nowrap rounded w-full   text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2 cursor-pointer hover:outline hover:outline-bg-blue-800 hover:text-blue-800">
-                  Submit
+                  {t("CONTACT.BUTTON_SUBMIT")}
                 </button>
               </form>
             </section>

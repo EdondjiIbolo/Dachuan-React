@@ -11,8 +11,10 @@ import { useData } from "../../Hooks/useData.jsx";
 // const { Drilling } = Technologies;
 
 export function DrillingCnc() {
-  const { loading, info } = useData("false");
-  const Drilling = info;
+  const material = undefined;
+  const { loading, info } = useData({ material });
+  const { dataInfo } = info;
+  const Drilling = dataInfo;
   console.log(Drilling);
   const [currentSection, setCurrentSection] = useState("");
 
@@ -288,7 +290,7 @@ export function DrillingCnc() {
                 {t("DRILLING.MATERIALS.MATERIAL_SECTION_DESCRIPTION")}
               </p>
             </article>
-            <article className="section-qs">
+            <article className="section-qs flex flex-col gap-8">
               <ol id="Finishing" className="qs-list">
                 <div className="list__item">
                   {Drilling?.materials?.map((material, index) => {
@@ -298,12 +300,19 @@ export function DrillingCnc() {
                           item={material}
                           section={"MATERIALS"}
                           index={index}
+                          page={"DRILLING"}
                         />
                       </li>
                     );
                   })}
                 </div>
               </ol>
+              <Link
+                to="/materials"
+                className="bg-blue-800 font-semibold text-white m-auto p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
+              >
+                {t("BUTTON_SEE_MORE")}
+              </Link>
             </article>
           </section>
           <section data-section="Finishing" className=" bg-slate-100 p-8">
@@ -315,7 +324,7 @@ export function DrillingCnc() {
                 {t("DRILLING.FINISHING.FINISHING_SECTION_DESCRIPTION")}
               </p>
             </article>
-            <article id="Quotation" className="section-qs">
+            <article id="Quotation" className="section-qs flex flex-col gap-8">
               <ol className="qs-list">
                 <div className="list__item">
                   {Drilling?.Finishing?.map((finishing, index) => {
@@ -325,12 +334,19 @@ export function DrillingCnc() {
                           item={finishing}
                           section={"FINISHING"}
                           index={index}
+                          page={"DRILLING"}
                         />
                       </li>
                     );
                   })}
                 </div>
               </ol>
+              <Link
+                to="/finishing"
+                className="bg-blue-800 font-semibold text-white m-auto p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2  hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
+              >
+                {t("BUTTON_SEE_MORE")}
+              </Link>
             </article>
           </section>
           <section

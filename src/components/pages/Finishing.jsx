@@ -69,7 +69,7 @@ export function Finishing() {
                     <li key={index}>
                       <a
                         href={`#${finishing.finishingName}`}
-                        className={`sm:p-1 p-[6px] text-base capitalize hover:font-medium transition-all duration-250 ease-linear ${
+                        className={`sm:p-1 p-[6px] text-base hover:text-slate-700 capitalize hover:font-medium transition-all duration-250 ease-linear ${
                           currentSection === finishing.finishingName
                             ? "font-bold text-lg text-slate-900"
                             : ""
