@@ -1,12 +1,4 @@
-import { useEffect } from "react";
-import {
-  CNFlag,
-  CustomerIcon,
-  EnFlag,
-  MachinesIcon,
-  PartsIcon,
-  UsersIcon,
-} from "../Icons";
+import { CustomerIcon, MachinesIcon, PartsIcon, UsersIcon } from "../Icons";
 import { Header } from "../Header.jsx";
 import { Footer } from "../Footer.jsx";
 import { useTranslation } from "react-i18next";

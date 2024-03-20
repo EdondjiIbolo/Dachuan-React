@@ -213,7 +213,7 @@ export function HomePage() {
                   <picture className="flex justify-center">
                     <img
                       src="./images/iconos/select.png"
-                      alt=""
+                      alt="select icon"
                       className="w-14 "
                     />
                   </picture>
@@ -229,7 +229,7 @@ export function HomePage() {
                   <picture className="flex justify-center">
                     <img
                       src="./images/iconos/order.png"
-                      alt=""
+                      alt="order img"
                       className="w-14 "
                     />
                   </picture>
@@ -284,7 +284,11 @@ export function HomePage() {
                   </header>
                   <div className="flex-grow flex flex-col sm:gap-4  justify-center items-center py-2">
                     <picture className="h-16 w-full flex justify-center items-center">
-                      <img src="./images/time.webp" alt="" className="w-14 " />
+                      <img
+                        src="./images/time.webp"
+                        alt="time icon"
+                        className="w-14 "
+                      />
                     </picture>
                     <div className="flex-col flex gap-0 text-xs max-w-[20ch] font-semibold">
                       {t("MAIN_PAGE.ADVANTAGE_SECTION_CARD_4_DESCRIPTION")}
@@ -301,7 +305,7 @@ export function HomePage() {
                     <picture className="h-16 w-full flex justify-center items-center">
                       <img
                         src="./images/iconos/material.png"
-                        alt=""
+                        alt="material icon"
                         className="w-14 "
                       />
                     </picture>
@@ -323,7 +327,7 @@ export function HomePage() {
                     <picture className="h-16 w-full flex justify-center items-center">
                       <img
                         src="./images/iconos/assurance.png"
-                        alt=""
+                        alt="assurance icon"
                         className="w-14 "
                       />
                     </picture>
@@ -344,7 +348,7 @@ export function HomePage() {
                     <picture className="h-16 w-16 flex justify-center items-center">
                       <img
                         src="./images/iconos/finishing.png"
-                        alt=""
+                        alt="finishing icon"
                         className="w-14 "
                       />
                     </picture>

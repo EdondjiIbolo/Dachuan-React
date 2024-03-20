@@ -23,6 +23,7 @@ import { OrdersCompleted } from "./components/pages/Buy Pages/OrdersCompleted";
 import { CustomQuotation } from "./components/pages/Buy Pages/CustomQuotation";
 import { QuoteInfo } from "./components/pages/Buy Pages/QuoteInfo";
 import { AssistanceQuotes } from "./components/pages/Buy Pages/Assistant/AssistantQuotes";
+import { Finishing } from "./components/pages/Finishing";
 
 function App() {
   useEffect(() => {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/machining-turning" element={<TurningCnc />} />
         <Route path="/machining-drilling" element={<DrillingCnc />} />
         <Route path="/materials" element={<Materials />} />
+        <Route path="/finishing" element={<Finishing />} />
         <Route path="/assistance" element={<Assistance />} />
         <Route path="/guide" element={<Guide />} />
         <Route path="/about" element={<AboutUs />} />

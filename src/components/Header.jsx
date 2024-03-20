@@ -2,8 +2,8 @@ import { sections } from "../mock/headerData.json";
 import { LoginIcon } from "../components/Icons.jsx";
 import { HeaderListItem } from "./HeaderListItem.jsx";
 import "./sections/header.css";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useLang } from "../Hooks/useLang.jsx";
 import { useTranslation } from "react-i18next";
 
@@ -11,7 +11,7 @@ export function Header() {
   const [menu, setMenu] = useState(false);
   const { changeLanguage, lang } = useLang();
   const className = menu ? " main-nav show sm:flex-1" : "main-nav sm:flex-1";
-
+  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const handleclick = () => {
     setMenu(!menu);
@@ -19,13 +19,20 @@ export function Header() {
   const closemenu = () => {
     setMenu(false);
   };
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
   const handleChange = (e) => {
     closemenu();
+    navigate(0);
     changeLanguage(e.target.value);
     console.log(localStorage.getItem("lang"));
   };
   return (
-    <header className="main-header  justify-center h-20  bg-white w-full flex fixed top-0 left-0 z-40  md:pr-5">
+    <header className="main-header  justify-center h-20  bg-white w-full flex fixed top-0 left-0 z-40  md:pr-1">
       <section className="flex w-full max-w-[1320px]  items-center  border-b-2   m-auto justify-between  h-20 z-30  fixed  ">
         <section className="header__container--right px-2">
           <a
@@ -89,7 +96,7 @@ export function Header() {
               className="flex gap-1 cursor-pointer  hover:font-semibold hover:outline outline-2 outline-bg-blue-700 rounded p-1 flex-nowrap"
               onClick={closemenu}
             >
-              <p className="w-10 text-nowrap">{t("HEADER.SECTION_6")}</p>
+              <p className="w-10 text-nowrap">{t("HEADER.SECTION_7")}</p>
               <LoginIcon />
             </Link>
             <Link

@@ -5,7 +5,7 @@ import App from "./App.jsx";
 import "./index.css";
 import "./i18n/i18n.js";
 import { UserProvider } from "./Context/UserContext.jsx";
-import { LangContext, LangProvider } from "./Context/LangContext.jsx";
+import { LangProvider } from "./Context/LangContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>

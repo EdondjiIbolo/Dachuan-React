@@ -10,16 +10,11 @@ import { useTranslation } from "react-i18next";
 import { useData } from "../../Hooks/useData.jsx";
 
 export function MillingCnc() {
-  const { loading, info } = useData();
+  const { loading, info } = useData("false");
   const Milling = info;
 
   const [currentSection, setCurrentSection] = useState("");
-  // useEffect(() => {
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: "smooth",
-  //   });
-  // }, []);
+
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
@@ -428,7 +423,7 @@ export function MillingCnc() {
               <img
                 src="/images/CNC2.webp"
                 className="h-full  relative z-5  object-cover "
-                alt=""
+                alt="manufacturing illustration"
               />
             </picture>
           </section>

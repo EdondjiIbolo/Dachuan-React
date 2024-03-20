@@ -32,8 +32,12 @@
       "Page": "/"
     },
     {
-      "section_title": "Material & Post Processing",
+      "section_title": "Material",
       "Page": "/materials"
+    },
+    {
+      "section_title": "Post Processing",
+      "Page": "/finishing"
     },
     {
       "section_title": "Design  Assistance",

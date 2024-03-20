@@ -1,17 +1,21 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useLang } from "./useLang";
 
-export function useData() {
+export function useData({ material, lang }) {
   //finishing and material end point
-  const [info, setInfo] = useState({});
+
+  const [info, setInfo] = useState([]);
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     const getInfo = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get("http://localhost:3000/data");
+        const { data } = await axios.get(
+          `http://localhost:3000/data?data=${material}&lang=${lang}`
+        );
         const dataInfo = await data;
-        console.log(dataInfo);
         setInfo(dataInfo);
       } catch (err) {
         console.log(err);
@@ -20,6 +24,6 @@ export function useData() {
       }
     };
     getInfo();
-  }, []);
+  }, [lang, material]);
   return { loading, info };
 }

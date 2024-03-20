@@ -11,16 +11,11 @@ import { useData } from "../../Hooks/useData.jsx";
 // const { Drilling } = Technologies;
 
 export function DrillingCnc() {
-  const { loading, info } = useData();
+  const { loading, info } = useData("false");
   const Drilling = info;
   console.log(Drilling);
   const [currentSection, setCurrentSection] = useState("");
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, []);
+
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
@@ -415,7 +410,7 @@ export function DrillingCnc() {
               <img
                 src="/images/CNC2.webp"
                 className="h-full  relative z-5  object-cover "
-                alt=""
+                alt="manufacturing illustration"
               />
             </picture>
           </section>
