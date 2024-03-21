@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-
 import { MaterialCard } from "../MaterialCard";
 import "../sections/materials.css";
 import { Header } from "../Header.jsx";
 import { Footer } from "../Footer.jsx";
 import { useData } from "../../Hooks/useData.jsx";
 import { Loading } from "../Loading.jsx";
-import { Link } from "react-router-dom";
 import { useLang } from "../../Hooks/useLang.jsx";
 import { useTranslation } from "react-i18next";
 
@@ -49,15 +47,13 @@ export function Materials() {
         <>
           <Header />
           <main className=" w-full   relative  pt-20 ">
-            <header className="p-3 max-w-[1300px] m-auto flex justify-between items-center  ">
-              <section>
-                <h1 className="font-bold text-center sm:text-start text-3xl p-3 capitalize">
-                  {t("CARD.TITLE_MATERIAL")}
-                </h1>
-                <p className="max-w-[80ch] p-2 text-lg">
-                  {t("CARD.TITLE_MATERIAL_DESCRIPTION")}
-                </p>
-              </section>
+            <header className="p-3 max-w-[1300px] m-auto flex flex-col justify-between   ">
+              <h1 className="font-bold text-center sm:text-start text-3xl p-3 capitalize">
+                {t("CARD.TITLE_MATERIAL")}
+              </h1>
+              <p className="max-w-[80ch] p-2 text-lg">
+                {t("CARD.TITLE_MATERIAL_DESCRIPTION")}
+              </p>
             </header>
 
             <nav className=" bg-zinc-50 sticky shadow-md z-10 top-20">
