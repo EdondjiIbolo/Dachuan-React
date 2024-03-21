@@ -16,7 +16,7 @@ export function Panel() {
         setLoading(true);
         try {
           const { data } = await axios.get(
-            `http://localhost:3000/panel-info?email=${email}`
+            `https://api-chuantai-dev-dbab.4.us-1.fl0.io/panel-info?email=${email}`
           );
           const { quotes } = await data;
           setInfo(quotes);

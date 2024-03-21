@@ -13,7 +13,7 @@ export function useUserQuote() {
       try {
         setLoading(true);
         const { data } = await axios.get(
-          `http://localhost:3000/customer-quote?email=${email}`
+          `https://api-chuantai-dev-dbab.4.us-1.fl0.io/customer-quote?email=${email}`
         );
         const { quotes } = await data;
         console.log(quotes);
