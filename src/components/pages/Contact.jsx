@@ -65,12 +65,6 @@ export function Contact() {
             <h1 className="font-bold text-2xl md:text-4xl p-3 md:text-center sm:mb-3">
               {t("CONTACT.HEADER_TITLE")}
             </h1>
-            <Link
-              to="/#Services"
-              className="bg-slate-300 font-semibold text-black border border-black  p-2 flex items-center justify-center text-nowrap rounded md:w-18 sm:w-44 text-center hover:bg-white transition-all duration-200 ease-in hover:outline-2 h-8 md:h-12 hover:outline hover:outline-bg-blue-800 hover:text-blue-800"
-            >
-              See Capabilities
-            </Link>
           </header>
           <article className="grid grid-cols-1 md:grid-flow-col md:auto-cols-fr gap-5">
             <section className="p-3 flex flex-col gap-3">
@@ -133,7 +127,7 @@ export function Contact() {
                         ? "border-red-600 border-2 shadow-red-400"
                         : "border-gray-400"
                     } p-2 border border-gray-400 rounded outline-none flex-grow shadow`}
-                    placeholder="First Name"
+                    placeholder={t("CONTACT.FORM.FIRST_NAME")}
                   />
                   <input
                     type="text"
@@ -145,7 +139,7 @@ export function Contact() {
                         ? "border-red-600 border-2 shadow-red-400"
                         : "border-gray-400"
                     } p-2 border border-gray-400 rounded outline-none flex-grow shadow`}
-                    placeholder="Last Name"
+                    placeholder={t("CONTACT.FORM.LAST_NAME")}
                   />
                 </div>
 
@@ -157,7 +151,7 @@ export function Contact() {
                         ? "border-red-600 border-2 shadow-red-400"
                         : "border-gray-400"
                     } p-2 border border-gray-400 rounded outline-none flex-grow shadow`}
-                    placeholder="Company"
+                    placeholder={t("CONTACT.FORM.COMPANY")}
                     value={companyName}
                     onChange={(e) => setCompanyName(e.target.value)}
                   />
@@ -173,7 +167,7 @@ export function Contact() {
                         ? "border-red-600 border-2 shadow-red-400"
                         : "border-gray-400"
                     } p-2 border border-gray-400 rounded outline-none flex-grow shadow`}
-                    placeholder="Email"
+                    placeholder={t("CONTACT.FORM.EMAIL")}
                   />
                 </div>
                 <div className="w-full flex">
@@ -187,7 +181,7 @@ export function Contact() {
                         ? "border-red-600 border-2 shadow-red-400"
                         : "border-gray-400"
                     } p-2 border border-gray-400 italic focus:not-italic rounded outline-none flex-grow shadow`}
-                    placeholder="Tel : +8611125899856"
+                    placeholder={t("CONTACT.FORM.PHONE")}
                   />
                 </div>
                 <div className="w-full flex">
@@ -201,7 +195,7 @@ export function Contact() {
                         ? "border-red-600 border-2 shadow-red-400"
                         : "border-gray-400"
                     }  border rounded resize-none shadow outline-none p-1 h-40 flex-grow`}
-                    placeholder="Message"
+                    placeholder={t("CONTACT.FORM.MESSAGE")}
                   ></textarea>
                 </div>
                 {error && (

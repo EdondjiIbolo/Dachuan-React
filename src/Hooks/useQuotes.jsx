@@ -10,7 +10,7 @@ export function useQuotes() {
       try {
         setLoading(true);
         const { data } = await axios.get(
-          "http://localhost:3000/assistant-quote"
+          "https://api-chuantai-dev-dbab.4.us-1.fl0.io/assistant-quote"
         );
         const { quotes } = await data;
         setQuotesData(quotes);

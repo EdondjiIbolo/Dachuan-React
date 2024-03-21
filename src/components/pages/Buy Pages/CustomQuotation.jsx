@@ -19,7 +19,9 @@ export function CustomQuotation() {
   const navigate = useNavigate();
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`http://localhost:3000/quote/${id}`);
+      const { data } = await axios.get(
+        `https://api-chuantai-dev-dbab.4.us-1.fl0.io/quote/${id}`
+      );
       console.log(data);
     };
     getData();

@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+
 export function FinishingCard({ feature, finishing }) {
+  const { t, i18n } = useTranslation();
   return (
     <article className="flex flex-col pb-2 pt-2 gap-4 border-2 border-gray-300 h-[480px] shadow-md rounded bg-gradient-to-l  px-2  text-black to-slate-200 from-slate-300">
       <picture className="w-full rounded max-h-36 flex justify-center overflow-hidden">
@@ -14,13 +18,13 @@ export function FinishingCard({ feature, finishing }) {
 
         <div>
           <p className="text-[.8rem]">
-            <b>特性: </b>
+            <b>{t("CARD.DESCRIPTION")} </b>
             {feature?.featureCharacter}
           </p>
         </div>
         <div>
           <p className="text-[.8rem]">
-            <b>用途: </b>
+            <b>{t("CARD.UTILITY")} </b>
             {feature?.featureUtility}
           </p>
         </div>

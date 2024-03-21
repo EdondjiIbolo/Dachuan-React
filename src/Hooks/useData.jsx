@@ -8,8 +8,8 @@ export function useData({ material, lang }) {
   const [loading, setLoading] = useState(false);
   const url =
     material !== undefined
-      ? `http://localhost:3000/data?data=${material}&lang=${lang}`
-      : `http://localhost:3000/data`;
+      ? `https://api-chuantai-dev-dbab.4.us-1.fl0.io/data?data=${material}&lang=${lang}`
+      : `https://api-chuantai-dev-dbab.4.us-1.fl0.io/data`;
   useEffect(() => {
     const getInfo = async () => {
       try {

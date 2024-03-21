@@ -9,7 +9,9 @@ export function useSingleQuote({ id }) {
     const getQuotes = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get(`http://localhost:3000/quote/${id}`);
+        const { data } = await axios.get(
+          `https://api-chuantai-dev-dbab.4.us-1.fl0.io/quote/${id}`
+        );
         const result = await data;
         console.log(result.quantity);
         setQuotesData(result);

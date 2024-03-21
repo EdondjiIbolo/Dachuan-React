@@ -10,7 +10,7 @@ export function useCompletedOrders({ email }) {
       try {
         setLoading(true);
         const { data } = await axios.get(
-          `http://localhost:3000/customer-quote?status=${status}&email=${email}`
+          `https://api-chuantai-dev-dbab.4.us-1.fl0.io/customer-quote?status=${status}&email=${email}`
         );
         const { quotes: newQuotes } = await data;
         setQuote(newQuotes);

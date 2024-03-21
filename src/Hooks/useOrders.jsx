@@ -9,7 +9,7 @@ export function useOrders({ email }) {
       try {
         setLoading(true);
         const { data } = await axios.get(
-          `http://localhost:3000/my-orders?id=${email}`
+          `https://api-chuantai-dev-dbab.4.us-1.fl0.io/my-orders?id=${email}`
         );
         const newOrders = await data;
         setOrders(newOrders);

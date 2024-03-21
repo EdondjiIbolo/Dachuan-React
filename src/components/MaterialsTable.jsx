@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { ArrowIcon } from "./Icons";
 import "./sections/materialstable.css";
+import { Link } from "react-router-dom";
 export function MaterialTable() {
   const { t, i18n } = useTranslation();
   return (
@@ -23,7 +24,12 @@ export function MaterialTable() {
           <tr>
             <td className="font-semibold sm:text-left">
               {" "}
-              {t("MAIN_PAGE.MATERIALS.MATERIAL_1_NAME")}
+              <Link
+                to={`/materials#${t("MAIN_PAGE.MATERIALS.MATERIAL_1_NAME")}`}
+                className="font-semibold hover:underline p-1 sm:text-left"
+              >
+                {t("MAIN_PAGE.MATERIALS.MATERIAL_1_NAME")}
+              </Link>
             </td>
             <td data-label="Feature">
               {t("MAIN_PAGE.MATERIALS.MATERIAL_1_FEATURE_1")}
@@ -41,8 +47,12 @@ export function MaterialTable() {
 
           <tr>
             <td className="font-semibold sm:text-left">
-              {" "}
-              {t("MAIN_PAGE.MATERIALS.MATERIAL_2_NAME")}
+              <Link
+                to={`/materials#${t("MAIN_PAGE.MATERIALS.MATERIAL_1_NAME")}`}
+                className="font-semibold hover:underline p-1 sm:text-left"
+              >
+                {t("MAIN_PAGE.MATERIALS.MATERIAL_2_NAME")}
+              </Link>
             </td>
             <td data-label="Feature">
               {t("MAIN_PAGE.MATERIALS.MATERIAL_2_FEATURE_1")}
@@ -59,8 +69,12 @@ export function MaterialTable() {
           </tr>
           <tr>
             <td className="font-semibold sm:text-left">
-              {" "}
-              {t("MAIN_PAGE.MATERIALS.MATERIAL_3_NAME")}
+              <Link
+                to={`/materials#${t("MAIN_PAGE.MATERIALS.MATERIAL_1_NAME")}`}
+                className="font-semibold hover:underline p-1 sm:text-left"
+              >
+                {t("MAIN_PAGE.MATERIALS.MATERIAL_3_NAME")}
+              </Link>
             </td>
             <td data-label="Feature">
               {t("MAIN_PAGE.MATERIALS.MATERIAL_3_FEATURE_1")}
@@ -77,8 +91,12 @@ export function MaterialTable() {
           </tr>
           <tr>
             <td className="font-semibold sm:text-left">
-              {" "}
-              {t("MAIN_PAGE.MATERIALS.MATERIAL_4_NAME")}
+              <Link
+                to={`/materials#${t("MAIN_PAGE.MATERIALS.MATERIAL_4_NAME")}`}
+                className="font-semibold hover:underline p-1 sm:text-left"
+              >
+                {t("MAIN_PAGE.MATERIALS.MATERIAL_4_NAME")}
+              </Link>
             </td>
             <td data-label="Feature">
               {t("MAIN_PAGE.MATERIALS.MATERIAL_4_FEATURE_1")}

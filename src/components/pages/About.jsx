@@ -14,7 +14,7 @@ export function AboutUs() {
           <picture className="absolute z-5  left-0  w-full  ">
             <img
               src="/img/Milling.jpeg"
-              className="h-96 blur-lg object-[-235px] sm:object-center sm:h-96 block object-cover w-full"
+              className="h-96 blur-xl object-[-235px] sm:object-center sm:h-96 block object-cover w-full"
               alt="Banner img"
             />
           </picture>
@@ -43,17 +43,12 @@ export function AboutUs() {
                   <p>{t("ABOUT.SECTION_1_DESCRIPTION_3")}</p>
                 </article>
                 <picture className="flex justify-center p-4 pt-0">
-                  <img src="/img/CNC2.webp" alt="" className="object-cover" />
+                  <img
+                    src="/images/company.png"
+                    alt=""
+                    className="object-cover h-72 w-full "
+                  />
                 </picture>
-              </section>
-            </section>
-
-            <section className="w-full max-w-[1310px] m-auto   pt-10 px-10 ">
-              <section className="grid sm:grid-flow-col gap-8 sm:gap-6 sm:auto-cols-fr">
-                <article className="flex flex-col text-center sm:text-left gap-4">
-                  <p>{t("ABOUT.SECTION_1_DESCRIPTION_4")}</p>
-                  <p>{t("ABOUT.SECTION_1_DESCRIPTION_5")}</p>
-                </article>
               </section>
             </section>
           </section>
@@ -64,14 +59,58 @@ export function AboutUs() {
               </h3>
               <hr />
               <section className="grid sm:grid-flow-col  pt-2 gap-8 sm:gap-6 sm:auto-cols-fr">
+                <picture className="flex justify-center p-4 pt-0">
+                  <img
+                    src="/images/services.png"
+                    alt=""
+                    className="object-cover h-72 w-full "
+                  />
+                </picture>
                 <article className="flex flex-col text-center sm:text-left gap-4">
+                  <h3 className="font-bold text-xl">
+                    {t("ABOUT.SECTION_2_SUBTITLE_1")}
+                  </h3>
                   <p>{t("ABOUT.SECTION_2_DESCRIPTION_1")}</p>
                   <p>{t("ABOUT.SECTION_2_DESCRIPTION_2")}</p>
                   <p>{t("ABOUT.SECTION_2_DESCRIPTION_3")}</p>
                   <p>{t("ABOUT.SECTION_2_DESCRIPTION_4")}</p>
                 </article>
-                <article className="grid place-content-center gap-4 p-4 pt-0">
-                  <div className="flex md:items-start md:flex-row flex-col items-center gap-8">
+              </section>
+            </section>
+          </section>
+          <section className=" bg-slate-100">
+            <section className="w-full max-w-[1310px] m-auto py-10 px-10 flex flex-col gap-4">
+              <h3 className=" font-medium text-4xl mb-3 max-w-[50ch] text-start text-pretty ">
+                {t("ABOUT.SECTION_3_TITLE_1")}
+              </h3>
+              <hr />
+              <section className="flex sm:flex-row gap-4  justify-between flex-col h-min p-2 rounded">
+                <article className=" md:w-[60%]">
+                  <h3 className="font-semibold mb-2 text-lg italic">
+                    {t("ABOUT.SECTION_3_SUBTITLE_1")}
+                  </h3>
+                  <p>{t("ABOUT.SECTION_3_SUBTITLE_DESCRIPTION_1")}.</p>
+                </article>
+
+                <picture className="h-60 rounded overflow-hidden md:w-[35%] b pt-0">
+                  <img
+                    src="/images/team.png"
+                    alt=""
+                    className="object-cover h-full w-full"
+                  />
+                </picture>
+              </section>
+            </section>
+          </section>
+          <section className=" bg-slate-100">
+            <section className="w-full max-w-[1310px] m-auto py-10 px-5 ">
+              <h3 className=" font-medium text-4xl mb-3 max-w-[50ch] text-start text-pretty ">
+                {t("ABOUT.SECTION_5_SUBTITLE_1")}
+              </h3>
+              <hr />
+              <section className="grid sm:grid-flow-col  pt-2 gap-8 sm:gap-6 sm:auto-cols-fr">
+                <article className="grid place-content-left gap-4 p-4 pt-0">
+                  <div className="flex md:items-start  md:flex-row flex-col items-center gap-8">
                     <div className="flex gap-3 flex-col justify-center md:items-start items-center">
                       <CustomerIcon />
                       <p className="text-2xl flex gap-2  italic">
@@ -112,61 +151,12 @@ export function AboutUs() {
                     </div>
                   </div>
                 </article>
-              </section>
-            </section>
-          </section>
-          <section className=" bg-slate-100">
-            <section className="w-full max-w-[1310px] m-auto py-10 px-10 flex flex-col gap-4">
-              <h3 className=" font-medium text-4xl mb-3 max-w-[50ch] text-start text-pretty ">
-                {t("ABOUT.SECTION_3_TITLE_1")}
-              </h3>
-              <hr />
-              <section className="flex sm:flex-row gap-4 items-center bg-white justify-between flex-col h-min p-2 rounded">
-                <article className=" md:w-[60%]">
-                  <h3 className="font-semibold mb-2 text-lg italic">
-                    {t("ABOUT.SECTION_3_SUBTITLE_1")}
-                  </h3>
-                  <p>{t("ABOUT.SECTION_3_SUBTITLE_DESCRIPTION_1")}.</p>
+                <article className="flex flex-col text-center sm:text-left gap-4">
+                  <p>{t("ABOUT.SECTION_5_DESCRIPTION_1")}</p>
+                  <p>{t("ABOUT.SECTION_5_DESCRIPTION_2")}</p>
+                  <p>{t("ABOUT.SECTION_5_DESCRIPTION_3")}</p>
+                  <p>{t("ABOUT.SECTION_5_DESCRIPTION_4")}</p>
                 </article>
-
-                <picture className="h-full rounded overflow-hidden md:w-[20%] pt-0">
-                  <img
-                    src="/img/CNC.webp"
-                    alt=""
-                    className="object-cover h-full w-full"
-                  />
-                </picture>
-              </section>
-              <section className="flex sm:flex-row gap-4 items-center bg-white justify-between flex-col h-min p-2 rounded">
-                <picture className="h-full rounded overflow-hidden md:w-[20%] pt-0">
-                  <img
-                    src="/img/CNC.webp"
-                    alt=""
-                    className="object-cover h-full w-full"
-                  />
-                </picture>
-                <article className=" md:w-[60%]">
-                  <h3 className="font-semibold mb-2 text-lg italic">
-                    {t("ABOUT.SECTION_3_SUBTITLE_2")}
-                  </h3>
-                  <p>{t("ABOUT.SECTION_3_SUBTITLE_DESCRIPTION_2")}.</p>
-                </article>
-              </section>
-              <section className="flex sm:flex-row gap-4 items-center bg-white justify-between flex-col h-min p-2 rounded">
-                <article className=" md:w-[60%]">
-                  <h3 className="font-semibold mb-2 text-lg italic">
-                    {t("ABOUT.SECTION_3_SUBTITLE_3")}
-                  </h3>
-                  <p>{t("ABOUT.SECTION_3_SUBTITLE_DESCRIPTION_3")}.</p>
-                </article>
-
-                <picture className="h-full rounded overflow-hidden md:w-[20%] pt-0">
-                  <img
-                    src="/img/CNC.webp"
-                    alt=""
-                    className="object-cover h-full w-full"
-                  />
-                </picture>
               </section>
             </section>
           </section>
@@ -177,28 +167,17 @@ export function AboutUs() {
               </h3>
               <section className="grid sm:grid-flow-col gap-8 sm:gap-6 sm:auto-cols-fr">
                 <article className="flex flex-col text-center sm:text-left gap-4">
-                  <p>{t("ABOUT.SECTION_4_TITLE_1")}</p>
-
                   <p>{t("ABOUT.SECTION_4_DESCRIPTION_1")}</p>
                   <p>{t("ABOUT.SECTION_4_DESCRIPTION_2")}</p>
                   <p>{t("ABOUT.SECTION_4_DESCRIPTION_3")}</p>
                 </article>
                 <picture className="flex justify-center p-4 pt-0">
                   <img
-                    src="/img/Spanflug_Team.webp"
+                    src="/images/vision.png"
                     alt="team members"
                     className="object-cover"
                   />
                 </picture>
-              </section>
-            </section>
-
-            <section className="w-full max-w-[1310px] m-auto   p-4 px-10 ">
-              <section className="grid sm:grid-flow-col gap-8 sm:gap-6 sm:auto-cols-fr">
-                <article className="flex flex-col text-center sm:text-left gap-4">
-                  <p>{t("ABOUT.SECTION_4_DESCRIPTION_4")}</p>
-                  <p>{t("ABOUT.SECTION_4_DESCRIPTION_5")}</p>
-                </article>
               </section>
             </section>
           </section>

@@ -7,12 +7,13 @@ import axios from "axios";
 // const baseContact = "https://api-deploy-production-5c13.up.railway.app/contact";
 // const SendFileURL =
 //   "https://api-deploy-production-5c13.up.railway.app/send-file";
-const baseUrl = "http://localhost:3000/login";
-const baseUrlSign = "http://localhost:3000/sign-up";
-const baseVerify = "http://localhost:3000/verify";
-const baseRecover = "http://localhost:3000/recover";
-const baseContact = "http://localhost:3000/message-contact";
-const SendFileURL = "http://localhost:3000/new-quote";
+const baseUrl = "https://api-chuantai-dev-dbab.4.us-1.fl0.io/login";
+const baseUrlSign = "https://api-chuantai-dev-dbab.4.us-1.fl0.io/sign-up";
+const baseVerify = "https://api-chuantai-dev-dbab.4.us-1.fl0.io/verify";
+const baseRecover = "https://api-chuantai-dev-dbab.4.us-1.fl0.io/recover";
+const baseContact =
+  "https://api-chuantai-dev-dbab.4.us-1.fl0.io/message-contact";
+const SendFileURL = "https://api-chuantai-dev-dbab.4.us-1.fl0.io/new-quote";
 const login = async (credentials) => {
   const { data } = await axios.post(baseUrl, credentials);
   return data;
@@ -39,20 +40,23 @@ const sendFile = async (credentials) => {
 };
 const sendChanges = async (credentials) => {
   const { data } = await axios.post(
-    "http://localhost:3000/assistant-changes",
+    "https://api-chuantai-dev-dbab.4.us-1.fl0.io/assistant-changes",
     credentials
   );
   return data;
 };
 const createQuote = async (credentials) => {
   const { data } = await axios.post(
-    "http://localhost:3000/new-quote",
+    "https://api-chuantai-dev-dbab.4.us-1.fl0.io/new-quote",
     credentials
   );
   return data;
 };
 const customQuote = async (credentials) => {
-  const { data } = axios.post("http://localhost:3000/send-quote", credentials);
+  const { data } = axios.post(
+    "https://api-chuantai-dev-dbab.4.us-1.fl0.io/send-quote",
+    credentials
+  );
   return data;
 };
 export default {

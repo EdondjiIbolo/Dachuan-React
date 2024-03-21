@@ -160,7 +160,7 @@
     "FINISHINGS": {
       "TABLE_FINISHING": "后处理",
       "TABLE_FEATURE": "工艺",
-      "FINISHING_1_NAME": "电镀&喷涂",
+      "FINISHING_1_NAME": "电镀和喷涂",
       "FINISHING_1_FEATURE_1": "镀锌",
       "FINISHING_1_FEATURE_2": "镀铬",
       "FINISHING_1_FEATURE_3": "镀硬铬",
@@ -175,11 +175,11 @@
       "FINISHING_3_FEATURE_2": "研磨",
       "FINISHING_3_FEATURE_3": "喷砂",
       "FINISHING_3_FEATURE_4": "阳极氧化",
-      "FINISHING_4_NAME": "特殊处理",
-      "FINISHING_4_FEATURE_1": "煮黑",
-      "FINISHING_4_FEATURE_2": "激光打标",
-      "FINISHING_4_FEATURE_3": "等离子处理",
-      "FINISHING_4_FEATURE_4": "真空处理"
+      "FINISHING_4_NAME": "电镀",
+      "FINISHING_4_FEATURE_1": "镀铬",
+      "FINISHING_4_FEATURE_2": "镀铬",
+      "FINISHING_4_FEATURE_3": "镀锡",
+      "FINISHING_4_FEATURE_4": "镀镍"
     },
 
     "ASSISTANCE_SECTION_TITLE": "我们的首要任务是您的满意：我们随时为您解决疑问和需求。",
@@ -211,7 +211,16 @@
     "SECTION_2_DESCRIPTION": "通过川泰智能，您可以即时获取您的加工部件的报价。在报价平台中，您可以快速的提交设计及相关信息，并选择您所需要的材料与后处理工艺，我们将会随时查看并回复您的问题",
     "SECTION_2_DESCRIPTION_2": "我同意每月收到川泰智能的服务和产品更新, 特价优惠等信息我已审阅并同意川泰智能的条款及隐私政策",
     "SECTION_2_DESCRIPTION_3": "通过提交表格，您同意传泰智能的条款和隐私政策。",
-    "BUTTON_SUBMIT": "提交 "
+    "BUTTON_SUBMIT": "提交 ",
+
+    "FORM": {
+      "FIRST_NAME": "名字",
+      "LAST_NAME": "姓氏",
+      "COMPANY": "公司",
+      "EMAIL": "电子邮件",
+      "PHONE": "手机号 ：+86 999 9999 9999",
+      "MESSAGE": "留言"
+    }
   },
   "MILLING": {
     "MILLING_TITLE": "CNC 加工 - 铣削",
