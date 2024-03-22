@@ -7,7 +7,7 @@ export function Services() {
     <section
       id="Services"
       data-section="Services"
-      className="max-w-[1300px] m-auto py-10 px-4 "
+      className="max-w-[1300px] m-auto py-10 px-4 animate-fade-right animate-once animate-duration-[400ms] animate-delay-[50ms] animate-ease-linear "
     >
       <h2 className="text-center font-semibold text-2xl mb-4 pt-4 ">
         {t("MAIN_PAGE.SERVICE_SECTION_TITLE")}

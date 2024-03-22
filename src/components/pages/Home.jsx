@@ -52,7 +52,7 @@ export function HomePage() {
     <>
       <Header />
       <main className=" w-full  m-auto  bg-zinc-100 relative  pt-20">
-        <section className="relative max-w-[1310px] m-auto h-86 sm:h-96 overflow-hidden">
+        <section className="relative max-w-[1310px] m-auto h-86 sm:h-96 overflow-hidden animate-fade animate-once animate-duration-500 animate-delay-100 animate-ease-linear">
           <picture className="absolute w-1/2 z-10 top-0 right-0     ">
             <img
               src="./images/main-banner.jpg"

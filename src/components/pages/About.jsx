@@ -120,7 +120,7 @@ export function AboutUs() {
                 <div className="flex gap-3 flex-col justify-center  items-center">
                   <CustomerIcon />
                   <p className="text-2xl flex gap-2  italic">
-                    <strong className="text-blue-600 font-bold bg-red-500 w-20 text-right">
+                    <strong className="text-blue-600 font-bold w-20 text-right">
                       +8.000
                     </strong>
                     customers
@@ -129,7 +129,7 @@ export function AboutUs() {
                 <div className="flex gap-3 flex-col justify-center  items-center">
                   <UsersIcon />
                   <p className="text-2xl flex gap-2  italic">
-                    <strong className="text-blue-600 font-bold bg-red-500 w-20 text-right">
+                    <strong className="text-blue-600 font-bold w-20 text-right">
                       +5.000
                     </strong>
                     Users
@@ -139,7 +139,7 @@ export function AboutUs() {
                 <div className="flex gap-3 flex-col justify-center  items-center">
                   <MachinesIcon />
                   <p className="text-2xl flex gap-2  italic">
-                    <strong className="text-blue-600 font-bold bg-red-500 w-34 text-right">
+                    <strong className="text-blue-600 font-bold w-34 text-right">
                       +50.000
                     </strong>{" "}
                     machines
@@ -148,7 +148,7 @@ export function AboutUs() {
                 <div className="flex gap-3 flex-col justify-center  items-center">
                   <PartsIcon />
                   <p className="text-2xl flex gap-2  italic">
-                    <strong className="text-blue-600 font-bold bg-red-500 w-30 text-right">
+                    <strong className="text-blue-600 font-bold w-30 text-right">
                       +200.000{" "}
                     </strong>
                     Calculated parts
