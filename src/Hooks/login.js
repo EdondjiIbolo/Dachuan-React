@@ -7,6 +7,7 @@ import axios from "axios";
 // const baseContact = "https://api-deploy-production-5c13.up.railway.app/contact";
 // const SendFileURL =
 //   "https://api-deploy-production-5c13.up.railway.app/send-file";
+const api_url = "https://api-chuantai-dev-dbab.4.us-1.fl0.io";
 const baseUrl = "https://api-chuantai-dev-dbab.4.us-1.fl0.io/login";
 const baseUrlSign = "https://api-chuantai-dev-dbab.4.us-1.fl0.io/sign-up";
 const baseVerify = "https://api-chuantai-dev-dbab.4.us-1.fl0.io/verify";
@@ -53,9 +54,45 @@ const createQuote = async (credentials) => {
   return data;
 };
 const customQuote = async (credentials) => {
-  const { data } = axios.post(
+  const { data } = await axios.post(
     "https://api-chuantai-dev-dbab.4.us-1.fl0.io/send-quote",
     credentials
+  );
+  return data;
+};
+const getUsersQuotes = async (email) => {
+  const { data } = await axios.get(
+    `https://api-chuantai-dev-dbab.4.us-1.fl0.io/customer-quote?email=${email}`
+  );
+  return data;
+};
+const getSingleQuote = async (id) => {
+  const { data } = await axios.get(
+    `https://api-chuantai-dev-dbab.4.us-1.fl0.io/quote/${id}`
+  );
+  return data;
+};
+const getAssistantQuotes = async () => {
+  const { data } = await axios.get(
+    "https://api-chuantai-dev-dbab.4.us-1.fl0.io/assistant-quote"
+  );
+  return data;
+};
+const getOrderes = async (email) => {
+  const { data } = await axios.get(
+    `https://api-chuantai-dev-dbab.4.us-1.fl0.io/my-orders?id=${email}`
+  );
+  return data;
+};
+const completedQuotes = async ({ email, status }) => {
+  const { data } = await axios.get(
+    `https://api-chuantai-dev-dbab.4.us-1.fl0.io/customer-quote?status=${status}&email=${email}`
+  );
+  return data;
+};
+const completedOrders = async ({ status, email }) => {
+  const { data } = await axios.get(
+    `https://api-chuantai-dev-dbab.4.us-1.fl0.io/customer-quote?status=${status}&email=${email}`
   );
   return data;
 };
@@ -69,4 +106,10 @@ export default {
   sendChanges,
   createQuote,
   customQuote,
+  getUsersQuotes,
+  getSingleQuote,
+  getAssistantQuotes,
+  getOrderes,
+  completedQuotes,
+  completedOrders,
 };

@@ -13,8 +13,8 @@ export function MyOrder() {
   console.log(orders);
   const mappedQuotes = orders.map((order) => ({
     id: order.id_quotation,
-    phone: order.telefono,
-    name: order.nombre,
+    phone: order.phone,
+    name: order.name,
     userId: order.user_id,
     price: order.price,
     date: order.fecha_quotation,

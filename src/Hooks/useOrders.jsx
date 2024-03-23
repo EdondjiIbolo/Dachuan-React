@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import FetchOrderes from "../Hooks/login";
 
 export function useOrders({ email }) {
   const [orders, setOrders] = useState([]);
@@ -8,9 +9,7 @@ export function useOrders({ email }) {
     const getOrders = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get(
-          `https://api-chuantai-dev-dbab.4.us-1.fl0.io/my-orders?id=${email}`
-        );
+        const data = await FetchOrderes.getOrderes(email);
         const newOrders = await data;
         setOrders(newOrders);
       } catch (err) {

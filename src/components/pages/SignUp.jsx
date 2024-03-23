@@ -16,7 +16,7 @@ export function SignUp() {
   const [verifytext, setVerifytext] = useState(false);
   const [error, setError] = useState(false);
   const [errorText, setErrorText] = useState("");
-  const { setUser, user } = useUser();
+  const { setUser } = useUser();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,9 +50,15 @@ export function SignUp() {
       const userdata = await signServices.verifyCode({ phone });
       console.log(userdata);
     } catch (error) {
+      setVerify(false);
+      setErrorText(error);
+      setError(true);
+
       console.error("Error al enviar el código de verificación:", error);
     } finally {
-      setVerify(false);
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
     }
   };
   const handleSubmit = async (e) => {

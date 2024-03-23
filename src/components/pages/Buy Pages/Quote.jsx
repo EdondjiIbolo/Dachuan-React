@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export function Quote({ quote }) {
-  console.log(quote.url);
+  console.log(quote.shipping_date);
   return (
     <>
       <td
@@ -38,7 +38,7 @@ export function Quote({ quote }) {
         {quote.address}
       </td>
       <td
-        className="text-center text-xs hover:text-blue-600 hover:font-semibold p-2 cursor-pointer"
+        className="text-center text-xs hover:text-blue-600 hover:font-semibold p-2 text-nowrap cursor-pointer"
         data-label=" Shipping date"
       >
         {quote.shipping_date ?? "--"}

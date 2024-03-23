@@ -16,6 +16,9 @@ export function CustomQuotation() {
   const [roughness, setRoughness] = useState("Ra1.6μm");
   const [quantity, setQuantity] = useState(1);
   const [notes, setNotes] = useState(false);
+  const [error, setError] = useState(false);
+  const date = Date.now();
+  const newDate = new Date(date);
   const navigate = useNavigate();
   useEffect(() => {
     const getData = async () => {
@@ -48,8 +51,12 @@ export function CustomQuotation() {
     };
 
     try {
-      const response = FetchCustomQuote.customQuote(newData);
-
+      const response = await FetchCustomQuote.customQuote(newData);
+      const data = await response;
+      console.log(data);
+      if (!response) {
+        throw new Error("Todos los campos son obligatorios");
+      }
       if (response) {
         setTimeout(() => {
           navigate("/panel/my-quotes");
@@ -57,10 +64,20 @@ export function CustomQuotation() {
       }
     } catch (err) {
       console.log(err);
+      setError(true);
+    } finally {
+      setTimeout(() => {
+        setError(false);
+      }, 3200);
     }
   };
   return (
     <main className="pt-20  min-h-screen main-body">
+      {error && (
+        <div className="bg-red-500 text-white fixed h-10 z-50 w-full text-center text-lg font-medium top-0 left-0 animate-fade-down animate-once animate-duration-[400ms] animate-delay-[50ms] animate-ease-linear">
+          All fields are mandatory
+        </div>
+      )}
       <header className="sm:h-16 h-24 flex items-center fixed top-20 w-screen bg-white shadow-md  ">
         <article className="flex flex-col gap-3 sm:flex-row w-full items-center justify-between max-w-[1310px] m-auto">
           <section className="flex gap-4 items-center ">
@@ -129,7 +146,7 @@ export function CustomQuotation() {
               </article>
               <div className="bg-slate-200 p-1 rounded-md w-24 flex justify-between items-center">
                 <div
-                  className="p-1 font-bold text-gray-700 hover:text-black  hover:bg-slate-300 rounded"
+                  className="p-1 font-bold text-gray-700 cursor-pointer hover:text-black  hover:bg-slate-300 rounded"
                   onClick={handdleAdd}
                 >
                   +
@@ -143,7 +160,7 @@ export function CustomQuotation() {
                   className="border-gray-400 border w-10 pl-1 rounded focus:border focus:outline-none"
                 />
                 <div
-                  className="p-1 font-bold text-gray-700 hover:text-black  hover:bg-slate-300 rounded"
+                  className="p-1 font-bold text-gray-700 cursor-pointer hover:text-black  hover:bg-slate-300 rounded"
                   onClick={handleDiff}
                 >
                   -
@@ -284,7 +301,7 @@ export function CustomQuotation() {
                   type="text"
                   inputMode="text"
                   name="lead_time"
-                  placeholder="Enetr your expexted lead time"
+                  placeholder="Enter your expexted lead time"
                   className="p-2 border rounded border-gray-400 w-full "
                 />
               </label>
@@ -297,45 +314,26 @@ export function CustomQuotation() {
               </p>
             </header>
             <article className=" bg-white p-2 rounded shadow-sm flex flex-col ">
-              <label className="flex gap-3 items-center cursor-pointer hover:bg-zinc-50 border-b border-gray-700 p-2">
+              <article className=" bg-white p-2 rounded shadow-sm flex flex-col ">
                 <input
-                  type="radio"
-                  name="shipping"
-                  value="Standard"
-                  inputMode="text"
-                  className="rounded-full w-4 h-4"
+                  type="date"
+                  name="shipping_date"
+                  className="focus:outline-0 w-full"
                 />
-                <span className="text-sm flex justify-between grow text-gray-500 font-medium">
-                  <p>Standard</p>
-                  <p>7-10 Business days</p>
-                </span>
-              </label>
-              <label className="flex gap-3 items-center cursor-pointer hover:bg-zinc-50 p-2">
-                <input
-                  type="radio"
-                  name="shipping"
-                  value="Economy"
-                  inputMode="text"
-                  className="rounded-full w-4 h-4"
-                />
-                <span className="text-sm flex justify-between grow text-gray-500 font-medium">
-                  <p>Economy</p>
-                  <p>5-8 Business days</p>
-                </span>
-              </label>
+              </article>
             </article>
           </article>
           <article>
             <header>
               <p className="font-semibold flex gap-2 items-center pb-1 text-blue-800">
-                <SecureIcon /> Shipping Shipping Addrss
+                <SecureIcon /> Shipping Shipping Address
               </p>
             </header>
             <article className=" bg-white p-2  rounded shadow-sm flex flex-row  gap-3 items-center ">
               <input
                 type="radio"
                 name="address"
-                value={`lino dachuan / rongtaicheng / + 1326717532`}
+                value="lino dachuan / rongtaicheng / + 1326717532"
                 inputMode="text"
                 className="rounded-full w-5 h-5"
               />

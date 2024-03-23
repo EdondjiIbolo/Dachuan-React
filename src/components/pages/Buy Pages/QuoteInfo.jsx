@@ -233,44 +233,23 @@ export function QuoteInfo() {
             <article>
               <header>
                 <p className="font-semibold flex gap-2 items-center pb-1 text-blue-800">
-                  <SecureIcon /> Shipping Option
+                  <SecureIcon /> Shipping Date
                 </p>
               </header>
               <article className=" bg-white p-2 rounded shadow-sm flex flex-col ">
-                <label className="flex gap-3 items-center cursor-pointer hover:bg-zinc-50 border-b border-gray-700 p-2">
-                  <input
-                    disabled
-                    type="radio"
-                    name="shipping"
-                    value="Standard"
-                    inputMode="text"
-                    className="rounded-full w-4 h-4"
-                  />
-                  <span className="text-sm flex justify-between grow text-gray-500 font-medium">
-                    <p>Standard</p>
-                    <p>7-10 Business days</p>
-                  </span>
-                </label>
-                <label className="flex gap-3 items-center cursor-pointer hover:bg-zinc-50 p-2">
-                  <input
-                    disabled
-                    type="radio"
-                    name="shipping"
-                    value="Economy"
-                    inputMode="text"
-                    className="rounded-full w-4 h-4"
-                  />
-                  <span className="text-sm flex justify-between grow text-gray-500 font-medium">
-                    <p>Economy</p>
-                    <p>5-8 Business days</p>
-                  </span>
-                </label>
+                <input
+                  type="date"
+                  name="shipping"
+                  value="2028-07-22"
+                  disabled
+                  className="focus:outline-0 w-full"
+                />
               </article>
             </article>
             <article>
               <header>
                 <p className="font-semibold flex gap-2 items-center pb-1 text-blue-800">
-                  <SecureIcon /> Shipping Shipping Addrss
+                  <SecureIcon /> Shipping Shipping Adderss
                 </p>
               </header>
               <article className=" bg-white p-2  rounded shadow-sm flex flex-row  gap-3 items-center ">
@@ -278,9 +257,14 @@ export function QuoteInfo() {
                   disabled
                   type="radio"
                   name="address"
-                  value={`lino dachuan / rongtaicheng / + 1326717532`}
+                  value={
+                    quote.address
+                      ? quote.address
+                      : `lino dachuan / rongtaicheng / + 1326717532`
+                  }
                   inputMode="text"
                   className="rounded-full w-5 h-5"
+                  checked={quote.address}
                 />
                 <div className="text-sm text-gray-500 font-medium">
                   <p>lino dachuan</p> <p>rongtaicheng</p> <p>+ 1326717532</p>

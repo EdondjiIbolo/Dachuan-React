@@ -26,7 +26,8 @@ export function Login() {
         phone,
         password,
       });
-      const newdata = userdata;
+      console.log(userdata);
+      const newdata = await userdata;
       window.localStorage.setItem("user", JSON.stringify(newdata));
       setUser(newdata);
       console.log(user);
@@ -102,7 +103,7 @@ export function Login() {
             )}
             <Link
               to="/forgot-password"
-              className="text-blue-900 text-end w-full block p-1 hover:font-semibold hover:underline"
+              className="text-blue-900 text-end w-min text-nowrap ml-auto block p-2 hover:font-semibold hover:underline"
             >
               Forget your password?
             </Link>

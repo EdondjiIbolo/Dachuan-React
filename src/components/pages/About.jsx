@@ -45,7 +45,7 @@ export function AboutUs() {
                 <picture className="flex justify-center p-4 pt-0">
                   <img
                     src="/images/company.png"
-                    alt=""
+                    alt="Company introduction image"
                     className="object-cover h-72 w-full "
                   />
                 </picture>
@@ -62,7 +62,7 @@ export function AboutUs() {
                 <picture className="flex justify-center p-4 pt-0">
                   <img
                     src="/images/services.png"
-                    alt=""
+                    alt="service"
                     className="object-cover h-72 w-full "
                   />
                 </picture>
@@ -105,7 +105,7 @@ export function AboutUs() {
                 <picture className="h-60 rounded overflow-hidden md:w-[35%] b pt-0">
                   <img
                     src="/images/team.png"
-                    alt=""
+                    alt="team members"
                     className="object-cover h-full w-full"
                   />
                 </picture>
@@ -171,7 +171,7 @@ export function AboutUs() {
                 <picture className="flex justify-center p-4 pt-0">
                   <img
                     src="/images/vision.png"
-                    alt="team members"
+                    alt="innovation"
                     className="object-cover"
                   />
                 </picture>

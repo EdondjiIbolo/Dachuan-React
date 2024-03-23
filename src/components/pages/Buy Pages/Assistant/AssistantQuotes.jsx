@@ -8,8 +8,8 @@ export function AssistanceQuotes() {
   console.log({ quotesData });
   const mappedQuotes = quotesData.map((quote) => ({
     id: quote.id_quotation,
-    phone: quote.telefono,
-    name: quote.nombre,
+    phone: quote.phone,
+    name: quote.name,
     userId: quote.user_id,
     price: quote.price,
     date: quote.fecha_quotation,

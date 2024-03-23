@@ -1,6 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-
+import FetchCompletedQuotes from "../Hooks/login";
 export function useCompletedQuotes({ email }) {
   const [quotes, setQuote] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -9,9 +8,10 @@ export function useCompletedQuotes({ email }) {
     const getQuote = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get(
-          `https://api-chuantai-dev-dbab.4.us-1.fl0.io/customer-quote?status=${status}&email=${email}`
-        );
+        const data = await FetchCompletedQuotes.completedQuotes({
+          email,
+          status,
+        });
         const { quotes: newQuotes } = await data;
         setQuote(newQuotes);
       } catch (err) {

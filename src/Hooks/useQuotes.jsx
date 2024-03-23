@@ -1,6 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-
+import FetchQuotations from "../Hooks/login";
 export function useQuotes() {
   const [quotesData, setQuotesData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -9,9 +8,7 @@ export function useQuotes() {
     const getQuotes = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get(
-          "https://api-chuantai-dev-dbab.4.us-1.fl0.io/assistant-quote"
-        );
+        const data = FetchQuotations.getAssistantQuotes();
         const { quotes } = await data;
         setQuotesData(quotes);
       } catch (err) {

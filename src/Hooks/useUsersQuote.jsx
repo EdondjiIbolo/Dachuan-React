@@ -1,7 +1,6 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useUser } from "./useUser";
-
+import FetchQuotations from "../Hooks/login";
 export function useUserQuote() {
   const { user } = useUser();
   const { email } = user;
@@ -12,9 +11,7 @@ export function useUserQuote() {
     const getQuotes = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get(
-          `https://api-chuantai-dev-dbab.4.us-1.fl0.io/customer-quote?email=${email}`
-        );
+        const data = FetchQuotations.getUsersQuotes(email);
         const { quotes } = await data;
         console.log(quotes);
         setQuotesData(quotes);

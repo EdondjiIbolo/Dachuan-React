@@ -6,10 +6,11 @@ import { Loading } from "../../Loading";
 
 export function MyQuotes() {
   const { loading, quotesData } = useUserQuote();
+  console.log(quotesData);
   const mappedQuotes = quotesData.map((quote) => ({
     id: quote.id_quotation,
-    phone: quote.telefono,
-    name: quote.nombre,
+    phone: quote.phone,
+    name: quote.name,
     price: quote.price,
     date: quote.fecha_quotation,
     technology: quote.technology,
@@ -25,7 +26,7 @@ export function MyQuotes() {
     status: quote.status,
     url: quote.url,
   }));
-
+  console.log(mappedQuotes);
   return (
     <>
       {loading && <Loading />}
@@ -126,14 +127,19 @@ export function MyQuotes() {
               </thead>
 
               <tbody className="sm:text-base t-body text-xs ">
-                {mappedQuotes.map((quote) => (
-                  <tr
-                    className="p-4 border border-gray-400 rounded"
-                    key={quote.id}
-                  >
-                    <Quote quote={quote} />
-                  </tr>
-                ))}
+                {mappedQuotes.map((quote) => {
+                  if (quote.status === "quoted") {
+                    return;
+                  }
+                  return (
+                    <tr
+                      className="p-4 border border-gray-400 rounded"
+                      key={quote.id}
+                    >
+                      <Quote quote={quote} />
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </section>

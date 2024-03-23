@@ -69,7 +69,7 @@ export function Recover() {
     }
 
     try {
-      // setLoading(true);
+      setLoading(true);
 
       const userdata = await RecoverServices.recoverPassword({
         phone,
@@ -78,10 +78,10 @@ export function Recover() {
       });
 
       const newdata = await userdata;
-      console.log("hola");
+
       window.localStorage.setItem("user", JSON.stringify(newdata));
       setUser(newdata);
-      console.log(user);
+
       navigate("/login");
     } catch (err) {
       setError(true);
@@ -167,8 +167,8 @@ export function Recover() {
               </div>
             </section>
             {error && (
-              <p className="text-white absolute flex w-72 bottom-4 left-1/2 -translate-x-1/2 border-red-500 rounded p-1 px-3 text-lg bg-red-500 duration-250 transition-all  justify-center ease-in ">
-                Error : {errorText}
+              <p className="text-white absolute flex w-80 bottom-4 left-1/2 -translate-x-1/2 border-red-500 rounded p-1 px-2 text-md text-center bg-red-500 duration-250 transition-all  justify-center ease-in ">
+                {errorText}
               </p>
             )}
           </div>
