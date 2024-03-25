@@ -25,6 +25,8 @@
     "TITLE_MATERIAL_DESCRIPTION": "发现川泰实时报价引擎中的各种材料！如果您需要特定材料但在列表中找不到，请填写自定义字段，您将找到适合您项目的所有材料。用于每个场合的完美材料，让您的创造力闪耀！",
     "DESCRIPTION": "特性:",
     "PRICE_TEXT": "材料成本",
+    "PRICE_MANUFACTURE_TEXT": "制造成本",
+
     "UTILITY": "用途",
     "ALTERNATIVE_NAME": "别称"
   },

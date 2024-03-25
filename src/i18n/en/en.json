@@ -25,6 +25,7 @@
     "TITLE_MATERIAL_DESCRIPTION": "Discover a variety of materials in the Chuantai Real-Time Quoting Engine! If you need a specific material not found in the list, fill out the custom field, and you will find all materials suitable for your project. Perfect materials for every occasion, making your creativity shine!",
     "DESCRIPTION": "Features:",
     "PRICE_TEXT": "Material Cost",
+    "PRICE_MANUFACTURE_TEXT": "Manufacturing cost",
     "UTILITY": "Utility",
     "ALTERNATIVE_NAME": "Alternative name"
   },
