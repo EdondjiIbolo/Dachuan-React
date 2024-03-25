@@ -100,7 +100,7 @@ export function Recover() {
         <section className="flex w-full max-w-[1320px]  items-center  border-b-2  bg-white  m-auto justify-between  h-20 z-30  fixed   ">
           <Link to="/" className="w-36">
             <img
-              src="/img/logo.png"
+              src="/images/logo.png"
               alt="Logo"
               className="w-full object-cover object-top"
             />

@@ -3,8 +3,12 @@ import "../../../sections/session.css";
 import { Loading } from "../../../Loading";
 import { Quotes } from "./Quote";
 import { useQuotes } from "../../../../Hooks/useQuotes";
+import { useUser } from "../../../../Hooks/useUser";
 export function AssistanceQuotes() {
   const { quotesData, loading } = useQuotes();
+  const { user } = useUser();
+  // autorizar al usuario para ver esta seccion dependiendo de su rol
+
   console.log({ quotesData });
   const mappedQuotes = quotesData.map((quote) => ({
     id: quote.id_quotation,

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useSingleQuote } from "../../../Hooks/useSingleQuote";
 import { SecureIcon, UploadIcon } from "../../Icons";
 import { Loading } from "../../Loading";
@@ -19,6 +19,26 @@ export function QuoteInfo() {
                 {id}
               </p>
             </section>
+            <Link
+              to="/panel"
+              className="bg-blue-700
+              hover:bg-white
+              mb-2
+              hover:text-blue-800
+              transition-all
+              duration-150
+              ease-linear
+              hover:border-2
+              border-blue-700
+              text-white
+              w-24
+              p-3
+              text-center
+              rounded
+              font-bold"
+            >
+              Back
+            </Link>
           </article>
         </header>
         <form className="md:px-32 px-2 pb-5 pt-20 flex gap-16 flex-col sm:flex-row">
@@ -286,17 +306,13 @@ export function QuoteInfo() {
                 </div>
                 <div className="flex p-2 py-4 items-center justify-between border-b border-gray-300">
                   <p className="text-base">Lead Time</p>
-                  <p>--</p>
+                  <p>{quote?.lead_time}</p>
                 </div>
                 <div className="flex p-2 py-4 items-center justify-between border-b border-gray-300">
-                  <p className="text-base">Shipping Method</p>
+                  <p className="text-base">Shipping Time</p>
                   <div>
-                    <p className="font-bold text-right pr-3 text-sm">
-                      5-8 business days (Standard)
-                    </p>
-                    <p className="text-center text-gray-500  text-xs">
-                      Estim.. Delivery{" "}
-                      <span className="font-medium">Mar 12 2024</span>
+                    <p className="font-bold text-right pr-3 italic text-sm">
+                      {quote.shipping_date.split("T")[0]}
                     </p>
                   </div>
                 </div>

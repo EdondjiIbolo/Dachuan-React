@@ -16,7 +16,7 @@ export function Panel() {
         setLoading(true);
         try {
           const { data } = await axios.get(
-            `https://api-chuantai-dev-dbab.4.us-1.fl0.io/panel-info?email=${email}`
+            `http://localhost:3000/panel-info?email=${email}`
           );
           const { quotes } = await data;
           setInfo(quotes);
@@ -28,14 +28,16 @@ export function Panel() {
       };
       getData();
     }, []);
-    console.log(info);
+
     return { info, loading };
   };
   let quotedAmount = 0;
   const { info } = useQuotesInfo();
-  const quotations = info?.filter((quote) => quote.status === "quoting").length;
-  const quoted = info?.filter((quote) => quote.status === "quoted").length;
-  const ordered = info?.filter((quote) => quote.status === "ordered").length;
+  const quotations = info?.filter(
+    (quote) => quote?.status === "quoting"
+  ).length;
+  const quoted = info?.filter((quote) => quote?.status === "quoted").length;
+  const ordered = info?.filter((quote) => quote?.status === "ordered").length;
   const quotesQuoted = info?.filter((quote) => {
     return quote.status === "quoted";
   });
@@ -43,7 +45,8 @@ export function Panel() {
     quotedAmount += Number(quote.price);
   });
 
-  console.log(quotedAmount, quotesQuoted);
+  console.log(quotations, quoted, quotesQuoted);
+  console.log(info);
 
   return (
     <main className="main-body flex flex-col  gap-3 pt-20  p-3 sm:px-20">

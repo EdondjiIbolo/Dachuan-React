@@ -8,13 +8,12 @@ import axios from "axios";
 // const SendFileURL =
 //   "https://api-deploy-production-5c13.up.railway.app/send-file";
 const api_url = "https://api-chuantai-dev-dbab.4.us-1.fl0.io";
-const baseUrl = "https://api-chuantai-dev-dbab.4.us-1.fl0.io/login";
-const baseUrlSign = "https://api-chuantai-dev-dbab.4.us-1.fl0.io/sign-up";
-const baseVerify = "https://api-chuantai-dev-dbab.4.us-1.fl0.io/verify";
-const baseRecover = "https://api-chuantai-dev-dbab.4.us-1.fl0.io/recover";
-const baseContact =
-  "https://api-chuantai-dev-dbab.4.us-1.fl0.io/message-contact";
-const SendFileURL = "https://api-chuantai-dev-dbab.4.us-1.fl0.io/new-quote";
+const baseUrl = "http://localhost:3000/login";
+const baseUrlSign = "http://localhost:3000/sign-up";
+const baseVerify = "http://localhost:3000/verify";
+const baseRecover = "http://localhost:3000/recover";
+const baseContact = "http://localhost:3000/message-contact";
+const SendFileURL = "http://localhost:3000/new-quote";
 const login = async (credentials) => {
   const { data } = await axios.post(baseUrl, credentials);
   return data;
@@ -41,58 +40,54 @@ const sendFile = async (credentials) => {
 };
 const sendChanges = async (credentials) => {
   const { data } = await axios.post(
-    "https://api-chuantai-dev-dbab.4.us-1.fl0.io/assistant-changes",
+    "http://localhost:3000/assistant-changes",
     credentials
   );
   return data;
 };
 const createQuote = async (credentials) => {
   const { data } = await axios.post(
-    "https://api-chuantai-dev-dbab.4.us-1.fl0.io/new-quote",
+    "http://localhost:3000/new-quote",
     credentials
   );
   return data;
 };
 const customQuote = async (credentials) => {
   const { data } = await axios.post(
-    "https://api-chuantai-dev-dbab.4.us-1.fl0.io/send-quote",
+    "http://localhost:3000/send-quote",
     credentials
   );
   return data;
 };
 const getUsersQuotes = async (email) => {
   const { data } = await axios.get(
-    `https://api-chuantai-dev-dbab.4.us-1.fl0.io/customer-quote?email=${email}`
+    `http://localhost:3000/customer-quote?email=${email}`
   );
   return data;
 };
 const getSingleQuote = async (id) => {
-  const { data } = await axios.get(
-    `https://api-chuantai-dev-dbab.4.us-1.fl0.io/quote/${id}`
-  );
+  const { data } = await axios.get(`http://localhost:3000/quote/${id}`);
   return data;
 };
 const getAssistantQuotes = async () => {
-  const { data } = await axios.get(
-    "https://api-chuantai-dev-dbab.4.us-1.fl0.io/assistant-quote"
-  );
+  const { data } = await axios.get("http://localhost:3000/assistant-quote");
   return data;
 };
 const getOrderes = async (email) => {
   const { data } = await axios.get(
-    `https://api-chuantai-dev-dbab.4.us-1.fl0.io/my-orders?id=${email}`
+    `http://localhost:3000/my-orders?id=${email}`
   );
   return data;
 };
 const completedQuotes = async ({ email, status }) => {
   const { data } = await axios.get(
-    `https://api-chuantai-dev-dbab.4.us-1.fl0.io/customer-quote?status=${status}&email=${email}`
+    `http://localhost:3000/customer-quote?status=${status}&email=${email}`
   );
   return data;
 };
 const completedOrders = async ({ status, email }) => {
   const { data } = await axios.get(
-    `https://api-chuantai-dev-dbab.4.us-1.fl0.io/customer-quote?status=${status}&email=${email}`
+    `http://localhost:3000/customer-quote?status=${status}&email=${email}`
   );
   return data;
 };

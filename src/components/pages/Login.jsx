@@ -11,8 +11,8 @@ export function Login() {
   const navigate = useNavigate();
   const { setUser, user } = useUser();
   const className = error
-    ? "w-full italic p-2 outline-none focus:outline-none outline-red-500 text-slate-800 bg-slate-100 shadow-lg rounded"
-    : "w-full italic p-2 outline-none focus:ring text-slate-800 bg-slate-100 shadow-lg rounded";
+    ? "w-full italic p-2 outline-none focus:outline-none outline-red-500 text-slate-800 bg-slate-100  rounded"
+    : "w-full italic p-2 outline-none focus:ring text-slate-800 bg-slate-200  rounded";
   useEffect(() => {
     if (user.token) {
       navigate("/panel");
@@ -22,6 +22,7 @@ export function Login() {
     e.preventDefault();
     try {
       setLoading(true);
+      console.log(phone, password);
       const userdata = await loginServices.login({
         phone,
         password,
@@ -50,7 +51,7 @@ export function Login() {
         <section className="flex w-full max-w-[1320px]  items-center  border-b-2  bg-white  m-auto justify-between  h-20 z-30  fixed   ">
           <Link to="/" className="w-36">
             <img
-              src="/img/logo.png"
+              src="/images/logo.png"
               alt="Logo"
               className="w-full object-cover object-top"
             />
@@ -68,11 +69,11 @@ export function Login() {
       <main className="flex items-center justify-center w-screen p-5 bg-slate-200 min-h-screen">
         <form
           onSubmit={handleSubmit}
-          className="w-screen relative max-w-[500px] bg-slate-500 h-[400px] px-5 flex flex-col items-center
-        justify-center gap-4 rounded m-auto"
+          className="w-screen relative max-w-[500px] bg-slate-50 h-[400px] px-5 flex flex-col items-center
+        justify-center gap-4 shadow-md rounded m-auto"
         >
           <picture className="absolute -top-10 rounded-full overflow-hidden">
-            <div className="w-24 bg-red-500 h-24"></div>
+            <img src="/images/user.png" className="w-24 h-24"></img>
           </picture>
           <input
             type="tel"
@@ -111,7 +112,7 @@ export function Login() {
           <button className="text-white bg-blue-500 p-3 w-full rounded-lg font-bold border-2 hover:bg-white hover:text-black hover:border-black transition-all duration-200 ease border-slate-400">
             Login
           </button>
-          <p className="text-white">
+          <p className="text-black">
             Dont have an account ?{" "}
             <Link to="/sign-up" className="text-blue-400">
               Sign Up{" "}
