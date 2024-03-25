@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 export function MaterialCard({ feature, material, url }) {
   const { t, i18n } = useTranslation();
   const rangeNum = feature?.pricingRange?.split("")[0];
-  console.log(rangeNum);
+
   return (
     <article className="flex flex-col pb-2 pt-3 gap-4 border-2 border-gray-300 h-[480px] shadow-md rounded bg-gradient-to-l  p-1  text-black to-slate-200 from-slate-300">
       <picture className="w-full flex justify-center overflow-hidden">
@@ -20,7 +20,7 @@ export function MaterialCard({ feature, material, url }) {
           <span className="p-1 px-4 text-center font-semibold text-sm text-blue-700 bg-blue-200 rounded-3xl uppercase">
             {t("CARD.PRICE_TEXT")}
           </span>
-          <div className="text-blue-500 flex flex-nowrap text-slate-500">
+          <div className="flex flex-nowrap gap-[1px] bg-blue-200 px-2 rounded text-slate-400">
             {" "}
             <p
               className={`${

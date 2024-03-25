@@ -52,7 +52,7 @@ export function Services() {
             </div>
           </div>
         </article>
-        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4 pt-4 text-black  to-neutral-300 from-neutral-400 gap-2 py-4 ">
+        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4 pt-4 text-black  to-slate-300 from-slate-400 gap-2 py-4 ">
           <picture className=" pt-2 flex items-end w-56 mx-auto h-36">
             <img
               src="./images/turning.png"
@@ -84,7 +84,7 @@ export function Services() {
             </div>
           </div>
         </article>
-        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4 pt-4 text-black to-slate-200 from-slate-400 gap-2 py-4 ">
+        <article className="flex flex-col  rounded shadow-xl  bg-gradient-to-l p-4 pt-4 text-black to-slate-300 from-slate-400 gap-2 py-4 ">
           <picture className=" pt-2 flex items-end w-56 mx-auto h-36">
             <img
               src="./images/drilling.png"

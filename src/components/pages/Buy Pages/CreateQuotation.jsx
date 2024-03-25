@@ -286,8 +286,8 @@ export function CreateQuotation() {
     const description = "Este es un sms de la imagen";
     console.log(description);
     fd.append("file", file);
-    console.log(file);
     fd.append("email", email);
+    console.log(fd);
 
     try {
       setLoading(true);
