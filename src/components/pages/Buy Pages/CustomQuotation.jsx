@@ -17,6 +17,8 @@ export function CustomQuotation() {
   const [quantity, setQuantity] = useState(1);
   const [notes, setNotes] = useState(false);
   const [error, setError] = useState(false);
+  const [address, setAddress] = useState(false);
+  const [addressText, setAddressText] = useState(false);
   const date = Date.now();
   const newDate = new Date(date);
   const navigate = useNavigate();
@@ -70,6 +72,13 @@ export function CustomQuotation() {
         setError(false);
       }, 3200);
     }
+  };
+  const handleUpdateAddress = (e) => {
+    e.preventDefault();
+    const formdata = Object.fromEntries(new FormData(e.target));
+
+    const { SendAddress, SenderName, SenderPhone } = formdata;
+    setAddressText([SendAddress, SenderName, SenderPhone].join("/"));
   };
   return (
     <main className="pt-20  min-h-screen main-body">
@@ -329,16 +338,28 @@ export function CustomQuotation() {
                 <SecureIcon /> Shipping Shipping Address
               </p>
             </header>
-            <article className=" bg-white p-2  rounded shadow-sm flex flex-row  gap-3 items-center ">
-              <input
-                type="radio"
-                name="address"
-                value="lino dachuan / rongtaicheng / + 1326717532"
-                inputMode="text"
-                className="rounded-full w-5 h-5"
-              />
-              <div className="text-sm text-gray-500 font-medium">
-                <p>lino dachuan</p> <p>rongtaicheng</p> <p>+ 1326717532</p>
+            <article className=" bg-white p-2  rounded shadow-sm flex flex-row  gap-3 items-center  justify-between px-3">
+              <section
+                className="flex
+               gap-3 items-center"
+              >
+                <input
+                  type="radio"
+                  name="address"
+                  value={addressText}
+                  inputMode="text"
+                  className="rounded-full w-5 h-5"
+                />
+                <div className="text-sm text-gray-500  text-wrap  font-medium">
+                  <p>{addressText.split("/")[0]}</p>
+                  <p className=" text-wrap">{addressText.split("/")[1]}</p>
+                  <p>{addressText.split("/")[2]}</p>
+                </div>
+              </section>
+              <div onClick={() => setAddress(true)}>
+                <p className="text-blue-800 font-bold cursor-pointer underline italic">
+                  Edit
+                </p>
               </div>
             </article>
           </article>
@@ -382,6 +403,58 @@ export function CustomQuotation() {
           </section>
         </section>
       </form>
+      {!address && (
+        <form
+          className="fixed top-0 left-0 z-[50] grid place-content-center w-full h-full bg-zinc-600 bg-opacity-70"
+          onSubmit={handleUpdateAddress}
+        >
+          <section className="bg-white relative w-96 p-3 h-80 rounded">
+            <div className="absolute cursor-pointer hover:scale-110 transition-all duration-150 ease-linear z-[70]  h-8 w-8 flex justify-center items-center -top-24 text-red-600 hover:text-orange-400 right-0 sm:-right-24" onClick={()=>setAddress(false)}>
+              <span className="w-7 pointer-events-none rounded absolute rotate-45 bg-current shadow-md h-1 block"></span>
+              <span className="w-7 pointer-events-none rounded absolute -rotate-45 bg-current shadow-md h-1 block"></span>
+            </div>
+            <header className="flex justify-center p-2">
+              <h1 className="mx-auto font-semibold">
+                Set your Shipping information
+              </h1>
+            </header>
+            <main className="flex flex-col gap-4">
+              <label className="flex items-center justify-between gap-3">
+                <p>Address: </p>
+                <input
+                  type="text"
+                  placeholder="Address"
+                  name="SendAddress"
+                  className="bg-slate-200 w-[70%] p-2 rounded focus:ring outline-none"
+                />
+              </label>
+              <label className="flex items-center justify-between gap-3">
+                <p>Name: </p>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  name="SenderName"
+                  className="bg-slate-200 w-[70%] p-2 rounded focus:ring outline-none"
+                />
+              </label>
+              <label className="flex items-center justify-between gap-3">
+                <p>Phone: </p>
+                <input
+                  type="text"
+                  placeholder="Phone"
+                  name="SenderPhone"
+                  className="bg-slate-200 w-[70%] p-2 rounded focus:ring outline-none"
+                />
+              </label>
+            </main>
+            <div className="w-full py-4 flex justify-center">
+              <button className="p-2 bg-blue-500 text-white rounded w-24 ">
+                Save
+              </button>
+            </div>
+          </section>
+        </form>
+      )}
     </main>
   );
 }

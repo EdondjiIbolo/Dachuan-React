@@ -103,7 +103,7 @@ export function SignUp() {
         <section className="flex w-full max-w-[1320px]  items-center  border-b-2  bg-white  m-auto justify-between  h-20 z-30  fixed   ">
           <Link to="/" className="w-36">
             <img
-              src="/img/logo.png"
+              src="/images/logo.png"
               alt="Logo"
               className="w-full object-cover object-top"
             />
@@ -122,19 +122,19 @@ export function SignUp() {
         <form
           onSubmit={handleSubmit}
           action=""
-          className=" sm:pt-4 relative w-full max-w-[600px] bg-slate-500  sm:mb-auto h-[500px] sm:h-[400px] px-5 flex flex-col items-center
+          className=" sm:pt-4 relative w-full max-w-[600px] bg-slate-50 shadow-md sm:mb-auto h-[500px] sm:h-[400px] px-5 flex flex-col items-center
         justify-center gap-4 rounded m-auto"
         >
-          <picture className="absolute -top-10 rounded-full overflow-hidden">
-            <div className="sm:w-24 w-16 h-16 bg-red-500 sm:-24"></div>
+          <picture className="absolute bg-white sm:w-24 w-24 h-24 border-blue-800 border-4 -top-16 rounded-full flex items-center justify-center  ">
+            <img src="/images/add-user.png" className=" w-14 h-14 ml-3" />
           </picture>
 
           <section className="flex justify-between w-full flex-col sm:flex-row gap-4">
             <input
               type="text"
-              className={`w-full italic p-2 outline-none focus:ring text-slate-800 ${
+              className={`w-full italic p-2 outline-none focus:ring text-slate-500 ${
                 error ? "border-red-500 border-2" : ""
-              } bg-slate-100 shadow-lg rounded`}
+              } bg-slate-200  rounded`}
               placeholder="Name"
               name="name"
               value={name}
@@ -145,7 +145,7 @@ export function SignUp() {
               type="text"
               className={`w-full italic p-2 outline-none focus:ring text-slate-800 ${
                 error ? "border-red-500 border-2" : ""
-              } bg-slate-100 shadow-lg rounded`}
+              } bg-slate-200   rounded`}
               placeholder="Username"
               name="username"
               autoComplete="current-Username"
@@ -171,7 +171,7 @@ export function SignUp() {
               type="password"
               className={`w-full italic p-2 outline-none focus:ring ${
                 error ? "border-red-500 border-2" : ""
-              } text-slate-800 bg-slate-100 shadow-lg rounded`}
+              } text-slate-800 bg-slate-200  rounded`}
               placeholder="password"
               value={password}
               onChange={({ target }) => setPassword(target.value)}
@@ -182,7 +182,7 @@ export function SignUp() {
                 inputMode="email"
                 className={`w-full p-2 outline-none text-slate-800 ${
                   error ? "border-red-500 border-2" : ""
-                } bg-slate-100 shadow-lg rounded`}
+                } bg-slate-200 rounded`}
                 placeholder="email"
                 value={email}
                 autoComplete="current-email"
@@ -198,7 +198,7 @@ export function SignUp() {
               inputMode="tel"
               className={`w-full sm:w-1/2 p-2  focus:ring ${
                 error ? "border-red-500 border-2" : ""
-              } outline-none text-slate-800 bg-slate-100 shadow-lg rounded`}
+              } outline-none text-slate-800 bg-slate-200  rounded`}
               placeholder="+8611125666985"
               value={phone}
               autoComplete="current-phone"
@@ -211,7 +211,7 @@ export function SignUp() {
                 placeholder="verification code"
                 className={`w-full p-2  focus:ring ${
                   error ? "border-red-500 border-2" : ""
-                } outline-none text-slate-800 bg-slate-100 shadow-lg rounded`}
+                } outline-none text-slate-800 bg-slate-200 rounded`}
                 value={verifyCode}
                 onChange={({ target }) => setVerifyCode(target.value)}
               />
@@ -228,7 +228,7 @@ export function SignUp() {
           <button className="text-white bg-blue-500 p-3 w-full sm:w-[250px] rounded-lg font-bold border-2 hover:bg-white hover:text-black hover:border-black transition-all mt-4 duration-200 ease border-slate-400">
             Sign Up
           </button>
-          <p className="text-white">
+          <p className="text-black">
             Already have an account ?{" "}
             <Link to="/login" className="text-blue-400 font-bold">
               Log in{" "}

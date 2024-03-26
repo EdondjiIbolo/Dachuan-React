@@ -24,6 +24,7 @@ import { CustomQuotation } from "./components/pages/Buy Pages/CustomQuotation";
 import { QuoteInfo } from "./components/pages/Buy Pages/QuoteInfo";
 import { AssistanceQuotes } from "./components/pages/Buy Pages/Assistant/AssistantQuotes";
 import { Finishing } from "./components/pages/Finishing";
+import AssistantContent from "./components/AssistantContent";
 // import { AboutUs } from "./components/AboutRecover";
 
 function App() {
@@ -39,7 +40,9 @@ function App() {
         <Route path="/machining-drilling" element={<DrillingCnc />} />
         <Route path="/materials" element={<Materials />} />
         <Route path="/finishing" element={<Finishing />} />
-        <Route path="/assistance" element={<Assistance />} />
+        <Route path="/assistance" element={<Assistance />}>
+          <Route path="assistance/:id" element={<AssistantContent />} />
+        </Route>
         <Route path="/guide" element={<Guide />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/Contact" element={<Contact />} />

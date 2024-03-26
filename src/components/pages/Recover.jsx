@@ -15,8 +15,8 @@ export function Recover() {
   const navigate = useNavigate();
   const { setUser, user } = useUser();
   const className = error
-    ? "w-full italic p-2 outline-none focus:outline-none outline-red-500 text-slate-800 bg-slate-100 shadow-lg rounded"
-    : "w-full italic p-2 outline-none focus:ring text-slate-800 bg-slate-100 shadow-lg rounded";
+    ? "w-full italic p-2 outline-none focus:outline-none outline-red-500 text-slate-800 bg-slate-200 rounded"
+    : "w-full italic p-2 outline-none focus:ring text-slate-800 bg-slate-200 rounded";
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -118,11 +118,11 @@ export function Recover() {
       <main className="flex items-center justify-center w-screen p-5 bg-slate-200 min-h-screen">
         <form
           onSubmit={handleSubmit}
-          className="w-screen relative max-w-[500px] bg-slate-500 h-[400px] px-5 flex flex-col items-center
+          className="w-screen relative max-w-[500px] bg-white h-[400px] px-5 flex flex-col items-center
         justify-center gap-4 rounded m-auto"
         >
           <picture className="absolute -top-10 rounded-full overflow-hidden">
-            <div className="w-24 bg-red-500 h-24"></div>
+            <img src="/images/user.png" className="w-24 h-24"></img>
           </picture>
           <input
             type="tel"
@@ -153,7 +153,7 @@ export function Recover() {
                 placeholder="verification code"
                 className={`w-full p-2  focus:ring ${
                   error ? "border-red-500 border-2" : ""
-                } outline-none text-slate-800 bg-slate-100 shadow-lg rounded`}
+                } outline-none text-slate-800 bg-slate-200  rounded`}
                 value={verifyCode}
                 onChange={({ target }) => setVerifyCode(target.value)}
               />
@@ -173,7 +173,7 @@ export function Recover() {
             )}
           </div>
           <button className="text-white sm:w-1/2 bg-blue-500 p-3 w-full rounded-lg font-bold border-2 hover:bg-white hover:text-black hover:border-black transition-all duration-200 ease border-slate-400">
-            Log in
+            Change Password
           </button>
         </form>
       </main>
