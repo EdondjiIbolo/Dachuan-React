@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { SecureIcon, UploadFileIcon, UploadIcon } from "../../Icons";
 import "../../sections/quotations.css";
 import { useEffect, useState } from "react";
@@ -18,7 +18,7 @@ export function CustomQuotation() {
   const [notes, setNotes] = useState(false);
   const [error, setError] = useState(false);
   const [address, setAddress] = useState(false);
-  const [addressText, setAddressText] = useState(false);
+  const [addressText, setAddressText] = useState(null);
   const date = Date.now();
   const newDate = new Date(date);
   const navigate = useNavigate();
@@ -109,9 +109,12 @@ export function CustomQuotation() {
             <header className="flex sm:flex-row flex-col gap-2 border-b-2 pb-2 justify-between items-center">
               <h2 className="font-semibold">Parts & Configurations</h2>
               <div className="flex gap-3">
-                <button className="bg-blue-300 p-1 rounded text-slate-800 px-2 font-semibold">
-                  Configure
-                </button>
+                <Link
+                  to="/panel"
+                  className="bg-blue-300 p-1 rounded text-slate-800 px-2 font-semibold"
+                >
+                  Go to panel
+                </Link>
                 <button className="bg-blue-300 p-1 rounded text-slate-800 px-2 font-semibold">
                   Remove
                 </button>
@@ -351,9 +354,15 @@ export function CustomQuotation() {
                   className="rounded-full w-5 h-5"
                 />
                 <div className="text-sm text-gray-500  text-wrap  font-medium">
-                  <p>{addressText.split("/")[0]}</p>
-                  <p className=" text-wrap">{addressText.split("/")[1]}</p>
-                  <p>{addressText.split("/")[2]}</p>
+                  {addressText === null ? (
+                    "Set tour address"
+                  ) : (
+                    <>
+                      <p>{addressText?.split("/")[0]}</p>
+                      <p className=" text-wrap">{addressText?.split("/")[1]}</p>
+                      <p>{addressText?.split("/")[2]}</p>{" "}
+                    </>
+                  )}
                 </div>
               </section>
               <div onClick={() => setAddress(true)}>
@@ -403,13 +412,16 @@ export function CustomQuotation() {
           </section>
         </section>
       </form>
-      {!address && (
+      {address && (
         <form
           className="fixed top-0 left-0 z-[50] grid place-content-center w-full h-full bg-zinc-600 bg-opacity-70"
           onSubmit={handleUpdateAddress}
         >
           <section className="bg-white relative w-96 p-3 h-80 rounded">
-            <div className="absolute cursor-pointer hover:scale-110 transition-all duration-150 ease-linear z-[70]  h-8 w-8 flex justify-center items-center -top-24 text-red-600 hover:text-orange-400 right-0 sm:-right-24" onClick={()=>setAddress(false)}>
+            <div
+              className="absolute cursor-pointer hover:scale-110 transition-all duration-150 ease-linear z-[70]  h-8 w-8 flex justify-center items-center -top-24 text-red-600 hover:text-orange-400 right-0 sm:-right-24"
+              onClick={() => setAddress(false)}
+            >
               <span className="w-7 pointer-events-none rounded absolute rotate-45 bg-current shadow-md h-1 block"></span>
               <span className="w-7 pointer-events-none rounded absolute -rotate-45 bg-current shadow-md h-1 block"></span>
             </div>

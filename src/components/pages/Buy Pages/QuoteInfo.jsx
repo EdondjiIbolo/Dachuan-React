@@ -1,11 +1,24 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useSingleQuote } from "../../../Hooks/useSingleQuote";
 import { SecureIcon, UploadIcon } from "../../Icons";
 import { Loading } from "../../Loading";
+import { useState } from "react";
 
 export function QuoteInfo() {
   const { id } = useParams();
   const { quote, loading } = useSingleQuote({ id });
+  const [address, setAddress] = useState(false);
+  const [addressText, setAddressText] = useState(null);
+  const date = Date.now();
+  const newDate = new Date(date);
+  const navigate = useNavigate();
+  const handleUpdateAddress = (e) => {
+    e.preventDefault();
+    const formdata = Object.fromEntries(new FormData(e.target));
+
+    const { SendAddress, SenderName, SenderPhone } = formdata;
+    setAddressText([SendAddress, SenderName, SenderPhone].join("/"));
+  };
   console.log(quote);
   return (
     <>
@@ -95,7 +108,7 @@ export function QuoteInfo() {
                   <input
                     type="number"
                     inputMode="number"
-                    disabled
+                    disabled={quote.status !== "quoting"}
                     name="quantity"
                     value={quote.quantity}
                     min={0}
@@ -115,7 +128,7 @@ export function QuoteInfo() {
                 <label className="flex flex-col gap-1">
                   <p className="font-semibold">Quantity</p>
                   <input
-                    disabled
+                    disabled={quote.status !== "quoting"}
                     type="number"
                     inputMode="number"
                     value={quote?.quantity}
@@ -125,7 +138,7 @@ export function QuoteInfo() {
                 <label className="flex flex-col gap-1">
                   <p className="font-semibold">Technology</p>
                   <select
-                    disabled
+                    disabled={quote.status !== "quoting"}
                     name="Technology"
                     className="p-1 w-72 border rounded border-gray-500 outline-none"
                   >
@@ -137,7 +150,7 @@ export function QuoteInfo() {
                 <label className="flex flex-col gap-1">
                   <p className="font-semibold">Material</p>
                   <select
-                    disabled
+                    disabled={quote.status !== "quoting"}
                     name="Material"
                     className="p-1 w-72 border rounded border-gray-500 outline-none"
                   >
@@ -153,7 +166,7 @@ export function QuoteInfo() {
                 <label className="flex flex-col gap-1">
                   <p className="font-semibold">Finishing</p>
                   <select
-                    disabled
+                    disabled={quote.status !== "quoting"}
                     name="Finishing"
                     className="p-1 w-72 border rounded border-gray-500 outline-none"
                   >
@@ -173,7 +186,7 @@ export function QuoteInfo() {
                 <label className="flex flex-col gap-1">
                   <p className="font-semibold">Tolerance</p>
                   <select
-                    disabled
+                    disabled={quote.status !== "quoting"}
                     name="Tolerance"
                     className="p-1 w-72 border rounded border-gray-500 outline-none"
                   >
@@ -191,7 +204,7 @@ export function QuoteInfo() {
                 <label className="flex flex-col gap-1">
                   <p className="font-semibold">Roughness</p>
                   <select
-                    disabled
+                    disabled={quote.status !== "quoting"}
                     name="Roughness"
                     className="p-1 w-72 border rounded border-gray-500 outline-none"
                   >
@@ -202,7 +215,7 @@ export function QuoteInfo() {
                 <label className="flex flex-col gap-1">
                   <p className="font-semibold">Threads</p>
                   <select
-                    disabled
+                    disabled={quote.status !== "quoting"}
                     name="Threads"
                     className="p-1 w-72 border rounded border-gray-500 outline-none"
                   >
@@ -215,7 +228,11 @@ export function QuoteInfo() {
                 <div>
                   <p className="font-bold">*2D Technical Drawing</p>
                   <label className="flex flex-col gap-1 cursor-pointer hover:border-2 transition-all duration-150 ease-linear p-3 h-32 border border-dashed border-blue-600 w-72 justify-center rounded items-center">
-                    <input disabled type="file" className="hidden" />
+                    <input
+                      disabled={quote.status !== "quoting"}
+                      type="file"
+                      className="hidden"
+                    />
                     <UploadIcon />
                     <p className="font-medium text-zinc-600">
                       Upload your 2D file
@@ -240,7 +257,7 @@ export function QuoteInfo() {
                 <label htmlFor="">
                   <p className="text-sm text-left p-1">Business days</p>
                   <input
-                    disabled
+                    disabled={quote.status !== "quoting"}
                     type="text"
                     inputMode="text"
                     name="lead_time"
@@ -260,8 +277,8 @@ export function QuoteInfo() {
                 <input
                   type="date"
                   name="shipping"
-                  value="2028-07-22"
-                  disabled
+                  defaultValue={newDate}
+                  disabled={quote.status !== "quoting"}
                   className="focus:outline-0 w-full"
                 />
               </article>
@@ -269,25 +286,40 @@ export function QuoteInfo() {
             <article>
               <header>
                 <p className="font-semibold flex gap-2 items-center pb-1 text-blue-800">
-                  <SecureIcon /> Shipping Shipping Adderss
+                  <SecureIcon /> Shipping Shipping Address
                 </p>
               </header>
-              <article className=" bg-white p-2  rounded shadow-sm flex flex-row  gap-3 items-center ">
-                <input
-                  disabled
-                  type="radio"
-                  name="address"
-                  value={
-                    quote.address
-                      ? quote.address
-                      : `lino dachuan / rongtaicheng / + 1326717532`
-                  }
-                  inputMode="text"
-                  className="rounded-full w-5 h-5"
-                  checked={quote.address}
-                />
-                <div className="text-sm text-gray-500 font-medium">
-                  <p>lino dachuan</p> <p>rongtaicheng</p> <p>+ 1326717532</p>
+              <article className=" bg-white p-2  rounded shadow-sm flex flex-row  gap-3 items-center  justify-between px-3">
+                <section
+                  className="flex
+               gap-3 items-center"
+                >
+                  <input
+                    type="radio"
+                    name="address"
+                    value={addressText}
+                    disabled={quote.status !== "quoting"}
+                    inputMode="text"
+                    className="rounded-full w-5 h-5"
+                  />
+                  <div className="text-sm text-gray-500  text-wrap  font-medium">
+                    {addressText === null ? (
+                      "Set tour address"
+                    ) : (
+                      <>
+                        <p>{addressText?.split("/")[0]}</p>
+                        <p className=" text-wrap">
+                          {addressText?.split("/")[1]}
+                        </p>
+                        <p>{addressText?.split("/")[2]}</p>{" "}
+                      </>
+                    )}
+                  </div>
+                </section>
+                <div onClick={() => setAddress(true)}>
+                  <p className="text-blue-800 font-bold cursor-pointer underline italic">
+                    Edit
+                  </p>
                 </div>
               </article>
             </article>
@@ -312,7 +344,7 @@ export function QuoteInfo() {
                   <p className="text-base">Shipping Time</p>
                   <div>
                     <p className="font-bold text-right pr-3 italic text-sm">
-                      {quote.shipping_date.split("T")[0]}
+                      {quote.shipping_date?.split("T")[0]}
                     </p>
                   </div>
                 </div>
@@ -324,15 +356,17 @@ export function QuoteInfo() {
                 </div>
               </section>
               <section>
-                {quote.status === "quoting" ? (
+                {quote.status === "quoting" && (
                   <button className="bg-blue-700 hover:bg-white mb-2 hover:text-blue-800 transition-all duration-150 ease-linear hover:border-2 border-blue-700 text-white w-full p-3 rounded font-bold">
                     Request For Quotation
                   </button>
-                ) : quote.status === "quoted" ? (
+                )}{" "}
+                {quote.status === "quoted" && (
                   <button className="bg-orange-600 hover:bg-white mb-2 hover:text-blue-800 transition-all duration-150 ease-linear hover:border-2 border-blue-700 text-white w-full p-3 rounded font-bold">
                     Order now
                   </button>
-                ) : (
+                )}{" "}
+                {quote.status === "ordered" && (
                   <button className="bg-orange-600 hover:bg-white mb-2 hover:text-blue-800 transition-all duration-150 ease-linear hover:border-2 border-blue-700 text-white w-full p-3 rounded font-bold">
                     Pay now
                   </button>
@@ -341,6 +375,61 @@ export function QuoteInfo() {
             </section>
           </section>
         </form>
+        {address && (
+          <form
+            className="fixed top-0 left-0 z-[50] grid place-content-center w-full h-full bg-zinc-600 bg-opacity-70"
+            onSubmit={handleUpdateAddress}
+          >
+            <section className="bg-white relative w-96 p-3 h-80 rounded">
+              <div
+                className="absolute cursor-pointer hover:scale-110 transition-all duration-150 ease-linear z-[70]  h-8 w-8 flex justify-center items-center -top-24 text-red-600 hover:text-orange-400 right-0 sm:-right-24"
+                onClick={() => setAddress(false)}
+              >
+                <span className="w-7 pointer-events-none rounded absolute rotate-45 bg-current shadow-md h-1 block"></span>
+                <span className="w-7 pointer-events-none rounded absolute -rotate-45 bg-current shadow-md h-1 block"></span>
+              </div>
+              <header className="flex justify-center p-2">
+                <h1 className="mx-auto font-semibold">
+                  Set your Shipping information
+                </h1>
+              </header>
+              <main className="flex flex-col gap-4">
+                <label className="flex items-center justify-between gap-3">
+                  <p>Address: </p>
+                  <input
+                    type="text"
+                    placeholder="Address"
+                    name="SendAddress"
+                    className="bg-slate-200 w-[70%] p-2 rounded focus:ring outline-none"
+                  />
+                </label>
+                <label className="flex items-center justify-between gap-3">
+                  <p>Name: </p>
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    name="SenderName"
+                    className="bg-slate-200 w-[70%] p-2 rounded focus:ring outline-none"
+                  />
+                </label>
+                <label className="flex items-center justify-between gap-3">
+                  <p>Phone: </p>
+                  <input
+                    type="text"
+                    placeholder="Phone"
+                    name="SenderPhone"
+                    className="bg-slate-200 w-[70%] p-2 rounded focus:ring outline-none"
+                  />
+                </label>
+              </main>
+              <div className="w-full py-4 flex justify-center">
+                <button className="p-2 bg-blue-500 text-white rounded w-24 ">
+                  Save
+                </button>
+              </div>
+            </section>
+          </form>
+        )}
       </main>
     </>
   );

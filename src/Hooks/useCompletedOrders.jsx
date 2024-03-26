@@ -1,10 +1,9 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import FetchCompletedOrderss from "../Hooks/login";
 export function useCompletedOrders({ email }) {
   const [quotes, setQuote] = useState([]);
   const [loading, setLoading] = useState(false);
-  const status = "ordered";
+  const status = "completed";
   useEffect(() => {
     const getQuote = async () => {
       try {
@@ -13,6 +12,7 @@ export function useCompletedOrders({ email }) {
           status,
           email,
         });
+
         const { quotes: newQuotes } = await data;
         setQuote(newQuotes);
       } catch (err) {

@@ -11,8 +11,8 @@ export function OrdersCompleted() {
   const { quotes: orders, loading } = useCompletedOrders({ email });
   const mappedQuotes = orders.map((order) => ({
     id: order.id_quotation,
-    phone: order.telefono,
-    name: order.nombre,
+    phone: order.phone,
+    name: order.name,
     userId: order.user_id,
     price: order.price,
     date: order.fecha_quotation,
@@ -30,6 +30,7 @@ export function OrdersCompleted() {
     note: order.note,
     status: order.status,
   }));
+  console.log(mappedQuotes);
   return (
     <>
       {loading && <Loading />}

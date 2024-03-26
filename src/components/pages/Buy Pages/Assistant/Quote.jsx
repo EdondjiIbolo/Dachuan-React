@@ -188,6 +188,7 @@ export function Quotes({ quote }) {
                     <option value="ordered">ordered</option>
                     <option value="In production">In production</option>
                     <option value="delivered">delivered</option>
+                    <option value="completed">Completed</option>
                   </select>
                 </label>
                 <label className="flex items-center w-full">

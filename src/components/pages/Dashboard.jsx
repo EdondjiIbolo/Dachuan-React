@@ -4,8 +4,6 @@ import { useUser } from "../../Hooks/useUser";
 import { useEffect, useState } from "react";
 import axios from "axios";
 export function Panel() {
-  const [qty, setQty] = useState(1);
-
   const { user } = useUser();
   const { email } = user;
   const useQuotesInfo = () => {
@@ -38,6 +36,12 @@ export function Panel() {
   ).length;
   const quoted = info?.filter((quote) => quote?.status === "quoted").length;
   const ordered = info?.filter((quote) => quote?.status === "ordered").length;
+  const completed = info?.filter(
+    (quote) => quote?.status === "completed"
+  ).length;
+  const inProduction = info?.filter(
+    (quote) => quote?.status === "In production"
+  ).length;
   const quotesQuoted = info?.filter((quote) => {
     return quote.status === "quoted";
   });
@@ -155,7 +159,9 @@ export function Panel() {
                 <img src="./img/in-production.png" alt="" className=" " />
               </picture>
               <div className="flex items-center gap-0 flex-col text-blue-700">
-                <p className=" text-center font-bold text-base m-0 p-0">0</p>
+                <p className=" text-center font-bold text-base m-0 p-0">
+                  {inProduction}
+                </p>
                 <p className="text-sm text-center font-medium">In production</p>
               </div>
             </article>
@@ -167,7 +173,9 @@ export function Panel() {
                 <img src="./img/orders-completed.png" alt="" className=" " />
               </picture>
               <div className="flex items-center gap-0 flex-col text-blue-700">
-                <p className=" text-center font-bold text-base m-0 p-0">0</p>
+                <p className=" text-center font-bold text-base m-0 p-0">
+                  {completed}
+                </p>
                 <p className="text-sm text-center font-medium">Completed</p>
               </div>
             </Link>

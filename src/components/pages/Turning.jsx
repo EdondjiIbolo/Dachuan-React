@@ -256,7 +256,11 @@ export function TurningCnc() {
                         alt="advantage icon"
                       />
                     </picture>
-                    <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
+
+                    <div
+                      id="Materials"
+                      className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm"
+                    >
                       <strong>{t("TURNING.ADVANTAGE_5_TITLE")}</strong>
                       <p>{t("TURNING.ADVANTAGE_5_TITLE_DESCRIPTION")}</p>
                     </div>
@@ -268,10 +272,7 @@ export function TurningCnc() {
                         alt="advantage icon"
                       />
                     </picture>
-                    <div
-                      id="Materials"
-                      className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm"
-                    >
+                    <div className="flex flex-col gap-2 flex-grow max-w-[50ch] text-sm">
                       <strong>{t("TURNING.ADVANTAGE_6_TITLE")}</strong>
                       <p>{t("TURNING.ADVANTAGE_6_TITLE_DESCRIPTION")}</p>
                     </div>
