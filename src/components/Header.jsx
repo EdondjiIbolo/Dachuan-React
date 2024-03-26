@@ -34,7 +34,7 @@ export function Header() {
   return (
     <header className="main-header  justify-center h-20  bg-white w-full flex fixed top-0 left-0 z-40  md:pr-1">
       <section className="flex w-full max-w-[1320px]  items-center  border-b-2   m-auto justify-between  h-20 z-30  fixed  ">
-        <section className="header__container--right px-2">
+        <section className="header__container--right ">
           <a
             href="/"
             className="w-44 h-20  flex items-center overflow-hidden"
