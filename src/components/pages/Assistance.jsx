@@ -8,9 +8,11 @@ export function Assistance() {
   return (
     <main className="min-h-screen  flex flex-col">
       <Header />
-      <main className="pt-20 grid flex-grow relative grid-cols-[300px,auto]">
+      <main className="pt-20 flex flex-grow relative  ">
         <AssistanceAside />
-        <Outlet />
+        <section className="w-auto flex-grow">
+          <Outlet />
+        </section>
       </main>
       <Footer />
     </main>
