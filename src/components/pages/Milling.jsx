@@ -180,15 +180,20 @@ export function MillingCnc() {
               </li>
             </ul>
           </nav>
-          <section className="grid grid-cols-1 md:grid-cols-[350px,auto] max-w-[1310px] m-auto gap-8 px-3 py-10">
+          <section className="grid grid-cols-1 md:grid-cols-[360px,auto] max-w-[1310px] m-auto gap-20 px-3 py-10">
             <h2 className="text-2xl">{t("MILLING.SERVICE_TITLE")}</h2>
             <article
               id="Advantages"
-              className="text-pretty [line-height] text-sm flex flex-col gap-2"
+              className="text-pretty  text-sm flex flex-col gap-2"
             >
-              <p className="text-base m-0">
-                {t("MILLING.SERVICE_DESCRIPTION_1")}
-              </p>
+              <div>
+                <p className="text-base m-0">
+                  {t("MILLING.SERVICE_DESCRIPTION_1")}
+                </p>
+                <p className="text-base m-0">
+                  {t("MILLING.SERVICE_DESCRIPTION_1_1")}
+                </p>
+              </div>
               <div>
                 <p className="text-base ">
                   {t("MILLING.SERVICE_DESCRIPTION_2")}

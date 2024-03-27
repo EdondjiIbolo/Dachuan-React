@@ -39,6 +39,14 @@ export function Materials() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [currentSection]);
+  const handleClickScroll = ({ e, material }) => {
+    e.preventDefault();
+    const elemento = document.getElementById(`${material.materialName}`);
+    console.log(elemento.offsetTop);
+    window.scroll({
+      top: elemento.offsetTop - 130,
+    });
+  };
   return (
     <>
       {loading ? (
@@ -62,6 +70,7 @@ export function Materials() {
                   return (
                     <li key={index}>
                       <a
+                        onClick={(e) => handleClickScroll({ e, material })}
                         href={`#${material.materialName}`}
                         className={`sm:p-1 p-[6px] text-base capitalize hover:font-medium transition-all duration-250 ease-linear ${
                           currentSection === material.materialName

@@ -43,6 +43,13 @@ export function Finishing() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [currentSection]);
+  const handleClickScroll = ({ e, finishing }) => {
+    e.preventDefault();
+    const elemento = document.getElementById(`${finishing.finishingName}`);
+    window.scroll({
+      top: elemento.offsetTop - 130,
+    });
+  };
   return (
     <>
       {loading ? (
@@ -66,6 +73,7 @@ export function Finishing() {
                   return (
                     <li key={index}>
                       <a
+                        onClick={(e) => handleClickScroll({ e, finishing })}
                         href={`#${finishing.finishingName}`}
                         className={`sm:p-1 p-[6px] text-base hover:text-slate-700 capitalize hover:font-medium transition-all duration-250 ease-linear ${
                           currentSection === finishing.finishingName
