@@ -35,7 +35,7 @@ export function Services() {
             </h3>
 
             <ul className="flex flex-col gap-2 ">
-              <li className="list-disc text-md ">
+              <li className="pt-2 text-md ">
                 {t("MAIN_PAGE.SERVICE_SECTION_MILLING_DESCRIPTION")}
               </li>
             </ul>
@@ -67,7 +67,7 @@ export function Services() {
             </h3>
 
             <ul className="flex flex-col gap-2 ">
-              <li className="list-disc text-md ">
+              <li className="pt-2 text-md ">
                 {t("MAIN_PAGE.SERVICE_SECTION_TURNING_DESCRIPTION")}
               </li>
             </ul>
@@ -99,7 +99,7 @@ export function Services() {
             </h3>
 
             <ul className="flex flex-col gap-2 ">
-              <li className="list-disc text-md ">
+              <li className="pt-2 text-md ">
                 {t("MAIN_PAGE.SERVICE_SECTION_DRILLING_DESCRIPTION")}
               </li>
             </ul>

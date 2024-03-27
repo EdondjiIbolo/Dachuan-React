@@ -12,13 +12,6 @@ import { MaterialTable } from "../MaterialsTable.jsx";
 import { useTranslation } from "react-i18next";
 import { FinishingTable } from "../FinishingTable.jsx";
 export function HomePage() {
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, []);
-
   const [currentSection, setCurrentSection] = useState("");
   const { t, i18n } = useTranslation();
   useEffect(() => {
@@ -68,9 +61,14 @@ export function HomePage() {
             <span className="text-zinc-500 text-sm font-semibold">
               {t("MAIN_PAGE.BANNER_SUBTITLE")}
             </span>
-            <h1 className="font-bold text-2xl max-w-[40ch] text-wrap">
-              {t("MAIN_PAGE.BANNER_INTRODUCTION_TITLE")}
-            </h1>
+            <div>
+              <h1 className="font-bold text-2xl max-w-[40ch] text-wrap">
+                {t("MAIN_PAGE.BANNER_INTRODUCTION_TITLE")}
+              </h1>
+              <h1 className="font-bold text-2xl max-w-[40ch] text-wrap">
+                {t("MAIN_PAGE.BANNER_INTRODUCTION_TITLE_2")}
+              </h1>
+            </div>
             <ul>
               <li className="text-zinc-500 text-xs sm:text-sm flex gap-2   items-center ">
                 <CheckIcon />
@@ -186,20 +184,20 @@ export function HomePage() {
             data-section="Advantages"
             className="flex    bg-slate-100 flex-wrap"
           >
-            <article className="w-full max-w-[1300px] m-auto pt-20 flex justify-center items-center gap-10  p-4 flex-col">
-              <h3 className="font-bold text-2xl mb-2">
+            <article className="w-full max-w-[1300px] m-auto pt-20 flex justify-center items-center gap-5  p-4 flex-col">
+              <h3 className="font-bold text-2xl mb-1">
                 {t("MAIN_PAGE.ADVANTAGE_SECTION_TITLE")}
               </h3>
               <p className="text-blue-900 text-lg">
                 {t("MAIN_PAGE.ADVANTAGE_SECTION_DESCRIPTION_1")}
               </p>
-              <div className="items-container md:mb-4 ">
+              <div className="items-container md:mb-2  mt-4">
                 <article className="item">
                   <span className="absolute -top-2 -left-2 bg-blue-800 text-white  text-xl p-3 h-12 w-12 rounded-full flex justify-center items-center font-semibold ">
                     1
                   </span>
-                  <picture className="flex justify-center mb-3">
-                    <img src="./images/upload.webp" className="w-14" />
+                  <picture className="flex justify-center">
+                    <img src="./images/upload.webp" className="w-10" />
                   </picture>
                   <p className="font-semibold  max-w-[16ch] text-center">
                     {t("MAIN_PAGE.ADVANTAGE_SECTION_CARD_1")}
@@ -210,11 +208,11 @@ export function HomePage() {
                   <span className="absolute -top-2 -left-2 bg-blue-800 text-white  text-xl p-3 h-12 w-12 rounded-full flex justify-center items-center font-semibold ">
                     2
                   </span>
-                  <picture className="flex justify-center">
+                  <picture className="flex  justify-center">
                     <img
                       src="./images/iconos/select.png"
                       alt="select icon"
-                      className="w-14 "
+                      className="w-16 "
                     />
                   </picture>
                   <p className="font-semibold  max-w-[16ch] text-center">
@@ -230,7 +228,7 @@ export function HomePage() {
                     <img
                       src="./images/iconos/order.png"
                       alt="order img"
-                      className="w-14 "
+                      className="w-12 "
                     />
                   </picture>
                   <p className="font-semibold  max-w-[16ch] text-center">
@@ -267,7 +265,7 @@ export function HomePage() {
               </Link>
             </article>
 
-            <article className="items-container2 p-2 bg-slate-100">
+            <article className="items-container2 p-2 mt-5 bg-slate-100">
               <h3 className="font-bold text-xl m-auto text-center mb-2">
                 {t("MAIN_PAGE.ADVANTAGE_SECTION_TITLE_2")}
               </h3>
@@ -394,9 +392,9 @@ export function HomePage() {
               data-section="Introduction"
               className="bg-slate-300 bg-opacity-50"
             >
-              <section className="flex flex-col max-w-[1310px] m-auto   gap-10 p-16">
+              <section className="flex flex-col max-w-[1310px] m-auto  gap-10 p-16">
                 <header className="mb-2">
-                  <h3 className="w-full text-center max-w-[80ch] mx-auto my-2 font-meidum text-2xl">
+                  <h3 className="w-full text-center max-w-[80ch] mx-auto my-2 font-semibold text-2xl">
                     {t("MAIN_PAGE.ADVANTAGE_SECTION_2_TITLE")}
                   </h3>
                   <h3 className="w-full text-center max-w-[80ch] mx-auto  font-medium">
@@ -404,7 +402,10 @@ export function HomePage() {
                   </h3>
                 </header>
                 <div className=" grid grid-cols-1 md:grid-cols-3 text-balance content-center sm:gap-6 gap-20  justify-center">
-                  <article className="flex    text-center gap-4 flex-col">
+                  <article
+                    className="flex  items-center
+                    text-center gap-4 flex-col"
+                  >
                     <picture className="flex justify-center">
                       <img
                         className="w-24 h-24 block"
@@ -415,13 +416,13 @@ export function HomePage() {
                     <h4 className="font-medium">
                       {t("MAIN_PAGE.ADVANTAGE_SECTION_2_ARTICLE_1_TITLE")}
                     </h4>
-                    <p className="max-w-[60ch]   text-center">
+                    <p className="max-w-[40ch] text-balance   text-center">
                       {t(
                         "MAIN_PAGE.ADVANTAGE_SECTION_2_ARTICLE_1_DESCRIPTION_1"
                       )}
                     </p>
                   </article>
-                  <article className="flex    text-center gap-4 flex-col">
+                  <article className="flex items-center   text-center gap-4 flex-col">
                     <picture className="flex justify-center">
                       <img
                         className="w-24 h-24 block"
@@ -432,13 +433,13 @@ export function HomePage() {
                     <h4 className="font-medium">
                       {t("MAIN_PAGE.ADVANTAGE_SECTION_2_ARTICLE_2_TITLE")}
                     </h4>
-                    <p className="max-w-[60ch]    text-center">
+                    <p className="max-w-[40ch] text-balance ">
                       {t(
                         "MAIN_PAGE.ADVANTAGE_SECTION_2_ARTICLE_1_DESCRIPTION_2"
                       )}
                     </p>
                   </article>
-                  <article className="flex    text-center gap-4 flex-col">
+                  <article className="flex items-center   text-center gap-4 flex-col">
                     <picture className="flex justify-center">
                       <img
                         className="w-24 h-24 block"
@@ -449,7 +450,7 @@ export function HomePage() {
                     <h4 className="font-medium">
                       {t("MAIN_PAGE.ADVANTAGE_SECTION_2_ARTICLE_3_TITLE")}
                     </h4>
-                    <p className="max-w-[60ch]    text-center">
+                    <p className="max-w-[40ch] text-balance  text-center">
                       {t(
                         "MAIN_PAGE.ADVANTAGE_SECTION_2_ARTICLE_1_DESCRIPTION_3"
                       )}

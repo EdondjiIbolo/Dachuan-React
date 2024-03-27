@@ -12,7 +12,7 @@ export function Footer() {
             <li>
               <a
                 href="/machining-milling"
-                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+                className="hover:text-slate-300 hover:border-b border-slate-300"
               >
                 {t("FOOTER.COLUMN_1_DATA_1")}
               </a>
@@ -20,7 +20,7 @@ export function Footer() {
             <li>
               <a
                 href="/machining-turning"
-                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+                className="hover:text-slate-300 hover:border-b border-slate-300"
               >
                 {t("FOOTER.COLUMN_1_DATA_2")}
               </a>
@@ -28,7 +28,7 @@ export function Footer() {
             <li>
               <a
                 href="/machining-drilling"
-                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+                className="hover:text-slate-300 hover:border-b border-slate-300"
               >
                 {t("FOOTER.COLUMN_1_DATA_3")}
               </a>
@@ -39,7 +39,7 @@ export function Footer() {
             <li>
               <Link
                 to="/guide"
-                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+                className="hover:text-slate-300 hover:border-b border-slate-300"
               >
                 {t("FOOTER.COLUMN_2_DATA_1")}
               </Link>
@@ -47,7 +47,7 @@ export function Footer() {
             <li>
               <a
                 href="/materials"
-                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+                className="hover:text-slate-300 hover:border-b border-slate-300"
               >
                 {t("FOOTER.COLUMN_2_DATA_2")}
               </a>
@@ -55,7 +55,7 @@ export function Footer() {
             <li>
               <Link
                 to="/assistance"
-                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+                className="hover:text-slate-300 hover:border-b border-slate-300"
               >
                 {t("FOOTER.COLUMN_2_DATA_3")}
               </Link>
@@ -66,7 +66,7 @@ export function Footer() {
             <li>
               <a
                 href="/about"
-                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+                className="hover:text-slate-300 hover:border-b border-slate-300"
               >
                 {t("FOOTER.COLUMN_3_DATA_1")}
               </a>
@@ -74,7 +74,7 @@ export function Footer() {
             <li>
               <a
                 href="#"
-                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+                className="hover:text-slate-300 hover:border-b border-slate-300"
               >
                 {t("FOOTER.COLUMN_3_DATA_2")}
               </a>
@@ -82,7 +82,7 @@ export function Footer() {
             <li>
               <a
                 href="#"
-                className="hover:text-slate-300 hover:border-b p-1 border-slate-300"
+                className="hover:text-slate-300 hover:border-b border-slate-300"
               >
                 {t("FOOTER.COLUMN_3_DATA_3")}
               </a>

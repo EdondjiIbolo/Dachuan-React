@@ -372,7 +372,7 @@ export function MillingCnc() {
             </h2>
 
             <article className="text-pretty text-sm flex flex-col gap-2">
-              <p>{t("MILLING.SUMERISE_DESCRIPTION_1")}</p>
+              <h4 className="text-lg">{t("MILLING.SUMERISE_DESCRIPTION_1")}</h4>
               <p>{t("MILLING.SUMERISE_DESCRIPTION_2")}</p>
               <p>{t("MILLING.SUMERISE_DESCRIPTION_3")}</p>
             </article>

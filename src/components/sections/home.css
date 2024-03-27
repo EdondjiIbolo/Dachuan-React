@@ -32,7 +32,7 @@
 
 @media screen and (min-width: 530px) {
   .item2 {
-    width: 150px;
+    width: 160px;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 350ms ease;
