@@ -55,7 +55,7 @@ export function Quote({ quote }) {
       <td className="text-center text-xs p-2" data-label=" Actions">
         <div>
           <a
-            href={`https://api-chuantai-dev-dbab.4.us-1.fl0.io/file/${quote.url}`}
+            href={`https://testing-api-dev-bbej.4.us-1.fl0.io/file/${quote.url}`}
             download
             className="p-1 bg-orange-500 text-white min-w-min text-nowrap hover:scale-110 transition-all duration-150 ease-linear hover:shadow-md rounded"
           >

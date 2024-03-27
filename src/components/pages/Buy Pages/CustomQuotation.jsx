@@ -25,7 +25,7 @@ export function CustomQuotation() {
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get(
-        `https://api-chuantai-dev-dbab.4.us-1.fl0.io/quote/${id}`
+        `https://testing-api-dev-bbej.4.us-1.fl0.io/quote/${id}`
       );
       console.log(data);
     };

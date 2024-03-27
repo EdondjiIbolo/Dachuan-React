@@ -7,7 +7,7 @@ import axios from "axios";
 // const baseContact = "https://api-deploy-production-5c13.up.railway.app/contact";
 // const SendFileURL =
 //   "https://api-deploy-production-5c13.up.railway.app/send-file";
-const api_url = "https://api-chuantai-dev-dbab.4.us-1.fl0.io";
+const api_url = "https://testing-api-dev-bbej.4.us-1.fl0.io";
 const baseUrl = "http://localhost:3000/login";
 const baseUrlSign = "http://localhost:3000/sign-up";
 const baseVerify = "http://localhost:3000/verify";
