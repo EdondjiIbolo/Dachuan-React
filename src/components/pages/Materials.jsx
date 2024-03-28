@@ -74,11 +74,14 @@ export function Materials() {
               <ul className="flex px-2 w-full max-w-[1300px] sm:px-4 m-auto justify-between  md:px-12 font-semibold text-xs sm:text-lg py-2 text-slate-400 ">
                 {materialsInfo?.map((material, index) => {
                   return (
-                    <li key={index}>
+                    <li
+                      key={index}
+                      className="w-[14%] text-ellipsis overflow-hidden"
+                    >
                       <a
                         onClick={(e) => handleClickScroll({ e, material })}
                         href={`#${material.materialName}`}
-                        className={`sm:p-1 p-[6px] text-base capitalize hover:font-medium transition-all duration-250 ease-linear ${
+                        className={`sm:p-1 p-[6px] text-base text-nowrap capitalize hover:font-medium transition-all duration-250 ease-linear ${
                           currentSection === material.materialName
                             ? "font-bold text-lg text-slate-900"
                             : ""

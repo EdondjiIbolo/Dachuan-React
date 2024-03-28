@@ -7,7 +7,7 @@ export function AssistanceAside() {
   console.log(FRAME);
   return (
     <aside className="bg-slate-300 shadow flex sticky w-[300px]  top-24 left-0   flex-col gap-2 p-2">
-      <nav className="sticky top-20 pt-4 h-min w-full">
+      <nav className="sticky top-20 h-min w-full">
         <header>
           <h1 className="font-bold text-md p-1">Menu</h1>
         </header>
@@ -24,7 +24,7 @@ export function AssistanceAside() {
                         className="border-t pl-2 p-[3px] border-slate-400"
                       >
                         <Link
-                          to={`assistance/${index2 + 1}`}
+                          to={`article/${index2 + 1}`}
                           className="text-sm hover:text-blue-600 transition-all duration-400 ease-linear"
                         >
                           {subItem.name}

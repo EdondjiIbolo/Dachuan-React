@@ -60,7 +60,7 @@ export function Finishing() {
           <Header />
           <main className=" w-full   relative  pt-20 ">
             <header className="p-3 max-w-[1300px] m-auto flex justify-between flex-col  ">
-              <h1 className="font-bold  text-center sm:text-start text-3xl p-3 pl-0 capitalize">
+              <h1 className="font-bold text-2xl sm:text-start sm:text-3xl p-3 pl-0 capitalize">
                 {t("CARD.TITLE_FINISHING")}
               </h1>
               <div>
@@ -73,15 +73,18 @@ export function Finishing() {
               </div>
             </header>
 
-            <nav className=" bg-zinc-50 sticky shadow-md z-10 top-20">
+            <nav className=" bg-zinc-50 sticky shadow-md max-w-screen  z-10 top-20">
               <ul className="flex px-2 w-full max-w-[1300px] sm:px-4 m-auto justify-between  md:px-12 font-semibold text-xs sm:text-lg py-2 text-slate-400 ">
                 {finishingsInfo?.map((finishing, index) => {
                   return (
-                    <li key={index}>
+                    <li
+                      key={index}
+                      className="w-[16%] text-ellipsis overflow-hidden"
+                    >
                       <a
                         onClick={(e) => handleClickScroll({ e, finishing })}
                         href={`#${finishing.finishingName}`}
-                        className={`sm:p-1 p-[6px] text-base hover:text-slate-700 capitalize hover:font-medium transition-all duration-250 ease-linear ${
+                        className={`sm:p-1 p-[6px] text-base hover:text-slate-700 capitalize text-nowrap text-ellipsis hover:font-medium transition-all duration-250 ease-linear ${
                           currentSection === finishing.finishingName
                             ? "font-bold text-lg text-slate-900"
                             : ""
