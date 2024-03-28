@@ -48,10 +48,8 @@ export function HomePage() {
       <main className=" w-full  m-auto  bg-zinc-100 relative  pt-20">
         <section className="relative max-w-[1510px] m-auto h-86 sm:h-[400px] overflow-hidden animate-fade animate-once animate-duration-500 animate-delay-100 animate-ease-linear">
           <picture
-            className="absolute w-[60%] z-10 top-0 right-0 bg-white  "
+            className="absolute w-[55%] z-10 top-0 right-0 bg-white  "
             style={{
-              background:
-                "linear-gradient(115deg, rgba(233,233,235,1) 0%, rgba(255,255,255,1) 26%, rgba(255,255,255,1) 35%, rgba(255,255,255,1) 100%)",
               clipPath: "polygon(10% 0, 100% 0%, 100% 100%, 0% 100%)",
             }}
           >
