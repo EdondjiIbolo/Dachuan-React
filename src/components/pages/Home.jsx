@@ -44,12 +44,17 @@ export function HomePage() {
   return (
     <>
       <Header />
-      <main className=" w-full  m-auto  bg-zinc-100 relative  pt-20">
-        <section className="relative max-w-[1310px] m-auto h-86 sm:h-96 overflow-hidden animate-fade animate-once animate-duration-500 animate-delay-100 animate-ease-linear">
-          <picture className="absolute w-1/2 z-10 top-0 right-0     ">
+      <main className=" w-full  m-auto  bg-zinc-80 relative  pt-20">
+        <section className="relative max-w-[1510px] m-auto h-86 sm:h-[400px] overflow-hidden animate-fade animate-once animate-duration-500 animate-delay-100 animate-ease-linear">
+          <picture
+            className="absolute w-[60%] z-10 top-0 right-0 bg-gradient-to-l to-white from-zinc-200  "
+            style={{
+              clipPath: "polygon(10% 0, 100% 0%, 100% 100%, 0% 100%)",
+            }}
+          >
             <img
               src="./images/main-banner.jpg"
-              className="h-96 object-[-235px] sm:object-center sm:h-96 block object-cover w-full"
+              className="h-96  sm:h-[400px] block object-cover w-full max-w-[700px] ml-auto"
               alt="Banner img"
               style={{
                 clipPath: "polygon(10% 0, 100% 0%, 100% 100%, 0% 100%)",
