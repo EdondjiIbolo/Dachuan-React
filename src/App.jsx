@@ -1,14 +1,14 @@
 import "./App.css";
+
+import { Outlet, Route, Routes } from "react-router-dom";
 import { HomePage } from "./components/pages/Home";
 import { MillingCnc } from "./components/pages/Milling";
 import { DrillingCnc } from "./components/pages/Drilling";
 import { TurningCnc } from "./components/pages/Turning";
-import { Outlet, Route, Routes } from "react-router-dom";
 import { Materials } from "./components/pages/Materials";
 import { AboutUs } from "./components/pages/About";
 import { Contact } from "./components/pages/Contact";
 import { Login } from "./components/pages/Login";
-import { useEffect } from "react";
 import { SignUp } from "./components/pages/SignUp";
 import { Panel } from "./components/pages/Dashboard";
 import { Assistance } from "./components/pages/Assistance";
@@ -27,9 +27,6 @@ import { Finishing } from "./components/pages/Finishing";
 import AssistantContent from "./components/AssistantContent";
 
 function App() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <>
       <Routes>
