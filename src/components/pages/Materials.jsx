@@ -55,13 +55,18 @@ export function Materials() {
         <>
           <Header />
           <main className=" w-full   relative  pt-20 ">
-            <header className="p-3 max-w-[1300px] m-auto flex flex-col justify-between   ">
-              <h1 className="font-bold text-center sm:text-start text-3xl p-3 capitalize">
+            <header className="p-3 max-w-[1300px] m-auto flex flex-col py-4 justify-between   ">
+              <h1 className="font-bold text-center sm:text-start text-3xl p-3 pl-0 capitalize">
                 {t("CARD.TITLE_MATERIAL")}
               </h1>
-              <p className="max-w-[80ch] p-2 text-lg">
-                {t("CARD.TITLE_MATERIAL_DESCRIPTION")}
-              </p>
+              <div>
+                <p className="max-w-[80ch] text-lg">
+                  {t("CARD.TITLE_MATERIAL_DESCRIPTION_1")}
+                </p>
+                <p className="max-w-[80ch] text-lg">
+                  {t("CARD.TITLE_MATERIAL_DESCRIPTION_2")}
+                </p>
+              </div>
             </header>
 
             <nav className=" bg-zinc-50 sticky shadow-md z-10 top-20">

@@ -24,7 +24,8 @@
     "TITLE_FINISHING_DESCRIPTION_2": "If you need a different process, pleasespecify it as custom when requesting aquote. ",
     "SUBTITLE_MATERIAL": "CNC Machining",
     "TITLE_MATERIAL": "Manufacturing Materials",
-    "TITLE_MATERIAL_DESCRIPTION": "Discover a variety of materials in the Chuantai Real-Time Quoting Engine! If you need a specific material not found in the list, fill out the custom field, and you will find all materials suitable for your project. Perfect materials for every occasion, making your creativity shine!",
+    "TITLE_MATERIAL_DESCRIPTION_1": "All of these materials can be found on theChuantai intelligence instant quoteplatform.",
+    "TITLE_MATERIAL_DESCRIPTION_2": "If you need a different material, specify itas custom when you request a quote.",
     "DESCRIPTION": "Features:",
     "PRICE_TEXT": "Material Cost",
     "PRICE_MANUFACTURE_TEXT": "Manufacturing cost",
@@ -162,7 +163,7 @@
     "FINISHING_SECTION_DESCRIPTION_1": "All of these finishing can be found on the Chuantai Technology instant quote platform. ",
     "FINISHING_SECTION_DESCRIPTION_2": "If you need a different finishing, please specify it as custom when you make a request. ",
     "MATERIALS_SECTION_TITLE": "Materials",
-    "MATERIALS_SECTION_DESCRIPTION_1": "All of these Materials can be found on the Chuantai Technology instant quote platform。",
+    "MATERIALS_SECTION_DESCRIPTION_1": "All of these Materials can be found on the Chuantai Technology instant quote platform.",
     "MATERIALS_SECTION_DESCRIPTION_2": "If you need a different material, specify it as custom when you request a quote.",
 
     "MATERIALS": {
