@@ -229,7 +229,10 @@
       "COMPANY": "公司",
       "EMAIL": "电子邮件",
       "PHONE": "手机号 ：+86 999 9999 9999",
-      "MESSAGE": "留言"
+      "MESSAGE": "留言",
+      "MESSAGE_SUCCESS": "发送短信时出错",
+      "MESSAGE_ERROR": "信息已成功发送。",
+      "MESSAGE_ERROR_INPUTS": "所有字段必须填写"
     }
   },
   "MILLING": {

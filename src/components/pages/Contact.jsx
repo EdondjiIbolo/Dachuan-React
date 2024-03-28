@@ -24,7 +24,7 @@ export function Contact() {
     if (!(name && email && phone && companyName && message && phone)) {
       setLoading(false);
       setError(true);
-      setErrorText("All fields must be filled");
+      setErrorText(t("CONTACT.FORM.MESSAGE_ERROR_INPUTS"));
       setTimeout(() => {
         setError(false);
       }, 4000);
@@ -49,7 +49,7 @@ export function Contact() {
       }, 3500);
     } catch (error) {
       setError(true);
-      setErrorText(Error.message);
+      setErrorText(t("CONTACT.FORM.MESSAGE_SUCCESS"));
       setTimeout(() => {
         setError(false);
       }, 4000);
@@ -202,12 +202,12 @@ export function Contact() {
                 </div>
                 {error && (
                   <p className="text-white shadow-rose-500 shadow-sm italic  text-center border-red-500 rounded p-1 px-3 text-lg bg-red-500 duration-250 transition-all  justify-center ease-in ">
-                    Error : {errorText}
+                    {errorText}
                   </p>
                 )}
                 {succes && (
                   <p className="text-white shadow-sky-500 shadow-sm italic  text-center border-red-500 rounded p-1 px-3 text-lg bg-blue-500 duration-250 transition-all  justify-center ease-in ">
-                    Message have sent successfully
+                    {t("CONTACT.FORM.MESSAGE_SUCCESS")}
                   </p>
                 )}
                 <div className="flex gap-2 items-start">
