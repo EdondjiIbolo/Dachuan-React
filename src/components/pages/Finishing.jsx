@@ -48,6 +48,7 @@ export function Finishing() {
     const elemento = document.getElementById(`${finishing.finishingName}`);
     window.scroll({
       top: elemento.offsetTop - 130,
+      behavior: "smooth",
     });
   };
   return (
