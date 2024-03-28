@@ -90,13 +90,15 @@ export function MaterialCard({ feature, material, url }) {
           </div>
         </div>
 
-        <div className="text-pretty">
-          <p>
-            {" "}
-            <b>{t("CARD.ALTERNATIVE_NAME")}:</b>{" "}
-            {feature?.featureAlternativeName ?? "none"}
-          </p>
-        </div>
+        {feature.featureAlternativeName !== "none" && (
+          <div className="text-pretty">
+            <p>
+              {" "}
+              <b>{t("CARD.ALTERNATIVE_NAME")}:</b>{" "}
+              {feature?.featureAlternativeName}
+            </p>
+          </div>
+        )}
 
         <div>
           <p>
