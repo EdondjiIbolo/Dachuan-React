@@ -5,7 +5,7 @@ export function Footer() {
   const { t, i18n } = useTranslation();
   return (
     <footer className="bg-indigo-950 w-full h-auto text-white ">
-      <section className="p-12 pb-4 max-w-[1300px] m-auto">
+      <section className="p-12 pb-4 max-w-[1520px] m-auto">
         <ul className="grid sm:grid-cols-2 md:grid-cols-4 pb-8 gap-16 border-b-[1px] :mdjustify-center border-zinc-500">
           <ul className="flex flex-col gap-3  text-sm">
             <p className="text-zinc-400">{t("FOOTER.HEADER_1")}</p>

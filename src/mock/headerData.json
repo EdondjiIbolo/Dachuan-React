@@ -48,6 +48,10 @@
       "Page": "/about"
     },
     {
+      "section_title": "Guide",
+      "Page": "/guide"
+    },
+    {
       "section_title": "Contact",
       "Page": "/contact"
     }

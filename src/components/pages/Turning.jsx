@@ -282,13 +282,18 @@ export function TurningCnc() {
             </section>
           </section>
           <section data-section="Materials" className=" bg-slate-100 p-8">
-            <article className="section-art text-center items-center flex flex-col gap-4">
+            <article className="section-art text-center items-center flex flex-col p-3 gap-4">
               <p className="text__title font-semibold text-xl">
                 {t("TURNING.MATERIALS.MATERIAL_SECTION_TITLE")}
               </p>
-              <p className="max-w-[80ch] ">
-                {t("TURNING.MATERIALS.MATERIAL_SECTION_DESCRIPTION")}
-              </p>
+              <div>
+                <p className="max-w-[80ch] ">
+                  {t("MAIN_PAGE.MATERIALS_SECTION_DESCRIPTION_1")}
+                </p>
+                <p className="max-w-[80ch] ">
+                  {t("MAIN_PAGE.MATERIALS_SECTION_DESCRIPTION_2")}
+                </p>
+              </div>
             </article>
             <article className="section-qs flex flex-col gap-8">
               <ol id="Finishing" className="qs-list">
@@ -316,13 +321,18 @@ export function TurningCnc() {
             </article>
           </section>
           <section data-section="Finishing" className=" bg-slate-100 p-8">
-            <article className=" text-center items-center flex flex-col gap-4">
+            <article className=" text-center items-center flex flex-col p-3 gap-4">
               <p className="text__title font-semibold text-xl">
                 {t("TURNING.FINISHING.FINISHING_SECTION_TITLE")}
               </p>
-              <p className="max-w-[80ch] ">
-                {t("TURNING.FINISHING.FINISHING_SECTION_DESCRIPTION")}
-              </p>
+              <div>
+                <p className="max-w-[80ch] ">
+                  {t("MAIN_PAGE.FINISHING_SECTION_DESCRIPTION_1")}
+                </p>
+                <p className="max-w-[80ch] ">
+                  {t("MAIN_PAGE.FINISHING_SECTION_DESCRIPTION_2")}
+                </p>
+              </div>
             </article>
             <article id="Quotation" className="section-qs flex flex-col gap-8">
               <ol className="qs-list">

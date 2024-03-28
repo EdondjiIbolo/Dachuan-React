@@ -40,7 +40,6 @@ export function AcordeonMaterial({ item, index, section, page }) {
       >
         <p className="font-bold text-lg p-2">
           {t(`${page}.${section}.${section}_${index + 1}_TITLE`)}
-          {/* {item.name} */}
         </p>
         <div className={className2}>
           <ArrowIcon />

@@ -33,7 +33,7 @@ export function Header() {
   };
   return (
     <header className="main-header  justify-center h-20  bg-white w-full flex fixed top-0 left-0 z-40  md:pr-1">
-      <section className="flex w-full max-w-[1320px]  items-center  border-b-2   m-auto justify-between  h-20 z-30  fixed  ">
+      <section className="flex w-full max-w-[1520px] px-4 items-center  border-b-2   m-auto justify-between  h-20 z-30  fixed  ">
         <section className="header__container--right ">
           <a
             href="/"
@@ -96,7 +96,7 @@ export function Header() {
               className="flex gap-1 cursor-pointer  hover:font-semibold hover:outline outline-2 outline-bg-blue-700 rounded p-1 flex-nowrap"
               onClick={closemenu}
             >
-              <p className="w-10 text-nowrap">{t("HEADER.SECTION_7")}</p>
+              <p className="w-10 text-nowrap">{t("HEADER.SECTION_8")}</p>
               <LoginIcon />
             </Link>
             <Link

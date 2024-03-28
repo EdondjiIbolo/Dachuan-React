@@ -59,12 +59,17 @@ export function Finishing() {
           <Header />
           <main className=" w-full   relative  pt-20 ">
             <header className="p-3 max-w-[1300px] m-auto flex justify-between flex-col  ">
-              <h1 className="font-bold  text-center sm:text-start text-3xl p-3 capitalize">
+              <h1 className="font-bold  text-center sm:text-start text-3xl p-3 pl-0 capitalize">
                 {t("CARD.TITLE_FINISHING")}
               </h1>
-              <p className="max-w-[80ch] p-2 text-lg">
-                {t("CARD.TITLE_FINISHING_DESCRIPTION")}
-              </p>
+              <div>
+                <p className="max-w-[80ch] m-0  text-lg">
+                  {t("CARD.TITLE_FINISHING_DESCRIPTION_1")}
+                </p>
+                <p className="max-w-[80ch] m-0  text-lg">
+                  {t("CARD.TITLE_FINISHING_DESCRIPTION_2")}
+                </p>
+              </div>
             </header>
 
             <nav className=" bg-zinc-50 sticky shadow-md z-10 top-20">
