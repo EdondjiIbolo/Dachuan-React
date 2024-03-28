@@ -7,12 +7,12 @@ export function Services() {
     <section
       id="Services"
       data-section="Services"
-      className="max-w-[1300px] m-auto py-10 px-4 animate-fade-right animate-once animate-duration-[400ms] animate-delay-[50ms] animate-ease-linear "
+      className="max-w-[1400px] m-auto py-10 px-4 animate-fade-right animate-once animate-duration-[400ms] animate-delay-[50ms] animate-ease-linear "
     >
       <h2 className="text-center font-semibold text-2xl mb-4 pt-4 ">
         {t("MAIN_PAGE.SERVICE_SECTION_TITLE")}
       </h2>
-      <p className="max-w-[120ch] text-balance text-center m-auto pb-0 mb-1">
+      <p className="max-w-[110ch] text-balance text-center m-auto pb-0 mb-1">
         {t("MAIN_PAGE.SERVICE_SECTION_DESCRIPTION_1")}
       </p>
       <p className="max-w-[85ch] text-pretty text-center m-auto pb-4 mb-2">

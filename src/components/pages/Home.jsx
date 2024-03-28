@@ -40,15 +40,18 @@ export function HomePage() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [currentSection]);
-
+  // linear-gradient(115deg, rgba(233,233,235,1) 24%, rgba(255,255,255,1) 67%);
+  //linear-gradient(115deg, rgba(233,233,235,1) 0%, rgba(255,255,255,1) 27%) original:
   return (
     <>
       <Header />
-      <main className=" w-full  m-auto  bg-zinc-80 relative  pt-20">
+      <main className=" w-full  m-auto  bg-zinc-100 relative  pt-20">
         <section className="relative max-w-[1510px] m-auto h-86 sm:h-[400px] overflow-hidden animate-fade animate-once animate-duration-500 animate-delay-100 animate-ease-linear">
           <picture
-            className="absolute w-[60%] z-10 top-0 right-0 bg-gradient-to-l to-white from-zinc-200  "
+            className="absolute w-[60%] z-10 top-0 right-0 bg-white  "
             style={{
+              background:
+                "linear-gradient(115deg, rgba(233,233,235,1) 0%, rgba(255,255,255,1) 26%, rgba(255,255,255,1) 35%, rgba(255,255,255,1) 100%)",
               clipPath: "polygon(10% 0, 100% 0%, 100% 100%, 0% 100%)",
             }}
           >
@@ -247,7 +250,7 @@ export function HomePage() {
                   <picture className="flex justify-center">
                     <img
                       src="./images/iconos/shipping.png"
-                      alt=""
+                      alt="Shipping icon"
                       className="w-16 h-10"
                     />
                   </picture>

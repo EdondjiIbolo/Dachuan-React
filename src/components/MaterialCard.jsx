@@ -10,7 +10,7 @@ export function MaterialCard({ feature, material, url }) {
       <picture className="w-full flex justify-center overflow-hidden">
         <img
           src={`./images/${url}.png`}
-          alt=""
+          alt={`${feature?.featureName} image`}
           className="h-36 w-full object-contain"
         />
       </picture>

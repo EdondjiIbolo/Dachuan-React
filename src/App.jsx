@@ -25,7 +25,6 @@ import { QuoteInfo } from "./components/pages/Buy Pages/QuoteInfo";
 import { AssistanceQuotes } from "./components/pages/Buy Pages/Assistant/AssistantQuotes";
 import { Finishing } from "./components/pages/Finishing";
 import AssistantContent from "./components/AssistantContent";
-// import { AboutUs } from "./components/AboutRecover";
 
 function App() {
   useEffect(() => {

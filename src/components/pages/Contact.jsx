@@ -41,6 +41,8 @@ export function Contact() {
         message,
         check,
       });
+      const response = await sendMessage;
+      console.log(response);
       setSuccess(true);
       setTimeout(() => {
         setSuccess(false);
